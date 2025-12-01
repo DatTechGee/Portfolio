@@ -226,17 +226,17 @@ export const myProjects = [
 export const mySocials = [
   {
     name: "WhatsApp",
-    href: "",
+    href: "https://wa.me/2348103093734",
     icon: "/assets/socials/whatsApp.svg",
   },
   {
     name: "Linkedin",
-    href: "https://www.linkedin.com/in/ali-sanati/",
+    href: "https://www.linkedin.com/in/isaac-emmanuel-83794a2a2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     icon: "/assets/socials/linkedIn.svg",
   },
   {
     name: "Instagram",
-    href: "https://www.instagram.com/ali.sanatidev/reels/",
+    href: "https://www.instagram.com/dattechgee?igsh=MThhbndmYnNyc3FxOQ==",
     icon: "/assets/socials/instagram.svg",
   },
 ];
