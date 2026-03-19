@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import Card from "../components/Card";
-import { Globe } from "../components/globe";
-import CopyEmailButton from "../components/CopyEmailButton";
+
 import { Frameworks } from "../components/Frameworks";
 
 const About = () => {
@@ -78,27 +77,7 @@ const About = () => {
             />
           </div>
         </div>
-        {/* Grid 3 */}
-        <div className="grid-black-color grid-3">
-          <div className="z-10 w-[50%]">
-            <p className="headtext">Time Zone</p>
-            <p className="subtext">
-              I'm based in Nigeria, and open to remote work worldwide
-            </p>
-          </div>
-          <figure className="absolute left-[30%] top-[10%]">
-            <Globe />
-          </figure>
-        </div>
-        {/* Grid 4 */}
-        <div className="grid-special-color grid-4">
-          <div className="flex flex-col items-center justify-center gap-4 size-full">
-            <p className="text-center headtext">
-              Do you want to start a project together?
-            </p>
-            <CopyEmailButton />
-          </div>
-        </div>
+        
         {/* Grid 5 */}
         <div className="grid-default-color grid-5">
           <div className="z-10 w-[50%]">

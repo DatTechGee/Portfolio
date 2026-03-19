@@ -20,6 +20,15 @@ const HeroText = () => {
         >
           Hi I'm Isaac Emmanuel
         </motion.h1>
+        <motion.p
+          className="mt-2 text-lg text-neutral-300"
+          variants={variants}
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 1.1 }}
+        >
+          Full Stack Developer specializing in modern, secure, and scalable web applications
+        </motion.p>
         <div className="flex flex-col items-start">
           <motion.p
             className="text-5xl font-medium text-neutral-300"
@@ -62,6 +71,15 @@ const HeroText = () => {
           transition={{ delay: 1 }}
         >
           Hi, I'm Isaac Emmanuel
+        </motion.p>
+        <motion.p
+          className="px-2 text-base text-neutral-300"
+          variants={variants}
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 1.1 }}
+        >
+          Full Stack Developer building secure, scalable, and high-performance websites
         </motion.p>
         <div>
           <motion.p
