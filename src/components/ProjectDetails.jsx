@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { trackEvent } from "../utils/analytics";
 const ProjectDetails = ({
   title,
   description,
@@ -17,9 +18,10 @@ const ProjectDetails = ({
       >
         <button
           onClick={closeModal}
+          aria-label="Close project details"
           className="absolute p-2 rounded-sm top-5 right-5 bg-midnight hover:bg-gray-500"
         >
-          <img src="assets/close.svg" className="w-6 h-6" />
+          <img src="assets/close.svg" className="w-6 h-6" alt="Close" />
         </button>
         <img
           src={image}
@@ -62,10 +64,11 @@ const ProjectDetails = ({
               href={href}
               target="_blank"
               rel="noreferrer"
+              onClick={() => trackEvent("project_click", { project: title, url: href })}
               className="inline-flex items-center gap-1 font-medium cursor-pointer hover-animation"
             >
               View Project{" "}
-              <img src="assets/arrow-up.svg" className="size-4" />
+              <img src="assets/arrow-up.svg" className="size-4" alt="Open project" />
             </a>
           </div>
         </div>

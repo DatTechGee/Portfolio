@@ -24,12 +24,14 @@ const App = () => {
       {showPreloader && <Preloader />}
       <div className={showPreloader ? "opacity-0 pointer-events-none" : ""}>
         <Navbar />
-        <Hero />
-        <About />
-        <Projects />
-        <Experiences />
-        <Testimonial />
-        <Contact />
+        <main id="main-content">
+          <Hero />
+          <About />
+          <Projects />
+          <Experiences />
+          <Testimonial />
+          <Contact />
+        </main>
         <Footer />
         <ScrollButtons />
       </div>

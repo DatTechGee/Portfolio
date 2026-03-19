@@ -2,6 +2,7 @@ import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import Alert from "../components/Alert";
 import { Particles } from "../components/Particles";
+import { trackEvent } from "../utils/analytics";
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -26,6 +27,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+    trackEvent("contact_submit_attempt", { section: "contact" });
     try {
       console.log("Form submitted:", formData);
       const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_79b0nyj";
@@ -46,6 +48,7 @@ const Contact = () => {
       console.log("EmailJS success:", result);
       setIsLoading(false);
       setFormData({ name: "", email: "", message: "" });
+      trackEvent("contact_submit_success", { section: "contact" });
       showAlertMessage("success", "Your message has been sent!");
     } catch (error) {
       setIsLoading(false);
@@ -59,6 +62,7 @@ const Contact = () => {
       } catch (e) {
         /* ignore */
       }
+      trackEvent("contact_submit_error", { section: "contact", detail });
       showAlertMessage("danger", `Something went wrong: ${detail}`);
     }
   };
