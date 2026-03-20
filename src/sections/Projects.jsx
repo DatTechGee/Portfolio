@@ -14,11 +14,11 @@ const liveProjects = [
       "Live deployment on Vercel.",
     ],
     href: "https://dattechgee-react-estate.vercel.app/",
-    image: "/assets/projects/elearning.jpg",
+    image: "/assets/projects/estate.JPG",
     tags: [
-      { id: "estate-1", name: "React" },
-      { id: "estate-2", name: "Real Estate" },
-      { id: "estate-3", name: "Vercel" },
+      { id: "estate-1", name: "React", path: "/assets/logos/react.svg" },
+      { id: "estate-2", name: "TailwindCSS", path: "/assets/logos/tailwindcss.svg" },
+      { id: "estate-3", name: "Vite.js", path: "/assets/logos/vitejs.svg" },
     ],
   },
   {
@@ -32,11 +32,11 @@ const liveProjects = [
       "Live deployment on Vercel.",
     ],
     href: "https://dattechgee-nike-landing-page.vercel.app/",
-    image: "/assets/projects/accessories.jpg",
+    image: "/assets/projects/nike-landing-page.JPG",
     tags: [
-      { id: "nike-1", name: "Landing Page" },
-      { id: "nike-2", name: "UI Design" },
-      { id: "nike-3", name: "Vercel" },
+      { id: "nike-1", name: "React", path: "/assets/logos/react.svg" },
+      { id: "nike-2", name: "TailwindCSS", path: "/assets/logos/tailwindcss.svg" },
+      { id: "nike-3", name: "Vite.js", path: "/assets/logos/vitejs.svg" },
     ],
   },
   {
@@ -50,11 +50,11 @@ const liveProjects = [
       "Live deployment on Vercel.",
     ],
     href: "https://dattechgee.vercel.app/",
-    image: "/assets/projects/auth-system.jpg",
+    image: "/assets/projects/portfolio.JPG",
     tags: [
-      { id: "portfolio-1", name: "Portfolio" },
-      { id: "portfolio-2", name: "React" },
-      { id: "portfolio-3", name: "Vercel" },
+      { id: "portfolio-1", name: "React", path: "/assets/logos/react.svg" },
+      { id: "portfolio-2", name: "Three.js", path: "/assets/logos/threejs.svg" },
+      { id: "portfolio-3", name: "TailwindCSS", path: "/assets/logos/tailwindcss.svg" },
     ],
   },
   {
@@ -68,11 +68,11 @@ const liveProjects = [
       "Live deployment on Vercel.",
     ],
     href: "https://dattechgee.vercel.app/",
-    image: "/assets/projects/weather.jpeg",
+    image: "/assets/projects/weather.JPG",
     tags: [
-      { id: "weather-1", name: "Weather" },
-      { id: "weather-2", name: "Web App" },
-      { id: "weather-3", name: "Vercel" },
+      { id: "weather-1", name: "React", path: "/assets/logos/react.svg" },
+      { id: "weather-2", name: "Vite.js", path: "/assets/logos/vitejs.svg" },
+      { id: "weather-3", name: "TailwindCSS", path: "/assets/logos/tailwindcss.svg" },
     ],
   },
 ];
@@ -105,7 +105,7 @@ const Projects = () => {
           src={preview}
           onError={(e) => {
             e.currentTarget.onerror = null;
-            e.currentTarget.src = "/assets/projects/auth-system.jpg";
+            e.currentTarget.src = "/assets/projects/estate.JPG";
           }}
           style={{ x: springX, y: springY }}
         />

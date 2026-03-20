@@ -29,7 +29,7 @@ const ProjectDetails = ({
           className="w-full rounded-t-2xl"
           onError={(e) => {
             e.currentTarget.onerror = null;
-            e.currentTarget.src = "/assets/projects/auth-system.jpg";
+            e.currentTarget.src = "/assets/projects/estate.JPG";
           }}
         />
         <div className="p-5">

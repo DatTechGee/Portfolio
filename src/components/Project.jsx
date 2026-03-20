@@ -22,7 +22,17 @@ const Project = ({
           <p className="text-2xl">{title}</p>
           <div className="flex gap-5 mt-2 text-sand">
             {tags.map((tag) => (
-              <span key={tag.id}>{tag.name}</span>
+              tag.path ? (
+                <img
+                  key={tag.id}
+                  src={tag.path}
+                  alt={tag.name}
+                  title={tag.name}
+                  className="w-6 h-6"
+                />
+              ) : (
+                <span key={tag.id}>{tag.name}</span>
+              )
             ))}
           </div>
         </div>

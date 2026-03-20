@@ -26,7 +26,7 @@ const Footer = () => {
       <p className="px-2 py-1 text-xs rounded-full bg-white/10 text-neutral-300">
         SEO Standard Ready
       </p>
-      <p>© 2025 Isaac Emmanuel. All rights reserved.</p>
+      <p>Copyright © {new Date().getFullYear()} Isaac Emmanuel. All rights reserved.</p>
     </footer>
   );
 };
