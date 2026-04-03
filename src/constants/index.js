@@ -149,9 +149,9 @@ export const experiences = [
     contents: [
       "Engineered systems for large-scale data ingestion and analysis, ensuring efficient data processing and storage.",
       "Developed back-end systems enabling vehicle-to-cloud communication for telemetry, diagnostics, and remote control:",
-      "✅ Implemented secure APIs, following ISO 26262 automotive safety standards.",
-      "✅ Ensured data privacy for customers and partners through industry-compliant protocols.",
-      "✅ Delivered remote features like over-the-air updates, real-time tracking, and remote start capabilities.",
+      "Implemented secure APIs, following ISO 26262 automotive safety standards.",
+      " Ensured data privacy for customers and partners through industry-compliant protocols.",
+      " Delivered remote features like over-the-air updates, real-time tracking, and remote start capabilities.",
     ],
   },
   {
