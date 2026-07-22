@@ -150,14 +150,11 @@ const PortfolioSidebar = ({ onProjectClick }) => {
         {/* Divider */}
         <div className="h-px dark:bg-white/[0.06] bg-black/[0.06]" />
 
-        {/* PORTFOLIO branding */}
-        <div className="rounded-xl overflow-hidden opacity-30 hover:opacity-70 transition-opacity duration-300">
-          <img
-            src="/assets/PORTFILO.png"
-            alt="DatTechGee Portfolio"
-            className="w-full h-auto object-cover"
-            loading="lazy"
-          />
+        {/* Footer info */}
+        <div className="px-1">
+          <p className="text-[10px] dark:text-neutral-600 text-neutral-400 leading-relaxed">
+            Click any project to jump to it
+          </p>
         </div>
       </div>
     </div>

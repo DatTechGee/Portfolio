@@ -142,7 +142,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" aria-labelledby="contact-heading" className="relative flex items-center c-space section-spacing">
+    <section id="contact" aria-labelledby="contact-heading" className="relative c-space section-spacing">
       <Particles
         className="absolute inset-0 -z-50"
         quantity={100}

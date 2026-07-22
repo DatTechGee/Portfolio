@@ -8,6 +8,7 @@ function Navigation({ active, onLinkClick, theme }) {
     { id: "about", label: "About" },
     { id: "services", label: "Services" },
     { id: "projects", label: "Projects" },
+    { id: "portfolio", label: "Portfolio" },
     { id: "contact", label: "Contact" },
   ];
 
@@ -15,10 +16,12 @@ function Navigation({ active, onLinkClick, theme }) {
     <ul className="nav-ul">
       {links.map((link) => (
         <li key={link.id} className="nav-li">
-          <a
+          <motion.a
             className={`nav-link ${active === link.id ? "font-semibold" : ""}`}
             href={`#${link.id}`}
             onClick={(e) => onLinkClick(e, link.id)}
+            whileHover={{ y: -2, scale: 1.02 }}
+            transition={{ type: "spring", stiffness: 320, damping: 20 }}
           >
             {active === link.id && (
               <motion.span
@@ -28,7 +31,7 @@ function Navigation({ active, onLinkClick, theme }) {
               />
             )}
             <span className="relative z-10">{link.label}</span>
-          </a>
+          </motion.a>
         </li>
       ))}
     </ul>
@@ -39,10 +42,12 @@ const ThemeToggle = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <button
+    <motion.button
       onClick={toggleTheme}
       className="theme-toggle"
       aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+      whileHover={{ rotate: 8, scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
     >
       {theme === "dark" ? (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -53,7 +58,7 @@ const ThemeToggle = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
         </svg>
       )}
-    </button>
+    </motion.button>
   );
 };
 
@@ -80,7 +85,7 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    const ids = ["home", "about", "services", "projects", "contact"];
+    const ids = ["home", "about", "services", "projects", "portfolio", "contact"];
     const sections = ids.map((id) => document.getElementById(id)).filter(Boolean);
     if (!sections.length) return;
 
@@ -126,7 +131,12 @@ const Navbar = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-3 sm:py-4">
           {/* Logo + brand */}
-          <a href="/" className="flex items-center gap-2.5 group">
+          <motion.a
+            href="/"
+            className="flex items-center gap-2.5 group"
+            whileHover={{ y: -2, scale: 1.03 }}
+            transition={{ type: "spring", stiffness: 320, damping: 20 }}
+          >
             <div className="relative">
               <img
                 src="/assets/logo.png"
@@ -143,15 +153,17 @@ const Navbar = () => {
                 Full Stack Dev
               </span>
             </div>
-          </a>
+          </motion.a>
 
           {/* Right side controls */}
           <div className="flex items-center gap-2">
             <ThemeToggle />
 
-            <button
+            <motion.button
               onClick={() => setIsOpen(!isOpen)}
               className={`flex cursor-pointer focus:outline-none sm:hidden p-2 rounded-lg transition-colors ${hamburgerClass}`}
+              whileHover={{ rotate: 8, scale: 1.04 }}
+              whileTap={{ scale: 0.95 }}
             >
               <img
                 src={isOpen ? "assets/close.svg" : "assets/menu.svg"}
@@ -160,7 +172,7 @@ const Navbar = () => {
                 className="w-5 h-5"
                 alt="toggle"
               />
-            </button>
+            </motion.button>
           </div>
 
           {/* Desktop nav */}
@@ -169,13 +181,15 @@ const Navbar = () => {
           </nav>
 
           {/* CTA */}
-          <a
+          <motion.a
             href="#contact"
             onClick={(e) => handleNavClick(e, "contact")}
             className="hidden sm:flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full bg-gradient-to-r from-royal to-lavender text-white hover:opacity-90 transition-opacity duration-300 shadow-lg shadow-royal/20"
+            whileHover={{ y: -2, scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
           >
             Let&apos;s Talk
-          </a>
+          </motion.a>
         </div>
       </div>
 
@@ -195,13 +209,15 @@ const Navbar = () => {
             >
               <nav className="py-4 px-5" aria-label="Mobile navigation">
                 <Navigation active={active} onLinkClick={handleNavClick} theme={theme} />
-                <a
+                <motion.a
                   href="#contact"
                   onClick={(e) => handleNavClick(e, "contact")}
                   className="mt-4 block w-full py-3 text-sm font-medium rounded-xl bg-gradient-to-r from-royal to-lavender text-center text-white"
+                  whileHover={{ y: -2, scale: 1.01 }}
+                  whileTap={{ scale: 0.97 }}
                 >
                   Let&apos;s Talk
-                </a>
+                </motion.a>
               </nav>
             </motion.div>
           </>

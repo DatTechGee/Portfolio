@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { motion } from "motion/react";
 import { ThemeProvider } from "./context/ThemeContext";
 import Navbar from "./sections/Navbar";
 import Hero from "./sections/Hero";
@@ -7,6 +8,7 @@ import Services from "./sections/Services";
 import Highlights from "./sections/Highlights";
 import BrandStory from "./sections/BrandStory";
 import Projects from "./sections/Projects";
+import ImagePortfolio from "./sections/ImagePortfolio";
 import RecruiterFocus from "./sections/RecruiterFocus";
 import Experiences from "./sections/Experiences";
 import Testimonial from "./sections/Testimonial";
@@ -34,7 +36,12 @@ const App = () => {
           }`}
         >
           <Navbar />
-          <main id="main-content">
+          <motion.main
+            id="main-content"
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
             <Hero />
             <About />
             <Services />
@@ -42,10 +49,11 @@ const App = () => {
             <BrandStory />
             <RecruiterFocus />
             <Projects />
+            <ImagePortfolio />
             <Experiences />
             <Testimonial />
             <Contact />
-          </main>
+          </motion.main>
           <Footer />
           <ScrollButtons />
         </div>

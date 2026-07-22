@@ -22,6 +22,8 @@ const Project = ({
         onMouseEnter={() => setPreview(image || null)}
         onMouseLeave={() => setPreview(null)}
         initial={{ opacity: 0, y: 40 }}
+        whileHover={{ y: -8, scale: 1.01, boxShadow: "0 24px 60px rgba(92, 51, 204, 0.14)" }}
+        whileTap={{ scale: 0.99 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-40px" }}
         transition={{
@@ -78,28 +80,32 @@ const Project = ({
             {/* Hover CTA buttons */}
             <div className="absolute bottom-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 translate-y-3 group-hover:translate-y-0 transition-all duration-300">
               {href && (
-                <a
+                <motion.a
                   href={href}
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-white/15 backdrop-blur-md text-white border border-white/10 hover:bg-white/25 transition-colors"
                   onClick={(e) => e.stopPropagation()}
+                  whileHover={{ y: -2, scale: 1.04 }}
+                  whileTap={{ scale: 0.96 }}
                 >
                   Live
                   <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
                   </svg>
-                </a>
+                </motion.a>
               )}
-              <button
+              <motion.button
                 onClick={() => setIsHidden(true)}
                 className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-white/15 backdrop-blur-md text-white border border-white/10 hover:bg-white/25 transition-colors cursor-pointer"
+                whileHover={{ y: -2, scale: 1.04 }}
+                whileTap={{ scale: 0.96 }}
               >
                 Details
                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
-              </button>
+              </motion.button>
             </div>
           </div>
         </div>

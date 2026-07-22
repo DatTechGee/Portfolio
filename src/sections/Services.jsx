@@ -95,7 +95,7 @@ const Services = () => {
           <motion.div
             key={service.id}
             variants={cardVariants}
-            whileHover={{ y: -4 }}
+            whileHover={{ y: -6, scale: 1.01, boxShadow: "0 20px 50px rgba(92, 51, 204, 0.10)" }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
             className="glass-card service-card p-6 group cursor-default relative"
           >
