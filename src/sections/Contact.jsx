@@ -35,30 +35,6 @@ const faqData = [
   },
 ];
 
-const socialIcons = {
-  WhatsApp: (
-    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-    </svg>
-  ),
-  Linkedin: (
-    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-    </svg>
-  ),
-  Instagram: (
-    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
-    </svg>
-  ),
-};
-
-const socialColors = {
-  WhatsApp: "from-green-500/20 to-green-600/20 text-green-500",
-  Linkedin: "from-blue-500/20 to-blue-600/20 text-blue-500",
-  Instagram: "from-pink-500/20 to-purple-500/20 text-pink-500",
-};
-
 const Contact = () => {
   const { theme } = useTheme();
   const particleColor = useMemo(() => (theme === "light" ? "#5c33cc" : "#ffffff"), [theme]);
@@ -74,6 +50,7 @@ const Contact = () => {
   const [alertMessage, setAlertMessage] = useState("");
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [openFaq, setOpenFaq] = useState(null);
+  const [focusedField, setFocusedField] = useState(null);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -107,24 +84,28 @@ const Contact = () => {
     trackEvent("contact_submit_attempt", { section: "contact", projectType: formData.projectType });
 
     try {
-      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_ck4r5lm";
-      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_auzpx2n";
-      const userId = import.meta.env.VITE_EMAILJS_USER_ID || undefined;
-      const toEmail = import.meta.env.VITE_EMAILJS_TO_EMAIL || "dattechgee@gmail.com";
-      const toName = import.meta.env.VITE_EMAILJS_TO_NAME || "Isaac Emmanuel";
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_USER_ID;
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error("Email service is not configured. Please email me directly at dattechgee@gmail.com");
+      }
+
+      emailjs.init(publicKey);
 
       const projectLabel = projectTypes.find((p) => p.id === formData.projectType)?.label || "Not specified";
 
       const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
-        to_name: toName,
-        to_email: toEmail,
+        to_name: import.meta.env.VITE_EMAILJS_TO_NAME || "Isaac Emmanuel",
+        to_email: import.meta.env.VITE_EMAILJS_TO_EMAIL || "dattechgee@gmail.com",
         project_type: projectLabel,
         message: formData.message,
       };
 
-      await emailjs.send(serviceId, templateId, templateParams, userId);
+      await emailjs.send(serviceId, templateId, templateParams);
       setIsLoading(false);
       setFormData({ name: "", email: "", projectType: "", message: "" });
       trackEvent("contact_submit_success", { section: "contact" });
@@ -179,7 +160,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 flex-wrap justify-center">
               <button
                 onClick={copyEmail}
                 className="inline-flex items-center gap-2 px-4 py-2 text-xs font-medium rounded-lg dark:bg-white/[0.05] bg-black/[0.04] dark:border-white/[0.08] border-black/[0.08] dark:text-neutral-300 text-neutral-600 dark:hover:text-white hover:text-primary transition-all duration-200 cursor-pointer"
@@ -201,25 +182,9 @@ const Contact = () => {
                 )}
               </button>
 
-              {mySocials.map((social) => (
-                <motion.a
-                  key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={social.name}
-                  className={`inline-flex items-center gap-1.5 px-3 py-2 text-xs font-medium rounded-lg bg-gradient-to-br border dark:border-white/[0.08] border-black/[0.08] dark:hover:border-white/20 hover:border-black/20 transition-all duration-200 ${socialColors[social.name] || "dark:text-neutral-300 text-neutral-600"}`}
-                  whileHover={{ y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  {socialIcons[social.name] || <img src={social.icon} className="w-4 h-4" alt="" />}
-                  <span className="hidden sm:inline">{social.name}</span>
-                </motion.a>
-              ))}
-
               <motion.a
                 href="mailto:dattechgee@gmail.com"
-                className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-medium rounded-lg bg-gradient-to-br from-royal/20 to-lavender/20 text-lavender dark:border-white/[0.08] border-black/[0.08] dark:hover:border-royal/30 hover:border-royal/20 transition-all duration-200"
+                className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-medium rounded-lg dark:bg-royal/15 bg-royal/10 dark:text-lavender text-royal dark:border-white/[0.08] border-black/[0.08] transition-all duration-200"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -228,6 +193,26 @@ const Contact = () => {
                 </svg>
                 Email
               </motion.a>
+
+              {mySocials.map((social) => (
+                <motion.a
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={social.name}
+                  className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-medium rounded-lg dark:bg-white/[0.04] bg-black/[0.03] dark:border-white/[0.08] border-black/[0.08] dark:text-neutral-400 text-neutral-500 dark:hover:text-white hover:text-primary transition-all duration-200"
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                    {social.name === "WhatsApp" && <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />}
+                    {social.name === "Linkedin" && <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />}
+                    {social.name === "Instagram" && <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />}
+                  </svg>
+                  <span className="hidden sm:inline">{social.name}</span>
+                </motion.a>
+              ))}
             </div>
           </div>
         </ScrollReveal>
@@ -236,7 +221,7 @@ const Contact = () => {
           {/* Left Column: Info + FAQ */}
           <div className="lg:col-span-2 flex flex-col gap-6">
             {/* Contact Info */}
-            <ScrollReveal direction="left" distance={30} duration={0.6}>
+            <ScrollReveal direction="left" distance={30} duration={0.7} blur={4}>
               <div className="glass-card p-5 md:p-6">
                 <h3 className="text-sm font-semibold dark:text-white text-neutral-800 mb-4">Contact Info</h3>
                 <div className="flex flex-col gap-4">
@@ -293,7 +278,7 @@ const Contact = () => {
             </ScrollReveal>
 
             {/* FAQ */}
-            <ScrollReveal direction="left" distance={30} delay={0.1} duration={0.6}>
+            <ScrollReveal direction="left" distance={30} delay={0.1} duration={0.7} blur={4}>
               <div className="glass-card p-5 md:p-6">
                 <h3 className="text-sm font-semibold dark:text-white text-neutral-800 mb-4">Frequently Asked</h3>
                 <div className="flex flex-col gap-1">
@@ -336,18 +321,12 @@ const Contact = () => {
           </div>
 
           {/* Right Column: Form */}
-          <ScrollReveal direction="right" distance={30} delay={0.15} duration={0.7}>
+          <ScrollReveal direction="right" distance={30} delay={0.15} duration={0.8} blur={4}>
             <div className="lg:col-span-3 glass-card p-6 md:p-8">
-              <form className="w-full" onSubmit={handleSubmit}>
+              <form className="w-full" onSubmit={handleSubmit} noValidate>
                 {/* Project Type Chips */}
-                <motion.div
-                  className="mb-6"
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2, duration: 0.5 }}
-                >
-                  <label className="field-label dark:text-neutral-300 text-neutral-600 mb-2 block">
+                <div className="mb-6">
+                  <label className="field-label dark:text-neutral-300 text-neutral-600 mb-2.5 block">
                     What do you need?
                   </label>
                   <div className="flex flex-wrap gap-2">
@@ -356,10 +335,10 @@ const Contact = () => {
                         key={type.id}
                         type="button"
                         onClick={() => handleProjectType(type.id)}
-                        className={`inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg border transition-all duration-200 cursor-pointer ${
+                        className={`inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-medium rounded-xl border transition-all duration-300 cursor-pointer ${
                           formData.projectType === type.id
-                            ? "bg-royal/15 border-royal/30 text-royal dark:text-lavender"
-                            : "dark:bg-white/[0.03] bg-black/[0.03] dark:border-white/[0.06] border-black/[0.06] dark:text-neutral-400 text-neutral-500 dark:hover:bg-white/[0.06] hover:bg-black/[0.06]"
+                            ? "bg-royal/20 border-royal/40 text-lavender dark:text-lavender shadow-sm shadow-royal/10"
+                            : "dark:bg-white/[0.03] bg-black/[0.03] dark:border-white/[0.07] border-black/[0.07] dark:text-neutral-400 text-neutral-500 dark:hover:bg-white/[0.07] hover:bg-black/[0.06] hover:border-white/[0.12]"
                         }`}
                       >
                         <span>{type.icon}</span>
@@ -367,15 +346,11 @@ const Contact = () => {
                       </button>
                     ))}
                   </div>
-                </motion.div>
+                </div>
 
+                {/* Name + Email */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
-                  <motion.div
-                    initial={{ opacity: 0, y: 12 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.3, duration: 0.5 }}
-                  >
+                  <div className="flex flex-col gap-2.5">
                     <label htmlFor="name" className="field-label dark:text-neutral-300 text-neutral-600">
                       Full Name
                     </label>
@@ -383,20 +358,17 @@ const Contact = () => {
                       id="name"
                       name="name"
                       type="text"
-                      className="field-input"
+                      className={`field-input ${focusedField === "name" ? "field-input--focused" : ""}`}
                       placeholder="John Doe"
                       autoComplete="name"
                       value={formData.name}
                       onChange={handleChange}
+                      onFocus={() => setFocusedField("name")}
+                      onBlur={() => setFocusedField(null)}
                       required
                     />
-                  </motion.div>
-                  <motion.div
-                    initial={{ opacity: 0, y: 12 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.35, duration: 0.5 }}
-                  >
+                  </div>
+                  <div className="flex flex-col gap-2.5">
                     <label htmlFor="email" className="field-label dark:text-neutral-300 text-neutral-600">
                       Email
                     </label>
@@ -404,22 +376,20 @@ const Contact = () => {
                       id="email"
                       name="email"
                       type="email"
-                      className="field-input"
+                      className={`field-input ${focusedField === "email" ? "field-input--focused" : ""}`}
                       placeholder="john@example.com"
                       autoComplete="email"
                       value={formData.email}
                       onChange={handleChange}
+                      onFocus={() => setFocusedField("email")}
+                      onBlur={() => setFocusedField(null)}
                       required
                     />
-                  </motion.div>
+                  </div>
                 </div>
-                <motion.div
-                  className="mb-6"
-                  initial={{ opacity: 0, y: 12 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.4, duration: 0.5 }}
-                >
+
+                {/* Message */}
+                <div className="flex flex-col gap-2.5 mb-6">
                   <label htmlFor="message" className="field-label dark:text-neutral-300 text-neutral-600">
                     Tell me about your project
                   </label>
@@ -427,42 +397,45 @@ const Contact = () => {
                     id="message"
                     name="message"
                     rows="5"
-                    className="field-input resize-none"
+                    className={`field-input resize-none ${focusedField === "message" ? "field-input--focused" : ""}`}
                     placeholder="Describe your project, goals, timeline, and budget..."
                     autoComplete="off"
                     value={formData.message}
                     onChange={handleChange}
+                    onFocus={() => setFocusedField("message")}
+                    onBlur={() => setFocusedField(null)}
                     required
                   />
-                </motion.div>
-                <motion.button
+                </div>
+
+                {/* Submit */}
+                <button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full py-3.5 text-sm font-medium text-center rounded-xl cursor-pointer bg-gradient-to-r from-royal to-lavender text-white hover:opacity-90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg hover:shadow-royal/25"
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.5, duration: 0.5 }}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                  className="group relative w-full py-4 text-sm font-semibold text-center rounded-xl cursor-pointer overflow-hidden transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {isLoading ? (
-                    <span className="flex items-center justify-center gap-2">
-                      <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-                      </svg>
-                      Sending...
-                    </span>
-                  ) : (
-                    <span className="flex items-center justify-center gap-2">
-                      Send Message
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    </span>
-                  )}
-                </motion.button>
+                  <div className="absolute inset-0 bg-gradient-to-r from-royal to-lavender transition-opacity duration-300 group-hover:opacity-90" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-lavender to-royal opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ boxShadow: "inset 0 1px 0 rgba(255,255,255,0.15)" }} />
+                  <span className="relative z-10 flex items-center justify-center gap-2 text-white">
+                    {isLoading ? (
+                      <>
+                        <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                        </svg>
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        Send Message
+                        <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                      </>
+                    )}
+                  </span>
+                </button>
               </form>
             </div>
           </ScrollReveal>

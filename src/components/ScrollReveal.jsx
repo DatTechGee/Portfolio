@@ -1,17 +1,24 @@
-import { motion } from "motion/react";
+import { motion, useInView } from "motion/react";
+import { useRef } from "react";
 
 const ScrollReveal = ({
   children,
   className = "",
   delay = 0,
   direction = "up",
-  duration = 0.6,
-  distance = 40,
+  duration = 0.7,
+  distance = 50,
   once = true,
-  amount = 0.2,
-  scale = 1,
+  amount = 0.15,
+  scale = 0.97,
+  blur = 4,
+  stagger = 0,
+  as = "div",
 }) => {
-  const directions = {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once, amount });
+
+  const dirMap = {
     up: { y: distance, x: 0 },
     down: { y: -distance, x: 0 },
     left: { x: distance, y: 0 },
@@ -19,18 +26,22 @@ const ScrollReveal = ({
     none: { x: 0, y: 0 },
   };
 
-  const { x, y } = directions[direction] || directions.up;
+  const { x, y } = dirMap[direction] || dirMap.up;
 
   return (
     <motion.div
+      ref={ref}
       className={className}
-      initial={{ opacity: 0, x, y, scale }}
-      whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
-      viewport={{ once, amount }}
+      initial={{ opacity: 0, x, y, scale, filter: `blur(${blur}px)` }}
+      animate={
+        isInView
+          ? { opacity: 1, x: 0, y: 0, scale: 1, filter: "blur(0px)" }
+          : { opacity: 0, x, y, scale, filter: `blur(${blur}px)` }
+      }
       transition={{
         duration,
-        delay,
-        ease: [0.25, 0.1, 0.25, 1],
+        delay: stagger || delay,
+        ease: [0.16, 1, 0.3, 1],
       }}
     >
       {children}

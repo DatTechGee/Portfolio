@@ -1,5 +1,7 @@
 import { motion } from "motion/react";
 import ScrollReveal from "../components/ScrollReveal";
+import ImageReveal from "../components/ImageReveal";
+import CountUp from "../components/CountUp";
 
 const portfolioImages = [
   {
@@ -119,13 +121,13 @@ const ImagePortfolio = () => {
 
           {/* Stats */}
           <div className="grid grid-cols-2 gap-4 shrink-0">
-            {stats.map((stat) => (
+            {stats.map((stat, i) => (
               <div
                 key={stat.label}
                 className="text-center px-4 py-3 rounded-xl dark:bg-white/[0.03] bg-black/[0.02]"
               >
                 <p className="text-2xl font-bold gradient-text-hero">
-                  {stat.value}
+                  <CountUp from={0} to={parseInt(stat.value)} suffix="+" delay={i * 0.15} duration={2} />
                 </p>
                 <p className="text-[10px] font-medium uppercase tracking-wider dark:text-neutral-500 text-neutral-400 mt-1">
                   {stat.label}
@@ -142,20 +144,22 @@ const ImagePortfolio = () => {
           <motion.div
             key={img.alt}
             className={`relative group overflow-hidden rounded-2xl ${img.span} border dark:border-white/[0.06] border-black/[0.06]`}
-            initial={{ opacity: 0, y: 30, scale: 0.97 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{
               duration: 0.6,
               delay: i * 0.08,
-              ease: [0.25, 0.1, 0.25, 1],
+              ease: [0.16, 1, 0.3, 1],
             }}
           >
-            <img
+            <ImageReveal
               src={img.src}
               alt={img.alt}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              loading="lazy"
+              className="w-full h-full"
+              delay={i * 0.1}
+              scale={1.12}
+              duration={1}
             />
 
             {/* Gradient overlay */}

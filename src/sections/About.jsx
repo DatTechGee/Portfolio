@@ -6,29 +6,31 @@ import { motion } from "motion/react";
 import ScrollReveal from "../components/ScrollReveal";
 
 const gridItemVariants = {
-  hidden: { opacity: 0, y: 30, scale: 0.97 },
+  hidden: { opacity: 0, y: 40, scale: 0.96, filter: "blur(6px)" },
   visible: (i) => ({
     opacity: 1,
     y: 0,
     scale: 1,
+    filter: "blur(0px)",
     transition: {
-      duration: 0.6,
-      delay: i * 0.12,
-      ease: [0.25, 0.1, 0.25, 1],
+      duration: 0.7,
+      delay: i * 0.1,
+      ease: [0.16, 1, 0.3, 1],
     },
   }),
 };
 
 const industryVariants = {
-  hidden: { opacity: 0, y: 12, scale: 0.95 },
+  hidden: { opacity: 0, y: 15, scale: 0.95, filter: "blur(4px)" },
   visible: (i) => ({
     opacity: 1,
     y: 0,
     scale: 1,
+    filter: "blur(0px)",
     transition: {
-      duration: 0.4,
-      delay: 0.15 + i * 0.06,
-      ease: [0.25, 0.1, 0.25, 1],
+      duration: 0.5,
+      delay: 0.15 + i * 0.05,
+      ease: [0.16, 1, 0.3, 1],
     },
   }),
 };

@@ -1,5 +1,5 @@
 import { Suspense, lazy } from "react";
-import { motion } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
 import HeroText from "../components/HeroText";
 import { Particles } from "../components/Particles";
 
@@ -19,13 +19,18 @@ const ambientOrbVariants = {
 };
 
 const Hero = () => {
+  const { scrollYProgress } = useScroll();
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
+  const heroScale = useTransform(scrollYProgress, [0, 0.15], [1, 0.96]);
+  const heroY = useTransform(scrollYProgress, [0, 0.15], [0, -60]);
+
   return (
-    <section id="home" aria-label="Hero" className="relative flex min-h-screen items-center justify-center overflow-hidden pb-16 pt-24 md:pb-20 md:pt-28">
+    <section id="home" aria-label="Hero" className="relative flex items-center justify-center min-h-screen overflow-hidden">
       <motion.div
         className="hero-overlay absolute inset-0 -z-40"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1.2 }}
+        transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
       />
       <Particles
         className="absolute inset-0 -z-30"
@@ -35,7 +40,9 @@ const Hero = () => {
         size={0.6}
       />
 
-      <HeroText />
+      <motion.div style={{ opacity: heroOpacity, scale: heroScale, y: heroY }} className="w-full">
+        <HeroText />
+      </motion.div>
 
       <motion.div
         className="absolute inset-0 -z-40 opacity-30"
@@ -49,7 +56,7 @@ const Hero = () => {
         transition={{ duration: 2, delay: 0.5 }}
       />
 
-      {/* Ambient glow orbs - floating animation */}
+      {/* Ambient glow orbs */}
       <motion.div
         className="absolute top-1/4 -left-32 w-96 h-96 bg-royal/20 rounded-full blur-[128px] -z-20"
         custom={0}
@@ -77,9 +84,9 @@ const Hero = () => {
 
       <motion.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-80 rounded-full border border-white/10 bg-black/10 px-3 py-2 backdrop-blur-md"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 0.8, y: 0 }}
-        transition={{ delay: 0.8, duration: 0.6, ease: "easeOut" }}
+        initial={{ opacity: 0, y: 30, scale: 0.9 }}
+        animate={{ opacity: 0.8, y: 0, scale: 1 }}
+        transition={{ delay: 1.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       >
         <span className="text-[11px] font-medium uppercase tracking-[0.35em] dark:text-neutral-400 text-neutral-500">Scroll</span>
         <div className="scroll-indicator flex h-8 w-5 items-start justify-center rounded-full border-white/20 bg-white/5 p-1 shadow-[0_0_20px_rgba(92,51,204,0.2)]">

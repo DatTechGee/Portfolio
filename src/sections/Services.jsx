@@ -50,28 +50,19 @@ const iconMap = {
   ),
 };
 
+const accentColors = [
+  "from-blue-500 to-indigo-600",
+  "from-emerald-500 to-teal-600",
+  "from-violet-500 to-purple-600",
+  "from-orange-500 to-amber-600",
+  "from-rose-500 to-pink-600",
+  "from-cyan-500 to-blue-600",
+  "from-fuchsia-500 to-purple-600",
+  "from-lime-500 to-emerald-600",
+  "from-sky-500 to-cyan-600",
+];
+
 const Services = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.08,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 30, scale: 0.96 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] },
-    },
-  };
-
   return (
     <section className="c-space section-spacing" id="services" aria-labelledby="services-heading">
       <ScrollReveal distance={30}>
@@ -84,30 +75,56 @@ const Services = () => {
         </div>
       </ScrollReveal>
 
-      <motion.div
-        className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-80px" }}
-      >
-        {myServices.map((service) => (
+      <ScrollReveal distance={0} duration={1}>
+        <div className="section-divider w-full mb-12" />
+      </ScrollReveal>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {myServices.map((service, i) => (
           <motion.div
             key={service.id}
-            variants={cardVariants}
-            whileHover={{ y: -6, scale: 1.01, boxShadow: "0 20px 50px rgba(92, 51, 204, 0.10)" }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className="glass-card service-card p-6 group cursor-default relative"
+            initial={{ opacity: 0, y: 35, filter: "blur(4px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{
+              duration: 0.6,
+              delay: i * 0.06,
+              ease: [0.16, 1, 0.3, 1],
+            }}
+            whileHover={{ y: -6 }}
+            className="group glass-card service-card relative p-6 cursor-default"
           >
-            <div className="absolute inset-0 rounded-[1.25rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ boxShadow: "0 0 30px rgba(92, 51, 204, 0.08), inset 0 1px 0 rgba(122, 87, 219, 0.15)" }} />
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-royal/15 to-lavender/15 dark:border-white/8 border-black/8 flex items-center justify-center text-lavender mb-4 transition-all duration-300 group-hover:from-royal/30 group-hover:to-lavender/30 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-royal/15">
-              {iconMap[service.icon]}
+            {/* Top accent line */}
+            <div className={`absolute top-0 left-0 right-0 h-[2px] rounded-t-2xl bg-gradient-to-r ${accentColors[i % accentColors.length]} opacity-0 group-hover:opacity-100 transition-opacity duration-400`} />
+
+            {/* Number + Icon row */}
+            <div className="flex items-center justify-between mb-5">
+              <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${accentColors[i % accentColors.length]} flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                {iconMap[service.icon]}
+              </div>
+              <span className="text-3xl font-black dark:text-white/[0.04] text-black/[0.04] select-none leading-none">
+                {String(i + 1).padStart(2, "0")}
+              </span>
             </div>
-            <h3 className="text-lg font-semibold dark:text-white text-neutral-800 mb-2 group-hover:text-lavender transition-colors duration-300">{service.title}</h3>
-            <p className="text-sm dark:text-neutral-400 text-neutral-500 leading-relaxed">{service.description}</p>
+
+            {/* Title */}
+            <h3 className="text-lg font-bold dark:text-white text-neutral-800 mb-2 group-hover:text-lavender transition-colors duration-300">
+              {service.title}
+            </h3>
+
+            {/* Description */}
+            <p className="text-sm dark:text-neutral-400 text-neutral-500 leading-relaxed">
+              {service.description}
+            </p>
+
+            {/* Bottom accent dot */}
+            <div className="mt-5 flex items-center gap-2">
+              <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${accentColors[i % accentColors.length]} opacity-40 group-hover:opacity-100 transition-opacity duration-300`} />
+              <div className="h-px flex-1 dark:bg-white/[0.04] bg-black/[0.04]" />
+            </div>
           </motion.div>
         ))}
-      </motion.div>
+      </div>
     </section>
   );
 };

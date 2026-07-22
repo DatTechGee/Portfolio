@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import ProjectDetails from "./ProjectDetails";
+import ImageReveal from "./ImageReveal";
 
 const Project = ({
   title,
@@ -40,11 +41,13 @@ const Project = ({
             } flex items-center justify-center overflow-hidden`}
           >
             {image ? (
-              <img
+              <ImageReveal
                 src={image}
                 alt={title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                loading="lazy"
+                className="w-full h-full"
+                delay={0.2}
+                scale={1.1}
+                duration={1}
               />
             ) : (
               <div className="flex flex-col items-center gap-2">
