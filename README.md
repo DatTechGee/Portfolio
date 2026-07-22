@@ -1,0 +1,87 @@
+# 🚀 3D Developer Portfolio (Personalized)
+
+This repository contains a modern, animated developer portfolio built with React, Vite, TailwindCSS and React Three Fiber. The project includes a contact form wired to EmailJS and a tech-styled UI.
+
+---
+
+## 📚 Quick Links
+- Development: `npm run dev` (Vite)
+- Env example: `.env.local.example` (copy to `.env.local` and fill values)
+
+---
+
+## 🧭 Getting Started
+1. Clone the repository and install dependencies:
+
+```powershell
+git clone <your-repo-url>
+cd Portfolio-main
+npm install
+```
+
+2. Create local env file:
+
+```powershell
+copy .env.local.example .env.local
+# then edit .env.local and set VITE_EMAILJS_USER_ID and other values
+```
+
+3. Run the dev server:
+
+```powershell
+npm run dev
+```
+
+Open http://localhost:5173 in your browser.
+
+---
+
+## 🔑 Environment variables
+This project uses Vite environment variables for EmailJS configuration. Copy `.env.local.example` to `.env.local` and set the values:
+
+- `VITE_EMAILJS_USER_ID` — EmailJS Public Key (User ID)
+- `VITE_EMAILJS_SERVICE_ID` — EmailJS Service ID (e.g. `service_ck4r5lm`)
+- `VITE_EMAILJS_TEMPLATE_ID` — EmailJS Template ID
+- `VITE_EMAILJS_TO_EMAIL` — Recipient email (where messages are sent)
+- `VITE_EMAILJS_TO_NAME` — Recipient name
+
+The `.env.local` file is ignored via `.gitignore` to keep keys private.
+
+---
+
+## ✉️ Contact Form (EmailJS)
+The contact form is implemented in `src/sections/Contact.jsx` and uses `@emailjs/browser`. Make sure the IDs in your EmailJS dashboard match the values in `.env.local`.
+
+If you see `account not found` or similar errors, verify:
+- The public key (`VITE_EMAILJS_USER_ID`) is correct and belongs to the same EmailJS account as the service/template.
+- `VITE_EMAILJS_SERVICE_ID` and `VITE_EMAILJS_TEMPLATE_ID` are correct.
+- Template variable names match the keys sent from the form (e.g. `from_name`, `from_email`, `message`).
+
+For debugging, open DevTools → Network and inspect the POST to `https://api.emailjs.com`.
+
+---
+
+## 🖼 Favicon / Brand
+The app uses a tech logo for the favicon (`public/assets/logos/threejs.svg`). For best compatibility add PNG/ICO fallbacks to `public/assets/logos/`:
+
+- `threejs-32.png` (32x32)
+- `threejs-16.png` (16x16)
+- Optional `/favicon.ico` at project root
+
+You can generate these from the SVG using ImageMagick or an online favicon generator.
+
+---
+
+## ✨ Notes & Changes
+- The project originally included a 3D Astronaut model; it may have been removed or replaced. Check `public/models/` and `src/components/` for 3D assets.
+- `src/main.jsx` initializes EmailJS using `import.meta.env.VITE_EMAILJS_USER_ID`.
+
+---
+
+## ❤️ Contributing
+Feel free to open issues or PRs. If you want help wiring a server-side email relay or adding a production-ready email flow, I can scaffold a simple serverless endpoint.
+
+---
+
+## License
+This repo contains both original and third-party assets. Respect licenses for any imported models or images.
