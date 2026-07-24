@@ -11,7 +11,7 @@ const timelineItemVariants = {
     transition: {
       duration: 0.55,
       delay: i * 0.15,
-      ease: [0.25, 0.1, 0.25, 1],
+      ease: [0.16, 1, 0.3, 1],
     },
   }),
 };
@@ -57,7 +57,7 @@ export const Timeline = ({ data }) => {
                 className="absolute flex items-center justify-center w-10 h-10 rounded-full -left-[15px] dark:bg-midnight bg-white timeline-dot"
                 whileInView={{ scale: [0, 1.3, 1] }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.2 + 0.3, ease: "easeOut" }}
+                transition={{ duration: 0.5, delay: index * 0.2 + 0.3, ease: [0.16, 1, 0.3, 1] }}
               >
                 <div className="w-4 h-4 p-2 border rounded-full dark:bg-neutral-800 bg-neutral-200 dark:border-neutral-700 border-neutral-300" />
               </motion.div>
@@ -83,7 +83,7 @@ export const Timeline = ({ data }) => {
                   transition={{
                     duration: 0.5,
                     delay: index * 0.2 + contentIndex * 0.06 + 0.4,
-                    ease: [0.22, 1, 0.36, 1],
+                    ease: [0.16, 1, 0.3, 1],
                   }}
                 >
                   {content}

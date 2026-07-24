@@ -43,7 +43,7 @@ const Preloader = ({ onComplete }) => {
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="relative"
         >
           <div className="w-24 h-24 rounded-full border-4 border-white/10 flex items-center justify-center">

@@ -53,7 +53,7 @@ const Hero = () => {
         }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.3 }}
-        transition={{ duration: 2, delay: 0.5 }}
+        transition={{ duration: 2, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
       />
 
       {/* Ambient glow orbs */}

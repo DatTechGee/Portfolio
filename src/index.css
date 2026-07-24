@@ -818,20 +818,6 @@ html.light .marquee-fade-right {
   border-top-color: transparent;
 }
 
-/* Availability banner pulse */
-@keyframes availability-pulse {
-  0%, 100% {
-    box-shadow: 0 0 0 0 rgba(87, 219, 150, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 0 8px rgba(87, 219, 150, 0);
-  }
-}
-
-.availability-pulse {
-  animation: availability-pulse 2s infinite;
-}
-
 /* Transition section hover effects */
 .transition-card {
   transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.3s ease;

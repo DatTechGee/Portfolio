@@ -1,12 +1,19 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Project from "../components/Project";
 import PortfolioSidebar from "../components/PortfolioSidebar";
 import ScrollReveal from "../components/ScrollReveal";
+import { ProjectsSkeleton } from "../components/ProjectsSkeleton";
 import { myProjects } from "../constants";
 
 const Projects = () => {
   const [preview, setPreview] = useState(null);
+  const [loaded, setLoaded] = useState(false);
   const itemRefs = useRef([]);
+
+  useEffect(() => {
+    const t = setTimeout(() => setLoaded(true), 600);
+    return () => clearTimeout(t);
+  }, []);
 
   const handleSidebarClick = (idx) => {
     const el = itemRefs.current[idx];
@@ -38,11 +45,15 @@ const Projects = () => {
       <div className="flex gap-8 lg:gap-12">
         {/* Main project list */}
         <div className="flex-1 min-w-0">
-          {myProjects.map((project, i) => (
-            <div key={project.id} ref={(el) => (itemRefs.current[i] = el)}>
-              <Project {...project} setPreview={setPreview} index={i} />
-            </div>
-          ))}
+          {!loaded ? (
+            <ProjectsSkeleton count={4} />
+          ) : (
+            myProjects.map((project, i) => (
+              <div key={project.id} ref={(el) => (itemRefs.current[i] = el)}>
+                <Project {...project} setPreview={setPreview} index={i} />
+              </div>
+            ))
+          )}
         </div>
 
         {/* Sidebar — desktop only */}

@@ -24,7 +24,7 @@ const BrandStory = () => {
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className="glass-card p-6 md:p-8 lg:p-10"
       >
         <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
