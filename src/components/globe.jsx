@@ -5,6 +5,7 @@ import { useMotionValue, useSpring } from "motion/react";
 import { useEffect, useRef } from "react";
 
 import { twMerge } from "tailwind-merge";
+import { useTheme } from "../context/ThemeContext";
 
 const MOVEMENT_DAMPING = 1400;
 
@@ -36,7 +37,19 @@ const GLOBE_CONFIG = {
   ],
 };
 
-export function Globe({ className, config = GLOBE_CONFIG }) {
+export function Globe({ className, config: configProp }) {
+  const { theme } = useTheme();
+  const isDark = theme !== "light";
+
+  const config = {
+    ...GLOBE_CONFIG,
+    ...configProp,
+    dark: isDark ? 1 : 0,
+    baseColor: isDark ? [1, 1, 1] : [0.25, 0.2, 0.5],
+    markerColor: isDark ? [1, 1, 1] : [0.35, 0.2, 0.8],
+    glowColor: isDark ? [1, 1, 1] : [0.35, 0.2, 0.8],
+  };
+
   let phi = 0;
   let width = 0;
   const canvasRef = useRef(null);
@@ -92,7 +105,7 @@ export function Globe({ className, config = GLOBE_CONFIG }) {
       globe.destroy();
       window.removeEventListener("resize", onResize);
     };
-  }, [rs, config]);
+  }, [rs, config, isDark]);
 
   return (
     <div

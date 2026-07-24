@@ -16,6 +16,21 @@ const projectTypes = [
   { id: "other", label: "Other", icon: "💡" },
 ];
 
+const budgetRanges = [
+  { id: "under-150k", label: "Under ₦150k" },
+  { id: "150k-300k", label: "₦150k - ₦300k" },
+  { id: "300k-750k", label: "₦300k - ₦750k" },
+  { id: "750k-plus", label: "₦750k+" },
+  { id: "not-sure", label: "Not sure yet" },
+];
+
+const timelineOptions = [
+  { id: "asap", label: "ASAP" },
+  { id: "2-4-weeks", label: "2 - 4 weeks" },
+  { id: "1-2-months", label: "1 - 2 months" },
+  { id: "flexible", label: "Flexible" },
+];
+
 const faqData = [
   {
     q: "How long does a typical project take?",
@@ -42,6 +57,8 @@ const Contact = () => {
     name: "",
     email: "",
     projectType: "",
+    budget: "",
+    timeline: "",
     message: "",
   });
   const [isLoading, setIsLoading] = useState(false);
@@ -62,6 +79,22 @@ const Contact = () => {
       projectType: prev.projectType === type ? "" : type,
     }));
     trackEvent("contact_project_type_select", { type });
+  };
+
+  const handleBudget = (budget) => {
+    setFormData((prev) => ({
+      ...prev,
+      budget: prev.budget === budget ? "" : budget,
+    }));
+    trackEvent("contact_budget_select", { budget });
+  };
+
+  const handleTimeline = (timeline) => {
+    setFormData((prev) => ({
+      ...prev,
+      timeline: prev.timeline === timeline ? "" : timeline,
+    }));
+    trackEvent("contact_timeline_select", { timeline });
   };
 
   const copyEmail = () => {
@@ -95,6 +128,8 @@ const Contact = () => {
       emailjs.init(publicKey);
 
       const projectLabel = projectTypes.find((p) => p.id === formData.projectType)?.label || "Not specified";
+      const budgetLabel = budgetRanges.find((b) => b.id === formData.budget)?.label || "Not specified";
+      const timelineLabel = timelineOptions.find((t) => t.id === formData.timeline)?.label || "Not specified";
 
       const templateParams = {
         from_name: formData.name,
@@ -102,14 +137,16 @@ const Contact = () => {
         to_name: import.meta.env.VITE_EMAILJS_TO_NAME || "Isaac Emmanuel",
         to_email: import.meta.env.VITE_EMAILJS_TO_EMAIL || "dattechgee@gmail.com",
         project_type: projectLabel,
+        budget_range: budgetLabel,
+        timeline: timelineLabel,
         message: formData.message,
       };
 
       await emailjs.send(serviceId, templateId, templateParams);
       setIsLoading(false);
-      setFormData({ name: "", email: "", projectType: "", message: "" });
+      setFormData({ name: "", email: "", projectType: "", budget: "", timeline: "", message: "" });
       trackEvent("contact_submit_success", { section: "contact" });
-      showAlertMessage("success", "Message sent successfully! I'll get back to you within 24 hours.");
+      showAlertMessage("success", "Quote request sent successfully! I'll get back to you within 24 hours.");
     } catch (error) {
       setIsLoading(false);
       let detail = "Something went wrong. Please try again or email me directly.";
@@ -207,6 +244,7 @@ const Contact = () => {
                 >
                   <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
                     {social.name === "WhatsApp" && <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />}
+                    {social.name === "GitHub" && <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.426 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.704-2.782.605-3.369-1.343-3.369-1.343-.455-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.071 1.531 1.032 1.531 1.032.892 1.533 2.341 1.09 2.91.834.091-.647.35-1.09.636-1.34-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.254-.446-1.275.098-2.656 0 0 .84-.269 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.747-1.026 2.747-1.026.546 1.381.202 2.402.1 2.656.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.944.359.31.678.921.678 1.856 0 1.34-.012 2.421-.012 2.75 0 .268.18.58.688.481A10.019 10.019 0 0022 12.017C22 6.484 17.523 2 12 2z" />}
                     {social.name === "Linkedin" && <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />}
                     {social.name === "Instagram" && <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />}
                   </svg>
@@ -219,7 +257,7 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-10">
           {/* Left Column: Info + FAQ */}
-          <div className="lg:col-span-2 flex flex-col gap-6">
+          <div className="lg:col-span-2 flex flex-col gap-6 lg:sticky lg:top-24 self-start">
             {/* Contact Info */}
             <ScrollReveal direction="left" distance={30} duration={0.7} blur={4}>
               <div className="glass-card p-5 md:p-6">
@@ -322,120 +360,196 @@ const Contact = () => {
 
           {/* Right Column: Form */}
           <ScrollReveal direction="right" distance={30} delay={0.15} duration={0.8} blur={4}>
-            <div className="lg:col-span-3 glass-card p-6 md:p-8">
+            <div className="lg:col-span-3 glass-card p-6 md:p-8 shadow-[0_20px_60px_rgba(20,20,38,0.08)]">
               <form className="w-full" onSubmit={handleSubmit} noValidate>
-                {/* Project Type Chips */}
-                <div className="mb-6">
-                  <label className="field-label dark:text-neutral-300 text-neutral-600 mb-2.5 block">
-                    What do you need?
-                  </label>
-                  <div className="flex flex-wrap gap-2">
-                    {projectTypes.map((type) => (
-                      <button
-                        key={type.id}
-                        type="button"
-                        onClick={() => handleProjectType(type.id)}
-                        className={`inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-medium rounded-xl border transition-all duration-300 cursor-pointer ${
-                          formData.projectType === type.id
-                            ? "bg-royal/20 border-royal/40 text-lavender dark:text-lavender shadow-sm shadow-royal/10"
-                            : "dark:bg-white/[0.03] bg-black/[0.03] dark:border-white/[0.07] border-black/[0.07] dark:text-neutral-400 text-neutral-500 dark:hover:bg-white/[0.07] hover:bg-black/[0.06] hover:border-white/[0.12]"
-                        }`}
-                      >
-                        <span>{type.icon}</span>
-                        {type.label}
-                      </button>
-                    ))}
+                <div className="mb-6 flex items-start justify-between gap-4">
+                  <div>
+                    <p className="section-kicker mb-2">Request a Quote</p>
+                    <h3 className="text-xl font-semibold dark:text-white text-neutral-800">
+                      Tell me what you want to build
+                    </h3>
+                    <p className="mt-2 text-sm dark:text-neutral-400 text-neutral-500 max-w-xl">
+                      Share a few details and I’ll send back a clear estimate, timeline, and next steps.
+                    </p>
                   </div>
                 </div>
 
-                {/* Name + Email */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
-                  <div className="flex flex-col gap-2.5">
-                    <label htmlFor="name" className="field-label dark:text-neutral-300 text-neutral-600">
-                      Full Name
-                    </label>
-                    <input
-                      id="name"
-                      name="name"
-                      type="text"
-                      className={`field-input ${focusedField === "name" ? "field-input--focused" : ""}`}
-                      placeholder="John Doe"
-                      autoComplete="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      onFocus={() => setFocusedField("name")}
-                      onBlur={() => setFocusedField(null)}
-                      required
-                    />
+                <div className="grid grid-cols-1 xl:grid-cols-12 gap-6 xl:gap-7 items-start">
+                  <div className="xl:col-span-5 space-y-5">
+                    <div className="rounded-2xl border border-black/[0.06] dark:border-white/[0.06] bg-black/[0.02] dark:bg-white/[0.03] p-4 md:p-5">
+                      <div className="flex items-center justify-between gap-3 mb-3">
+                        <div>
+                          <p className="text-xs font-semibold uppercase tracking-[0.28em] dark:text-neutral-400 text-neutral-500">
+                            Project Fit
+                          </p>
+                          <p className="mt-1 text-sm dark:text-neutral-400 text-neutral-500">
+                            Pick the closest match.
+                          </p>
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 gap-2.5">
+                        {projectTypes.map((type) => (
+                          <button
+                            key={type.id}
+                            type="button"
+                            onClick={() => handleProjectType(type.id)}
+                            className={`inline-flex items-center gap-2 px-3.5 py-3 text-xs font-medium rounded-xl border transition-all duration-300 cursor-pointer text-left ${
+                              formData.projectType === type.id
+                                ? "bg-royal/20 border-royal/40 text-lavender dark:text-lavender shadow-sm shadow-royal/10"
+                                : "dark:bg-white/[0.03] bg-white/80 dark:border-white/[0.07] border-black/[0.07] dark:text-neutral-400 text-neutral-500 dark:hover:bg-white/[0.07] hover:bg-black/[0.04] hover:border-white/[0.12]"
+                            }`}
+                          >
+                            <span className="text-base">{type.icon}</span>
+                            <span>{type.label}</span>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 gap-4">
+                      <div className="rounded-2xl border border-black/[0.06] dark:border-white/[0.06] bg-black/[0.02] dark:bg-white/[0.03] p-4 md:p-5">
+                        <label className="field-label dark:text-neutral-300 text-neutral-600 mb-2.5 block">
+                          Budget Range
+                        </label>
+                        <div className="flex flex-wrap gap-2">
+                          {budgetRanges.map((budget) => (
+                            <button
+                              key={budget.id}
+                              type="button"
+                              onClick={() => handleBudget(budget.id)}
+                              className={`inline-flex items-center justify-center px-3.5 py-2 text-xs font-medium rounded-xl border transition-all duration-300 cursor-pointer ${
+                                formData.budget === budget.id
+                                  ? "bg-royal/20 border-royal/40 text-lavender dark:text-lavender shadow-sm shadow-royal/10"
+                                  : "dark:bg-white/[0.03] bg-white/80 dark:border-white/[0.07] border-black/[0.07] dark:text-neutral-400 text-neutral-500 dark:hover:bg-white/[0.07] hover:bg-black/[0.04] hover:border-white/[0.12]"
+                              }`}
+                            >
+                              {budget.label}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="rounded-2xl border border-black/[0.06] dark:border-white/[0.06] bg-black/[0.02] dark:bg-white/[0.03] p-4 md:p-5">
+                        <label className="field-label dark:text-neutral-300 text-neutral-600 mb-2.5 block">
+                          Preferred Timeline
+                        </label>
+                        <div className="flex flex-wrap gap-2">
+                          {timelineOptions.map((timeline) => (
+                            <button
+                              key={timeline.id}
+                              type="button"
+                              onClick={() => handleTimeline(timeline.id)}
+                              className={`inline-flex items-center justify-center px-3.5 py-2 text-xs font-medium rounded-xl border transition-all duration-300 cursor-pointer ${
+                                formData.timeline === timeline.id
+                                  ? "bg-royal/20 border-royal/40 text-lavender dark:text-lavender shadow-sm shadow-royal/10"
+                                  : "dark:bg-white/[0.03] bg-white/80 dark:border-white/[0.07] border-black/[0.07] dark:text-neutral-400 text-neutral-500 dark:hover:bg-white/[0.07] hover:bg-black/[0.04] hover:border-white/[0.12]"
+                              }`}
+                            >
+                              {timeline.label}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="rounded-2xl border border-royal/10 bg-gradient-to-br from-royal/8 via-white/70 to-mint/6 dark:from-royal/10 dark:via-white/[0.03] dark:to-mint/8 p-4 md:p-5">
+                      <p className="text-sm font-semibold dark:text-white text-neutral-800 mb-2">What helps me quote faster</p>
+                      <ul className="space-y-2 text-sm dark:text-neutral-400 text-neutral-600 leading-relaxed">
+                        <li>• The main goal and the problem you want solved</li>
+                        <li>• Any reference sites, wireframes, or features you need</li>
+                        <li>• Your preferred launch window and budget range</li>
+                      </ul>
+                    </div>
                   </div>
-                  <div className="flex flex-col gap-2.5">
-                    <label htmlFor="email" className="field-label dark:text-neutral-300 text-neutral-600">
-                      Email
-                    </label>
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      className={`field-input ${focusedField === "email" ? "field-input--focused" : ""}`}
-                      placeholder="john@example.com"
-                      autoComplete="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      onFocus={() => setFocusedField("email")}
-                      onBlur={() => setFocusedField(null)}
-                      required
-                    />
+
+                  <div className="xl:col-span-7 space-y-5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      <div className="flex flex-col gap-2.5">
+                        <label htmlFor="name" className="field-label dark:text-neutral-300 text-neutral-600">
+                          Full Name
+                        </label>
+                        <input
+                          id="name"
+                          name="name"
+                          type="text"
+                          className={`field-input ${focusedField === "name" ? "field-input--focused" : ""}`}
+                          placeholder="John Doe"
+                          autoComplete="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          onFocus={() => setFocusedField("name")}
+                          onBlur={() => setFocusedField(null)}
+                          required
+                        />
+                      </div>
+                      <div className="flex flex-col gap-2.5">
+                        <label htmlFor="email" className="field-label dark:text-neutral-300 text-neutral-600">
+                          Email
+                        </label>
+                        <input
+                          id="email"
+                          name="email"
+                          type="email"
+                          className={`field-input ${focusedField === "email" ? "field-input--focused" : ""}`}
+                          placeholder="john@example.com"
+                          autoComplete="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          onFocus={() => setFocusedField("email")}
+                          onBlur={() => setFocusedField(null)}
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col gap-2.5">
+                      <label htmlFor="message" className="field-label dark:text-neutral-300 text-neutral-600">
+                        Project Summary
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        rows="10"
+                        className={`field-input resize-none min-h-[20rem] leading-relaxed ${focusedField === "message" ? "field-input--focused" : ""}`}
+                        placeholder="Describe the goal, key features, preferred style, deadline, and any reference sites..."
+                        autoComplete="off"
+                        value={formData.message}
+                        onChange={handleChange}
+                        onFocus={() => setFocusedField("message")}
+                        onBlur={() => setFocusedField(null)}
+                        required
+                      />
+                    </div>
+
+                    <button
+                      type="submit"
+                      disabled={isLoading}
+                      className="group relative w-full py-4 text-sm font-semibold text-center rounded-2xl cursor-pointer overflow-hidden transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_16px_40px_rgba(92,51,204,0.18)]"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-royal to-lavender transition-opacity duration-300 group-hover:opacity-90" />
+                      <div className="absolute inset-0 bg-gradient-to-r from-lavender to-royal opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ boxShadow: "inset 0 1px 0 rgba(255,255,255,0.15)" }} />
+                      <span className="relative z-10 flex items-center justify-center gap-2 text-white">
+                        {isLoading ? (
+                          <>
+                            <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                            </svg>
+                            Sending...
+                          </>
+                        ) : (
+                          <>
+                            Request Quote
+                            <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                          </>
+                        )}
+                      </span>
+                    </button>
                   </div>
                 </div>
-
-                {/* Message */}
-                <div className="flex flex-col gap-2.5 mb-6">
-                  <label htmlFor="message" className="field-label dark:text-neutral-300 text-neutral-600">
-                    Tell me about your project
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="5"
-                    className={`field-input resize-none ${focusedField === "message" ? "field-input--focused" : ""}`}
-                    placeholder="Describe your project, goals, timeline, and budget..."
-                    autoComplete="off"
-                    value={formData.message}
-                    onChange={handleChange}
-                    onFocus={() => setFocusedField("message")}
-                    onBlur={() => setFocusedField(null)}
-                    required
-                  />
-                </div>
-
-                {/* Submit */}
-                <button
-                  type="submit"
-                  disabled={isLoading}
-                  className="group relative w-full py-4 text-sm font-semibold text-center rounded-xl cursor-pointer overflow-hidden transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-royal to-lavender transition-opacity duration-300 group-hover:opacity-90" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-lavender to-royal opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ boxShadow: "inset 0 1px 0 rgba(255,255,255,0.15)" }} />
-                  <span className="relative z-10 flex items-center justify-center gap-2 text-white">
-                    {isLoading ? (
-                      <>
-                        <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-                        </svg>
-                        Sending...
-                      </>
-                    ) : (
-                      <>
-                        Send Message
-                        <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                      </>
-                    )}
-                  </span>
-                </button>
               </form>
             </div>
           </ScrollReveal>

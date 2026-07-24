@@ -246,6 +246,11 @@ export const myProjects = [
 
 export const mySocials = [
   {
+    name: "GitHub",
+    href: "https://github.com/dattechgee",
+    icon: "/assets/socials/github.svg",
+  },
+  {
     name: "WhatsApp",
     href: "https://wa.me/2348103093734",
     icon: "/assets/socials/whatsApp.svg",
@@ -402,3 +407,11 @@ export const currentFocus = [
   "SaaS Platforms",
   "Cybersecurity Tools",
 ];
+
+export const portfolioStats = {
+  yearsExperience: 4,
+  projectsDelivered: 30,
+  happyClients: 15,
+  technologiesUsed: 12,
+  clientSatisfaction: 100,
+};

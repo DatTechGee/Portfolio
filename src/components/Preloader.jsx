@@ -1,8 +1,44 @@
 import { motion } from "motion/react";
+import { useEffect, useState } from "react";
 
-const Preloader = () => {
+const Preloader = ({ onComplete }) => {
+  const [progress, setProgress] = useState(0);
+  const [isComplete, setIsComplete] = useState(false);
+
+  useEffect(() => {
+    let mounted = true;
+
+    const tick = () => {
+      if (!mounted) return;
+      setProgress((prev) => {
+        if (prev >= 100) {
+          if (!isComplete) {
+            setIsComplete(true);
+            setTimeout(() => onComplete?.(), 400);
+          }
+          return 100;
+        }
+        const increment = prev < 60 ? 8 : prev < 85 ? 4 : prev < 95 ? 2 : 1;
+        return Math.min(prev + increment, 100);
+      });
+    };
+
+    const interval = setInterval(tick, 80);
+    return () => {
+      mounted = false;
+      clearInterval(interval);
+    };
+  }, [onComplete, isComplete]);
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-b from-[#02030a] to-[#050614]">
+    <motion.div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-b from-[#02030a] to-[#050614]"
+      animate={isComplete ? { opacity: 0 } : { opacity: 1 }}
+      transition={{ duration: 0.4 }}
+      role="status"
+      aria-live="polite"
+      aria-label={`Loading: ${progress}%`}
+    >
       <div className="flex flex-col items-center gap-6">
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
@@ -30,24 +66,21 @@ const Preloader = () => {
           className="text-center"
         >
           <p className="text-lg font-semibold text-white">DatTechGee</p>
-          <p className="text-sm text-neutral-400 mt-1">Preparing something great...</p>
+          <p className="text-sm text-neutral-400 mt-1">Loading...</p>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-          className="w-40 h-0.5 bg-white/10 rounded-full overflow-hidden"
-        >
-          <motion.div
-            className="h-full bg-gradient-to-r from-royal to-lavender rounded-full"
-            initial={{ width: "0%" }}
-            animate={{ width: "100%" }}
-            transition={{ duration: 2, ease: "easeInOut" }}
-          />
-        </motion.div>
+        <div className="w-40 flex flex-col items-center gap-2">
+          <div className="w-full h-0.5 bg-white/10 rounded-full overflow-hidden">
+            <motion.div
+              className="h-full bg-gradient-to-r from-royal to-lavender rounded-full"
+              style={{ width: `${progress}%` }}
+              transition={{ duration: 0.15 }}
+            />
+          </div>
+          <span className="text-[10px] font-mono text-neutral-500">{progress}%</span>
+        </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

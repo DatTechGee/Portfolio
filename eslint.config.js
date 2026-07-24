@@ -3,8 +3,9 @@ import globals from 'globals'
 import react from 'eslint-plugin-react'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
+import tseslint from 'typescript-eslint'
 
-export default [
+export default tseslint.config(
   { ignores: ['dist'] },
   {
     files: ['**/*.{js,jsx}'],
@@ -35,4 +36,18 @@ export default [
       ],
     },
   },
-]
+  ...tseslint.configs.recommended,
+  {
+    files: ['**/*.{ts,tsx}'],
+    rules: {
+      ...tseslint.configs.recommended.rules,
+      '@typescript-eslint/no-unused-vars': 'off',
+    },
+  },
+  {
+    files: ['vite.config.ts'],
+    rules: {
+      'no-undef': 'off',
+    },
+  },
+)
