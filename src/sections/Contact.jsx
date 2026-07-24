@@ -67,7 +67,6 @@ const Contact = () => {
   const [alertMessage, setAlertMessage] = useState("");
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [openFaq, setOpenFaq] = useState(null);
-  const [focusedField, setFocusedField] = useState(null);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -172,7 +171,6 @@ const Contact = () => {
       {showAlert && <Alert type={alertType} text={alertMessage} />}
 
       <div className="mx-auto w-full max-w-6xl">
-        {/* Header */}
         <ScrollReveal distance={30}>
           <div className="mb-12 flex flex-col items-center text-center">
             <p className="section-kicker">Get In Touch</p>
@@ -183,7 +181,6 @@ const Contact = () => {
           </div>
         </ScrollReveal>
 
-        {/* Top Row: Status + Quick Connect */}
         <ScrollReveal distance={20} delay={0.1}>
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-10 glass-card p-4 sm:p-5">
             <div className="flex items-center gap-3">
@@ -196,7 +193,6 @@ const Contact = () => {
                 <p className="text-xs dark:text-neutral-400 text-neutral-500">Usually responds within 24 hours</p>
               </div>
             </div>
-
             <div className="flex items-center gap-2 flex-wrap justify-center">
               <button
                 onClick={copyEmail}
@@ -218,7 +214,6 @@ const Contact = () => {
                   </>
                 )}
               </button>
-
               <motion.a
                 href="mailto:dattechgee@gmail.com"
                 className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-medium rounded-lg dark:bg-royal/15 bg-royal/10 dark:text-lavender text-royal dark:border-white/[0.08] border-black/[0.08] transition-all duration-200"
@@ -230,7 +225,6 @@ const Contact = () => {
                 </svg>
                 Email
               </motion.a>
-
               {mySocials.map((social) => (
                 <motion.a
                   key={social.name}
@@ -256,9 +250,7 @@ const Contact = () => {
         </ScrollReveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-10">
-          {/* Left Column: Info + FAQ */}
           <div className="lg:col-span-2 flex flex-col gap-6 lg:sticky lg:top-24 self-start">
-            {/* Contact Info */}
             <ScrollReveal direction="left" distance={30} duration={0.7} blur={4}>
               <div className="glass-card p-5 md:p-6">
                 <h3 className="text-sm font-semibold dark:text-white text-neutral-800 mb-4">Contact Info</h3>
@@ -315,7 +307,6 @@ const Contact = () => {
               </div>
             </ScrollReveal>
 
-            {/* FAQ */}
             <ScrollReveal direction="left" distance={30} delay={0.1} duration={0.7} blur={4}>
               <div className="glass-card p-5 md:p-6">
                 <h3 className="text-sm font-semibold dark:text-white text-neutral-800 mb-4">Frequently Asked</h3>
@@ -358,197 +349,167 @@ const Contact = () => {
             </ScrollReveal>
           </div>
 
-          {/* Right Column: Form */}
           <ScrollReveal direction="right" distance={30} delay={0.15} duration={0.8} blur={4}>
-            <div className="lg:col-span-3 glass-card p-6 md:p-8 shadow-[0_20px_60px_rgba(20,20,38,0.08)]">
+            <div className="lg:col-span-3 glass-card p-6 md:p-8">
               <form className="w-full" onSubmit={handleSubmit} noValidate>
-                <div className="mb-6 flex items-start justify-between gap-4">
-                  <div>
-                    <p className="section-kicker mb-2">Request a Quote</p>
-                    <h3 className="text-xl font-semibold dark:text-white text-neutral-800">
-                      Tell me what you want to build
-                    </h3>
-                    <p className="mt-2 text-sm dark:text-neutral-400 text-neutral-500 max-w-xl">
-                      Share a few details and I’ll send back a clear estimate, timeline, and next steps.
-                    </p>
-                  </div>
+                <div className="mb-6">
+                  <p className="section-kicker mb-2">Request a Quote</p>
+                  <h3 className="text-xl font-semibold dark:text-white text-neutral-800">
+                    Tell me what you want to build
+                  </h3>
+                  <p className="mt-2 text-sm dark:text-neutral-400 text-neutral-500">
+                    Share a few details and I&apos;ll send back a clear estimate, timeline, and next steps.
+                  </p>
                 </div>
 
-                <div className="grid grid-cols-1 xl:grid-cols-12 gap-6 xl:gap-7 items-start">
-                  <div className="xl:col-span-5 space-y-5">
-                    <div className="rounded-2xl border border-black/[0.06] dark:border-white/[0.06] bg-black/[0.02] dark:bg-white/[0.03] p-4 md:p-5">
-                      <div className="flex items-center justify-between gap-3 mb-3">
-                        <div>
-                          <p className="text-xs font-semibold uppercase tracking-[0.28em] dark:text-neutral-400 text-neutral-500">
-                            Project Fit
-                          </p>
-                          <p className="mt-1 text-sm dark:text-neutral-400 text-neutral-500">
-                            Pick the closest match.
-                          </p>
-                        </div>
-                      </div>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 gap-2.5">
-                        {projectTypes.map((type) => (
+                <div className="space-y-5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="flex flex-col gap-2">
+                      <label htmlFor="name" className="field-label dark:text-neutral-300 text-neutral-600">
+                        Full Name
+                      </label>
+                      <input
+                        id="name"
+                        name="name"
+                        type="text"
+                        className="field-input"
+                        placeholder="John Doe"
+                        autoComplete="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <label htmlFor="email" className="field-label dark:text-neutral-300 text-neutral-600">
+                        Email
+                      </label>
+                      <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        className="field-input"
+                        placeholder="john@example.com"
+                        autoComplete="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col gap-2">
+                    <label className="field-label dark:text-neutral-300 text-neutral-600">
+                      What do you need?
+                    </label>
+                    <div className="flex flex-wrap gap-2">
+                      {projectTypes.map((type) => (
+                        <button
+                          key={type.id}
+                          type="button"
+                          onClick={() => handleProjectType(type.id)}
+                          className={`inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-medium rounded-xl border transition-all duration-300 cursor-pointer ${
+                            formData.projectType === type.id
+                              ? "bg-royal/20 border-royal/40 text-lavender shadow-sm shadow-royal/10"
+                              : "dark:bg-white/[0.03] bg-white/80 dark:border-white/[0.07] border-black/[0.07] dark:text-neutral-400 text-neutral-500 dark:hover:bg-white/[0.07] hover:bg-black/[0.04] hover:border-black/[0.12]"
+                          }`}
+                        >
+                          <span>{type.icon}</span>
+                          {type.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="flex flex-col gap-2">
+                      <label className="field-label dark:text-neutral-300 text-neutral-600">
+                        Budget Range
+                      </label>
+                      <div className="flex flex-wrap gap-2">
+                        {budgetRanges.map((budget) => (
                           <button
-                            key={type.id}
+                            key={budget.id}
                             type="button"
-                            onClick={() => handleProjectType(type.id)}
-                            className={`inline-flex items-center gap-2 px-3.5 py-3 text-xs font-medium rounded-xl border transition-all duration-300 cursor-pointer text-left ${
-                              formData.projectType === type.id
-                                ? "bg-royal/20 border-royal/40 text-lavender dark:text-lavender shadow-sm shadow-royal/10"
-                                : "dark:bg-white/[0.03] bg-white/80 dark:border-white/[0.07] border-black/[0.07] dark:text-neutral-400 text-neutral-500 dark:hover:bg-white/[0.07] hover:bg-black/[0.04] hover:border-white/[0.12]"
+                            onClick={() => handleBudget(budget.id)}
+                            className={`inline-flex items-center justify-center px-3 py-2 text-xs font-medium rounded-xl border transition-all duration-300 cursor-pointer ${
+                              formData.budget === budget.id
+                                ? "bg-royal/20 border-royal/40 text-lavender shadow-sm shadow-royal/10"
+                                : "dark:bg-white/[0.03] bg-white/80 dark:border-white/[0.07] border-black/[0.07] dark:text-neutral-400 text-neutral-500 dark:hover:bg-white/[0.07] hover:bg-black/[0.04] hover:border-black/[0.12]"
                             }`}
                           >
-                            <span className="text-base">{type.icon}</span>
-                            <span>{type.label}</span>
+                            {budget.label}
                           </button>
                         ))}
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 gap-4">
-                      <div className="rounded-2xl border border-black/[0.06] dark:border-white/[0.06] bg-black/[0.02] dark:bg-white/[0.03] p-4 md:p-5">
-                        <label className="field-label dark:text-neutral-300 text-neutral-600 mb-2.5 block">
-                          Budget Range
-                        </label>
-                        <div className="flex flex-wrap gap-2">
-                          {budgetRanges.map((budget) => (
-                            <button
-                              key={budget.id}
-                              type="button"
-                              onClick={() => handleBudget(budget.id)}
-                              className={`inline-flex items-center justify-center px-3.5 py-2 text-xs font-medium rounded-xl border transition-all duration-300 cursor-pointer ${
-                                formData.budget === budget.id
-                                  ? "bg-royal/20 border-royal/40 text-lavender dark:text-lavender shadow-sm shadow-royal/10"
-                                  : "dark:bg-white/[0.03] bg-white/80 dark:border-white/[0.07] border-black/[0.07] dark:text-neutral-400 text-neutral-500 dark:hover:bg-white/[0.07] hover:bg-black/[0.04] hover:border-white/[0.12]"
-                              }`}
-                            >
-                              {budget.label}
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div className="rounded-2xl border border-black/[0.06] dark:border-white/[0.06] bg-black/[0.02] dark:bg-white/[0.03] p-4 md:p-5">
-                        <label className="field-label dark:text-neutral-300 text-neutral-600 mb-2.5 block">
-                          Preferred Timeline
-                        </label>
-                        <div className="flex flex-wrap gap-2">
-                          {timelineOptions.map((timeline) => (
-                            <button
-                              key={timeline.id}
-                              type="button"
-                              onClick={() => handleTimeline(timeline.id)}
-                              className={`inline-flex items-center justify-center px-3.5 py-2 text-xs font-medium rounded-xl border transition-all duration-300 cursor-pointer ${
-                                formData.timeline === timeline.id
-                                  ? "bg-royal/20 border-royal/40 text-lavender dark:text-lavender shadow-sm shadow-royal/10"
-                                  : "dark:bg-white/[0.03] bg-white/80 dark:border-white/[0.07] border-black/[0.07] dark:text-neutral-400 text-neutral-500 dark:hover:bg-white/[0.07] hover:bg-black/[0.04] hover:border-white/[0.12]"
-                              }`}
-                            >
-                              {timeline.label}
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="rounded-2xl border border-royal/10 bg-gradient-to-br from-royal/8 via-white/70 to-mint/6 dark:from-royal/10 dark:via-white/[0.03] dark:to-mint/8 p-4 md:p-5">
-                      <p className="text-sm font-semibold dark:text-white text-neutral-800 mb-2">What helps me quote faster</p>
-                      <ul className="space-y-2 text-sm dark:text-neutral-400 text-neutral-600 leading-relaxed">
-                        <li>• The main goal and the problem you want solved</li>
-                        <li>• Any reference sites, wireframes, or features you need</li>
-                        <li>• Your preferred launch window and budget range</li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div className="xl:col-span-7 space-y-5">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                      <div className="flex flex-col gap-2.5">
-                        <label htmlFor="name" className="field-label dark:text-neutral-300 text-neutral-600">
-                          Full Name
-                        </label>
-                        <input
-                          id="name"
-                          name="name"
-                          type="text"
-                          className={`field-input ${focusedField === "name" ? "field-input--focused" : ""}`}
-                          placeholder="John Doe"
-                          autoComplete="name"
-                          value={formData.name}
-                          onChange={handleChange}
-                          onFocus={() => setFocusedField("name")}
-                          onBlur={() => setFocusedField(null)}
-                          required
-                        />
-                      </div>
-                      <div className="flex flex-col gap-2.5">
-                        <label htmlFor="email" className="field-label dark:text-neutral-300 text-neutral-600">
-                          Email
-                        </label>
-                        <input
-                          id="email"
-                          name="email"
-                          type="email"
-                          className={`field-input ${focusedField === "email" ? "field-input--focused" : ""}`}
-                          placeholder="john@example.com"
-                          autoComplete="email"
-                          value={formData.email}
-                          onChange={handleChange}
-                          onFocus={() => setFocusedField("email")}
-                          onBlur={() => setFocusedField(null)}
-                          required
-                        />
-                      </div>
-                    </div>
-
-                    <div className="flex flex-col gap-2.5">
-                      <label htmlFor="message" className="field-label dark:text-neutral-300 text-neutral-600">
-                        Project Summary
+                    <div className="flex flex-col gap-2">
+                      <label className="field-label dark:text-neutral-300 text-neutral-600">
+                        Preferred Timeline
                       </label>
-                      <textarea
-                        id="message"
-                        name="message"
-                        rows="10"
-                        className={`field-input resize-none min-h-[20rem] leading-relaxed ${focusedField === "message" ? "field-input--focused" : ""}`}
-                        placeholder="Describe the goal, key features, preferred style, deadline, and any reference sites..."
-                        autoComplete="off"
-                        value={formData.message}
-                        onChange={handleChange}
-                        onFocus={() => setFocusedField("message")}
-                        onBlur={() => setFocusedField(null)}
-                        required
-                      />
+                      <div className="flex flex-wrap gap-2">
+                        {timelineOptions.map((timeline) => (
+                          <button
+                            key={timeline.id}
+                            type="button"
+                            onClick={() => handleTimeline(timeline.id)}
+                            className={`inline-flex items-center justify-center px-3 py-2 text-xs font-medium rounded-xl border transition-all duration-300 cursor-pointer ${
+                              formData.timeline === timeline.id
+                                ? "bg-royal/20 border-royal/40 text-lavender shadow-sm shadow-royal/10"
+                                : "dark:bg-white/[0.03] bg-white/80 dark:border-white/[0.07] border-black/[0.07] dark:text-neutral-400 text-neutral-500 dark:hover:bg-white/[0.07] hover:bg-black/[0.04] hover:border-black/[0.12]"
+                            }`}
+                          >
+                            {timeline.label}
+                          </button>
+                        ))}
+                      </div>
                     </div>
-
-                    <button
-                      type="submit"
-                      disabled={isLoading}
-                      className="group relative w-full py-4 text-sm font-semibold text-center rounded-2xl cursor-pointer overflow-hidden transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_16px_40px_rgba(92,51,204,0.18)]"
-                    >
-                      <div className="absolute inset-0 bg-gradient-to-r from-royal to-lavender transition-opacity duration-300 group-hover:opacity-90" />
-                      <div className="absolute inset-0 bg-gradient-to-r from-lavender to-royal opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ boxShadow: "inset 0 1px 0 rgba(255,255,255,0.15)" }} />
-                      <span className="relative z-10 flex items-center justify-center gap-2 text-white">
-                        {isLoading ? (
-                          <>
-                            <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
-                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-                            </svg>
-                            Sending...
-                          </>
-                        ) : (
-                          <>
-                            Request Quote
-                            <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg>
-                          </>
-                        )}
-                      </span>
-                    </button>
                   </div>
+
+                  <div className="flex flex-col gap-2">
+                    <label htmlFor="message" className="field-label dark:text-neutral-300 text-neutral-600">
+                      Project Summary
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={6}
+                      className="field-input resize-none"
+                      placeholder="Describe the goal, key features, preferred style, deadline, and any reference sites..."
+                      autoComplete="off"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isLoading}
+                    className="group relative w-full py-3.5 text-sm font-semibold text-center rounded-xl cursor-pointer overflow-hidden transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-royal to-lavender transition-opacity duration-300 group-hover:opacity-90" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-lavender to-royal opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <span className="relative z-10 flex items-center justify-center gap-2 text-white">
+                      {isLoading ? (
+                        <>
+                          <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                          </svg>
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          Request Quote
+                          <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          </svg>
+                        </>
+                      )}
+                    </span>
+                  </button>
                 </div>
               </form>
             </div>

@@ -2,7 +2,6 @@ import { useState, useRef } from "react";
 import Project from "../components/Project";
 import PortfolioSidebar from "../components/PortfolioSidebar";
 import ScrollReveal from "../components/ScrollReveal";
-import { motion } from "motion/react";
 import { myProjects } from "../constants";
 
 const Projects = () => {

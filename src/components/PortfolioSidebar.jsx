@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import { motion } from "motion/react";
 import { myProjects } from "../constants";
 
 const PortfolioSidebar = ({ onProjectClick }) => {
