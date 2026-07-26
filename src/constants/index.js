@@ -90,7 +90,7 @@ export const myProjects = [
       "Student mobile app, lecturer dashboard, and administrator dashboard with analytics.",
       "Built with Laravel backend, React Native (Expo) mobile app, and MySQL database.",
     ],
-    href: "",
+    href: "https://scholarsnudge.com/",
     image: "/assets/projects/scholars-nudge.jpg",
     gradient: projectGradients[8],
     tags: [
