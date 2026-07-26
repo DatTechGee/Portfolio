@@ -88,7 +88,7 @@ export const myProjects = [
       "Built with Laravel backend for admin oversight and fraud prevention logic.",
     ],
     href: "",
-    image: "",
+    image: "/assets/projects/blockchain-medical.jpg",
     gradient: projectGradients[7],
     tags: [
       { id: 1, name: "Laravel", path: "/assets/logos/laravel.svg" },
@@ -109,7 +109,7 @@ export const myProjects = [
       "Streamlined school record-keeping replacing manual paper systems.",
     ],
     href: "",
-    image: "",
+    image: "/assets/projects/student-filing.png",
     gradient: projectGradients[0],
     tags: [
       { id: 1, name: "Laravel", path: "/assets/logos/laravel.svg" },
@@ -130,7 +130,7 @@ export const myProjects = [
       "Built with Laravel backend, React frontend, and MySQL database.",
     ],
     href: "",
-    image: "",
+    image: "/assets/projects/payroll.png",
     gradient: projectGradients[1],
     tags: [
       { id: 1, name: "Laravel", path: "/assets/logos/laravel.svg" },
@@ -151,7 +151,7 @@ export const myProjects = [
       "Security alerts and anomaly detection for suspicious traffic patterns.",
     ],
     href: "",
-    image: "",
+    image: "/assets/projects/network-analyzer.jpg",
     gradient: projectGradients[5],
     tags: [
       { id: 1, name: "Laravel", path: "/assets/logos/laravel.svg" },
