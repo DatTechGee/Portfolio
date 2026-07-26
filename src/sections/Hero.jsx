@@ -1,9 +1,6 @@
-import { Suspense, lazy } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import HeroText from "../components/HeroText";
 import { Particles } from "../components/Particles";
-
-const HeroCanvas = lazy(() => import("../components/HeroCanvas"));
 
 const ambientOrbVariants = {
   animate: (i) => ({
@@ -75,12 +72,6 @@ const Hero = () => {
         variants={ambientOrbVariants}
         animate="animate"
       />
-
-      <figure className="absolute inset-0 -z-10" style={{ width: "100vw", height: "100vh" }}>
-        <Suspense fallback={null}>
-          <HeroCanvas />
-        </Suspense>
-      </figure>
 
       <motion.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-80 rounded-full border dark:border-white/10 border-black/[0.1] dark:bg-black/10 bg-black/[0.06] px-3 py-2 backdrop-blur-md"

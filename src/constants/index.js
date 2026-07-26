@@ -1,65 +1,65 @@
 export const myServices = [
   {
     id: 1,
-    title: "Custom Website Development",
+    title: "Full-Stack Web Applications",
     description:
-      "Modern, responsive websites built with React, Next.js, and Tailwind CSS that convert visitors into customers and strengthen your brand.",
-    icon: "globe",
+      "End-to-end web applications with React frontends, Laravel/Node.js backends, and MySQL databases — built for scale with authentication, dashboards, and reporting.",
+    icon: "layers",
   },
   {
     id: 2,
     title: "Mobile App Development",
     description:
-      "Cross-platform mobile applications using React Native for iOS and Android with native performance and smooth UX.",
+      "Cross-platform Android/iOS applications using React Native and Expo with GPS tracking, push notifications, biometric auth, and offline data storage.",
     icon: "smartphone",
   },
   {
     id: 3,
-    title: "Full-Stack Web Applications",
-    description:
-      "End-to-end web applications with React frontends, Laravel/Node.js backends, and MySQL databases — built for scale.",
-    icon: "layers",
-  },
-  {
-    id: 4,
-    title: "AI Integration & Automation",
-    description:
-      "Smart automation and AI-powered features using ChatGPT, GitHub Copilot, and custom APIs to accelerate your workflows.",
-    icon: "cpu",
-  },
-  {
-    id: 5,
     title: "Business Management Systems",
     description:
-      "Custom ERP, CRM, payroll, inventory, and student management systems tailored to your organization's workflow.",
+      "Custom ERP, CRM, payroll, inventory, student management, and attendance systems tailored to your organization's workflow.",
     icon: "briefcase",
   },
   {
-    id: 6,
+    id: 4,
     title: "API Development & Integration",
     description:
-      "RESTful APIs, third-party service integrations, and seamless data flow between your systems and platforms.",
+      "Secure RESTful APIs with token authentication, third-party service integrations, and seamless data flow between systems and platforms.",
     icon: "plug",
   },
   {
-    id: 7,
+    id: 5,
     title: "Database Design & Management",
     description:
-      "Efficient MySQL database schemas, query optimization, migrations, and data architecture for reliable applications.",
+      "Efficient MySQL schemas, normalization, migrations, seeders, query optimization, and data architecture for reliable applications.",
     icon: "database",
   },
   {
-    id: 8,
-    title: "Website Maintenance & Deployment",
+    id: 6,
+    title: "Custom Website Development",
     description:
-      "Ongoing support, performance monitoring, bug fixes, and deployment to Vercel, custom servers, or cloud platforms.",
+      "Modern, responsive websites with landing pages, contact forms, service portfolios, SEO-friendly structure, and mobile optimization.",
+    icon: "globe",
+  },
+  {
+    id: 7,
+    title: "Geolocation & Biometric Systems",
+    description:
+      "GPS geofencing, face verification attendance, radius-based classroom verification, background location monitoring, and biometric integration.",
+    icon: "cpu",
+  },
+  {
+    id: 8,
+    title: "Reporting & PDF Generation",
+    description:
+      "Automated payslip generation, PDF reports, Excel/CSV import and export, attendance analytics, and data visualization dashboards.",
     icon: "wrench",
   },
   {
     id: 9,
-    title: "UI/UX Design Implementation",
+    title: "Deployment & Maintenance",
     description:
-      "Pixel-perfect implementation of modern UI/UX designs with responsive layouts, animations, and accessibility.",
+      "Deployment to Vercel, Railway, Render, Hostinger, and custom servers. Ongoing support, performance monitoring, and bug fixes.",
     icon: "palette",
   },
 ];
@@ -73,11 +73,120 @@ const projectGradients = [
   "from-red-600 via-orange-600 to-amber-700",
   "from-violet-600 via-purple-600 to-indigo-700",
   "from-teal-600 via-cyan-600 to-blue-700",
+  "from-indigo-600 via-blue-600 to-cyan-700",
+  "from-amber-600 via-orange-600 to-red-700",
+  "from-fuchsia-600 via-purple-600 to-blue-700",
 ];
 
 export const myProjects = [
   {
     id: 1,
+    title: "Scholars Nudge — Smart Attendance",
+    description:
+      "A complete attendance management platform with face verification, GPS geofencing, live monitoring, and role-based dashboards for schools and universities.",
+    subDescription: [
+      "Face verification attendance with real-time validation and background location monitoring.",
+      "GPS geofencing with radius-based classroom verification for accurate check-ins.",
+      "Student mobile app, lecturer dashboard, and administrator dashboard with analytics.",
+      "Built with Laravel backend, React Native (Expo) mobile app, and MySQL database.",
+    ],
+    href: "",
+    image: "/assets/projects/scholars-nudge.jpg",
+    gradient: projectGradients[8],
+    tags: [
+      { id: 1, name: "Laravel", path: "/assets/logos/laravel.svg" },
+      { id: 2, name: "React Native", path: "/assets/logos/react.svg" },
+      { id: 3, name: "Expo", path: "" },
+      { id: 4, name: "MySQL", path: "/assets/logos/sqlite.svg" },
+      { id: 5, name: "REST API", path: "" },
+    ],
+  },
+  {
+    id: 2,
+    title: "Payroll Management System",
+    description:
+      "A complete payroll application with employee management, automated salary calculation, payslip generation, and downloadable PDF reports.",
+    subDescription: [
+      "Employee management with departments, positions, and salary structures.",
+      "Automated salary calculation with deductions and tax handling.",
+      "One-click payslip generation and downloadable PDF reports.",
+      "Built with Laravel backend, React frontend, and MySQL database.",
+    ],
+    href: "",
+    image: "/assets/projects/payroll.png",
+    gradient: projectGradients[1],
+    tags: [
+      { id: 1, name: "Laravel", path: "/assets/logos/laravel.svg" },
+      { id: 2, name: "React", path: "/assets/logos/react.svg" },
+      { id: 3, name: "TailwindCSS", path: "/assets/logos/tailwindcss.svg" },
+      { id: 4, name: "MySQL", path: "/assets/logos/sqlite.svg" },
+    ],
+  },
+  {
+    id: 3,
+    title: "Student Filing System",
+    description:
+      "A Laravel-based digital student records management system that simplifies document storage, retrieval, and administration for schools.",
+    subDescription: [
+      "Built with Laravel and SQLite for robust backend data management.",
+      "Student registration, file management, and advanced search system.",
+      "Secure authentication with role-based admin dashboard.",
+      "Streamlined school record-keeping replacing manual paper systems.",
+    ],
+    href: "",
+    image: "/assets/projects/student-filing.png",
+    gradient: projectGradients[0],
+    tags: [
+      { id: 1, name: "Laravel", path: "/assets/logos/laravel.svg" },
+      { id: 2, name: "SQLite", path: "/assets/logos/sqlite.svg" },
+      { id: 3, name: "PHP", path: "/assets/logos/php.svg" },
+      { id: 4, name: "TailwindCSS", path: "/assets/logos/tailwindcss.svg" },
+    ],
+  },
+  {
+    id: 4,
+    title: "Hostel Allocation System",
+    description:
+      "A web-based hostel allocation system for educational institutions with room assignment, capacity management, and administrative reporting.",
+    subDescription: [
+      "Student registration with room assignment and capacity management.",
+      "Administrative dashboard with allocation reports and student management.",
+      "Real-time room availability tracking and allocation status.",
+      "Streamlined hostel operations replacing manual allocation processes.",
+    ],
+    href: "",
+    image: "/assets/projects/hostel.jpg",
+    gradient: projectGradients[9],
+    tags: [
+      { id: 1, name: "Laravel", path: "/assets/logos/laravel.svg" },
+      { id: 2, name: "MySQL", path: "/assets/logos/sqlite.svg" },
+      { id: 3, name: "PHP", path: "/assets/logos/php.svg" },
+      { id: 4, name: "TailwindCSS", path: "/assets/logos/tailwindcss.svg" },
+    ],
+  },
+  {
+    id: 5,
+    title: "GPA/CGPA Management Portal",
+    description:
+      "A student academic management platform for calculating and tracking GPA and CGPA with result analysis and an academic dashboard.",
+    subDescription: [
+      "Student login with secure access to academic records.",
+      "Automated GPA calculation with CGPA tracking across semesters.",
+      "Result analysis with visual grade breakdowns and academic progress.",
+      "Clean academic dashboard for at-a-glance performance overview.",
+    ],
+    href: "",
+    image: "/assets/projects/gpa-portal.jpg",
+    gradient: projectGradients[10],
+    tags: [
+      { id: 1, name: "Laravel", path: "/assets/logos/laravel.svg" },
+      { id: 2, name: "React", path: "/assets/logos/react.svg" },
+      { id: 3, name: "MySQL", path: "/assets/logos/sqlite.svg" },
+      { id: 4, name: "TailwindCSS", path: "/assets/logos/tailwindcss.svg" },
+    ],
+  },
+  {
+    id: 6,
     title: "Medical Crowdfunding DApp",
     description:
       "A blockchain-powered crowdfunding platform for medical bills with fraud prevention, MetaMask integration, and secure donation tracking.",
@@ -98,52 +207,10 @@ export const myProjects = [
     ],
   },
   {
-    id: 2,
-    title: "Student Filing System",
-    description:
-      "A Laravel-based digital student records management system that simplifies document storage, retrieval, and administration.",
-    subDescription: [
-      "Built with Laravel and SQLite for robust backend data management.",
-      "Student registration, file management, and advanced search system.",
-      "Secure authentication with role-based admin dashboard.",
-      "Streamlined school record-keeping replacing manual paper systems.",
-    ],
-    href: "",
-    image: "/assets/projects/student-filing.png",
-    gradient: projectGradients[0],
-    tags: [
-      { id: 1, name: "Laravel", path: "/assets/logos/laravel.svg" },
-      { id: 2, name: "SQLite", path: "/assets/logos/sqlite.svg" },
-      { id: 3, name: "PHP", path: "/assets/logos/php.svg" },
-      { id: 4, name: "TailwindCSS", path: "/assets/logos/tailwindcss.svg" },
-    ],
-  },
-  {
-    id: 3,
-    title: "Payroll Management System",
-    description:
-      "A complete payroll application with employee management, automated salary calculation, and payslip generation.",
-    subDescription: [
-      "Employee management with departments, positions, and salary structures.",
-      "Automated salary calculation with deductions and tax handling.",
-      "One-click payslip generation and downloadable PDF reports.",
-      "Built with Laravel backend, React frontend, and MySQL database.",
-    ],
-    href: "",
-    image: "/assets/projects/payroll.png",
-    gradient: projectGradients[1],
-    tags: [
-      { id: 1, name: "Laravel", path: "/assets/logos/laravel.svg" },
-      { id: 2, name: "React", path: "/assets/logos/react.svg" },
-      { id: 3, name: "TailwindCSS", path: "/assets/logos/tailwindcss.svg" },
-      { id: 4, name: "MySQL", path: "/assets/logos/sqlite.svg" },
-    ],
-  },
-  {
-    id: 4,
+    id: 7,
     title: "Network Packet Analyzer",
     description:
-      "A cybersecurity tool integrating Laravel, React, Python, Wireshark, and TShark to analyze network traffic and detect anomalies.",
+      "A cybersecurity tool integrating Laravel, React, Python, Wireshark, and TShark to analyze network traffic and detect anomalies in real time.",
     subDescription: [
       "Real-time packet capture and network traffic analysis.",
       "Integration with Wireshark and TShark for deep packet inspection.",
@@ -161,10 +228,10 @@ export const myProjects = [
     ],
   },
   {
-    id: 5,
+    id: 8,
     title: "Real Estate Website",
     description:
-      "A responsive property listing platform featuring modern UI, property management, search functionality, and customer inquiry.",
+      "A responsive property listing platform featuring modern UI, property management, search functionality, and customer inquiry forms.",
     subDescription: [
       "Property listings with detailed info, pricing, and image galleries.",
       "Advanced property search and filter system for quick discoveries.",
@@ -182,10 +249,10 @@ export const myProjects = [
     ],
   },
   {
-    id: 6,
+    id: 9,
     title: "Climate Information Website",
     description:
-      "A React-based web application displaying real-time weather and climate data with an interactive dashboard interface.",
+      "A React-based web application displaying real-time weather and climate data with an interactive dashboard and 5-day forecast.",
     subDescription: [
       "Real-time weather data fetched from public APIs.",
       "5-day forecast with clean data visualization.",
@@ -202,7 +269,7 @@ export const myProjects = [
     ],
   },
   {
-    id: 7,
+    id: 10,
     title: "Nike Landing Page",
     description:
       "A modern responsive landing page demonstrating clean UI/UX principles, strong visuals, and smooth product showcase animations.",
@@ -222,7 +289,7 @@ export const myProjects = [
     ],
   },
   {
-    id: 8,
+    id: 11,
     title: "Portfolio Website",
     description:
       "A personal developer portfolio with 3D elements, interactive sections, animations, and SEO-optimized structured data.",
@@ -279,12 +346,12 @@ export const experiences = [
     date: "2023-Present",
     contents: [
       "Building custom web applications, mobile apps, and business systems for clients across schools, startups, SMEs, and organizations in Nigeria.",
-      "Developed a Student Filing System for schools with Laravel and secure authentication.",
-      "Built a Payroll Management System with employee management, salary calculation, and payslip generation.",
-      "Created a modern Estate Website with property listings, search, and image galleries.",
-      "Developed a Climate Information Website with real-time weather data and responsive UI.",
-      "Built a Network Packet Analyzer for cybersecurity monitoring with React, Laravel, and Python.",
-      "Delivering end-to-end solutions from design to deployment on Vercel and custom servers.",
+      "Developed Scholars Nudge — a smart attendance system with face verification, GPS geofencing, live monitoring, and role-based dashboards using Laravel and React Native (Expo).",
+      "Built a Payroll Management System with employee management, automated salary calculation, and payslip generation.",
+      "Created a Student Filing System for schools with Laravel, secure authentication, and record management.",
+      "Developed a Hostel Allocation System with room assignment, capacity management, and admin reporting.",
+      "Built a GPA/CGPA Management Portal with automated grade calculation and academic dashboards.",
+      "Delivering end-to-end solutions from requirements analysis and database design to deployment on Vercel, Railway, and custom servers.",
     ],
   },
   {
@@ -292,9 +359,10 @@ export const experiences = [
     job: "Various Client Projects",
     date: "2021-2023",
     contents: [
-      "Built responsive websites and landing pages using React, JavaScript, and Tailwind CSS.",
-      "Developed backend APIs and database systems using Laravel, PHP, and SQLite.",
+      "Built responsive websites and landing pages using React, JavaScript, HTML5, CSS3, and Tailwind CSS.",
+      "Developed backend APIs and database systems using Laravel, PHP, MySQL, and SQLite.",
       "Implemented authentication systems, role-based access control, and secure data handling.",
+      "Designed and deployed RESTful APIs with token authentication for mobile and web applications.",
       "Worked with Git/GitHub for version control and collaborative development workflows.",
     ],
   },
@@ -373,18 +441,18 @@ export const reviews = [
 export const getAvatarColors = (idx) => avatarColors[idx % avatarColors.length];
 
 export const techStack = [
+  { name: "Laravel", logo: "/assets/logos/laravel.svg" },
   { name: "React", logo: "/assets/logos/react.svg" },
   { name: "React Native", logo: "/assets/logos/react.svg" },
-  { name: "JavaScript", logo: "/assets/logos/javascript.svg" },
-  { name: "Node.js", logo: "/assets/logos/nodejs.svg" },
-  { name: "Laravel", logo: "/assets/logos/laravel.svg" },
+  { name: "Expo", logo: "" },
   { name: "PHP", logo: "/assets/logos/php.svg" },
-  { name: "Tailwind CSS", logo: "/assets/logos/tailwindcss.svg" },
-  { name: "Three.js", logo: "/assets/logos/threejs.svg" },
-  { name: "Vite.js", logo: "/assets/logos/vitejs.svg" },
-  { name: "Git", logo: "/assets/logos/git.svg" },
-  { name: "C++", logo: "/assets/logos/cplusplus.svg" },
+  { name: "JavaScript", logo: "/assets/logos/javascript.svg" },
   { name: "MySQL", logo: "/assets/logos/sqlite.svg" },
+  { name: "Tailwind CSS", logo: "/assets/logos/tailwindcss.svg" },
+  { name: "Node.js", logo: "/assets/logos/nodejs.svg" },
+  { name: "Git", logo: "/assets/logos/git.svg" },
+  { name: "Vite.js", logo: "/assets/logos/vitejs.svg" },
+  { name: "Three.js", logo: "/assets/logos/threejs.svg" },
 ];
 
 export const industries = [
@@ -399,19 +467,19 @@ export const industries = [
 ];
 
 export const currentFocus = [
-  "Blockchain Development",
-  "Web3 Integration",
-  "Smart Contracts",
+  "Full-Stack Development",
+  "Mobile App Development",
+  "Geolocation & Biometric Systems",
   "AI-Powered Applications",
-  "Decentralized Systems",
   "SaaS Platforms",
-  "Cybersecurity Tools",
+  "REST API Development",
+  "Database Architecture",
 ];
 
 export const portfolioStats = {
   yearsExperience: 4,
-  projectsDelivered: 30,
+  projectsDelivered: 15,
   happyClients: 15,
-  technologiesUsed: 12,
+  technologiesUsed: 14,
   clientSatisfaction: 100,
 };
