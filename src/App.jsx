@@ -20,6 +20,7 @@ import { TechMarquee } from "./components/transitions";
 import { ProcessSteps } from "./components/transitions";
 import { QuoteStrip } from "./components/transitions";
 import { AvailabilityBanner } from "./components/transitions";
+import SkillsBreakdown from "./sections/SkillsBreakdown";
 
 const App = () => {
   const [showPreloader, setShowPreloader] = useState(true);
@@ -51,6 +52,7 @@ const App = () => {
               <StatsBar />
               <Services />
               <TechMarquee />
+              <SkillsBreakdown />
               <Highlights />
               <QuoteStrip />
               <Experiences />

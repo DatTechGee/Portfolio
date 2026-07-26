@@ -153,8 +153,8 @@ const About = () => {
         </motion.div>
 
         {/* Current Focus */}
-        <ScrollReveal delay={0.2} distance={20}>
-          <div className="md:col-span-3 glass-card p-5 md:p-6">
+        <ScrollReveal delay={0.2} distance={20} className="md:col-span-3">
+          <div className="glass-card p-5 md:p-6 h-full">
             <p className="text-sm font-semibold dark:text-white text-neutral-800 mb-3">Currently Focused On</p>
             <div className="flex flex-wrap gap-2">
               {currentFocus.map((item, i) => (
@@ -176,8 +176,8 @@ const About = () => {
         </ScrollReveal>
 
         {/* Industries I Serve */}
-        <ScrollReveal delay={0.3} distance={20}>
-          <div className="md:col-span-3 glass-card p-5 md:p-6">
+        <ScrollReveal delay={0.3} distance={20} className="md:col-span-3">
+          <div className="glass-card p-5 md:p-6 h-full">
             <p className="text-sm font-semibold dark:text-white text-neutral-800 mb-3">Industries I Serve</p>
             <div className="flex flex-wrap gap-2">
               {industries.map((industry, i) => {
