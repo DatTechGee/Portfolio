@@ -13,7 +13,7 @@ class ErrorBoundary extends Component {
   render() {
     if (this.state.hasError) {
       return (
-        <div className="min-h-screen flex items-center justify-center dark:bg-primary bg-[#fbfaff] p-6">
+        <div className="min-h-screen flex items-center justify-center dark:bg-[#0a1128] bg-[#f5f3ec] p-6">
           <div className="max-w-md w-full glass-card p-8 text-center">
             <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-coral/20 to-orange/20 flex items-center justify-center">
               <svg className="w-8 h-8 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24">

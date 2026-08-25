@@ -27,7 +27,7 @@ const ScrollButtons = () => {
   };
 
   const scrollToNext = () => {
-    const sections = Array.from(document.querySelectorAll("section[id]"));
+    const sections = Array.from(document.querySelectorAll("section"));
     const currentY = window.scrollY;
     const next = sections.find((s) => {
       const rect = s.getBoundingClientRect();

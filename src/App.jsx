@@ -1,29 +1,32 @@
 import { useCallback, useState } from "react";
-import { motion } from "motion/react";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence, motion } from "motion/react";
 import { ThemeProvider } from "./context/ThemeContext";
 import Navbar from "./sections/Navbar";
-import Hero from "./sections/Hero";
-import About from "./sections/About";
-import Services from "./sections/Services";
-import Highlights from "./sections/Highlights";
-import RecruiterFocus from "./sections/RecruiterFocus";
-import Experiences from "./sections/Experiences";
-import Projects from "./sections/Projects";
-import Testimonial from "./sections/Testimonial";
-import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
 import Preloader from "./components/Preloader";
 import ScrollButtons from "./components/ScrollButtons";
 import ErrorBoundary from "./components/ErrorBoundary";
-import { StatsBar } from "./components/transitions";
-import { TechMarquee } from "./components/transitions";
-import { ProcessSteps } from "./components/transitions";
-import { QuoteStrip } from "./components/transitions";
-import { AvailabilityBanner } from "./components/transitions";
-import SkillsBreakdown from "./sections/SkillsBreakdown";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import ServicesPage from "./pages/ServicesPage";
+import ProjectsPage from "./pages/ProjectsPage";
+import ContactPage from "./pages/ContactPage";
+
+const PageWrapper = ({ children }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 12 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -12 }}
+    transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+  >
+    {children}
+  </motion.div>
+);
 
 const App = () => {
   const [showPreloader, setShowPreloader] = useState(true);
+  const location = useLocation();
 
   const handlePreloaderComplete = useCallback(() => {
     setShowPreloader(false);
@@ -41,28 +44,17 @@ const App = () => {
             }`}
           >
             <Navbar />
-            <motion.main
-              id="main-content"
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-            >
-              <Hero />
-              <About />
-              <StatsBar />
-              <Services />
-              <TechMarquee />
-              <SkillsBreakdown />
-              <Highlights />
-              <QuoteStrip />
-              <Experiences />
-              <RecruiterFocus />
-              <ProcessSteps />
-              <Projects />
-              <Testimonial />
-              <AvailabilityBanner />
-              <Contact />
-            </motion.main>
+            <main id="main-content">
+              <AnimatePresence mode="wait">
+                <Routes location={location} key={location.pathname}>
+                  <Route path="/" element={<PageWrapper><HomePage /></PageWrapper>} />
+                  <Route path="/about" element={<PageWrapper><AboutPage /></PageWrapper>} />
+                  <Route path="/services" element={<PageWrapper><ServicesPage /></PageWrapper>} />
+                  <Route path="/projects" element={<PageWrapper><ProjectsPage /></PageWrapper>} />
+                  <Route path="/contact" element={<PageWrapper><ContactPage /></PageWrapper>} />
+                </Routes>
+              </AnimatePresence>
+            </main>
             <Footer />
             <ScrollButtons />
           </div>

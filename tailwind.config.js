@@ -17,6 +17,7 @@ export default {
         orange: "#cc6033",
         sand: "#d6995c",
         coral: "#ea4884",
+        gold: "#d4a843",
       },
       boxShadow: {
         glow: "0 0 20px rgba(92, 51, 204, 0.3)",

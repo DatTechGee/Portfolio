@@ -56,7 +56,7 @@ const Preloader = ({ onComplete }) => {
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-28 h-28 rounded-full border border-white/5 animate-spin" style={{ animationDuration: "3s" }} />
           </div>
-          <div className="absolute inset-0 w-24 h-24 rounded-full bg-royal/20 blur-xl" />
+          <div className="absolute inset-0 w-24 h-24 rounded-full bg-gold/20 blur-xl" />
         </motion.div>
 
         <motion.div
@@ -72,7 +72,7 @@ const Preloader = ({ onComplete }) => {
         <div className="w-40 flex flex-col items-center gap-2">
           <div className="w-full h-0.5 bg-white/10 rounded-full overflow-hidden">
             <motion.div
-              className="h-full bg-gradient-to-r from-royal to-lavender rounded-full"
+              className="h-full bg-gradient-to-r from-gold to-gold/70 rounded-full"
               style={{ width: `${progress}%` }}
               transition={{ duration: 0.15 }}
             />

@@ -1,11 +1,11 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
 import './index.css'
 import App from './App.jsx'
 import emailjs from '@emailjs/browser'
 import { initAnalytics } from './utils/analytics'
 
-// Initialize EmailJS with the public key (Vite env variable)
 try {
   const userId = import.meta.env.VITE_EMAILJS_USER_ID;
   if (userId) emailjs.init(userId);
@@ -24,6 +24,8 @@ try {
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </StrictMode>,
 )

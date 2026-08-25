@@ -1,46 +1,18 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { Link, useLocation } from "react-router-dom";
 import { useTheme } from "../context/ThemeContext";
 
-function Navigation({ active, onLinkClick, theme }) {
-  const links = [
-    { id: "home", label: "Home" },
-    { id: "about", label: "About" },
-    { id: "services", label: "Services" },
-    { id: "projects", label: "Projects" },
-    { id: "portfolio", label: "Portfolio" },
-    { id: "contact", label: "Contact" },
-  ];
-
-  return (
-    <ul className="nav-ul">
-      {links.map((link) => (
-        <li key={link.id} className="nav-li">
-          <motion.a
-            className={`nav-link ${active === link.id ? "font-semibold" : ""}`}
-            href={`#${link.id}`}
-            onClick={(e) => onLinkClick(e, link.id)}
-            whileHover={{ y: -2, scale: 1.02 }}
-            transition={{ type: "spring", stiffness: 320, damping: 20 }}
-          >
-            {active === link.id && (
-              <motion.span
-                layoutId="nav-indicator"
-                className="absolute inset-0 rounded-full dark:bg-white/[0.07] bg-black/[0.05]"
-                transition={{ type: "spring", stiffness: 380, damping: 30 }}
-              />
-            )}
-            <span className="relative z-10">{link.label}</span>
-          </motion.a>
-        </li>
-      ))}
-    </ul>
-  );
-}
+const navLinks = [
+  { path: "/", label: "Home" },
+  { path: "/about", label: "About" },
+  { path: "/services", label: "Services" },
+  { path: "/projects", label: "Projects" },
+  { path: "/contact", label: "Contact" },
+];
 
 const ThemeToggle = () => {
   const { theme, toggleTheme } = useTheme();
-
   return (
     <motion.button
       onClick={toggleTheme}
@@ -64,44 +36,19 @@ const ThemeToggle = () => {
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [active, setActive] = useState("home");
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
   const { theme } = useTheme();
 
-  const handleNavClick = (e, id) => {
-    e.preventDefault();
+  useEffect(() => {
     setIsOpen(false);
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-    setActive(id);
-  };
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const ids = ["home", "about", "services", "projects", "portfolio", "contact"];
-    const sections = ids.map((id) => document.getElementById(id)).filter(Boolean);
-    if (!sections.length) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActive(entry.target.id);
-          }
-        });
-      },
-      { root: null, rootMargin: "-20% 0px -60% 0px", threshold: 0 }
-    );
-
-    sections.forEach((s) => observer.observe(s));
-    return () => sections.forEach((s) => observer.unobserve(s));
   }, []);
 
   const isLight = theme === "light";
@@ -109,59 +56,45 @@ const Navbar = () => {
   const navBg = scrolled
     ? isLight
       ? "backdrop-blur-2xl bg-[#f3f1f8]/75 border-b border-black/[0.06] shadow-xl shadow-black/[0.03]"
-      : "backdrop-blur-2xl bg-[#080a14]/75 border-b border-white/[0.06] shadow-xl shadow-black/30"
+      : "backdrop-blur-2xl bg-[#0a1128]/80 border-b border-white/[0.06] shadow-xl shadow-black/30"
     : isLight
       ? "backdrop-blur-sm bg-[#f3f1f8]/20"
-      : "backdrop-blur-sm bg-[#080a14]/20";
-
-  const logoTextClass = isLight ? "text-neutral-700" : "text-white/80";
-  const logoTextHoverClass = isLight
-    ? "group-hover:text-royal"
-    : "group-hover:text-white";
-  const hamburgerClass = isLight
-    ? "text-neutral-600 hover:text-primary hover:bg-black/5"
-    : "text-neutral-400 hover:text-white hover:bg-white/5";
-
-  const navMobileBg = isLight
-    ? "bg-[#f3f1f8]/95 backdrop-blur-2xl border-t border-black/5"
-    : "bg-[#080a14]/95 backdrop-blur-2xl border-t border-white/5";
+      : "backdrop-blur-sm bg-[#0a1128]/20";
 
   return (
     <div className={`fixed inset-x-0 z-20 w-full transition-all duration-500 ${navBg}`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-3 sm:py-4">
-          {/* Logo + brand */}
-          <motion.a
-            href="/"
-            className="flex items-center gap-2.5 group"
-            whileHover={{ y: -2, scale: 1.03 }}
-            transition={{ type: "spring", stiffness: 320, damping: 20 }}
-          >
-            <div className="relative">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-2.5 group">
+            <motion.div
+              className="relative"
+              whileHover={{ y: -2, scale: 1.03 }}
+              transition={{ type: "spring", stiffness: 320, damping: 20 }}
+            >
               <img
                 src="/assets/logo.png"
                 alt="DatTechGee"
-                className="w-9 h-9 rounded-xl object-cover transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-royal/20"
+                className="w-9 h-9 rounded-xl object-cover transition-all duration-300 group-hover:scale-110"
               />
-              <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-mint rounded-full border-2 dark:border-[#080a14] border-[#f3f1f8]" />
-            </div>
+              <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-gold rounded-full border-2 dark:border-[#0a1128] border-[#f3f1f8]" />
+            </motion.div>
             <div className="flex flex-col">
-              <span className={`text-[15px] font-bold leading-tight tracking-tight transition-colors duration-300 ${logoTextClass} ${logoTextHoverClass}`}>
+              <span className="text-[15px] font-bold leading-tight tracking-tight dark:text-white text-neutral-800 group-hover:text-gold transition-colors duration-300">
                 DatTechGee
               </span>
               <span className="text-[10px] font-medium uppercase tracking-[0.2em] dark:text-neutral-500 text-neutral-400 leading-tight">
                 Full Stack Dev
               </span>
             </div>
-          </motion.a>
+          </Link>
 
-          {/* Right side controls */}
+          {/* Right controls */}
           <div className="flex items-center gap-2">
             <ThemeToggle />
-
             <motion.button
               onClick={() => setIsOpen(!isOpen)}
-              className={`flex cursor-pointer focus:outline-none sm:hidden p-2 rounded-lg transition-colors ${hamburgerClass}`}
+              className="flex cursor-pointer sm:hidden p-2 rounded-lg dark:text-neutral-400 text-neutral-600 hover:text-gold dark:hover:text-gold transition-colors"
               whileHover={{ rotate: 8, scale: 1.04 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -176,48 +109,81 @@ const Navbar = () => {
           </div>
 
           {/* Desktop nav */}
-          <nav className="hidden sm:flex" aria-label="Main navigation">
-            <Navigation active={active} onLinkClick={handleNavClick} theme={theme} />
+          <nav className="hidden sm:flex items-center gap-1" aria-label="Main navigation">
+            {navLinks.map((link) => {
+              const isActive = location.pathname === link.path;
+              return (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`relative px-4 py-2 text-sm rounded-full transition-all duration-300 ${
+                    isActive
+                      ? "text-gold font-semibold"
+                      : "dark:text-neutral-400 text-neutral-500 hover:text-gold dark:hover:text-gold"
+                  }`}
+                >
+                  {isActive && (
+                    <motion.span
+                      layoutId="nav-indicator"
+                      className="absolute inset-0 rounded-full bg-gold/10 border border-gold/20"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                  <span className="relative z-10">{link.label}</span>
+                </Link>
+              );
+            })}
           </nav>
 
           {/* CTA */}
-          <motion.a
-            href="#contact"
-            onClick={(e) => handleNavClick(e, "contact")}
-            className="hidden sm:flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full bg-gradient-to-r from-royal to-lavender text-white hover:opacity-90 transition-opacity duration-300 shadow-lg shadow-royal/20"
-            whileHover={{ y: -2, scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
+          <Link
+            to="/contact"
+            className="hidden sm:flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-full bg-gold text-navy hover:bg-gold/90 transition-all duration-300 shadow-lg shadow-gold/20"
           >
             Let&apos;s Talk
-          </motion.a>
+          </Link>
         </div>
       </div>
 
+      {/* Mobile menu */}
       <AnimatePresence>
         {isOpen && (
           <>
-            <div
-              className="absolute inset-0 z-10 sm:hidden bg-black/40"
-              onClick={() => setIsOpen(false)}
-            />
+            <div className="absolute inset-0 z-10 sm:hidden bg-black/40" onClick={() => setIsOpen(false)} />
             <motion.div
-              className={`block overflow-hidden text-center sm:hidden relative z-20 ${navMobileBg}`}
+              className={`block overflow-hidden sm:hidden relative z-20 ${
+                isLight
+                  ? "bg-[#f3f1f8]/95 backdrop-blur-2xl border-t border-black/5"
+                  : "bg-[#0a1128]/95 backdrop-blur-2xl border-t border-white/5"
+              }`}
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
             >
-              <nav className="py-4 px-5" aria-label="Mobile navigation">
-                <Navigation active={active} onLinkClick={handleNavClick} theme={theme} />
-                <motion.a
-                  href="#contact"
-                  onClick={(e) => handleNavClick(e, "contact")}
-                  className="mt-4 block w-full py-3 text-sm font-medium rounded-xl bg-gradient-to-r from-royal to-lavender text-center text-white"
-                  whileHover={{ y: -2, scale: 1.01 }}
-                  whileTap={{ scale: 0.97 }}
+              <nav className="py-4 px-5 flex flex-col gap-1" aria-label="Mobile navigation">
+                {navLinks.map((link) => {
+                  const isActive = location.pathname === link.path;
+                  return (
+                    <Link
+                      key={link.path}
+                      to={link.path}
+                      className={`px-4 py-3 rounded-xl text-sm font-medium transition-all ${
+                        isActive
+                          ? "bg-gold/10 text-gold border border-gold/20"
+                          : "dark:text-neutral-400 text-neutral-600 hover:bg-white/5"
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  );
+                })}
+                <Link
+                  to="/contact"
+                  className="mt-3 block py-3 text-sm font-semibold rounded-xl bg-gold text-navy text-center"
                 >
                   Let&apos;s Talk
-                </motion.a>
+                </Link>
               </nav>
             </motion.div>
           </>
