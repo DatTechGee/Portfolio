@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Link } from "react-router-dom";
 import ScrollReveal from "../components/ScrollReveal";
@@ -41,8 +41,27 @@ const cardVariants = {
 
 export default function ProjectsPage() {
   const [activeFilter, setActiveFilter] = useState("All");
+  const [selectedProject, setSelectedProject] = useState(null);
 
   const filteredProjects = myProjects.filter((p) => matchesFilter(p, activeFilter));
+
+  useEffect(() => {
+    if (!selectedProject) return;
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") setSelectedProject(null);
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [selectedProject]);
+
+  useEffect(() => {
+    if (selectedProject) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [selectedProject]);
 
   return (
     <main className="bg-[#0a1128] min-h-screen">
@@ -99,7 +118,8 @@ export default function ProjectsPage() {
                   initial="hidden"
                   animate="visible"
                   exit="exit"
-                  className="group bg-[#0f1a36] border border-white/[0.06] rounded-2xl overflow-hidden hover:border-gold/30 hover:shadow-[0_0_30px_rgba(212,168,67,0.1)] transition-all duration-500 hover:-translate-y-1"
+                  onClick={() => setSelectedProject(project)}
+                  className="group bg-[#0f1a36] border border-white/[0.06] rounded-2xl overflow-hidden hover:border-gold/30 hover:shadow-[0_0_30px_rgba(212,168,67,0.1)] transition-all duration-500 hover:-translate-y-1 cursor-pointer"
                 >
                   {/* Image / Gradient Preview */}
                   <div
@@ -228,6 +248,127 @@ export default function ProjectsPage() {
           </ScrollReveal>
         </div>
       </section>
+
+      {/* Project Detail Modal */}
+      <AnimatePresence>
+        {selectedProject && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4"
+            onClick={() => setSelectedProject(null)}
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-[#0f1a36] border border-white/[0.06] rounded-3xl"
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-black/50 border border-white/10 flex items-center justify-center text-neutral-400 hover:text-white hover:border-white/30 transition-colors cursor-pointer"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+
+              {/* Project Image */}
+              <div
+                className="h-64 relative overflow-hidden"
+                style={{
+                  background: selectedProject.gradient || "linear-gradient(135deg, #0f1a36, #1a2a50)",
+                }}
+              >
+                {selectedProject.image && (
+                  <img
+                    src={selectedProject.image}
+                    alt={selectedProject.title}
+                    className="w-full h-full object-cover"
+                  />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0f1a36] via-transparent to-transparent" />
+              </div>
+
+              {/* Modal Content */}
+              <div className="p-8">
+                <h2 className="text-2xl font-bold dark:text-white text-neutral-800 mb-3">
+                  {selectedProject.title}
+                </h2>
+                <p className="dark:text-neutral-400 text-neutral-500 mb-6 leading-relaxed">
+                  {selectedProject.description}
+                </p>
+
+                {/* Key Features */}
+                {selectedProject.subDescription && selectedProject.subDescription.length > 0 && (
+                  <div className="mb-6">
+                    <h3 className="text-lg font-semibold dark:text-white text-neutral-800 mb-3">
+                      Key Features
+                    </h3>
+                    <ul className="space-y-2">
+                      {selectedProject.subDescription.map((feature, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-sm dark:text-neutral-400 text-neutral-500">
+                          <svg className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* Tech Stack Tags */}
+                {selectedProject.tags && selectedProject.tags.length > 0 && (
+                  <div className="mb-8">
+                    <h3 className="text-lg font-semibold dark:text-white text-neutral-800 mb-3">
+                      Tech Stack
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedProject.tags.map((tag) => (
+                        <span
+                          key={tag.id || tag.name}
+                          className="px-3 py-1 rounded-full text-xs bg-white/5 border border-white/10 dark:text-neutral-400 text-neutral-500"
+                        >
+                          {tag.name}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Action Buttons */}
+                <div className="flex flex-wrap gap-3">
+                  {selectedProject.href && (
+                    <a
+                      href={selectedProject.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-gold text-[#0a1128] px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-gold/90 transition-colors duration-300"
+                    >
+                      View Live
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </a>
+                  )}
+                  <button
+                    onClick={() => setSelectedProject(null)}
+                    className="inline-flex items-center gap-2 border border-white/10 text-neutral-400 px-6 py-2.5 rounded-full font-semibold text-sm hover:border-white/30 hover:text-white transition-colors duration-300 cursor-pointer"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </main>
   );
 }
