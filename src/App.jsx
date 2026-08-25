@@ -11,6 +11,8 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ServicesPage from "./pages/ServicesPage";
 import ProjectsPage from "./pages/ProjectsPage";
+import SolutionsPage from "./pages/SolutionsPage";
+import InsightsPage from "./pages/InsightsPage";
 import ContactPage from "./pages/ContactPage";
 
 const PageWrapper = ({ children }) => (
@@ -51,6 +53,8 @@ const App = () => {
                   <Route path="/about" element={<PageWrapper><AboutPage /></PageWrapper>} />
                   <Route path="/services" element={<PageWrapper><ServicesPage /></PageWrapper>} />
                   <Route path="/projects" element={<PageWrapper><ProjectsPage /></PageWrapper>} />
+                  <Route path="/solutions" element={<PageWrapper><SolutionsPage /></PageWrapper>} />
+                  <Route path="/insights" element={<PageWrapper><InsightsPage /></PageWrapper>} />
                   <Route path="/contact" element={<PageWrapper><ContactPage /></PageWrapper>} />
                 </Routes>
               </AnimatePresence>

@@ -89,15 +89,11 @@ export default function ProjectsPage() {
       {/* Projects Grid */}
       <section className="pb-20">
         <div className="max-w-6xl mx-auto px-6">
-          <motion.div
-            layout
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-          >
-            <AnimatePresence mode="popLayout">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <AnimatePresence mode="wait">
               {filteredProjects.map((project, index) => (
                 <motion.div
                   key={project.title}
-                  layout
                   custom={index}
                   variants={cardVariants}
                   initial="hidden"
@@ -136,9 +132,10 @@ export default function ProjectsPage() {
                       <div className="flex flex-wrap gap-1.5 mb-4">
                         {project.tags.slice(0, 4).map((tag) => (
                           <span
-                            key={tag}
+                            key={tag.id || tag.name}
                             className="px-2 py-0.5 rounded text-xs bg-white/5 border border-white/10 dark:text-neutral-400 text-neutral-500"
                           >
+                            {tag.name}
                             {tag}
                           </span>
                         ))}
@@ -173,7 +170,7 @@ export default function ProjectsPage() {
                 </motion.div>
               ))}
             </AnimatePresence>
-          </motion.div>
+          </div>
 
           {filteredProjects.length === 0 && (
             <div className="text-center py-20">

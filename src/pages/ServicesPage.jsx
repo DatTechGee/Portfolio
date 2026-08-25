@@ -52,16 +52,85 @@ const iconMap = {
   ),
 };
 
-const gradientColors = [
-  "from-blue-500 to-indigo-600",
-  "from-emerald-500 to-teal-600",
-  "from-violet-500 to-purple-600",
-  "from-orange-500 to-amber-600",
-  "from-rose-500 to-pink-600",
-  "from-cyan-500 to-blue-600",
-  "from-fuchsia-500 to-purple-600",
-  "from-lime-500 to-emerald-600",
-  "from-sky-500 to-cyan-600",
+const serviceCategories = [
+  {
+    title: "Custom Software Development",
+    description:
+      "Full-stack web applications, APIs, and business systems built from scratch with Laravel, React, and modern frameworks. Every solution is engineered for performance, security, and long-term maintainability.",
+    icon: "layers",
+    features: [
+      "End-to-end web applications with React and Laravel",
+      "RESTful APIs with token authentication",
+      "Database architecture with MySQL and optimization",
+      "Scalable microservices and modular codebases",
+    ],
+  },
+  {
+    title: "Mobile App Development",
+    description:
+      "Cross-platform iOS and Android applications with React Native and Expo. From GPS tracking to biometric auth, I build mobile experiences that perform like native.",
+    icon: "smartphone",
+    features: [
+      "Cross-platform iOS and Android from one codebase",
+      "GPS tracking, push notifications, and biometrics",
+      "Offline data storage and sync",
+      "App Store and Play Store deployment",
+    ],
+  },
+  {
+    title: "Business Systems & Automation",
+    description:
+      "Payroll, student portals, inventory, CRM, and workflow automation. I replace manual, error-prone processes with systems that run themselves.",
+    icon: "briefcase",
+    features: [
+      "Custom ERP, CRM, and payroll systems",
+      "Student management and attendance platforms",
+      "Automated reporting and PDF generation",
+      "Workflow automation and data pipelines",
+    ],
+  },
+  {
+    title: "UI/UX Design & Frontend",
+    description:
+      "Modern, responsive interfaces built with Tailwind CSS and React. Clean design systems that users trust and enjoy, with animations that feel intentional.",
+    icon: "palette",
+    features: [
+      "Responsive design with Tailwind CSS",
+      "Component-driven architecture with React",
+      "Interactive dashboards and data visualization",
+      "Performance-optimized animations with Framer Motion",
+    ],
+  },
+];
+
+const pillars = [
+  {
+    label: "Technology",
+    description: "Infrastructure that powers growth",
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
+      </svg>
+    ),
+  },
+  {
+    label: "Systems",
+    description: "Operational frameworks for scale",
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
+      </svg>
+    ),
+  },
+  {
+    label: "Execution",
+    description: "Disciplined delivery of results",
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+      </svg>
+    ),
+  },
 ];
 
 const processSteps = [
@@ -91,17 +160,26 @@ const processSteps = [
   },
 ];
 
+const industries = [
+  "Education",
+  "Healthcare",
+  "Finance",
+  "Real Estate",
+  "E-Commerce",
+  "Logistics",
+];
+
 export default function ServicesPage() {
   return (
     <main className="bg-[#0a1128] min-h-screen">
-      {/* Page Header */}
-      <section className="section-spacing pt-32 pb-12">
+      {/* Hero Section */}
+      <section className="section-spacing pt-32 pb-20">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <ScrollReveal>
             <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
               Services
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold dark:text-white text-neutral-800 mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold dark:text-white text-neutral-800 mb-6">
               What We Do
             </h1>
             <p className="dark:text-neutral-400 text-neutral-500 max-w-2xl mx-auto text-lg">
@@ -112,44 +190,40 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="pb-20">
+      {/* Position Statement */}
+      <section className="pb-24">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {myServices.map((service, i) => (
+          <ScrollReveal>
+            <div className="text-center mb-16">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold dark:text-white text-neutral-800 max-w-3xl mx-auto leading-snug">
+                Not just development. Not just consulting. I build systems that
+                work.
+              </h2>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {pillars.map((pillar, i) => (
               <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 35, filter: "blur(4px)" }}
+                key={pillar.label}
+                initial={{ opacity: 0, y: 30, filter: "blur(4px)" }}
                 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{
                   duration: 0.6,
-                  delay: i * 0.06,
+                  delay: i * 0.1,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                whileHover={{ y: -4 }}
-                className="group bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-6 cursor-default hover:border-gold/30 hover:shadow-[0_0_30px_rgba(212,168,67,0.08)] transition-all duration-500 relative overflow-hidden"
+                className="bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-8 text-center hover:border-gold/30 hover:shadow-[0_0_30px_rgba(212,168,67,0.08)] transition-all duration-500"
               >
-                {/* Number overlay */}
-                <span className="absolute top-4 right-5 text-5xl font-black text-gold/[0.07] select-none leading-none pointer-events-none group-hover:text-gold/[0.15] transition-colors duration-500">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-
-                {/* Icon */}
-                <div
-                  className={`w-12 h-12 rounded-xl bg-gradient-to-br ${gradientColors[i % gradientColors.length]} flex items-center justify-center text-white mb-5 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
-                >
-                  {iconMap[service.icon]}
+                <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold mx-auto mb-5">
+                  {pillar.icon}
                 </div>
-
-                {/* Title */}
-                <h3 className="text-lg font-bold dark:text-white text-neutral-800 mb-2 group-hover:text-gold transition-colors duration-300">
-                  {service.title}
+                <h3 className="text-lg font-bold dark:text-white text-neutral-800 mb-2">
+                  {pillar.label}
                 </h3>
-
-                {/* Description */}
-                <p className="text-sm dark:text-neutral-400 text-neutral-500 leading-relaxed">
-                  {service.description}
+                <p className="text-sm dark:text-neutral-400 text-neutral-500">
+                  {pillar.description}
                 </p>
               </motion.div>
             ))}
@@ -157,11 +231,89 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* My Process */}
+      {/* Service Categories */}
       <section className="py-20 bg-[#060d1f]">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
-            <div className="mb-12 text-center">
+            <div className="mb-14 text-center">
+              <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
+                What I Build
+              </span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold dark:text-white text-neutral-800 mb-4">
+                Service Categories
+              </h2>
+              <p className="dark:text-neutral-400 text-neutral-500 max-w-xl mx-auto">
+                Focused expertise across the full stack &mdash; from backend
+                infrastructure to polished user experiences
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {serviceCategories.map((service, i) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 35, filter: "blur(4px)" }}
+                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{
+                  duration: 0.6,
+                  delay: i * 0.1,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+                whileHover={{ y: -4 }}
+                className="group bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-8 cursor-default hover:border-gold/30 hover:shadow-[0_0_30px_rgba(212,168,67,0.08)] transition-all duration-500 relative overflow-hidden"
+              >
+                <span className="absolute top-5 right-6 text-6xl font-black text-gold/[0.07] select-none leading-none pointer-events-none group-hover:text-gold/[0.15] transition-colors duration-500">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+
+                <div className="w-14 h-14 rounded-xl bg-gold/10 flex items-center justify-center text-gold mb-6 group-hover:scale-110 transition-transform duration-300">
+                  {iconMap[service.icon]}
+                </div>
+
+                <h3 className="text-xl font-bold dark:text-white text-neutral-800 mb-3 group-hover:text-gold transition-colors duration-300">
+                  {service.title}
+                </h3>
+
+                <p className="text-sm dark:text-neutral-400 text-neutral-500 leading-relaxed mb-6">
+                  {service.description}
+                </p>
+
+                <ul className="space-y-2.5">
+                  {service.features.map((feature) => (
+                    <li
+                      key={feature}
+                      className="flex items-start gap-3 text-sm dark:text-neutral-300 text-neutral-600"
+                    >
+                      <svg
+                        className="w-4 h-4 text-gold mt-0.5 flex-shrink-0"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Development Process — Horizontal Timeline */}
+      <section className="py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <ScrollReveal>
+            <div className="mb-14 text-center">
               <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
                 Process
               </span>
@@ -175,7 +327,7 @@ export default function ServicesPage() {
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {processSteps.map((item, i) => (
               <motion.div
                 key={item.step}
@@ -189,12 +341,15 @@ export default function ServicesPage() {
                 }}
                 className="bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-6 relative overflow-hidden group hover:border-gold/30 transition-all duration-500"
               >
-                {/* Step number */}
+                {/* Connector line between steps (desktop only) */}
+                {i < processSteps.length - 1 && (
+                  <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-[1px] bg-white/10" />
+                )}
+
                 <span className="text-6xl font-black text-gold/[0.1] select-none leading-none block mb-4 group-hover:text-gold/[0.25] transition-colors duration-500">
                   {item.step}
                 </span>
 
-                {/* Gold accent bar */}
                 <div className="w-8 h-[2px] bg-gold mb-4 rounded-full" />
 
                 <h3 className="text-lg font-bold dark:text-white text-neutral-800 mb-2">
@@ -210,7 +365,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Tech Stack Marquee */}
-      <section className="py-16 overflow-hidden">
+      <section className="py-16 overflow-hidden bg-[#060d1f]">
         <div className="max-w-6xl mx-auto px-6 mb-8">
           <ScrollReveal>
             <div className="text-center">
@@ -253,7 +408,48 @@ export default function ServicesPage() {
         </ScrollReveal>
       </section>
 
-      {/* CTA */}
+      {/* Industries Section */}
+      <section className="py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <ScrollReveal>
+            <div className="text-center mb-10">
+              <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
+                Industries
+              </span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold dark:text-white text-neutral-800 mb-4">
+                Industries I Serve
+              </h2>
+              <p className="dark:text-neutral-400 text-neutral-500 max-w-xl mx-auto">
+                Solutions tailored to the unique challenges and workflows of
+                diverse sectors
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.1}>
+            <div className="flex flex-wrap justify-center gap-4 max-w-3xl mx-auto">
+              {industries.map((industry, i) => (
+                <motion.span
+                  key={industry}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.4,
+                    delay: i * 0.06,
+                    ease: [0.16, 1, 0.3, 1],
+                  }}
+                  className="px-6 py-3 rounded-full bg-[#0f1a36] border border-white/[0.06] text-sm font-medium dark:text-neutral-300 text-neutral-600 hover:border-gold/30 hover:text-gold transition-all duration-300 cursor-default"
+                >
+                  {industry}
+                </motion.span>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* CTA Section */}
       <section className="py-20 bg-[#060d1f]">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <ScrollReveal>
@@ -261,7 +457,8 @@ export default function ServicesPage() {
               Ready to start your project?
             </h2>
             <p className="dark:text-neutral-400 text-neutral-500 mb-8 max-w-lg mx-auto">
-              Let&apos;s discuss your vision and build something exceptional together.
+              Let&apos;s discuss your vision and build something exceptional
+              together.
             </p>
             <Link
               to="/contact"
