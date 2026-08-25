@@ -508,6 +508,15 @@ export default function AboutPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </Link>
+            <Link
+              to="/insights"
+              className="inline-flex items-center gap-2 border border-white/10 dark:text-neutral-300 text-neutral-600 px-8 py-3.5 rounded-full font-semibold hover:border-gold/40 hover:text-gold transition-all duration-300"
+            >
+              Read Insights
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </Link>
           </ScrollReveal>
         </div>
       </section>
