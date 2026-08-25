@@ -309,6 +309,219 @@ export const myProjects = [
       { id: 4, name: "Vite.js", path: "/assets/logos/vitejs.svg" },
     ],
   },
+  {
+    id: 12,
+    title: "E-Commerce Admin Dashboard",
+    description:
+      "A full-stack admin dashboard for managing products, orders, customers, and analytics for an online store with real-time sales tracking.",
+    subDescription: [
+      "Product catalog management with categories, variants, and image uploads.",
+      "Order processing workflow with status tracking and customer notifications.",
+      "Sales analytics dashboard with charts, revenue trends, and top products.",
+      "Built with React, Laravel API, MySQL, and Tailwind CSS.",
+    ],
+    href: "",
+    image: "/assets/projects/payroll.png",
+    gradient: projectGradients[3],
+    tags: [
+      { id: 1, name: "React", path: "/assets/logos/react.svg" },
+      { id: 2, name: "Laravel", path: "/assets/logos/laravel.svg" },
+      { id: 3, name: "MySQL", path: "/assets/logos/sqlite.svg" },
+      { id: 4, name: "TailwindCSS", path: "/assets/logos/tailwindcss.svg" },
+    ],
+  },
+  {
+    id: 13,
+    title: "SaaS Analytics Dashboard",
+    description:
+      "A multi-tenant analytics dashboard for SaaS businesses showing user metrics, MRR, churn rates, and feature usage with interactive charts.",
+    subDescription: [
+      "Multi-tenant architecture with per-account data isolation.",
+      "Real-time metric widgets for active users, revenue, and growth.",
+      "Interactive line and bar charts with date range filtering.",
+      "Built with Next.js, Node.js, PostgreSQL, and Chart.js.",
+    ],
+    href: "",
+    image: "/assets/projects/portfolio.JPG",
+    gradient: projectGradients[6],
+    tags: [
+      { id: 1, name: "React", path: "/assets/logos/react.svg" },
+      { id: 2, name: "Next.js", path: "" },
+      { id: 3, name: "Node.js", path: "/assets/logos/nodejs.svg" },
+      { id: 4, name: "PostgreSQL", path: "" },
+    ],
+  },
+  {
+    id: 14,
+    title: "Fitness Tracker Mobile App",
+    description:
+      "A React Native mobile app for tracking workouts, nutrition, and health goals with progress charts and personalized recommendations.",
+    subDescription: [
+      "Workout logging with exercise library, sets, reps, and rest timers.",
+      "Daily nutrition tracking with calorie and macro breakdown.",
+      "Progress charts showing weight, strength gains, and streaks.",
+      "Built with React Native, Expo, and Firebase for real-time sync.",
+    ],
+    href: "",
+    image: "/assets/projects/nike-landing-page.JPG",
+    gradient: projectGradients[4],
+    tags: [
+      { id: 1, name: "React Native", path: "/assets/logos/react.svg" },
+      { id: 2, name: "Expo", path: "" },
+      { id: 3, name: "Firebase", path: "" },
+      { id: 4, name: "JavaScript", path: "/assets/logos/javascript.svg" },
+    ],
+  },
+  {
+    id: 15,
+    title: "Food Delivery Mobile App",
+    description:
+      "A cross-platform food ordering app with restaurant browsing, real-time order tracking, in-app payments, and delivery driver assignment.",
+    subDescription: [
+      "Restaurant and menu browsing with search, filters, and ratings.",
+      "Real-time order tracking with GPS map and delivery ETA.",
+      "In-app payment integration with card and wallet options.",
+      "Built with React Native, Node.js backend, and MongoDB.",
+    ],
+    href: "",
+    image: "/assets/projects/portfolio.JPG",
+    gradient: projectGradients[1],
+    tags: [
+      { id: 1, name: "React Native", path: "/assets/logos/react.svg" },
+      { id: 2, name: "Node.js", path: "/assets/logos/nodejs.svg" },
+      { id: 3, name: "MongoDB", path: "" },
+      { id: 4, name: "Google Maps API", path: "" },
+    ],
+  },
+  {
+    id: 16,
+    title: "Inventory & POS System",
+    description:
+      "A point-of-sale and inventory management system for retail shops with barcode scanning, stock alerts, sales reporting, and multi-outlet support.",
+    subDescription: [
+      "Product management with barcode generation and stock tracking.",
+      "POS terminal interface with quick-add, discounts, and receipt printing.",
+      "Low-stock alerts and automated reorder notifications.",
+      "Sales reports with daily, weekly, and monthly breakdowns.",
+    ],
+    href: "",
+    image: "/assets/projects/payroll.png",
+    gradient: projectGradients[8],
+    tags: [
+      { id: 1, name: "Laravel", path: "/assets/logos/laravel.svg" },
+      { id: 2, name: "React", path: "/assets/logos/react.svg" },
+      { id: 3, name: "MySQL", path: "/assets/logos/sqlite.svg" },
+      { id: 4, name: "TailwindCSS", path: "/assets/logos/tailwindcss.svg" },
+    ],
+  },
+  {
+    id: 17,
+    title: "CRM — Client Relationship Manager",
+    description:
+      "A customer relationship management tool for tracking leads, deals, client communication, and sales pipeline with team collaboration features.",
+    subDescription: [
+      "Lead capture forms with auto-assignment to sales reps.",
+      "Deal pipeline with drag-and-drop Kanban board view.",
+      "Activity logging for calls, emails, and meetings per contact.",
+      "Built with Laravel, React, MySQL, and real-time notifications via WebSockets.",
+    ],
+    href: "",
+    image: "/assets/projects/hostel.jpg",
+    gradient: projectGradients[0],
+    tags: [
+      { id: 1, name: "Laravel", path: "/assets/logos/laravel.svg" },
+      { id: 2, name: "React", path: "/assets/logos/react.svg" },
+      { id: 3, name: "WebSockets", path: "" },
+      { id: 4, name: "MySQL", path: "/assets/logos/sqlite.svg" },
+    ],
+  },
+  {
+    id: 18,
+    title: "Payment Gateway Integration API",
+    description:
+      "A RESTful API service that unifies multiple payment providers (Paystack, Flutterwave, bank transfers) into a single consistent interface for developers.",
+    subDescription: [
+      "Unified API endpoint supporting Paystack, Flutterwave, and bank transfers.",
+      "Webhook handling for payment verification and status callbacks.",
+      "Transaction logging, reconciliation, and failed-payment retry logic.",
+      "Built with Node.js, Express, PostgreSQL, and Redis for queuing.",
+    ],
+    href: "",
+    image: "/assets/projects/network-analyzer.jpg",
+    gradient: projectGradients[5],
+    tags: [
+      { id: 1, name: "Node.js", path: "/assets/logos/nodejs.svg" },
+      { id: 2, name: "Express", path: "" },
+      { id: 3, name: "PostgreSQL", path: "" },
+      { id: 4, name: "REST API", path: "" },
+      { id: 5, name: "Redis", path: "" },
+    ],
+  },
+  {
+    id: 19,
+    title: "Notification Microservice",
+    description:
+      "A centralized notification service that handles email, SMS, and push notifications across multiple applications via a single API with template management.",
+    subDescription: [
+      "Multi-channel delivery: email (SMTP), SMS (Termii), and push (Firebase).",
+      "Template engine with variable interpolation and preview.",
+      "Rate limiting, retry logic, and delivery status tracking.",
+      "Built with Node.js, Bull queue, Redis, and PostgreSQL.",
+    ],
+    href: "",
+    image: "/assets/projects/student-filing.png",
+    gradient: projectGradients[2],
+    tags: [
+      { id: 1, name: "Node.js", path: "/assets/logos/nodejs.svg" },
+      { id: 2, name: "Express", path: "" },
+      { id: 3, name: "Redis", path: "" },
+      { id: 4, name: "REST API", path: "" },
+      { id: 5, name: "PostgreSQL", path: "" },
+    ],
+  },
+  {
+    id: 20,
+    title: "Auth & User Management Service",
+    description:
+      "A standalone authentication microservice providing JWT-based login, OAuth social auth, role-based access control, and session management for multiple apps.",
+    subDescription: [
+      "JWT access and refresh token authentication flow.",
+      "OAuth integration with Google and GitHub login.",
+      "Role-based access control with permission scoping.",
+      "Session management with device tracking and revoke-all capability.",
+    ],
+    href: "",
+    image: "/assets/projects/hostel.jpg",
+    gradient: projectGradients[9],
+    tags: [
+      { id: 1, name: "Node.js", path: "/assets/logos/nodejs.svg" },
+      { id: 2, name: "Express", path: "" },
+      { id: 3, name: "MongoDB", path: "" },
+      { id: 4, name: "REST API", path: "" },
+    ],
+  },
+  {
+    id: 21,
+    title: "NFT Marketplace",
+    description:
+      "A decentralized NFT marketplace for minting, buying, and selling digital collectibles with wallet integration and auction bidding system.",
+    subDescription: [
+      "ERC-721 smart contract for NFT minting and ownership transfer.",
+      "Marketplace with fixed-price listings and timed auction bidding.",
+      "MetaMask and WalletConnect integration for seamless wallet auth.",
+      "IPFS-based metadata storage for decentralized artwork hosting.",
+    ],
+    href: "",
+    image: "/assets/projects/blockchain-medical.jpg",
+    gradient: projectGradients[7],
+    tags: [
+      { id: 1, name: "Solidity", path: "" },
+      { id: 2, name: "React", path: "/assets/logos/react.svg" },
+      { id: 3, name: "Web3.js", path: "" },
+      { id: 4, name: "IPFS", path: "" },
+      { id: 5, name: "Hardhat", path: "" },
+    ],
+  },
 ];
 
 export const mySocials = [

@@ -207,8 +207,8 @@ export default function ProjectsPage() {
           <ScrollReveal>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               {[
-                { label: "Projects", value: "15+" },
-                { label: "Technologies", value: "10+" },
+                { label: "Projects", value: "21+" },
+                { label: "Technologies", value: "15+" },
                 { label: "Clients", value: "15+" },
                 { label: "Years", value: "4+" },
               ].map((stat) => (
