@@ -14,11 +14,11 @@ const filterCategories = [
 ];
 
 const filterKeywords = {
-  "Web Apps": ["web", "react", "next", "frontend", "fullstack", "full-stack", "dashboard", "portfolio", "website", "app"],
-  "Mobile": ["mobile", "android", "ios", "react native", "flutter"],
-  "Business Systems": ["business", "system", "erp", "crm", "management", "inventory", "invoice", "billing", "pos", "hr"],
-  "API": ["api", "rest", "graphql", "backend", "server", "endpoint"],
-  "Blockchain": ["blockchain", "web3", "crypto", "defi", "smart contract", "nft"],
+  "Web Apps": ["web", "react", "next", "frontend", "fullstack", "full-stack", "dashboard", "portfolio", "website", "landing", "estate", "climate"],
+  "Mobile": ["mobile", "android", "ios", "react native", "flutter", "fitness", "food delivery"],
+  "Business Systems": ["business", "system", "erp", "crm", "management", "inventory", "invoice", "billing", "pos", "hr", "payroll", "student", "hostel", "gpa", "school"],
+  "API": ["api", "rest", "graphql", "backend", "server", "endpoint", "microservice", "payment gateway", "notification"],
+  "Blockchain": ["blockchain", "web3", "crypto", "defi", "smart contract", "nft", "medical crowdfunding"],
 };
 
 function matchesFilter(project, category) {
@@ -144,6 +144,11 @@ export default function ProjectsPage() {
                       />
                     )}
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0f1a36] via-transparent to-transparent" />
+                    {!project.href && (
+                      <span className="absolute top-3 left-3 px-2 py-0.5 rounded text-[10px] font-semibold bg-white/10 backdrop-blur-sm text-neutral-300 border border-white/10">
+                        Concept
+                      </span>
+                    )}
                   </div>
 
                   {/* Card Content */}
@@ -224,8 +229,8 @@ export default function ProjectsPage() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               {[
                 { label: "Projects", value: "21+" },
-                { label: "Technologies", value: "15+" },
-                { label: "Clients", value: "15+" },
+                { label: "Technologies", value: "14+" },
+                { label: "Clients", value: "18+" },
                 { label: "Years", value: "4+" },
               ].map((stat) => (
                 <div key={stat.label}>

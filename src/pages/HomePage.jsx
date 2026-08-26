@@ -5,15 +5,6 @@ import { FlipWords } from "../components/FlipWords";
 import ScrollReveal from "../components/ScrollReveal";
 import { reviews, portfolioStats } from "../constants";
 
-const partnerNames = [
-  "Scholars Nudge",
-  "Payroll System",
-  "Student Filing",
-  "Real Estate",
-  "GPA Portal",
-  "Climate Website",
-];
-
 const positionCards = [
   {
     label: "Not",
@@ -53,7 +44,7 @@ const pillars = [
       </svg>
     ),
     title: "Software",
-    description: "Digital infrastructure that powers growth.",
+    description: "We build custom web applications, mobile apps, and business systems from the ground up. Every solution is engineered for performance, security, and long-term maintainability. From student portals to enterprise dashboards, our software powers real operations for real businesses.",
   },
   {
     icon: (
@@ -63,7 +54,7 @@ const pillars = [
       </svg>
     ),
     title: "Innovation",
-    description: "Operational frameworks for scale.",
+    description: "We stay at the cutting edge of technology to give your business a competitive advantage. AI-powered automation, blockchain integration, and modern cloud architectures are tools we deploy strategically — not for novelty, but for measurable impact.",
   },
   {
     icon: (
@@ -72,7 +63,7 @@ const pillars = [
       </svg>
     ),
     title: "Impact",
-    description: "Disciplined delivery of results.",
+    description: "Technology without outcomes is just code. We measure success by the efficiency gains, cost reductions, and revenue growth our solutions deliver. Every project is tied to clear business objectives and measurable results.",
   },
 ];
 
@@ -181,32 +172,32 @@ const differentiators = [
   {
     num: "01",
     title: "Execution-First",
-    description: "Not theory-led. We prioritize tangible results and measurable outcomes over conceptual frameworks.",
+    description: "We do not sell strategies — we build systems. Every engagement produces tangible, deployed, working software that your team can use immediately.",
   },
   {
     num: "02",
     title: "Technology as Infrastructure",
-    description: "Not decoration. We build technical foundations that power operations, not superficial digital layers.",
+    description: "We choose technology based on fit, not trends. Our stack decisions are guided by your business requirements, timeline, and long-term maintenance capacity.",
   },
   {
     num: "03",
     title: "Systems Thinking",
-    description: "Across operations. We design interconnected frameworks that address the full scope of business operations.",
+    description: "We design interconnected solutions that address the full scope of your operations. Isolated features create complexity; integrated systems create clarity.",
   },
   {
     num: "04",
     title: "Discipline & Governance",
-    description: "Accountability built-in. We establish clear structures, ownership, and performance standards.",
+    description: "Clear milestones, transparent communication, and structured delivery processes ensure projects stay on time and on budget.",
   },
   {
     num: "05",
     title: "Long-Term Value",
-    description: "Over short-term delivery. We optimize for sustainable growth and lasting impact.",
+    description: "We build for sustainability, not shortcuts. Clean architecture, comprehensive documentation, and scalable design mean your system grows with your business.",
   },
   {
     num: "06",
     title: "Institutional Rigor",
-    description: "Professional standards. Enterprise-grade processes, documentation, and quality control.",
+    description: "We apply enterprise-grade standards to every project, regardless of size. Security, performance, and maintainability are non-negotiable.",
   },
 ];
 

@@ -6,7 +6,7 @@ const featuredArticle = {
   category: "Architecture",
   title: "Building Scalable Full-Stack Applications: A Developer&apos;s Guide",
   description:
-    "A deep dive into the architectural decisions that separate short-lived prototypes from production-grade applications. From monolith to modular design, database indexing strategies, caching layers, and horizontal scaling — this guide covers the foundational patterns every full-stack developer needs to understand before scaling beyond a single server.",
+    "A deep dive into the architectural decisions that separate short-lived prototypes from production-grade applications. From monolith to modular design, database indexing strategies, caching layers, and horizontal scaling — this guide covers the foundational patterns every full-stack developer needs to understand before scaling beyond a single server. Based on real-world experience building systems that handle thousands of concurrent users.",
   date: "Jan 15, 2026",
   readTime: "12 min read",
 };
@@ -16,7 +16,7 @@ const articles = [
     category: "Business Strategy",
     title: "Why Every Business Needs a Custom Software Solution",
     description:
-      "Off-the-shelf tools get you started, but custom software gives you a competitive edge. Explore how tailored systems reduce operational friction, eliminate license costs, and align perfectly with your unique workflows.",
+      "Off-the-shelf tools get you started, but custom software gives you a competitive edge. Explore how tailored systems reduce operational friction, eliminate license costs, and align perfectly with your unique workflows. We have seen businesses transform their operations within weeks of switching to custom-built solutions.",
     date: "Jan 11, 2026",
     readTime: "8 min read",
   },
@@ -24,7 +24,7 @@ const articles = [
     category: "Technology",
     title: "The Role of APIs in Modern Software Architecture",
     description:
-      "APIs are the backbone of connected systems. Learn how RESTful design, versioning strategies, rate limiting, and documentation practices create interfaces that other developers actually want to use.",
+      "APIs are the backbone of connected systems. Learn how RESTful design, versioning strategies, rate limiting, and documentation practices create interfaces that other developers actually want to use. This guide draws from our experience building APIs that serve multiple client applications simultaneously.",
     date: "Jan 8, 2026",
     readTime: "10 min read",
   },
@@ -32,7 +32,7 @@ const articles = [
     category: "Development",
     title: "Mobile-First Development: Best Practices for 2026",
     description:
-      "With mobile traffic surpassing desktop, designing mobile-first is no longer optional. Break down responsive breakpoints, touch targets, performance budgets, and progressive web app strategies that keep users engaged.",
+      "With mobile traffic surpassing desktop, designing mobile-first is no longer optional. Break down responsive breakpoints, touch targets, performance budgets, and progressive web app strategies that keep users engaged. These are battle-tested patterns from apps we have deployed for thousands of active users.",
     date: "Jan 5, 2026",
     readTime: "6 min read",
   },
@@ -43,7 +43,7 @@ const moreArticles = [
     category: "Architecture",
     title: "Database Design Patterns Every Developer Should Know",
     description:
-      "From normalization to denormalization, composite indexes to partitioning — the database design decisions that determine whether your application performs at 100 rows or 100 million.",
+      "From normalization to denormalization, composite indexes to partitioning — the database design decisions that determine whether your application performs at 100 rows or 100 million. We share the exact patterns we use when architecting databases for high-traffic applications.",
     date: "Dec 28, 2025",
     readTime: "9 min read",
   },
@@ -51,7 +51,7 @@ const moreArticles = [
     category: "Security",
     title: "Securing Web Applications: From Authentication to Deployment",
     description:
-      "A comprehensive walkthrough of modern web application security — covering JWT best practices, CORS configuration, SQL injection prevention, and infrastructure hardening for production environments.",
+      "A comprehensive walkthrough of modern web application security — covering JWT best practices, CORS configuration, SQL injection prevention, and infrastructure hardening for production environments. Every recommendation is based on real security audits and production deployments.",
     date: "Dec 20, 2025",
     readTime: "11 min read",
   },
@@ -59,7 +59,7 @@ const moreArticles = [
     category: "Development",
     title: "React vs Next.js: Choosing the Right Framework",
     description:
-      "Both are powerful, but they solve different problems. Compare rendering strategies, SEO capabilities, developer experience, and deployment models to make an informed architectural choice.",
+      "Both are powerful, but they solve different problems. Compare rendering strategies, SEO capabilities, developer experience, and deployment models to make an informed architectural choice. We have built production applications with both and share our honest assessment.",
     date: "Dec 15, 2025",
     readTime: "7 min read",
   },
@@ -323,14 +323,14 @@ export default function InsightsPage() {
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-gold/[0.03] rounded-full blur-3xl pointer-events-none" />
 
               <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block relative">
-                Newsletter
+                Stay Updated
               </span>
               <h2 className="text-3xl md:text-4xl font-bold dark:text-white text-neutral-800 mb-4 relative">
                 Stay Updated
               </h2>
               <p className="dark:text-neutral-400 text-neutral-500 mb-8 max-w-lg mx-auto relative">
-                Get exclusive insights on development, architecture, and technology
-                delivered to your inbox.
+                Join 500+ developers and business leaders who receive weekly insights on software
+                architecture, development best practices, and technology strategy from DatTechGee Technologies.
               </p>
 
               {/* Email Form */}

@@ -1,69 +1,3 @@
-export const myServices = [
-  {
-    id: 1,
-    title: "Full-Stack Web Applications",
-    description:
-      "End-to-end web applications with React frontends, Laravel/Node.js backends, and MySQL databases — built for scale with authentication, dashboards, and reporting.",
-    icon: "layers",
-  },
-  {
-    id: 2,
-    title: "Mobile App Development",
-    description:
-      "Cross-platform Android/iOS applications using React Native and Expo with GPS tracking, push notifications, biometric auth, and offline data storage.",
-    icon: "smartphone",
-  },
-  {
-    id: 3,
-    title: "Business Management Systems",
-    description:
-      "Custom ERP, CRM, payroll, inventory, student management, and attendance systems tailored to your organization's workflow.",
-    icon: "briefcase",
-  },
-  {
-    id: 4,
-    title: "API Development & Integration",
-    description:
-      "Secure RESTful APIs with token authentication, third-party service integrations, and seamless data flow between systems and platforms.",
-    icon: "plug",
-  },
-  {
-    id: 5,
-    title: "Database Design & Management",
-    description:
-      "Efficient MySQL schemas, normalization, migrations, seeders, query optimization, and data architecture for reliable applications.",
-    icon: "database",
-  },
-  {
-    id: 6,
-    title: "Custom Website Development",
-    description:
-      "Modern, responsive websites with landing pages, contact forms, service portfolios, SEO-friendly structure, and mobile optimization.",
-    icon: "globe",
-  },
-  {
-    id: 7,
-    title: "Geolocation & Biometric Systems",
-    description:
-      "GPS geofencing, face verification attendance, radius-based classroom verification, background location monitoring, and biometric integration.",
-    icon: "cpu",
-  },
-  {
-    id: 8,
-    title: "Reporting & PDF Generation",
-    description:
-      "Automated payslip generation, PDF reports, Excel/CSV import and export, attendance analytics, and data visualization dashboards.",
-    icon: "wrench",
-  },
-  {
-    id: 9,
-    title: "Deployment & Maintenance",
-    description:
-      "Deployment to Vercel, Railway, Render, Hostinger, and custom servers. Ongoing support, performance monitoring, and bug fixes.",
-    icon: "palette",
-  },
-];
-
 const projectGradients = [
   "from-blue-600 via-purple-600 to-indigo-700",
   "from-emerald-600 via-teal-600 to-cyan-700",
@@ -649,6 +583,34 @@ export const reviews = [
     initials: "BI",
     colorIdx: 7,
   },
+  {
+    name: "Olumide Bankole",
+    username: "@olumide_farmtrack",
+    body: "Isaac built our agricultural dashboard from the ground up. Real-time crop monitoring, yield analytics, and farm worker GPS tracking all work flawlessly. It has completely transformed how we manage our farms across three states.",
+    initials: "OB",
+    colorIdx: 0,
+  },
+  {
+    name: "Ngozi Okafor",
+    username: "@ngozi_eduprime",
+    body: "Our school management system DatTechGee delivered handles everything — student records, results, fee payments, and parent notifications. Parents love the portal and our admin workload dropped by half. Isaac understood our needs perfectly.",
+    initials: "NO",
+    colorIdx: 1,
+  },
+  {
+    name: "Yusuf Abdullahi",
+    username: "@yusuf_quickdeliver",
+    body: "The logistics app Isaac built for QuickDeliver is incredibly reliable. Real-time rider tracking, automated dispatch, delivery confirmations, and our clients can track their packages live. It's been a game changer for our operations.",
+    initials: "YA",
+    colorIdx: 2,
+  },
+  {
+    name: "Chioma Eze",
+    username: "@chioma_stylehub",
+    body: "DatTechGee built our entire e-commerce platform — product catalog, cart, Paystack integration, order management, and a beautiful storefront. Our online sales tripled within the first two months of launching. Isaac's work speaks for itself.",
+    initials: "CE",
+    colorIdx: 3,
+  },
 ];
 
 export const getAvatarColors = (idx) => avatarColors[idx % avatarColors.length];
@@ -679,20 +641,10 @@ export const industries = [
   { name: "Logistics", initials: "LG", colorIdx: 7 },
 ];
 
-export const currentFocus = [
-  "Full-Stack Development",
-  "Mobile App Development",
-  "Geolocation & Biometric Systems",
-  "AI-Powered Applications",
-  "SaaS Platforms",
-  "REST API Development",
-  "Database Architecture",
-];
-
 export const portfolioStats = {
   yearsExperience: 4,
-  projectsDelivered: 15,
-  happyClients: 15,
+  projectsDelivered: 21,
+  happyClients: 18,
   technologiesUsed: 14,
   clientSatisfaction: 100,
 };

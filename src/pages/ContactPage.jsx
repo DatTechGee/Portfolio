@@ -64,6 +64,22 @@ const faqs = [
     question: "How do I get started?",
     answer: "Reach out via the form, WhatsApp, or email. We will discuss your needs, provide a quote, and begin.",
   },
+  {
+    question: "Do you work with clients outside Nigeria?",
+    answer: "Yes. While DatTechGee Technologies is based in Abuja, Nigeria, we serve clients globally. Remote collaboration is our standard operating model, and we have delivered projects for clients across Africa, Europe, and North America.",
+  },
+  {
+    question: "What is the typical project timeline?",
+    answer: "Simple websites and landing pages take 2-3 weeks. Business management systems and full-stack applications typically take 4-8 weeks. Mobile apps with backend infrastructure take 6-12 weeks. We provide a detailed timeline after the discovery phase.",
+  },
+  {
+    question: "Do you sign NDAs before starting work?",
+    answer: "Absolutely. We understand the sensitivity of business information and are happy to sign Non-Disclosure Agreements before any project discussion. Your intellectual property and business data are treated with the utmost confidentiality.",
+  },
+  {
+    question: "What happens after the project is delivered?",
+    answer: "DatTechGee Technologies provides post-launch support including bug fixes, performance monitoring, feature additions, and system updates. We offer flexible maintenance plans — monthly, quarterly, or annual — to keep your system running at peak performance.",
+  },
 ];
 
 const projectTypes = ["Web App", "Mobile App", "Business System", "API Development", "Custom Website", "Other"];
@@ -196,7 +212,7 @@ export default function ContactPage() {
                   Prefer a quick conversation?
                 </p>
                 <p className="dark:text-neutral-400 text-neutral-500 text-sm">
-                  Reach us directly on WhatsApp or LinkedIn for a faster response.
+                  Reach us directly on WhatsApp or LinkedIn. We respond within 2 business hours.
                 </p>
               </div>
               <div className="flex items-center gap-3">
@@ -223,6 +239,22 @@ export default function ContactPage() {
                   LinkedIn
                 </a>
               </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Response Time Commitment */}
+      <section className="pb-12">
+        <div className="max-w-6xl mx-auto px-6">
+          <ScrollReveal>
+            <div className="flex items-center justify-center gap-3 py-4 px-6 bg-gold/5 border border-gold/10 rounded-xl">
+              <svg className="w-5 h-5 text-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <p className="dark:text-neutral-300 text-neutral-600 text-sm text-center">
+                All inquiries receive a response within 24 business hours. Emergency support available for existing clients.
+              </p>
             </div>
           </ScrollReveal>
         </div>

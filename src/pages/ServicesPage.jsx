@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import ScrollReveal from "../components/ScrollReveal";
-import { myServices, techStack } from "../constants";
+import { techStack } from "../constants";
 import Marquee from "../components/Marquee";
 
 const iconMap = {
@@ -161,12 +161,12 @@ const processSteps = [
 ];
 
 const industries = [
-  "Education",
-  "Healthcare",
-  "Finance",
-  "Real Estate",
-  "E-Commerce",
-  "Logistics",
+  { name: "Education", description: "School management systems, student portals, attendance tracking, and academic dashboards for institutions of all sizes." },
+  { name: "Healthcare", description: "Patient management, appointment scheduling, and medical record systems built with strict data privacy compliance." },
+  { name: "Finance", description: "Payment processing, transaction tracking, and financial reporting systems with bank-grade security." },
+  { name: "Real Estate", description: "Property listing platforms, tenant management, and CRM systems for real estate businesses." },
+  { name: "E-Commerce", description: "Online stores, inventory management, order processing, and multi-vendor marketplace platforms." },
+  { name: "Logistics", description: "Fleet tracking, delivery management, route optimization, and supply chain visibility systems." },
 ];
 
 export default function ServicesPage() {
@@ -433,25 +433,100 @@ export default function ServicesPage() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <div className="flex flex-wrap justify-center gap-4 max-w-3xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               {industries.map((industry, i) => (
-                <motion.span
-                  key={industry}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
+                <motion.div
+                  key={industry.name}
+                  initial={{ opacity: 0, y: 30, filter: "blur(4px)" }}
+                  whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                   viewport={{ once: true }}
                   transition={{
-                    duration: 0.4,
-                    delay: i * 0.06,
+                    duration: 0.6,
+                    delay: i * 0.08,
                     ease: [0.16, 1, 0.3, 1],
                   }}
-                  className="px-6 py-3 rounded-full bg-[#0f1a36] border border-white/[0.06] text-sm font-medium dark:text-neutral-300 text-neutral-600 hover:border-gold/30 hover:text-gold transition-all duration-300 cursor-default"
+                  className="bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-6 hover:border-gold/30 transition-all duration-500"
                 >
-                  {industry}
-                </motion.span>
+                  <h3 className="text-lg font-bold dark:text-white text-neutral-800 mb-2">
+                    {industry.name}
+                  </h3>
+                  <p className="text-sm dark:text-neutral-400 text-neutral-500 leading-relaxed">
+                    {industry.description}
+                  </p>
+                </motion.div>
               ))}
             </div>
           </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Engagement Models */}
+      <section className="py-20 bg-[#060d1f]">
+        <div className="max-w-6xl mx-auto px-6">
+          <ScrollReveal>
+            <div className="mb-14 text-center">
+              <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
+                Working Together
+              </span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold dark:text-white text-neutral-800 mb-4">
+                Engagement Models
+              </h2>
+              <p className="dark:text-neutral-400 text-neutral-500 max-w-xl mx-auto">
+                Flexible ways to work with DatTechGee Technologies based on your project needs and timeline.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {[
+              {
+                title: "Fixed-Price Project",
+                description: "Clear scope, timeline, and budget agreed upfront. Ideal for well-defined projects with specific requirements and measurable deliverables.",
+                bestFor: "Websites, MVPs, feature development",
+                timeline: "2–8 weeks",
+              },
+              {
+                title: "Retainer Partnership",
+                description: "Ongoing development support with a dedicated monthly allocation. Perfect for continuous improvement, new features, and long-term product growth.",
+                bestFor: "Products, maintenance, iterations",
+                timeline: "Monthly",
+              },
+              {
+                title: "Technical Consulting",
+                description: "Architecture reviews, technology strategy, code audits, and technical advisory for teams building their own products and platforms.",
+                bestFor: "Architecture, code reviews, strategy",
+                timeline: "Per session",
+              },
+            ].map((model, i) => (
+              <motion.div
+                key={model.title}
+                initial={{ opacity: 0, y: 30, filter: "blur(4px)" }}
+                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-8 relative overflow-hidden group hover:border-gold/30 transition-all duration-500"
+              >
+                <span className="absolute top-5 right-6 text-6xl font-black text-gold/[0.07] select-none leading-none pointer-events-none group-hover:text-gold/[0.15] transition-colors duration-500">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div className="w-10 h-[2px] bg-gold mb-5 rounded-full" />
+                <h3 className="text-xl font-bold dark:text-white text-neutral-800 mb-3 group-hover:text-gold transition-colors duration-300">
+                  {model.title}
+                </h3>
+                <p className="dark:text-neutral-400 text-neutral-500 text-sm leading-relaxed mb-5">
+                  {model.description}
+                </p>
+                <div className="flex items-center justify-between pt-4 border-t border-white/[0.06]">
+                  <span className="text-xs dark:text-neutral-500 text-neutral-500">
+                    Best for: {model.bestFor}
+                  </span>
+                  <span className="text-xs text-gold font-semibold">
+                    {model.timeline}
+                  </span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 

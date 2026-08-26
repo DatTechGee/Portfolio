@@ -12,7 +12,7 @@ const clientSegments = [
     title: "Startups & MVPs",
     tagline: "From idea to launch-ready product",
     description:
-      "Helping founders validate ideas, build minimum viable products, and establish the technical foundations needed to attract investors and early adopters. From rapid prototyping to production deployment, every decision is made with speed and scalability in mind.",
+      "Helping founders validate ideas, build minimum viable products, and establish the technical foundations needed to attract investors and early adopters. From rapid prototyping to production deployment, every decision is made with speed and scalability in mind. We have helped launch 8+ startups from concept to market-ready products.",
   },
   {
     icon: (
@@ -23,7 +23,7 @@ const clientSegments = [
     title: "Schools & Education",
     tagline: "Digital transformation for institutions",
     description:
-      "Comprehensive school management systems with student portals, attendance tracking, GPA computation, fee management, and real-time reporting. Built to streamline administrative workflows and give educators more time to focus on what matters — teaching.",
+      "Comprehensive school management systems with student portals, attendance tracking, GPA computation, fee management, and real-time reporting. Built to streamline administrative workflows and give educators more time to focus on what matters — teaching. Our solutions serve institutions with 100 to 5,000+ students.",
   },
   {
     icon: (
@@ -34,7 +34,7 @@ const clientSegments = [
     title: "SMEs & Business Systems",
     tagline: "Streamline operations with custom software",
     description:
-      "Tailored payroll systems, inventory management, CRM platforms, and billing solutions designed to eliminate manual processes and reduce errors. Custom-built software that integrates seamlessly into your existing operations and scales as you grow.",
+      "Tailored payroll systems, inventory management, CRM platforms, and billing solutions designed to eliminate manual processes and reduce errors. Custom-built software that integrates seamlessly into your existing operations and scales as you grow. We have delivered 15+ business systems across Nigeria.",
   },
   {
     icon: (
@@ -45,7 +45,7 @@ const clientSegments = [
     title: "Enterprise & API Integration",
     tagline: "Scalable architecture for complex needs",
     description:
-      "RESTful API design, third-party service integrations, microservices architecture, and cloud deployment for organizations that need enterprise-grade reliability. Built with security, observability, and performance at the core of every decision.",
+      "RESTful API design, third-party service integrations, microservices architecture, and cloud deployment for organizations that need enterprise-grade reliability. Built with security, observability, and performance at the core of every decision. Our APIs handle millions of requests across multiple client applications.",
   },
 ];
 
@@ -281,7 +281,7 @@ export default function SolutionsPage() {
           <ScrollReveal>
             <div className="mb-12 text-center">
               <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
-                Why DatTechGee Technologies
+                Why Choose Us
               </span>
               <h2 className="text-3xl md:text-4xl font-bold dark:text-white text-neutral-800 mb-4">
                 Why DatTechGee Technologies
@@ -320,6 +320,57 @@ export default function SolutionsPage() {
                     </p>
                   </div>
                 </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Engagement Timeline */}
+      <section className="py-20 bg-[#060d1f]">
+        <div className="max-w-6xl mx-auto px-6">
+          <ScrollReveal>
+            <div className="mb-14 text-center">
+              <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
+                Timeline
+              </span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold dark:text-white text-neutral-800 mb-4">
+                How We Deliver
+              </h2>
+              <p className="dark:text-neutral-400 text-neutral-500 max-w-xl mx-auto">
+                A structured engagement process from first conversation to production deployment and beyond.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              { phase: "Discovery", duration: "1–2 Weeks", description: "Requirements analysis, technical architecture, and project scoping with clear deliverables." },
+              { phase: "Development", duration: "3–8 Weeks", description: "Iterative development with weekly demos, feedback integration, and quality assurance." },
+              { phase: "Testing", duration: "1–2 Weeks", description: "Comprehensive testing, performance optimization, and security hardening before launch." },
+              { phase: "Launch & Support", duration: "Ongoing", description: "Production deployment, monitoring, and continuous improvement with dedicated support." },
+            ].map((item, i) => (
+              <motion.div
+                key={item.phase}
+                initial={{ opacity: 0, y: 30, filter: "blur(4px)" }}
+                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-6 relative overflow-hidden group hover:border-gold/30 transition-all duration-500"
+              >
+                <span className="text-5xl font-black text-gold/[0.08] select-none leading-none block mb-3 group-hover:text-gold/[0.2] transition-colors duration-500">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div className="w-8 h-[2px] bg-gold mb-4 rounded-full" />
+                <h3 className="text-lg font-bold dark:text-white text-neutral-800 mb-1">
+                  {item.phase}
+                </h3>
+                <p className="text-gold text-xs font-semibold tracking-wide uppercase mb-3">
+                  {item.duration}
+                </p>
+                <p className="dark:text-neutral-400 text-neutral-500 text-sm leading-relaxed">
+                  {item.description}
+                </p>
               </motion.div>
             ))}
           </div>
