@@ -20,7 +20,7 @@ const Footer = () => {
               <span className="text-lg font-bold text-white">DatTechGee</span>
             </Link>
             <p className="text-sm text-neutral-400 leading-relaxed max-w-sm">
-              DatTechGee is a software solutions company building secure, scalable web applications,
+              DatTechGee Technologies builds secure, scalable web applications,
               mobile apps, and business systems. Founded by Isaac Emmanuel.
             </p>
             <div className="flex gap-3 mt-5">

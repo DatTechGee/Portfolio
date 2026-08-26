@@ -93,8 +93,8 @@ export default function AboutPage() {
               Building Digital Systems That Drive Growth
             </h1>
             <p className="dark:text-neutral-400 text-neutral-500 max-w-2xl mx-auto text-lg">
-              DatTechGee is a software solutions company delivering secure, scalable
-              web applications, mobile apps, and business systems to clients across
+              DatTechGee Technologies builds secure, scalable
+              web applications, mobile apps, and business systems for clients across
               Nigeria and beyond. Founded by Isaac Emmanuel.
             </p>
           </ScrollReveal>
@@ -124,7 +124,7 @@ export default function AboutPage() {
                   Hi, I&apos;m Isaac Emmanuel
                 </h2>
                 <p className="text-gold text-sm font-semibold tracking-wide uppercase mb-4">
-                  Founder &amp; Lead Developer — DatTechGee
+                  Founder &amp; Lead Developer — DatTechGee Technologies
                 </p>
                 <div className="space-y-4 dark:text-neutral-400 text-neutral-500 leading-relaxed text-sm md:text-base">
                   <p>

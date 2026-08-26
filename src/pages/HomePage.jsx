@@ -163,8 +163,8 @@ const HomePage = () => {
               </ScrollReveal>
 
               <ScrollReveal direction="up" delay={0.35}>
-                <p className="text-base text-neutral-400">
-                  Software solutions company delivering enterprise-grade digital products.
+                <p className="text-base text-gold font-semibold tracking-wide">
+                  Software. Innovation. Impact.
                 </p>
               </ScrollReveal>
 
