@@ -84,7 +84,7 @@ const Navbar = () => {
                 DatTechGee
               </span>
               <span className="text-[10px] font-medium uppercase tracking-[0.2em] dark:text-neutral-500 text-neutral-400 leading-tight">
-                Full Stack Dev
+                Software Solutions
               </span>
             </div>
           </Link>

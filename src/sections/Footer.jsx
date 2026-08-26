@@ -20,8 +20,8 @@ const Footer = () => {
               <span className="text-lg font-bold text-white">DatTechGee</span>
             </Link>
             <p className="text-sm text-neutral-400 leading-relaxed max-w-sm">
-              Full Stack Software Developer building secure, scalable, and intelligent web and mobile applications.
-              Specializing in Laravel, React, and modern frameworks.
+              DatTechGee is a software solutions company building secure, scalable web applications,
+              mobile apps, and business systems. Founded by Isaac Emmanuel.
             </p>
             <div className="flex gap-3 mt-5">
               {mySocials.map((social, index) => (
@@ -93,7 +93,7 @@ const Footer = () => {
         {/* Bottom */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-neutral-500">
-            &copy; {new Date().getFullYear()} Isaac Emmanuel (DatTechGee). All rights reserved.
+            &copy; {new Date().getFullYear()} DatTechGee — Isaac Emmanuel. All rights reserved.
           </p>
           <p className="text-xs text-neutral-500">
             Built with React, Tailwind CSS &amp; Motion

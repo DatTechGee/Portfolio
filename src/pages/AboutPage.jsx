@@ -86,16 +86,16 @@ export default function AboutPage() {
       <section className="section-spacing pt-32 pb-12">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <ScrollReveal>
-            <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
+              <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
               About
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold dark:text-white text-neutral-800 mb-6">
               Building Digital Systems That Drive Growth
             </h1>
             <p className="dark:text-neutral-400 text-neutral-500 max-w-2xl mx-auto text-lg">
-              From idea to deployment — crafting secure, scalable web and mobile
-              applications that solve real-world problems for businesses across
-              Nigeria and beyond.
+              DatTechGee is a software solutions company delivering secure, scalable
+              web applications, mobile apps, and business systems to clients across
+              Nigeria and beyond. Founded by Isaac Emmanuel.
             </p>
           </ScrollReveal>
         </div>
@@ -124,7 +124,7 @@ export default function AboutPage() {
                   Hi, I&apos;m Isaac Emmanuel
                 </h2>
                 <p className="text-gold text-sm font-semibold tracking-wide uppercase mb-4">
-                  Full-Stack Developer &amp; Founder of DatTechGee
+                  Founder &amp; Lead Developer — DatTechGee
                 </p>
                 <div className="space-y-4 dark:text-neutral-400 text-neutral-500 leading-relaxed text-sm md:text-base">
                   <p>

@@ -157,20 +157,20 @@ const HomePage = () => {
 
               <ScrollReveal direction="up" delay={0.3}>
                 <p className="text-lg sm:text-xl text-neutral-400 font-medium">
-                  Full Stack Software Developer & Founder of{" "}
+                  Founder &amp; Lead Developer at{" "}
                   <span className="text-gold">DatTechGee</span>
                 </p>
               </ScrollReveal>
 
               <ScrollReveal direction="up" delay={0.35}>
                 <p className="text-base text-neutral-400">
-                  Engineering digital solutions that drive business growth.
+                  Software solutions company delivering enterprise-grade digital products.
                 </p>
               </ScrollReveal>
 
               <ScrollReveal direction="up" delay={0.4}>
                 <p className="text-sm sm:text-base text-neutral-500 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-                  I design and build the digital infrastructure businesses need
+                  We design and build the digital infrastructure businesses need
                   to scale — custom software, mobile apps, and operational
                   systems built for execution.
                 </p>
@@ -420,7 +420,7 @@ const HomePage = () => {
           <div className="text-center mb-16">
             <ScrollReveal>
               <p className="text-gold text-sm uppercase tracking-[0.2em] font-semibold mb-4">
-                How I Work
+                How We Work
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
@@ -621,7 +621,7 @@ const HomePage = () => {
               </h2>
               <p className="text-neutral-400 max-w-xl mx-auto mb-10 text-base relative z-10">
                 Let&apos;s turn your vision into a high-performance digital product.
-                From concept to deployment, I&apos;ve got you covered.
+                From concept to deployment, we&apos;ve got you covered.
               </p>
               <div className="flex flex-wrap gap-4 justify-center relative z-10">
                 <Link

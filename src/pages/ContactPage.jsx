@@ -105,7 +105,7 @@ export default function ContactPage() {
           timeline: formData.timeline,
           message: formData.projectSummary,
           to_name: "Isaac Emmanuel",
-          to_email: "dattechgee@gmail.com",
+          to_email: import.meta.env.VITE_EMAILJS_TO_EMAIL || "ei0413405@gmail.com",
         }
       );
       setSubmitted(true);
