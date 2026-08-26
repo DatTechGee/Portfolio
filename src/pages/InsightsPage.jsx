@@ -115,14 +115,14 @@ function ArticleCard({ article, index, large = false }) {
           >
             {article.category}
           </span>
-          <span className="text-xs dark:text-neutral-500 text-neutral-500 tabular-nums">
+          <span className="text-xs text-neutral-500 text-neutral-500 tabular-nums">
             {article.date}
           </span>
         </div>
 
         {/* Title */}
         <h3
-          className={`font-bold dark:text-white text-neutral-800 mb-3 group-hover:text-gold transition-colors duration-300 leading-snug ${
+          className={`font-bold text-white text-neutral-800 mb-3 group-hover:text-gold transition-colors duration-300 leading-snug ${
             large ? "text-xl md:text-2xl" : "text-lg"
           }`}
         >
@@ -131,7 +131,7 @@ function ArticleCard({ article, index, large = false }) {
 
         {/* Description */}
         <p
-          className={`dark:text-neutral-400 text-neutral-500 leading-relaxed mb-6 flex-1 ${
+          className={`text-neutral-400 text-neutral-500 leading-relaxed mb-6 flex-1 ${
             large ? "text-sm md:text-base" : "text-sm"
           }`}
         >
@@ -140,7 +140,7 @@ function ArticleCard({ article, index, large = false }) {
 
         {/* Footer */}
         <div className="flex items-center justify-between pt-4 border-t border-white/[0.08]">
-          <span className="text-xs dark:text-neutral-500 text-neutral-500">
+          <span className="text-xs text-neutral-500 text-neutral-500">
             {article.readTime}
           </span>
           <span className="inline-flex items-center gap-1.5 text-gold text-sm font-semibold group-hover:gap-3 transition-all duration-300">
@@ -182,10 +182,10 @@ export default function InsightsPage() {
             <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
               Insights
             </span>
-            <h1 className="text-5xl md:text-6xl font-bold dark:text-white text-neutral-800 mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold text-white text-neutral-800 mb-6">
               Our Insights
             </h1>
-            <p className="dark:text-neutral-400 text-neutral-500 max-w-2xl mx-auto text-lg">
+            <p className="text-neutral-400 text-neutral-500 max-w-2xl mx-auto text-lg">
               Thoughts on modern web development, AI-powered automation, and building scalable digital solutions.
             </p>
           </ScrollReveal>
@@ -240,18 +240,18 @@ export default function InsightsPage() {
                       >
                         {featuredArticle.category}
                       </span>
-                      <span className="text-xs dark:text-neutral-500 text-neutral-500">
+                      <span className="text-xs text-neutral-500 text-neutral-500">
                         Featured
                       </span>
                     </div>
 
                     {/* Title */}
-                    <h2 className="text-2xl md:text-3xl font-bold dark:text-white text-neutral-800 mb-4 leading-tight group-hover:text-gold transition-colors duration-300">
+                    <h2 className="text-2xl md:text-3xl font-bold text-white text-neutral-800 mb-4 leading-tight group-hover:text-gold transition-colors duration-300">
                       {featuredArticle.title}
                     </h2>
 
                     {/* Description */}
-                    <p className="dark:text-neutral-400 text-neutral-500 leading-relaxed text-sm md:text-base max-w-3xl">
+                    <p className="text-neutral-400 text-neutral-500 leading-relaxed text-sm md:text-base max-w-3xl">
                       {featuredArticle.description}
                     </p>
                   </div>
@@ -260,10 +260,10 @@ export default function InsightsPage() {
                 {/* Footer */}
                 <div className="flex items-center justify-between pt-6 mt-6 border-t border-white/[0.08]">
                   <div className="flex items-center gap-4">
-                    <span className="text-xs dark:text-neutral-500 text-neutral-500 tabular-nums">
+                    <span className="text-xs text-neutral-500 text-neutral-500 tabular-nums">
                       {featuredArticle.date}
                     </span>
-                    <span className="text-xs dark:text-neutral-500 text-neutral-500">
+                    <span className="text-xs text-neutral-500 text-neutral-500">
                       {featuredArticle.readTime}
                     </span>
                   </div>
@@ -301,7 +301,7 @@ export default function InsightsPage() {
                   DatTechGee Technologies
                 </span>
               </div>
-              <h2 className="text-2xl font-bold dark:text-white text-neutral-800">
+              <h2 className="text-2xl font-bold text-white text-neutral-800">
                 Latest Articles
               </h2>
             </div>
@@ -320,7 +320,7 @@ export default function InsightsPage() {
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
             <div className="mb-10">
-              <h2 className="text-2xl font-bold dark:text-white text-neutral-800">
+              <h2 className="text-2xl font-bold text-white text-neutral-800">
                 More to Explore
               </h2>
             </div>
@@ -349,10 +349,10 @@ export default function InsightsPage() {
               <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block relative">
                 Stay Updated
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold dark:text-white text-neutral-800 mb-4 relative">
+              <h2 className="text-3xl md:text-4xl font-bold text-white text-neutral-800 mb-4 relative">
                 Stay Updated
               </h2>
-              <p className="dark:text-neutral-400 text-neutral-500 mb-8 max-w-lg mx-auto relative">
+              <p className="text-neutral-400 text-neutral-500 mb-8 max-w-lg mx-auto relative">
                 Join 500+ developers and business leaders who receive weekly insights on software
                 architecture, development best practices, and technology strategy from DatTechGee Technologies.
               </p>
@@ -375,7 +375,7 @@ export default function InsightsPage() {
                 </button>
               </form>
 
-              <p className="text-xs dark:text-neutral-600 text-neutral-400 mt-4 relative">
+              <p className="text-xs text-neutral-600 text-neutral-400 mt-4 relative">
                 No spam. Unsubscribe anytime.
               </p>
             </div>

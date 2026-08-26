@@ -100,36 +100,6 @@ a:focus-visible, button:focus-visible {
 }
 
 /* ══════════════════════════════════
-   LIGHT MODE
-   ══════════════════════════════════ */
-html.light body {
-  background:
-    radial-gradient(circle at top left, rgba(212, 168, 67, 0.06), transparent 22%),
-    radial-gradient(circle at 80% 0%, rgba(212, 168, 67, 0.04), transparent 24%),
-    linear-gradient(180deg, #f8f7f4 0%, #f0efe8 45%, #e8e6de 100%);
-  color: #141426;
-}
-
-html.light {
-  --bg-base: #f0efe8;
-  --bg-surface: rgba(255, 255, 255, 0.86);
-  --bg-surface-strong: rgba(255, 255, 255, 0.96);
-  --border-subtle: rgba(20, 20, 38, 0.08);
-  --border-strong: rgba(212, 168, 67, 0.16);
-  --text-primary: #141426;
-  --text-secondary: #565673;
-}
-
-html.light ::selection {
-  background: rgba(212, 168, 67, 0.2);
-  color: #1a1a2e;
-}
-
-html.light *::-webkit-scrollbar-thumb {
-  background: rgba(212, 168, 67, 0.25);
-}
-
-/* ══════════════════════════════════
    LAYOUT
    ══════════════════════════════════ */
 .c-space {
@@ -298,28 +268,13 @@ html.light *::-webkit-scrollbar-thumb {
 .section-kicker {
   @apply text-sm font-semibold uppercase tracking-[0.35em] mb-3;
   color: #d4a843;
-}
-html.light .section-kicker {
-  color: #b8922e;
-}
+}
 
 .section-title {
   font-weight: 700;
   font-size: 1.875rem;
   line-height: 1.2;
-}
-html:not(.light) .section-title {
-  background: linear-gradient(135deg, #ffffff 0%, #d4a843 50%, #f0d78c 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-html.light .section-title {
-  background: linear-gradient(135deg, #0a1128 0%, #b8922e 50%, #d4a843 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
+}
 
 @media (min-width: 768px) {
   .section-title { font-size: 2.25rem; }
@@ -328,42 +283,21 @@ html.light .section-title {
 .section-copy {
   @apply mt-3 max-w-2xl text-sm md:text-base leading-relaxed;
   color: rgba(232, 232, 240, 0.6);
-}
-html.light .section-copy {
-  color: #5a5a7a;
-}
+}
 
 .text-heading {
   @apply font-bold text-3xl md:text-4xl;
-}
-html:not(.light) .text-heading {
-  background: linear-gradient(135deg, #ffffff 0%, #d4a843 50%, #f0d78c 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-html.light .text-heading {
-  background: linear-gradient(135deg, #0a1128 0%, #b8922e 50%, #d4a843 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
+}
 
 .headtext {
   @apply mt-2 mb-2 text-xl;
   color: #e8e8f0;
-}
-html.light .headtext {
-  color: #1a1a2e;
-}
+}
 
 .subtext {
   @apply text-sm md:text-base text-pretty leading-relaxed;
   color: rgba(232, 232, 240, 0.6);
-}
-html.light .subtext {
-  color: #5a5a7a;
-}
+}
 
 /* ══════════════════════════════════
    GLASS CARD
@@ -395,27 +329,7 @@ html.light .subtext {
 .glass-card:hover::before {
   transform: translateX(120%);
 }
-
-html.light .glass-card {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(240, 239, 232, 0.9));
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(212, 168, 67, 0.08);
-  box-shadow:
-    0 10px 30px rgba(20, 20, 38, 0.06),
-    0 1px 0 rgba(255, 255, 255, 0.9) inset,
-    inset 0 0 0 1px rgba(255, 255, 255, 0.4);
-}
-html.light .glass-card:hover {
-  border-color: rgba(212, 168, 67, 0.2);
-  box-shadow:
-    0 16px 36px rgba(212, 168, 67, 0.06),
-    0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
-}
-html.light .glass-card::before {
-  background: linear-gradient(120deg, transparent 0%, rgba(212, 168, 67, 0.04) 42%, transparent 100%);
-}
+
 
 /* ══════════════════════════════════
    ABOUT GRID
@@ -443,11 +357,7 @@ html.light .glass-card::before {
   background: linear-gradient(135deg, #14162a, #1a1d3a);
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
-
-html.light .grid-default-color {
-  background: linear-gradient(135deg, #e8e4f0, #ddd8ec);
-  border: 1px solid rgba(0, 0, 0, 0.04);
-}
+
 
 /* ══════════════════════════════════
    NAVIGATION
@@ -460,13 +370,6 @@ html.light .grid-default-color {
   @apply max-sm:w-full max-sm:rounded-md py-2 max-sm:px-5;
   color: rgba(232, 232, 240, 0.55);
 }
-html.light .nav-li {
-  color: #5a5a7a;
-}
-html.light .nav-li:hover {
-  color: #141426;
-  background: rgba(212, 168, 67, 0.06);
-}
 
 .nav-link {
   @apply text-base;
@@ -477,28 +380,7 @@ html.light .nav-li:hover {
   border-radius: 9999px;
   transition: color 0.25s ease, background-color 0.25s ease;
   overflow: hidden;
-}
-html.light .nav-link {
-  color: #5a5a7a;
-}
-html.light .nav-link:hover,
-html.light .nav-link.text-white {
-  color: #141426;
-  background: rgba(212, 168, 67, 0.08);
-}
-
-/* ══════════════════════════════════
-   BUTTONS
-   ══════════════════════════════════ */
-.premium-btn {
-  @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-[#0a1128];
-  background: linear-gradient(135deg, #d4a843, #f0d78c);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px 15px rgba(212, 168, 67, 0.3);
-  transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
+}
 .premium-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(212, 168, 67, 0.45);
@@ -538,17 +420,7 @@ html.light .nav-link.text-white {
 .premium-btn-secondary:active {
   transform: translateY(0);
 }
-
-html.light .premium-btn-secondary {
-  background: rgba(255, 255, 255, 0.82);
-  border-color: rgba(20, 20, 38, 0.08);
-  color: #4f4f72;
-}
-html.light .premium-btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.96);
-  border-color: rgba(212, 168, 67, 0.22);
-  color: #141426;
-}
+
 
 /* ══════════════════════════════════
    SERVICE CARD
@@ -579,15 +451,7 @@ html.light .premium-btn-secondary:hover {
   border-color: rgba(92, 51, 204, 0.25);
   box-shadow: 0 8px 40px rgba(92, 51, 204, 0.1), 0 0 0 1px rgba(92, 51, 204, 0.08);
   transform: translateY(-2px);
-}
-html.light .project-preview-card {
-  border-color: rgba(0, 0, 0, 0.06);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-}
-html.light .project-preview-card:hover {
-  border-color: rgba(212, 168, 67, 0.2);
-  box-shadow: 0 8px 40px rgba(212, 168, 67, 0.08), 0 2px 12px rgba(0, 0, 0, 0.04);
-}
+}
 
 /* ══════════════════════════════════
    REVIEW CARD
@@ -602,16 +466,7 @@ html.light .project-preview-card:hover {
   border-color: rgba(212, 168, 67, 0.2);
   box-shadow: 0 6px 24px rgba(212, 168, 67, 0.06);
 }
-
-html.light .review-card {
-  background: rgba(255, 255, 255, 0.85);
-  border-color: rgba(0, 0, 0, 0.06);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
-}
-html.light .review-card:hover {
-  border-color: rgba(212, 168, 67, 0.15);
-  box-shadow: 0 6px 24px rgba(212, 168, 67, 0.06);
-}
+
 
 /* ══════════════════════════════════
    THEME TOGGLE
@@ -628,17 +483,7 @@ html.light .review-card:hover {
   border-color: rgba(212, 168, 67, 0.3);
   color: #d4a843;
 }
-
-html.light .theme-toggle {
-  background: rgba(255, 255, 255, 0.88);
-  border-color: rgba(20, 20, 38, 0.08);
-  color: #5a5a7a;
-}
-html.light .theme-toggle:hover {
-  background: rgba(212, 168, 67, 0.08);
-  border-color: rgba(212, 168, 67, 0.22);
-  color: #b8922e;
-}
+
 
 /* ══════════════════════════════════
    MODAL
@@ -646,21 +491,13 @@ html.light .theme-toggle:hover {
 .modal-overlay {
   background: rgba(3, 4, 12, 0.8);
   backdrop-filter: blur(8px);
-}
-html.light .modal-overlay {
-  background: rgba(243, 241, 248, 0.85);
-}
+}
 
 .modal-content {
   background: linear-gradient(135deg, #0c0e1c, #14162a, #1a1d3a);
   border: 1px solid rgba(255, 255, 255, 0.07);
   box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
-}
-html.light .modal-content {
-  background: rgba(255, 255, 255, 0.95);
-  border-color: rgba(0, 0, 0, 0.06);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
-}
+}
 
 /* ══════════════════════════════════
    CONTACT FORM
@@ -668,10 +505,7 @@ html.light .modal-content {
 .field-label {
   @apply text-sm font-medium leading-none;
   color: rgba(232, 232, 240, 0.8);
-}
-html.light .field-label {
-  color: #1a1a2e;
-}
+}
 
 .field-input {
   @apply w-full min-h-12 rounded-xl px-4 py-3 text-sm;
@@ -680,22 +514,13 @@ html.light .field-label {
   color: #e8e8f0;
   --tw-placeholder-color: rgba(232, 232, 240, 0.3);
   transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, transform 0.2s ease;
-}
-html.light .field-input {
-  background: rgba(255, 255, 255, 0.9);
-  border-color: rgba(20, 20, 38, 0.1);
-  color: #141426;
-  --tw-placeholder-color: #999;
-}
+}
 .field-input::placeholder {
   color: var(--tw-placeholder-color);
 }
 .field-input:hover {
   border-color: rgba(255, 255, 255, 0.14);
-}
-html.light .field-input:hover {
-  border-color: rgba(212, 168, 67, 0.18);
-}
+}
 .field-input:focus,
 .field-input--focused {
   border-color: rgba(212, 168, 67, 0.6) !important;
@@ -703,32 +528,6 @@ html.light .field-input:hover {
   outline: none;
   background: rgba(255, 255, 255, 0.06);
 }
-html.light .field-input:focus,
-html.light .field-input--focused {
-  background: #ffffff;
-  box-shadow: 0 0 0 3px rgba(212, 168, 67, 0.12), 0 8px 20px rgba(212, 168, 67, 0.08);
-}
-
-/* ══════════════════════════════════
-   GRADIENT TEXT
-   ══════════════════════════════════ */
-.gradient-text-hero {
-  background: linear-gradient(135deg, #ffffff 0%, #d4a843 40%, #f0d78c 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  background-size: 200% 200%;
-  animation: gradient-shift 8s ease infinite;
-}
-html.light .gradient-text-hero {
-  background: linear-gradient(135deg, #0a1128 0%, #b8922e 40%, #d4a843 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  background-size: 200% 200%;
-  animation: gradient-shift 8s ease infinite;
-}
-
 /* ══════════════════════════════════
    SECTION DIVIDER
    ══════════════════════════════════ */
@@ -743,18 +542,7 @@ html.light .gradient-text-hero {
     rgba(212, 168, 67, 0.25) 80%,
     transparent 100%
   );
-}
-html.light .section-divider {
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(212, 168, 67, 0.16) 20%,
-    rgba(212, 168, 67, 0.25) 50%,
-    rgba(212, 168, 67, 0.16) 80%,
-    transparent 100%
-  );
-  box-shadow: 0 0 18px rgba(212, 168, 67, 0.06);
-}
+}
 
 /* ══════════════════════════════════
    HERO GLASS CARD
@@ -769,58 +557,25 @@ html.light .section-divider {
 }
 .hero-glass:hover {
   transform: translateY(-2px);
-}
-html.light .hero-glass {
-  background: rgba(255, 255, 255, 0.84);
-  border: 1px solid rgba(212, 168, 67, 0.08);
-  box-shadow: 0 24px 70px rgba(20, 20, 38, 0.08);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-}
+}
 
 /* ══════════════════════════════════
    HERO OVERLAY
    ══════════════════════════════════ */
 .hero-overlay {
   background: linear-gradient(120deg, rgba(10, 17, 40, 0.82), rgba(10, 17, 40, 0.55), rgba(10, 17, 40, 0.85));
-}
-html.light .hero-overlay {
-  background: linear-gradient(120deg, rgba(240, 239, 232, 0.82), rgba(240, 239, 232, 0.55), rgba(240, 239, 232, 0.85));
-}
+}
 
 .scroll-indicator {
   border-color: rgba(255, 255, 255, 0.2);
-}
-html.light .scroll-indicator {
-  border-color: rgba(0, 0, 0, 0.15);
-}
+}
 
 /* ══════════════════════════════════
    FOOTER
-   ══════════════════════════════════ */
-html.light footer {
-  color: #141426;
-}
-html.light footer .text-neutral-400 {
-  color: #61617d;
-}
-html.light footer .text-neutral-500 {
-  color: #787896;
-}
-html.light footer .text-white {
-  color: #141426;
-}
-
+   ══════════════════════════════════ */
 /* ══════════════════════════════════
    TIMELINE
-   ══════════════════════════════════ */
-html.light .timeline-dot {
-  background: #f0efe8;
-  border-color: #d0c8b0;
-}
-html.light .timeline-line-bg {
-  background: #d0c8b0;
-}
+   ══════════════════════════════════ */
 
 /* ══════════════════════════════════
    PORTFOLIO SIDEBAR
@@ -840,13 +595,7 @@ html.light .timeline-line-bg {
 }
 .testimonial-fade-right {
   background: linear-gradient(to left, #080a14, transparent);
-}
-html.light .testimonial-fade-left {
-  background: linear-gradient(to right, #f0efe8, transparent);
-}
-html.light .testimonial-fade-right {
-  background: linear-gradient(to left, #f0efe8, transparent);
-}
+}
 
 /* ══════════════════════════════════
    AMBIENT GRADIENT (App background)
@@ -859,25 +608,11 @@ html.light .testimonial-fade-right {
   background:
     radial-gradient(circle at top left, rgba(212, 168, 67, 0.08), transparent 28%),
     radial-gradient(circle at bottom right, rgba(212, 168, 67, 0.05), transparent 30%);
-}
-html.light .ambient-bg {
-  background:
-    radial-gradient(circle at top left, rgba(212, 168, 67, 0.04), transparent 28%),
-    radial-gradient(circle at bottom right, rgba(212, 168, 67, 0.02), transparent 30%);
-}
+}
 
 /* ══════════════════════════════════
    COMPONENT OVERRIDES (light mode)
-   ══════════════════════════════════ */
-html.light .bg-gradient-to-t.from-indigo {
-  background: linear-gradient(to top, #f0efe8, transparent) !important;
-}
-html.light .bg-gradient-to-r.from-primary {
-  background: linear-gradient(to right, #f0efe8, transparent) !important;
-}
-html.light .bg-gradient-to-l.from-primary {
-  background: linear-gradient(to left, #f0efe8, transparent) !important;
-}
+   ══════════════════════════════════ */
 
 /* ══════════════════════════════════
    TRANSITION SECTIONS
@@ -894,19 +629,13 @@ html.light .bg-gradient-to-l.from-primary {
   background: radial-gradient(circle at center, rgba(212, 168, 67, 0.04), transparent 70%);
   pointer-events: none;
 }
-
-html.light .transition-section::before {
-  background: radial-gradient(circle at center, rgba(212, 168, 67, 0.02), transparent 70%);
-}
+
 
 /* Stats bar glow effect */
 .stats-glow {
   box-shadow: 0 0 40px rgba(212, 168, 67, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
-
-html.light .stats-glow {
-  box-shadow: 0 4px 20px rgba(212, 168, 67, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.8);
-}
+
 
 /* Process step connector line */
 .process-connector {
@@ -932,14 +661,8 @@ html.light .stats-glow {
 .marquee-fade-right {
   background: linear-gradient(to left, #0a1128, transparent);
 }
-
-html.light .marquee-fade-left {
-  background: linear-gradient(to right, #f0efe8, transparent);
-}
-
-html.light .marquee-fade-right {
-  background: linear-gradient(to left, #f0efe8, transparent);
-}
+
+
 
 /* Quote strip decorative elements */
 .quote-decoration {
@@ -979,10 +702,7 @@ html.light .marquee-fade-right {
   transform: translateY(-2px);
   box-shadow: 0 8px 30px rgba(212, 168, 67, 0.08);
 }
-
-html.light .transition-card:hover {
-  box-shadow: 0 8px 30px rgba(212, 168, 67, 0.05);
-}
+
 
 /* Gradient text for transition headings */
 .gradient-text-transition {
@@ -991,13 +711,7 @@ html.light .transition-card:hover {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-
-html.light .gradient-text-transition {
-  background: linear-gradient(135deg, #0a1128 0%, #b8922e 50%, #d4a843 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
+
 
 /* ══════════════════════════════════
    HERO PROFILE IMAGE
@@ -1020,15 +734,7 @@ html.light .gradient-text-transition {
   -webkit-mask-composite: xor;
   mask-composite: exclude;
 }
-
-html.light .hero-image-border {
-  background: linear-gradient(
-    135deg,
-    rgba(212, 168, 67, 0.5),
-    rgba(240, 215, 140, 0.35),
-    rgba(212, 168, 67, 0.25)
-  );
-}
+
 
 .hero-ring-outer {
   border-radius: 9999px;
@@ -1045,18 +751,7 @@ html.light .hero-image-border {
   animation: hero-ring-spin 12s linear infinite;
   pointer-events: none;
 }
-
-html.light .hero-ring-outer {
-  background:
-    linear-gradient(#f0efe8, #f0efe8) padding-box,
-    conic-gradient(
-      from 0deg,
-      rgba(212, 168, 67, 0.45),
-      rgba(240, 215, 140, 0.35),
-      rgba(184, 146, 46, 0.25),
-      rgba(212, 168, 67, 0.45)
-    ) border-box;
-}
+
 
 @keyframes hero-ring-spin {
   from { transform: rotate(0deg); }
@@ -1071,10 +766,4 @@ html.light .hero-ring-outer {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), 0 0 20px rgba(212, 168, 67, 0.06);
   white-space: nowrap;
 }
-
-html.light .hero-floating-badge {
-  background: rgba(255, 255, 255, 0.88);
-  border: 1px solid rgba(212, 168, 67, 0.1);
-  color: #1a1a2e;
-  box-shadow: 0 4px 16px rgba(20, 20, 38, 0.08), 0 0 20px rgba(212, 168, 67, 0.04);
-}
+

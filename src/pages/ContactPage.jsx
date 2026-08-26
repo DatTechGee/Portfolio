@@ -145,10 +145,10 @@ export default function ContactPage() {
             <span className="text-gold/70 text-sm font-semibold tracking-widest uppercase mb-4 block">
               Contact
             </span>
-            <h1 className="text-5xl md:text-6xl font-bold dark:text-white text-neutral-800 mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold text-white text-neutral-800 mb-6">
               Get in Touch
             </h1>
-            <p className="dark:text-neutral-400 text-neutral-500 max-w-2xl mx-auto text-lg">
+            <p className="text-neutral-400 text-neutral-500 max-w-2xl mx-auto text-lg">
               Ready to start your next project? Reach out to DatTechGee Technologies and let's discuss how we can bring your vision to life.
             </p>
           </ScrollReveal>
@@ -194,10 +194,10 @@ export default function ContactPage() {
                     <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                       {info.icon}
                     </div>
-                    <p className="dark:text-neutral-500 text-neutral-400 text-xs uppercase tracking-wider mb-1">
+                    <p className="text-neutral-500 text-neutral-400 text-xs uppercase tracking-wider mb-1">
                       {info.label}
                     </p>
-                    <p className="dark:text-white text-neutral-800 font-medium text-sm">
+                    <p className="text-white text-neutral-800 font-medium text-sm">
                       {info.value}
                     </p>
                   </a>
@@ -206,10 +206,10 @@ export default function ContactPage() {
                     <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold mx-auto mb-4">
                       {info.icon}
                     </div>
-                    <p className="dark:text-neutral-500 text-neutral-400 text-xs uppercase tracking-wider mb-1">
+                    <p className="text-neutral-500 text-neutral-400 text-xs uppercase tracking-wider mb-1">
                       {info.label}
                     </p>
-                    <p className="dark:text-white text-neutral-800 font-medium text-sm">
+                    <p className="text-white text-neutral-800 font-medium text-sm">
                       {info.value}
                     </p>
                   </div>
@@ -226,10 +226,10 @@ export default function ContactPage() {
           <ScrollReveal>
             <div className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="text-center sm:text-left">
-                <p className="dark:text-white text-neutral-800 font-semibold mb-1">
+                <p className="text-white text-neutral-800 font-semibold mb-1">
                   Prefer a quick conversation?
                 </p>
-                <p className="dark:text-neutral-400 text-neutral-500 text-sm">
+                <p className="text-neutral-400 text-neutral-500 text-sm">
                   Reach us directly on WhatsApp or LinkedIn. We respond within 2 business hours.
                 </p>
               </div>
@@ -270,7 +270,7 @@ export default function ContactPage() {
               <svg className="w-5 h-5 text-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <p className="dark:text-neutral-300 text-neutral-600 text-sm text-center">
+              <p className="text-neutral-300 text-neutral-600 text-sm text-center">
                 All inquiries receive a response within 24 business hours. Emergency support available for existing clients.
               </p>
             </div>
@@ -285,10 +285,10 @@ export default function ContactPage() {
             {/* Left Column - Sticky */}
             <ScrollReveal direction="left">
               <div className="lg:sticky lg:top-32 lg:self-start">
-                <h2 className="text-3xl md:text-4xl font-bold dark:text-white text-neutral-800 mb-4">
+                <h2 className="text-3xl md:text-4xl font-bold text-white text-neutral-800 mb-4">
                   Request a Quote
                 </h2>
-                <p className="dark:text-neutral-400 text-neutral-500 mb-8 leading-relaxed">
+                <p className="text-neutral-400 text-neutral-500 mb-8 leading-relaxed">
                   Tell us about your project and DatTechGee Technologies will get back to you within 24 hours with a detailed proposal, timeline, and quote.
                 </p>
 
@@ -307,7 +307,7 @@ export default function ContactPage() {
                         onClick={() => setOpenFaq(openFaq === i ? null : i)}
                         className="w-full flex items-center justify-between px-6 py-4 text-left"
                       >
-                        <span className="dark:text-white text-neutral-800 font-medium text-sm pr-4">
+                        <span className="text-white text-neutral-800 font-medium text-sm pr-4">
                           {faq.question}
                         </span>
                         <motion.span
@@ -327,7 +327,7 @@ export default function ContactPage() {
                             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                           >
                             <div className="px-6 pb-4">
-                              <p className="dark:text-neutral-400 text-neutral-500 text-sm leading-relaxed">
+                              <p className="text-neutral-400 text-neutral-500 text-sm leading-relaxed">
                                 {faq.answer}
                               </p>
                             </div>
@@ -356,10 +356,10 @@ export default function ContactPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.5 12.75l6 6 9-13.5" />
                       </svg>
                     </div>
-                    <h3 className="text-2xl font-bold dark:text-white text-neutral-800 mb-3">
+                    <h3 className="text-2xl font-bold text-white text-neutral-800 mb-3">
                       Message Sent Successfully!
                     </h3>
-                    <p className="dark:text-neutral-400 text-neutral-500 mb-6">
+                    <p className="text-neutral-400 text-neutral-500 mb-6">
                       Thanks for reaching out. DatTechGee Technologies will review your project details and get back to you within 24 hours.
                     </p>
                     <button
@@ -395,7 +395,7 @@ export default function ContactPage() {
                     )}
 
                     <div>
-                      <label className="block text-sm font-medium dark:text-white text-neutral-800 mb-2">
+                      <label className="block text-sm font-medium text-white text-neutral-800 mb-2">
                         Name
                       </label>
                       <input
@@ -410,7 +410,7 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium dark:text-white text-neutral-800 mb-2">
+                      <label className="block text-sm font-medium text-white text-neutral-800 mb-2">
                         Email
                       </label>
                       <input
@@ -425,7 +425,7 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium dark:text-white text-neutral-800 mb-2">
+                      <label className="block text-sm font-medium text-white text-neutral-800 mb-2">
                         Project Type
                       </label>
                       <select
@@ -448,7 +448,7 @@ export default function ContactPage() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div>
-                        <label className="block text-sm font-medium dark:text-white text-neutral-800 mb-2">
+                        <label className="block text-sm font-medium text-white text-neutral-800 mb-2">
                           Budget Range
                         </label>
                         <select
@@ -470,7 +470,7 @@ export default function ContactPage() {
                       </div>
 
                       <div>
-                        <label className="block text-sm font-medium dark:text-white text-neutral-800 mb-2">
+                        <label className="block text-sm font-medium text-white text-neutral-800 mb-2">
                           Timeline
                         </label>
                         <select
@@ -493,7 +493,7 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium dark:text-white text-neutral-800 mb-2">
+                      <label className="block text-sm font-medium text-white text-neutral-800 mb-2">
                         Project Summary
                       </label>
                       <textarea
@@ -556,10 +556,10 @@ export default function ContactPage() {
       <section className="section-spacing pt-12 pb-32">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <ScrollReveal>
-            <p className="dark:text-neutral-500 text-neutral-400 text-sm mb-2">
+            <p className="text-neutral-500 text-neutral-400 text-sm mb-2">
               dattechgee@gmail.com &middot; 0810 309 3734 &middot; 0911 245 4166
             </p>
-            <p className="dark:text-neutral-500 text-neutral-400 text-xs">
+            <p className="text-neutral-500 text-neutral-400 text-xs">
               Selective engagements. Disciplined execution. Measurable outcomes.
             </p>
           </ScrollReveal>

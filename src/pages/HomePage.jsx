@@ -408,7 +408,7 @@ const HomePage = () => {
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold dark:text-white text-neutral-800 mb-4">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-neutral-800 mb-4">
                 What We{" "}
                 <span className="bg-gradient-to-r from-white to-gold bg-clip-text text-transparent">
                   Stand For
@@ -431,7 +431,7 @@ const HomePage = () => {
                     {card.items.map((item, j) => (
                       <li key={j} className="flex items-start gap-3">
                         <span className={`w-1.5 h-1.5 rounded-full shrink-0 mt-2 ${card.label === "Is" ? "bg-gold" : "bg-neutral-600"}`} />
-                        <span className="dark:text-neutral-300 text-neutral-500 text-sm leading-relaxed">
+                        <span className="text-neutral-300 text-neutral-500 text-sm leading-relaxed">
                           {item}
                         </span>
                       </li>
@@ -479,7 +479,7 @@ const HomePage = () => {
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold dark:text-white text-neutral-800 mb-4">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-neutral-800 mb-4">
                 What We{" "}
                 <span className="bg-gradient-to-r from-white to-gold bg-clip-text text-transparent">
                   Do
@@ -549,7 +549,7 @@ const HomePage = () => {
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold dark:text-white text-neutral-800">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-neutral-800">
                 How We{" "}
                 <span className="bg-gradient-to-r from-white to-gold bg-clip-text text-transparent">
                   Work
@@ -605,7 +605,7 @@ const HomePage = () => {
           <ScrollReveal>
             <div className="relative">
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[200px] bg-gold/5 rounded-full blur-[100px] pointer-events-none" />
-              <p className="text-3xl sm:text-4xl lg:text-5xl font-bold dark:text-white text-neutral-800 relative z-10 mb-4">
+              <p className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-neutral-800 relative z-10 mb-4">
                 Growth is not accidental.
               </p>
               <p className="text-3xl sm:text-4xl lg:text-5xl font-bold relative z-10">
@@ -629,7 +629,7 @@ const HomePage = () => {
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold dark:text-white text-neutral-800 mb-4">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-neutral-800 mb-4">
                 Who We{" "}
                 <span className="bg-gradient-to-r from-white to-gold bg-clip-text text-transparent">
                   Work With
@@ -670,7 +670,7 @@ const HomePage = () => {
 
           <ScrollReveal delay={0.5}>
             <div className="mt-8 bg-[#0f1a36] border border-gold/20 rounded-2xl p-6 text-center">
-              <p className="dark:text-neutral-300 text-neutral-600 text-sm leading-relaxed">
+              <p className="text-neutral-300 text-neutral-600 text-sm leading-relaxed">
                 DatTechGee Technologies partners selectively. Engagements are accepted only where execution value can be clearly delivered and where our approach aligns with your commitment to structure, discipline, and measurable outcomes.
               </p>
             </div>
@@ -689,7 +689,7 @@ const HomePage = () => {
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold dark:text-white text-neutral-800">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-neutral-800">
                 Why{" "}
                 <span className="bg-gradient-to-r from-white to-gold bg-clip-text text-transparent">
                   DatTechGee Technologies
@@ -735,7 +735,7 @@ const HomePage = () => {
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.1}>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold dark:text-white text-neutral-800">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-neutral-800">
                   What Clients{" "}
                   <span className="bg-gradient-to-r from-white to-gold bg-clip-text text-transparent">
                     Say
@@ -869,7 +869,7 @@ const HomePage = () => {
               <p className="text-gold text-sm uppercase tracking-[0.2em] font-semibold mb-6 relative z-10">
                 Let&apos;s Collaborate
               </p>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold dark:text-white text-neutral-800 mb-6 relative z-10 max-w-3xl mx-auto leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-neutral-800 mb-6 relative z-10 max-w-3xl mx-auto leading-tight">
                 Ready to build the systems your{" "}
                 <span className="bg-gradient-to-r from-gold to-gold/70 bg-clip-text text-transparent">
                   business needs to scale
@@ -905,7 +905,7 @@ const HomePage = () => {
       <section className="pb-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <ScrollReveal>
-            <p className="dark:text-neutral-500 text-neutral-400 text-xs tracking-wider uppercase">
+            <p className="text-neutral-500 text-neutral-400 text-xs tracking-wider uppercase">
               Selective engagements. Disciplined execution. Measurable outcomes.
             </p>
           </ScrollReveal>

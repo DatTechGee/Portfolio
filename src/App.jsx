@@ -1,7 +1,6 @@
 import { useCallback, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "motion/react";
-import { ThemeProvider } from "./context/ThemeContext";
 import Navbar from "./sections/Navbar";
 import Footer from "./sections/Footer";
 import Preloader from "./components/Preloader";
@@ -36,7 +35,6 @@ const App = () => {
 
   return (
     <ErrorBoundary>
-      <ThemeProvider>
         <div className="relative min-h-screen overflow-x-hidden">
           <div className="ambient-bg" />
           {showPreloader && <Preloader onComplete={handlePreloaderComplete} />}
@@ -63,7 +61,6 @@ const App = () => {
             <ScrollButtons />
           </div>
         </div>
-      </ThemeProvider>
     </ErrorBoundary>
   );
 };

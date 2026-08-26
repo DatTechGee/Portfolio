@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Link, useLocation } from "react-router-dom";
-import { useTheme } from "../context/ThemeContext";
 
 const navLinks = [
   { path: "/", label: "Home" },
@@ -11,34 +10,10 @@ const navLinks = [
   { path: "/contact", label: "Contact" },
 ];
 
-const ThemeToggle = () => {
-  const { theme, toggleTheme } = useTheme();
-  return (
-    <motion.button
-      onClick={toggleTheme}
-      className="theme-toggle"
-      aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-      whileHover={{ rotate: 8, scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-    >
-      {theme === "dark" ? (
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-        </svg>
-      ) : (
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-        </svg>
-      )}
-    </motion.button>
-  );
-};
-
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const { theme } = useTheme();
 
   useEffect(() => {
     setIsOpen(false);
@@ -51,15 +26,9 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const isLight = theme === "light";
-
   const navBg = scrolled
-    ? isLight
-      ? "backdrop-blur-2xl bg-[#f3f1f8]/75 border-b border-black/[0.06] shadow-xl shadow-black/[0.03]"
-      : "backdrop-blur-2xl bg-[#0a1128]/80 border-b border-white/[0.06] shadow-xl shadow-black/30"
-    : isLight
-      ? "backdrop-blur-sm bg-[#f3f1f8]/20"
-      : "backdrop-blur-sm bg-[#0a1128]/20";
+    ? "backdrop-blur-2xl bg-[#0a1128]/80 border-b border-white/[0.06] shadow-xl shadow-black/30"
+    : "backdrop-blur-sm bg-[#0a1128]/20";
 
   return (
     <div className={`fixed inset-x-0 z-20 w-full transition-all duration-500 ${navBg}`}>
@@ -77,13 +46,13 @@ const Navbar = () => {
                 alt="DatTechGee"
                 className="w-9 h-9 rounded-xl object-cover transition-all duration-300 group-hover:scale-110"
               />
-              <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-gold rounded-full border-2 dark:border-[#0a1128] border-[#f3f1f8]" />
+              <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-gold rounded-full border-2 border-[#0a1128]" />
             </motion.div>
             <div className="flex flex-col">
-              <span className="text-[15px] font-bold leading-tight tracking-tight dark:text-white text-neutral-800 group-hover:text-gold transition-colors duration-300">
+              <span className="text-[15px] font-bold leading-tight tracking-tight text-white group-hover:text-gold transition-colors duration-300">
                 DatTechGee
               </span>
-              <span className="text-[10px] font-medium uppercase tracking-[0.2em] dark:text-neutral-500 text-neutral-400 leading-tight">
+              <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-neutral-500 leading-tight">
                 DatTechGee Technologies
               </span>
             </div>
@@ -91,10 +60,9 @@ const Navbar = () => {
 
           {/* Right controls */}
           <div className="flex items-center gap-2">
-            <ThemeToggle />
             <motion.button
               onClick={() => setIsOpen(!isOpen)}
-              className="flex cursor-pointer sm:hidden p-2 rounded-lg dark:text-neutral-400 text-neutral-600 hover:text-gold dark:hover:text-gold transition-colors"
+              className="flex cursor-pointer sm:hidden p-2 rounded-lg text-neutral-400 hover:text-gold transition-colors"
               whileHover={{ rotate: 8, scale: 1.04 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -119,7 +87,7 @@ const Navbar = () => {
                   className={`relative px-4 py-2 text-sm rounded-full transition-all duration-300 ${
                     isActive
                       ? "text-gold font-semibold"
-                      : "dark:text-neutral-400 text-neutral-500 hover:text-gold dark:hover:text-gold"
+                      : "text-neutral-400 hover:text-gold"
                   }`}
                 >
                   {isActive && (
@@ -151,11 +119,7 @@ const Navbar = () => {
           <>
             <div className="absolute inset-0 z-10 sm:hidden bg-black/40" onClick={() => setIsOpen(false)} />
             <motion.div
-              className={`block overflow-hidden sm:hidden relative z-20 ${
-                isLight
-                  ? "bg-[#f3f1f8]/95 backdrop-blur-2xl border-t border-black/5"
-                  : "bg-[#0a1128]/95 backdrop-blur-2xl border-t border-white/5"
-              }`}
+              className="block overflow-hidden sm:hidden relative z-20 bg-[#0a1128]/95 backdrop-blur-2xl border-t border-white/5"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
@@ -171,7 +135,7 @@ const Navbar = () => {
                       className={`px-4 py-3 rounded-xl text-sm font-medium transition-all ${
                         isActive
                           ? "bg-gold/10 text-gold border border-gold/20"
-                          : "dark:text-neutral-400 text-neutral-600 hover:bg-white/5"
+                          : "text-neutral-400 hover:bg-white/5"
                       }`}
                     >
                       {link.label}
