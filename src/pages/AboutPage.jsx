@@ -117,6 +117,8 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <div className="section-divider" />
+
       {/* ===== COMPANY INTRO ===== */}
       <section className="section-spacing pt-0">
         <div className="max-w-6xl mx-auto px-6">
@@ -130,7 +132,7 @@ export default function AboutPage() {
                     className="w-full h-auto object-cover"
                   />
                 </div>
-                <div className="absolute -bottom-4 -right-4 w-full h-full rounded-2xl border border-gold/20 -z-10" />
+                <div className="absolute -bottom-4 -right-4 w-full h-full rounded-xl border border-gold/20 -z-10" />
               </div>
             </ScrollReveal>
 
@@ -186,6 +188,8 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <div className="section-divider" />
+
       {/* ===== COMPANY VALUES ===== */}
       <section className="section-spacing bg-[#060d1f]">
         <div className="max-w-6xl mx-auto px-6">
@@ -216,7 +220,7 @@ export default function AboutPage() {
                   delay: i * 0.1,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="group bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-6 hover:border-gold/30 transition-all duration-500"
+                className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6 hover:border-gold/25 transition-all duration-400"
               >
                 {v.image && (
                   <div className="h-32 rounded-xl overflow-hidden mb-4 -mx-2 -mt-2">
@@ -237,6 +241,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <div className="section-divider" />
 
       {/* ===== THE FOUNDER — ISAAC EMMANUEL ===== */}
       <section className="section-spacing">
@@ -280,7 +286,7 @@ export default function AboutPage() {
             </ScrollReveal>
 
             <ScrollReveal direction="right">
-              <div className="relative rounded-2xl overflow-hidden border border-white/[0.06]">
+              <div className="relative rounded-2xl overflow-hidden border border-white/[0.08]">
                 <img src="/assets/PORTFILO.png" alt="Isaac Emmanuel — Founder" className="w-full h-full object-cover opacity-80" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a1128]/60 to-transparent" />
               </div>
@@ -288,6 +294,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <div className="section-divider" />
 
       {/* ===== TECH STACK ===== */}
       <section className="section-spacing bg-[#060d1f]">
@@ -319,7 +327,7 @@ export default function AboutPage() {
                   delay: i * 0.05,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="bg-[#0f1a36] border border-white/[0.06] rounded-xl p-4 flex flex-col items-center gap-3 hover:border-gold/30 hover:shadow-[0_0_20px_rgba(212,168,67,0.08)] transition-all duration-500 group"
+                className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-4 flex flex-col items-center gap-3 hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(212,168,67,0.06)] transition-all duration-400 group"
               >
                 {tech.logo ? (
                   <img
@@ -340,6 +348,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <div className="section-divider" />
 
       {/* ===== SKILLS BREAKDOWN ===== */}
       <section className="section-spacing">
@@ -370,7 +380,7 @@ export default function AboutPage() {
                   delay: i * 0.1,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-6"
+                className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6"
               >
                 <h3 className="text-sm font-semibold dark:text-white text-neutral-800 mb-5">
                   {cat.title}
@@ -404,6 +414,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <div className="section-divider" />
 
       {/* ===== EXPERIENCE TIMELINE ===== */}
       <section className="section-spacing bg-[#060d1f]">
@@ -460,7 +472,7 @@ export default function AboutPage() {
                     i % 2 === 0 ? "md:pl-12" : "md:pr-12"
                   } pl-12 md:pl-0`}
                 >
-                  <div className="bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-6">
+                  <div className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6">
                     <ul className="space-y-2.5">
                       {exp.contents.map((content, j) => (
                         <motion.li
@@ -487,6 +499,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <div className="section-divider" />
 
       {/* ===== INDUSTRIES ===== */}
       <section className="section-spacing">
@@ -517,7 +531,7 @@ export default function AboutPage() {
                   delay: i * 0.06,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="group bg-[#0f1a36] border border-white/[0.06] rounded-xl overflow-hidden hover:border-gold/30 hover:shadow-[0_0_20px_rgba(212,168,67,0.08)] transition-all duration-500"
+                className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(212,168,67,0.06)] transition-all duration-400"
               >
                 <div className="h-24 overflow-hidden">
                   <img src={industryImages[i]} alt={industry.name} className="w-full h-full object-cover opacity-50 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500" />
@@ -533,8 +547,10 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <div className="section-divider" />
+
       {/* ===== STATS ===== */}
-      <section className="py-16 border-t border-white/[0.06]">
+      <section className="py-16 border-t border-white/[0.08]">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
@@ -557,6 +573,8 @@ export default function AboutPage() {
           </ScrollReveal>
         </div>
       </section>
+
+      <div className="section-divider" />
 
       {/* ===== CTA ===== */}
       <section className="py-20 bg-[#060d1f]">

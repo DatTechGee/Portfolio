@@ -92,7 +92,7 @@ function ArticleCard({ article, index, large = false }) {
         ease: [0.16, 1, 0.3, 1],
       }}
       whileHover={{ y: -4 }}
-      className={`group bg-[#0f1a36] border border-white/[0.06] rounded-2xl overflow-hidden cursor-default hover:border-gold/30 hover:shadow-[0_0_30px_rgba(212,168,67,0.08)] transition-all duration-500 ${
+      className={`group bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden cursor-default hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(212,168,67,0.06)] transition-all duration-400 ${
         large ? "flex flex-col" : "flex flex-col"
       }`}
     >
@@ -139,7 +139,7 @@ function ArticleCard({ article, index, large = false }) {
         </p>
 
         {/* Footer */}
-        <div className="flex items-center justify-between pt-4 border-t border-white/[0.06]">
+        <div className="flex items-center justify-between pt-4 border-t border-white/[0.08]">
           <span className="text-xs dark:text-neutral-500 text-neutral-500">
             {article.readTime}
           </span>
@@ -191,7 +191,7 @@ export default function InsightsPage() {
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
             <div className="mt-10 max-w-3xl mx-auto">
-              <div className="relative rounded-2xl overflow-hidden border border-white/[0.06]">
+              <div className="relative rounded-2xl overflow-hidden border border-white/[0.08]">
                 <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1000&h=300&fit=crop&auto=format" alt="DatTechGee Technologies — Insights" className="w-full h-48 md:h-56 object-cover opacity-70" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a1128]/80 via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -222,7 +222,7 @@ export default function InsightsPage() {
                 ease: [0.16, 1, 0.3, 1],
               }}
               whileHover={{ y: -4 }}
-              className="group bg-[#0f1a36] border border-white/[0.06] rounded-2xl overflow-hidden cursor-default hover:border-gold/30 hover:shadow-[0_0_40px_rgba(212,168,67,0.08)] transition-all duration-500 relative"
+              className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden cursor-default hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(212,168,67,0.06)] transition-all duration-400 relative"
             >
               {/* Gradient accent */}
               <div className="h-1.5 bg-gradient-to-r from-gold via-gold/60 to-transparent" />
@@ -258,7 +258,7 @@ export default function InsightsPage() {
                 </div>
 
                 {/* Footer */}
-                <div className="flex items-center justify-between pt-6 mt-6 border-t border-white/[0.06]">
+                <div className="flex items-center justify-between pt-6 mt-6 border-t border-white/[0.08]">
                   <div className="flex items-center gap-4">
                     <span className="text-xs dark:text-neutral-500 text-neutral-500 tabular-nums">
                       {featuredArticle.date}
@@ -342,7 +342,7 @@ export default function InsightsPage() {
       <section className="section-spacing">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
-            <div className="bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-8 md:p-12 text-center relative overflow-hidden">
+            <div className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-8 md:p-12 text-center relative overflow-hidden">
               {/* Background accent */}
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-gold/[0.03] rounded-full blur-3xl pointer-events-none" />
 

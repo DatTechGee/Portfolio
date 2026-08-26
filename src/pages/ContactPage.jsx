@@ -154,7 +154,7 @@ export default function ContactPage() {
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
             <div className="mt-10 max-w-3xl mx-auto">
-              <div className="relative rounded-2xl overflow-hidden border border-white/[0.06]">
+              <div className="relative rounded-2xl overflow-hidden border border-white/[0.08]">
                 <img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1000&h=300&fit=crop&auto=format" alt="DatTechGee Technologies — Contact us" className="w-full h-48 md:h-56 object-cover opacity-70" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a1128]/80 via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 flex items-center justify-between">
@@ -189,7 +189,7 @@ export default function ContactPage() {
                     href={info.href}
                     target={info.href.startsWith("http") ? "_blank" : undefined}
                     rel={info.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="block bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-6 text-center hover:border-gold/30 hover:shadow-[0_0_20px_rgba(212,168,67,0.06)] transition-all duration-300 group"
+                    className="block bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6 text-center hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(212,168,67,0.06)] transition-all duration-400 group"
                   >
                     <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                       {info.icon}
@@ -202,7 +202,7 @@ export default function ContactPage() {
                     </p>
                   </a>
                 ) : (
-                  <div className="bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-6 text-center">
+                  <div className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6 text-center">
                     <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold mx-auto mb-4">
                       {info.icon}
                     </div>
@@ -224,7 +224,7 @@ export default function ContactPage() {
       <section className="pb-12">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
-            <div className="bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="text-center sm:text-left">
                 <p className="dark:text-white text-neutral-800 font-semibold mb-1">
                   Prefer a quick conversation?
@@ -300,7 +300,7 @@ export default function ContactPage() {
                       className={`border rounded-xl overflow-hidden transition-all duration-300 ${
                         openFaq === i
                           ? "border-gold/30 border-t-gold bg-[#0f1a36]"
-                          : "border-white/[0.06] bg-[#0f1a36]"
+                          : "border-white/[0.08] bg-[#0f1a36]"
                       }`}
                     >
                       <button
@@ -349,7 +349,7 @@ export default function ContactPage() {
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.95 }}
-                    className="bg-[#0f1a36] border border-gold/30 rounded-2xl p-12 text-center"
+                    className="bg-[#0f1a36] border border-gold/30 rounded-xl p-12 text-center"
                   >
                     <div className="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-6">
                       <svg className="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -386,7 +386,7 @@ export default function ContactPage() {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     onSubmit={handleSubmit}
-                    className="bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-8 space-y-5"
+                    className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-8 space-y-5"
                   >
                     {error && (
                       <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4 mb-6">
@@ -542,7 +542,7 @@ export default function ContactPage() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-xl bg-[#0f1a36] border border-white/[0.06] flex items-center justify-center text-neutral-400 hover:text-gold hover:border-gold/30 transition-all duration-300"
+                  className="w-12 h-12 rounded-xl bg-[#0f1a36] border border-white/[0.08] flex items-center justify-center text-neutral-400 hover:text-gold hover:border-gold/30 transition-all duration-300"
                 >
                   <img src={social.icon} alt={social.name} className="w-5 h-5" />
                 </a>

@@ -137,7 +137,159 @@ html.light *::-webkit-scrollbar-thumb {
 }
 
 .section-spacing {
-  @apply py-28 md:py-36 lg:py-40;
+  @apply py-20 md:py-28 lg:py-32;
+}
+
+/* ══════════════════════════════════
+   SHARP INSTITUTIONAL SECTION DIVIDERS
+   ══════════════════════════════════ */
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(212, 168, 67, 0.25) 20%, rgba(212, 168, 67, 0.4) 50%, rgba(212, 168, 67, 0.25) 80%, transparent 100%);
+}
+
+.section-divider-short {
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, #d4a843, rgba(212, 168, 67, 0.3));
+}
+
+.section-divider-long {
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 168, 67, 0.4), transparent);
+}
+
+/* ══════════════════════════════════
+   SHARP CARD SYSTEM
+   ══════════════════════════════════ */
+.card-sharp {
+  background: #0f1a36;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 1rem;
+  transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.card-sharp:hover {
+  border-color: rgba(212, 168, 67, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(212, 168, 67, 0.1);
+  transform: translateY(-2px);
+}
+
+.card-sharp-accent {
+  background: #0f1a36;
+  border: 1px solid rgba(212, 168, 67, 0.15);
+  border-radius: 1rem;
+  transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.card-sharp-accent:hover {
+  border-color: rgba(212, 168, 67, 0.35);
+  box-shadow: 0 8px 32px rgba(212, 168, 67, 0.08), 0 0 0 1px rgba(212, 168, 67, 0.15);
+  transform: translateY(-2px);
+}
+
+/* ══════════════════════════════════
+   INSTITUTIONAL IMAGE SYSTEM
+   ══════════════════════════════════ */
+.institutional-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.institutional-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.institutional-image:hover img {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+.institutional-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10, 17, 40, 0.7) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* ══════════════════════════════════
+   SHARP BADGE SYSTEM
+   ══════════════════════════════════ */
+.badge-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(212, 168, 67, 0.25);
+  background: rgba(212, 168, 67, 0.06);
+  color: #d4a843;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.badge-gold::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #d4a843;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════
+   SHARP BUTTON SYSTEM
+   ══════════════════════════════════ */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: #d4a843;
+  color: #0a1128;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: 1px solid #d4a843;
+}
+
+.btn-gold:hover {
+  background: #c49a3a;
+  box-shadow: 0 4px 20px rgba(212, 168, 67, 0.3);
+  transform: translateY(-1px);
+}
+
+.btn-outline-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: transparent;
+  color: #d4a843;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(212, 168, 67, 0.35);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-outline-gold:hover {
+  background: rgba(212, 168, 67, 0.08);
+  border-color: rgba(212, 168, 67, 0.5);
+  transform: translateY(-1px);
 }
 
 /* ══════════════════════════════════

@@ -196,7 +196,7 @@ export default function ServicesPage() {
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
             <div className="mt-10 max-w-3xl mx-auto">
-              <div className="relative rounded-2xl overflow-hidden border border-white/[0.06]">
+              <div className="relative rounded-2xl overflow-hidden border border-white/[0.08]">
                 <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1000&h=300&fit=crop&auto=format" alt="DatTechGee Technologies — Digital solutions" className="w-full h-48 md:h-64 object-cover opacity-70" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a1128]/80 via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 flex items-center justify-between">
@@ -243,7 +243,7 @@ export default function ServicesPage() {
                   delay: i * 0.1,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-8 text-center hover:border-gold/30 hover:shadow-[0_0_30px_rgba(212,168,67,0.08)] transition-all duration-500"
+                className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-8 text-center hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(212,168,67,0.06)] transition-all duration-400"
               >
                 <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold mx-auto mb-5">
                   {pillar.icon}
@@ -291,7 +291,7 @@ export default function ServicesPage() {
                   ease: [0.16, 1, 0.3, 1],
                 }}
                 whileHover={{ y: -4 }}
-                className="group bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-8 cursor-default hover:border-gold/30 hover:shadow-[0_0_30px_rgba(212,168,67,0.08)] transition-all duration-500 relative overflow-hidden"
+                className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl p-8 cursor-default hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(212,168,67,0.06)] transition-all duration-400 relative overflow-hidden"
               >
                 {service.image && (
                   <div className="h-36 rounded-xl overflow-hidden mb-5 -mx-2 -mt-2">
@@ -373,7 +373,7 @@ export default function ServicesPage() {
                   delay: i * 0.1,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-6 relative overflow-hidden group hover:border-gold/30 transition-all duration-500"
+                className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6 relative overflow-hidden group hover:border-gold/25 transition-all duration-400"
               >
                 {/* Connector line between steps (desktop only) */}
                 {i < processSteps.length - 1 && (
@@ -418,7 +418,7 @@ export default function ServicesPage() {
             {techStack.map((tech, i) => (
               <div
                 key={`${tech.name}-${i}`}
-                className="flex items-center gap-3 px-5 py-3 rounded-xl bg-[#0f1a36] border border-white/[0.06] mx-2 hover:border-gold/30 transition-all duration-300 group"
+                className="flex items-center gap-3 px-5 py-3 rounded-xl bg-[#0f1a36] border border-white/[0.08] mx-2 hover:border-gold/30 transition-all duration-300 group"
               >
                 {tech.logo ? (
                   <img
@@ -473,7 +473,7 @@ export default function ServicesPage() {
                     delay: i * 0.08,
                     ease: [0.16, 1, 0.3, 1],
                   }}
-                  className="group bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-6 hover:border-gold/30 transition-all duration-500"
+                  className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6 hover:border-gold/25 transition-all duration-400"
                 >
                   {industry.image && (
                     <div className="h-28 rounded-xl overflow-hidden mb-4 -mx-2 -mt-2">
@@ -540,7 +540,7 @@ export default function ServicesPage() {
                 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-8 relative overflow-hidden group hover:border-gold/30 transition-all duration-500"
+                className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-8 relative overflow-hidden group hover:border-gold/25 transition-all duration-400"
               >
                 {model.image && (
                   <div className="h-28 rounded-xl overflow-hidden mb-5 -mx-2 -mt-2">
@@ -557,7 +557,7 @@ export default function ServicesPage() {
                 <p className="dark:text-neutral-400 text-neutral-500 text-sm leading-relaxed mb-5">
                   {model.description}
                 </p>
-                <div className="flex items-center justify-between pt-4 border-t border-white/[0.06]">
+                <div className="flex items-center justify-between pt-4 border-t border-white/[0.08]">
                   <span className="text-xs dark:text-neutral-500 text-neutral-500">
                     Best for: {model.bestFor}
                   </span>

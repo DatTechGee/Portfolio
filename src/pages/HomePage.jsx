@@ -355,7 +355,7 @@ const HomePage = () => {
       <section className="section-spacing relative py-16">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <ScrollReveal>
-            <div className="bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-8 md:p-12">
+            <div className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-8 md:p-12">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
                 {[
                   {
@@ -398,7 +398,8 @@ const HomePage = () => {
       </section>
 
       {/* ===== OUR POSITION ===== */}
-      <section className="section-spacing relative py-24">
+      <div className="section-divider" />
+      <section className="section-spacing relative">
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <ScrollReveal>
@@ -444,6 +445,7 @@ const HomePage = () => {
       </section>
 
       {/* ===== THREE PILLARS ===== */}
+      <div className="section-divider" />
       <section className="section-spacing relative py-24 bg-[#060d1f]">
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8">
@@ -451,7 +453,7 @@ const HomePage = () => {
               <ScrollReveal key={pillar.title} delay={i * 0.12}>
                 <motion.div
                   whileHover={{ y: -6 }}
-                  className="bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-8 text-center hover:border-gold/20 transition-all duration-300"
+                  className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-8 text-center hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(212,168,67,0.06)] transition-all duration-400"
                 >
                   <div className="w-14 h-14 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold mx-auto mb-5">
                     {pillar.icon}
@@ -466,6 +468,7 @@ const HomePage = () => {
       </section>
 
       {/* ===== WHAT WE DO — CORE CAPABILITIES ===== */}
+      <div className="section-divider" />
       <section className="section-spacing relative py-24">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a1128] via-[#0c1429] to-[#0a1128]" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
@@ -498,7 +501,7 @@ const HomePage = () => {
                 <motion.div
                   whileHover={{ y: -6, scale: 1.02 }}
                   transition={{ duration: 0.3 }}
-                  className="group bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-6 h-full flex flex-col hover:border-gold/20 transition-colors duration-300"
+                  className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6 h-full flex flex-col hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(212,168,67,0.06)] transition-all duration-400"
                 >
                   <div className="w-12 h-12 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold mb-5 group-hover:bg-gold/15 transition-colors duration-300">
                     {cap.icon}
@@ -536,6 +539,7 @@ const HomePage = () => {
       </section>
 
       {/* ===== EXECUTION FRAMEWORK — HOW WE WORK ===== */}
+      <div className="section-divider" />
       <section className="section-spacing relative py-24 overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -595,6 +599,7 @@ const HomePage = () => {
       </section>
 
       {/* ===== GROWTH QUOTE ===== */}
+      <div className="section-divider" />
       <section className="section-spacing relative py-24 bg-[#060d1f]">
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <ScrollReveal>
@@ -614,6 +619,7 @@ const HomePage = () => {
       </section>
 
       {/* ===== WHO WE WORK WITH ===== */}
+      <div className="section-divider" />
       <section className="section-spacing relative py-24">
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -642,7 +648,7 @@ const HomePage = () => {
               <ScrollReveal key={partner.num} delay={i * 0.1}>
                   <motion.div
                     whileHover={{ y: -4 }}
-                    className="group bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-8 hover:border-gold/20 transition-all duration-300 h-full"
+                    className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl p-8 hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(212,168,67,0.06)] transition-all duration-400 h-full"
                   >
                     {partner.image && (
                       <div className="h-40 rounded-xl overflow-hidden mb-5 -mx-2 -mt-2">
@@ -673,6 +679,7 @@ const HomePage = () => {
       </section>
 
       {/* ===== WHY DATTECHGEE TECHNOLOGIES ===== */}
+      <div className="section-divider" />
       <section className="section-spacing relative py-24 bg-[#060d1f]">
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -696,7 +703,7 @@ const HomePage = () => {
               <ScrollReveal key={diff.num} delay={i * 0.08}>
                 <motion.div
                   whileHover={{ y: -4 }}
-                  className="group bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-6 hover:border-gold/20 transition-all duration-300"
+                  className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6 hover:border-gold/25 transition-all duration-400"
                 >
                   {diff.image && (
                     <div className="h-32 rounded-xl overflow-hidden mb-4 -mx-2 -mt-2">
@@ -716,6 +723,7 @@ const HomePage = () => {
       </section>
 
       {/* ===== TESTIMONIALS ===== */}
+      <div className="section-divider" />
       <section className="section-spacing relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a1128] via-[#0c1429] to-[#0a1128]" />
         <div className="relative z-10">
@@ -748,7 +756,7 @@ const HomePage = () => {
                   return (
                     <div
                       key={`${review.name}-${i}`}
-                      className="shrink-0 w-[360px] bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-6 whitespace-normal hover:border-gold/20 transition-colors duration-300"
+                      className="shrink-0 w-[360px] bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6 whitespace-normal hover:border-gold/25 transition-all duration-400"
                     >
                       <div className="flex items-center gap-3 mb-4">
                         <div
@@ -803,7 +811,7 @@ const HomePage = () => {
                     return (
                       <div
                         key={`${review.name}-rev-${i}`}
-                        className="shrink-0 w-[360px] bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-6 whitespace-normal hover:border-gold/20 transition-colors duration-300"
+                        className="shrink-0 w-[360px] bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6 whitespace-normal hover:border-gold/25 transition-all duration-400"
                       >
                         <div className="flex items-center gap-3 mb-4">
                           <div
@@ -848,6 +856,7 @@ const HomePage = () => {
       </section>
 
       {/* ===== CTA SECTION ===== */}
+      <div className="section-divider" />
       <section className="section-spacing relative py-24">
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <ScrollReveal>

@@ -193,7 +193,7 @@ export default function SolutionsPage() {
                   ease: [0.16, 1, 0.3, 1],
                 }}
                 whileHover={{ y: -4 }}
-                className="group bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-8 cursor-default hover:border-gold/30 hover:shadow-[0_0_30px_rgba(212,168,67,0.08)] transition-all duration-500 relative overflow-hidden"
+                className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl p-8 cursor-default hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(212,168,67,0.06)] transition-all duration-400 relative overflow-hidden"
               >
                 {segment.image && (
                   <div className="h-36 rounded-xl overflow-hidden mb-5 -mx-2 -mt-2">
@@ -260,7 +260,7 @@ export default function SolutionsPage() {
                   delay: i * 0.12,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-8 relative overflow-hidden group hover:border-gold/30 transition-all duration-500"
+                className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-8 relative overflow-hidden group hover:border-gold/25 transition-all duration-400"
               >
                 {/* Gold accent bar */}
                 <div className="w-10 h-[2px] bg-gold mb-5 rounded-full" />
@@ -314,7 +314,7 @@ export default function SolutionsPage() {
                   delay: i * 0.08,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-6 hover:border-gold/30 transition-all duration-500 group"
+                className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6 hover:border-gold/25 transition-all duration-400 group"
               >
                 <div className="flex items-start gap-4">
                   <div className="w-11 h-11 rounded-xl bg-gold/10 flex items-center justify-center text-gold shrink-0 group-hover:scale-110 transition-transform duration-300">
@@ -365,7 +365,7 @@ export default function SolutionsPage() {
                 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-6 relative overflow-hidden group hover:border-gold/30 transition-all duration-500"
+                className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6 relative overflow-hidden group hover:border-gold/25 transition-all duration-400"
               >
                 <span className="text-5xl font-black text-gold/[0.08] select-none leading-none block mb-3 group-hover:text-gold/[0.2] transition-colors duration-500">
                   {String(i + 1).padStart(2, "0")}

@@ -127,7 +127,7 @@ export default function ProjectsPage() {
                   animate="visible"
                   exit="exit"
                   onClick={() => setSelectedProject(project)}
-                  className="group bg-[#0f1a36] border border-white/[0.06] rounded-2xl overflow-hidden hover:border-gold/30 hover:shadow-[0_0_30px_rgba(212,168,67,0.1)] transition-all duration-500 hover:-translate-y-1 cursor-pointer"
+                  className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(212,168,67,0.06)] transition-all duration-400 hover:-translate-y-1 cursor-pointer"
                 >
                   {/* Image / Gradient Preview */}
                   <div
@@ -287,7 +287,7 @@ export default function ProjectsPage() {
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-[#0f1a36] border border-white/[0.06] rounded-3xl"
+              className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-[#0f1a36] border border-white/[0.08] rounded-3xl"
             >
               {/* Close Button */}
               <button

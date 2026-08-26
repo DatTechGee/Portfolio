@@ -4,7 +4,7 @@ import { mySocials } from "../constants";
 import { trackEvent } from "../utils/analytics";
 const Footer = () => {
   return (
-    <footer className="relative bg-[#060d1f] border-t border-white/5" role="contentinfo">
+    <footer className="relative bg-[#060d1f] border-t border-white/[0.08]" role="contentinfo">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
           {/* Brand */}
