@@ -144,6 +144,7 @@ const partners = [
     description:
       "We partner with founders who are serious about building sustainable businesses. Our approach establishes structured systems and technical foundations that transform ideas into execution-ready ventures.",
     num: "01",
+    image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=600&h=400&fit=crop&auto=format",
   },
   {
     title: "Growing Companies",
@@ -151,6 +152,7 @@ const partners = [
     description:
       "Organizations experiencing rapid growth encounter operational friction. We systematize operations and implement technology-enabled workflows that bring clarity to complexity.",
     num: "02",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&auto=format",
   },
   {
     title: "Organizations Requiring Execution",
@@ -158,6 +160,7 @@ const partners = [
     description:
       "We work with businesses that prioritize measurable outcomes over theoretical frameworks. We provide the technology backbone that transforms strategic plans into operational reality.",
     num: "03",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop&auto=format",
   },
   {
     title: "Teams Valuing Structure",
@@ -165,6 +168,7 @@ const partners = [
     description:
       "Organizations that recognize the competitive advantage of structured systems. We help implement frameworks that create measurable performance metrics and clear accountability.",
     num: "04",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&auto=format",
   },
 ];
 
@@ -173,31 +177,37 @@ const differentiators = [
     num: "01",
     title: "Execution-First",
     description: "We do not sell strategies — we build systems. Every engagement produces tangible, deployed, working software that your team can use immediately.",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=300&fit=crop&auto=format",
   },
   {
     num: "02",
     title: "Technology as Infrastructure",
     description: "We choose technology based on fit, not trends. Our stack decisions are guided by your business requirements, timeline, and long-term maintenance capacity.",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=300&fit=crop&auto=format",
   },
   {
     num: "03",
     title: "Systems Thinking",
     description: "We design interconnected solutions that address the full scope of your operations. Isolated features create complexity; integrated systems create clarity.",
+    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=300&fit=crop&auto=format",
   },
   {
     num: "04",
     title: "Discipline & Governance",
     description: "Clear milestones, transparent communication, and structured delivery processes ensure projects stay on time and on budget.",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=300&fit=crop&auto=format",
   },
   {
     num: "05",
     title: "Long-Term Value",
     description: "We build for sustainability, not shortcuts. Clean architecture, comprehensive documentation, and scalable design mean your system grows with your business.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=300&fit=crop&auto=format",
   },
   {
     num: "06",
     title: "Institutional Rigor",
     description: "We apply enterprise-grade standards to every project, regardless of size. Security, performance, and maintainability are non-negotiable.",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=300&fit=crop&auto=format",
   },
 ];
 
@@ -630,19 +640,24 @@ const HomePage = () => {
           <div className="grid sm:grid-cols-2 gap-6">
             {partners.map((partner, i) => (
               <ScrollReveal key={partner.num} delay={i * 0.1}>
-                <motion.div
-                  whileHover={{ y: -4 }}
-                  className="bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-8 hover:border-gold/20 transition-all duration-300 h-full"
-                >
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="text-gold/40 text-xs font-bold tracking-[0.3em] uppercase">
-                      Partner Type {partner.num}
-                    </span>
-                  </div>
-                  <h3 className="text-white text-xl font-bold mb-2">{partner.title}</h3>
-                  <p className="text-gold text-sm font-medium mb-4">{partner.subtitle}</p>
-                  <p className="text-neutral-400 text-sm leading-relaxed">{partner.description}</p>
-                </motion.div>
+                  <motion.div
+                    whileHover={{ y: -4 }}
+                    className="group bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-8 hover:border-gold/20 transition-all duration-300 h-full"
+                  >
+                    {partner.image && (
+                      <div className="h-40 rounded-xl overflow-hidden mb-5 -mx-2 -mt-2">
+                        <img src={partner.image} alt={partner.title} className="w-full h-full object-cover opacity-60 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500" />
+                      </div>
+                    )}
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="text-gold/40 text-xs font-bold tracking-[0.3em] uppercase">
+                        Partner Type {partner.num}
+                      </span>
+                    </div>
+                    <h3 className="text-white text-xl font-bold mb-2">{partner.title}</h3>
+                    <p className="text-gold text-sm font-medium mb-4">{partner.subtitle}</p>
+                    <p className="text-neutral-400 text-sm leading-relaxed">{partner.description}</p>
+                  </motion.div>
               </ScrollReveal>
             ))}
           </div>
@@ -681,8 +696,13 @@ const HomePage = () => {
               <ScrollReveal key={diff.num} delay={i * 0.08}>
                 <motion.div
                   whileHover={{ y: -4 }}
-                  className="bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-6 hover:border-gold/20 transition-all duration-300"
+                  className="group bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-6 hover:border-gold/20 transition-all duration-300"
                 >
+                  {diff.image && (
+                    <div className="h-32 rounded-xl overflow-hidden mb-4 -mx-2 -mt-2">
+                      <img src={diff.image} alt={diff.title} className="w-full h-full object-cover opacity-60 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500" />
+                    </div>
+                  )}
                   <span className="text-gold/40 text-xs font-bold tracking-[0.3em] uppercase block mb-3">
                     {diff.num}
                   </span>
@@ -832,6 +852,9 @@ const HomePage = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <ScrollReveal>
             <div className="relative bg-[#0f1a36] border border-white/[0.06] rounded-3xl p-10 md:p-16 text-center overflow-hidden">
+              <div className="absolute inset-0 rounded-3xl overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=600&fit=crop&auto=format" alt="" className="w-full h-full object-cover opacity-10" />
+              </div>
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-gold/5 rounded-full blur-[100px] pointer-events-none" />
 
               <p className="text-gold text-sm uppercase tracking-[0.2em] font-semibold mb-6 relative z-10">

@@ -13,6 +13,7 @@ const clientSegments = [
     tagline: "From idea to launch-ready product",
     description:
       "Helping founders validate ideas, build minimum viable products, and establish the technical foundations needed to attract investors and early adopters. From rapid prototyping to production deployment, every decision is made with speed and scalability in mind. We have helped launch 8+ startups from concept to market-ready products.",
+    image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=600&h=300&fit=crop&auto=format",
   },
   {
     icon: (
@@ -24,6 +25,7 @@ const clientSegments = [
     tagline: "Digital transformation for institutions",
     description:
       "Comprehensive school management systems with student portals, attendance tracking, GPA computation, fee management, and real-time reporting. Built to streamline administrative workflows and give educators more time to focus on what matters — teaching. Our solutions serve institutions with 100 to 5,000+ students.",
+    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=300&fit=crop&auto=format",
   },
   {
     icon: (
@@ -35,6 +37,7 @@ const clientSegments = [
     tagline: "Streamline operations with custom software",
     description:
       "Tailored payroll systems, inventory management, CRM platforms, and billing solutions designed to eliminate manual processes and reduce errors. Custom-built software that integrates seamlessly into your existing operations and scales as you grow. We have delivered 15+ business systems across Nigeria.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=300&fit=crop&auto=format",
   },
   {
     icon: (
@@ -46,6 +49,7 @@ const clientSegments = [
     tagline: "Scalable architecture for complex needs",
     description:
       "RESTful API design, third-party service integrations, microservices architecture, and cloud deployment for organizations that need enterprise-grade reliability. Built with security, observability, and performance at the core of every decision. Our APIs handle millions of requests across multiple client applications.",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=300&fit=crop&auto=format",
   },
 ];
 
@@ -191,6 +195,11 @@ export default function SolutionsPage() {
                 whileHover={{ y: -4 }}
                 className="group bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-8 cursor-default hover:border-gold/30 hover:shadow-[0_0_30px_rgba(212,168,67,0.08)] transition-all duration-500 relative overflow-hidden"
               >
+                {segment.image && (
+                  <div className="h-36 rounded-xl overflow-hidden mb-5 -mx-2 -mt-2">
+                    <img src={segment.image} alt={segment.title} className="w-full h-full object-cover opacity-60 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500" />
+                  </div>
+                )}
                 {/* Number overlay */}
                 <span className="absolute top-5 right-6 text-6xl font-black text-gold/[0.07] select-none leading-none pointer-events-none group-hover:text-gold/[0.15] transition-colors duration-500">
                   {String(i + 1).padStart(2, "0")}

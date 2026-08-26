@@ -152,6 +152,24 @@ export default function ContactPage() {
               Ready to start your next project? Reach out to DatTechGee Technologies and let's discuss how we can bring your vision to life.
             </p>
           </ScrollReveal>
+          <ScrollReveal delay={0.2}>
+            <div className="mt-10 max-w-3xl mx-auto">
+              <div className="relative rounded-2xl overflow-hidden border border-white/[0.06]">
+                <img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1000&h=300&fit=crop&auto=format" alt="DatTechGee Technologies — Contact us" className="w-full h-48 md:h-56 object-cover opacity-70" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a1128]/80 via-transparent to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 flex items-center justify-between">
+                  <div>
+                    <p className="text-white text-sm font-semibold">Let's Build Something Great</p>
+                    <p className="text-neutral-400 text-xs">Response within 2 business hours</p>
+                  </div>
+                  <div className="flex gap-2">
+                    <span className="px-3 py-1 rounded-full bg-gold/10 border border-gold/20 text-gold text-xs font-medium">WhatsApp</span>
+                    <span className="px-3 py-1 rounded-full bg-gold/10 border border-gold/20 text-gold text-xs font-medium">Email</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 

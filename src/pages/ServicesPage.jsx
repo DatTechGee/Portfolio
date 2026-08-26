@@ -58,6 +58,7 @@ const serviceCategories = [
     description:
       "Full-stack web applications, APIs, and business systems built from scratch with Laravel, React, and modern frameworks. Every solution is engineered for performance, security, and long-term maintainability.",
     icon: "layers",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=300&fit=crop&auto=format",
     features: [
       "End-to-end web applications with React and Laravel",
       "RESTful APIs with token authentication",
@@ -70,6 +71,7 @@ const serviceCategories = [
     description:
       "Cross-platform iOS and Android applications with React Native and Expo. From GPS tracking to biometric auth, we build mobile experiences that perform like native.",
     icon: "smartphone",
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=300&fit=crop&auto=format",
     features: [
       "Cross-platform iOS and Android from one codebase",
       "GPS tracking, push notifications, and biometrics",
@@ -82,6 +84,7 @@ const serviceCategories = [
     description:
       "Payroll, student portals, inventory, CRM, and workflow automation. We replace manual, error-prone processes with systems that run themselves.",
     icon: "briefcase",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=300&fit=crop&auto=format",
     features: [
       "Custom ERP, CRM, and payroll systems",
       "Student management and attendance platforms",
@@ -94,6 +97,7 @@ const serviceCategories = [
     description:
       "Modern, responsive interfaces built with Tailwind CSS and React. Clean design systems that users trust and enjoy, with animations that feel intentional.",
     icon: "palette",
+    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=300&fit=crop&auto=format",
     features: [
       "Responsive design with Tailwind CSS",
       "Component-driven architecture with React",
@@ -161,12 +165,12 @@ const processSteps = [
 ];
 
 const industries = [
-  { name: "Education", description: "School management systems, student portals, attendance tracking, and academic dashboards for institutions of all sizes." },
-  { name: "Healthcare", description: "Patient management, appointment scheduling, and medical record systems built with strict data privacy compliance." },
-  { name: "Finance", description: "Payment processing, transaction tracking, and financial reporting systems with bank-grade security." },
-  { name: "Real Estate", description: "Property listing platforms, tenant management, and CRM systems for real estate businesses." },
-  { name: "E-Commerce", description: "Online stores, inventory management, order processing, and multi-vendor marketplace platforms." },
-  { name: "Logistics", description: "Fleet tracking, delivery management, route optimization, and supply chain visibility systems." },
+  { name: "Education", description: "School management systems, student portals, attendance tracking, and academic dashboards for institutions of all sizes.", image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=300&fit=crop&auto=format" },
+  { name: "Healthcare", description: "Patient management, appointment scheduling, and medical record systems built with strict data privacy compliance.", image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=300&fit=crop&auto=format" },
+  { name: "Finance", description: "Payment processing, transaction tracking, and financial reporting systems with bank-grade security.", image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&h=300&fit=crop&auto=format" },
+  { name: "Real Estate", description: "Property listing platforms, tenant management, and CRM systems for real estate businesses.", image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=300&fit=crop&auto=format" },
+  { name: "E-Commerce", description: "Online stores, inventory management, order processing, and multi-vendor marketplace platforms.", image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=300&fit=crop&auto=format" },
+  { name: "Logistics", description: "Fleet tracking, delivery management, route optimization, and supply chain visibility systems.", image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=300&fit=crop&auto=format" },
 ];
 
 export default function ServicesPage() {
@@ -189,6 +193,25 @@ export default function ServicesPage() {
               Building the technical and operational backbone upon which serious
               businesses grow. DatTechGee Technologies delivers end-to-end digital solutions.
             </p>
+          </ScrollReveal>
+          <ScrollReveal delay={0.2}>
+            <div className="mt-10 max-w-3xl mx-auto">
+              <div className="relative rounded-2xl overflow-hidden border border-white/[0.06]">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1000&h=300&fit=crop&auto=format" alt="DatTechGee Technologies — Digital solutions" className="w-full h-48 md:h-64 object-cover opacity-70" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a1128]/80 via-transparent to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 flex items-center justify-between">
+                  <div>
+                    <p className="text-white text-sm font-semibold">End-to-End Digital Solutions</p>
+                    <p className="text-neutral-400 text-xs">From concept to deployment</p>
+                  </div>
+                  <div className="flex gap-2">
+                    <span className="px-3 py-1 rounded-full bg-gold/10 border border-gold/20 text-gold text-xs font-medium">Laravel</span>
+                    <span className="px-3 py-1 rounded-full bg-gold/10 border border-gold/20 text-gold text-xs font-medium">React</span>
+                    <span className="px-3 py-1 rounded-full bg-gold/10 border border-gold/20 text-gold text-xs font-medium">Node.js</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </ScrollReveal>
         </div>
       </section>
@@ -270,6 +293,11 @@ export default function ServicesPage() {
                 whileHover={{ y: -4 }}
                 className="group bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-8 cursor-default hover:border-gold/30 hover:shadow-[0_0_30px_rgba(212,168,67,0.08)] transition-all duration-500 relative overflow-hidden"
               >
+                {service.image && (
+                  <div className="h-36 rounded-xl overflow-hidden mb-5 -mx-2 -mt-2">
+                    <img src={service.image} alt={service.title} className="w-full h-full object-cover opacity-60 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500" />
+                  </div>
+                )}
                 <span className="absolute top-5 right-6 text-6xl font-black text-gold/[0.07] select-none leading-none pointer-events-none group-hover:text-gold/[0.15] transition-colors duration-500">
                   {String(i + 1).padStart(2, "0")}
                 </span>
@@ -445,8 +473,13 @@ export default function ServicesPage() {
                     delay: i * 0.08,
                     ease: [0.16, 1, 0.3, 1],
                   }}
-                  className="bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-6 hover:border-gold/30 transition-all duration-500"
+                  className="group bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-6 hover:border-gold/30 transition-all duration-500"
                 >
+                  {industry.image && (
+                    <div className="h-28 rounded-xl overflow-hidden mb-4 -mx-2 -mt-2">
+                      <img src={industry.image} alt={industry.name} className="w-full h-full object-cover opacity-50 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500" />
+                    </div>
+                  )}
                   <h3 className="text-lg font-bold dark:text-white text-neutral-800 mb-2">
                     {industry.name}
                   </h3>
@@ -484,18 +517,21 @@ export default function ServicesPage() {
                 description: "Clear scope, timeline, and budget agreed upfront. Ideal for well-defined projects with specific requirements and measurable deliverables.",
                 bestFor: "Websites, MVPs, feature development",
                 timeline: "2–8 weeks",
+                image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=300&fit=crop&auto=format",
               },
               {
                 title: "Retainer Partnership",
                 description: "Ongoing development support with a dedicated monthly allocation. Perfect for continuous improvement, new features, and long-term product growth.",
                 bestFor: "Products, maintenance, iterations",
                 timeline: "Monthly",
+                image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=600&h=300&fit=crop&auto=format",
               },
               {
                 title: "Technical Consulting",
                 description: "Architecture reviews, technology strategy, code audits, and technical advisory for teams building their own products and platforms.",
                 bestFor: "Architecture, code reviews, strategy",
                 timeline: "Per session",
+                image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=300&fit=crop&auto=format",
               },
             ].map((model, i) => (
               <motion.div
@@ -506,6 +542,11 @@ export default function ServicesPage() {
                 transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 className="bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-8 relative overflow-hidden group hover:border-gold/30 transition-all duration-500"
               >
+                {model.image && (
+                  <div className="h-28 rounded-xl overflow-hidden mb-5 -mx-2 -mt-2">
+                    <img src={model.image} alt={model.title} className="w-full h-full object-cover opacity-50 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500" />
+                  </div>
+                )}
                 <span className="absolute top-5 right-6 text-6xl font-black text-gold/[0.07] select-none leading-none pointer-events-none group-hover:text-gold/[0.15] transition-colors duration-500">
                   {String(i + 1).padStart(2, "0")}
                 </span>

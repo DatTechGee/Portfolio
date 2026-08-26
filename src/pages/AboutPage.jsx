@@ -3,30 +3,45 @@ import { Link } from "react-router-dom";
 import ScrollReveal from "../components/ScrollReveal";
 import { experiences, techStack, industries, portfolioStats } from "../constants";
 
+const industryImages = [
+  "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=300&fit=crop&auto=format",
+  "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=300&fit=crop&auto=format",
+  "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&h=300&fit=crop&auto=format",
+  "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=300&fit=crop&auto=format",
+  "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=300&fit=crop&auto=format",
+  "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=300&fit=crop&auto=format",
+  "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=600&h=300&fit=crop&auto=format",
+  "https://images.unsplash.com/photo-1586528116022-a577ca53f304?w=600&h=300&fit=crop&auto=format",
+];
+
 const companyValues = [
   {
     num: "01",
     title: "Execution Over Theory",
     description:
       "We prioritize tangible results and measurable outcomes over conceptual frameworks and speculative strategies.",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=300&fit=crop&auto=format",
   },
   {
     num: "02",
     title: "Technology as Infrastructure",
     description:
       "We build technical foundations that power operations, not superficial digital layers that add complexity.",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=300&fit=crop&auto=format",
   },
   {
     num: "03",
     title: "Systems Thinking",
     description:
       "We design interconnected frameworks that address the full scope of business operations, not isolated solutions.",
+    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=300&fit=crop&auto=format",
   },
   {
     num: "04",
     title: "Discipline & Governance",
     description:
       "We establish clear structures, ownership, and performance standards that ensure reliable delivery.",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=300&fit=crop&auto=format",
   },
 ];
 
@@ -201,8 +216,13 @@ export default function AboutPage() {
                   delay: i * 0.1,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-6 hover:border-gold/30 transition-all duration-500"
+                className="group bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-6 hover:border-gold/30 transition-all duration-500"
               >
+                {v.image && (
+                  <div className="h-32 rounded-xl overflow-hidden mb-4 -mx-2 -mt-2">
+                    <img src={v.image} alt={v.title} className="w-full h-full object-cover opacity-60 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500" />
+                  </div>
+                )}
                 <span className="text-gold/40 text-xs font-bold tracking-[0.3em] uppercase block mb-3">
                   {v.num}
                 </span>
@@ -260,15 +280,9 @@ export default function AboutPage() {
             </ScrollReveal>
 
             <ScrollReveal direction="right">
-              <div className="relative">
-                <div className="rounded-2xl overflow-hidden border-2 border-gold/30 shadow-[0_0_40px_rgba(212,168,67,0.1)]">
-                  <img
-                    src="/assets/PORTFILO.png"
-                    alt="Isaac Emmanuel — Founder of DatTechGee Technologies"
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
-                <div className="absolute -bottom-4 -right-4 w-full h-full rounded-2xl border border-gold/20 -z-10" />
+              <div className="relative rounded-2xl overflow-hidden border border-white/[0.06]">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&auto=format" alt="Isaac Emmanuel — Founder" className="w-full h-full object-cover opacity-80" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a1128]/60 to-transparent" />
               </div>
             </ScrollReveal>
           </div>
@@ -491,9 +505,9 @@ export default function AboutPage() {
             </div>
           </ScrollReveal>
 
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {industries.map((industry, i) => (
-              <motion.span
+              <motion.div
                 key={industry.name}
                 initial={{ opacity: 0, y: 15, scale: 0.95 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -503,11 +517,17 @@ export default function AboutPage() {
                   delay: i * 0.06,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded-xl bg-[#0f1a36] border border-white/[0.06] dark:text-neutral-300 text-neutral-600 hover:border-gold/30 hover:shadow-[0_0_20px_rgba(212,168,67,0.08)] transition-all duration-500 cursor-default"
+                className="group bg-[#0f1a36] border border-white/[0.06] rounded-xl overflow-hidden hover:border-gold/30 hover:shadow-[0_0_20px_rgba(212,168,67,0.08)] transition-all duration-500"
               >
-                <span className="w-2 h-2 rounded-full shrink-0 bg-gold" />
-                {industry.name}
-              </motion.span>
+                <div className="h-24 overflow-hidden">
+                  <img src={industryImages[i]} alt={industry.name} className="w-full h-full object-cover opacity-50 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500" />
+                </div>
+                <div className="p-3 text-center">
+                  <span className="text-sm font-medium dark:text-neutral-300 text-neutral-600">
+                    {industry.name}
+                  </span>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
