@@ -281,7 +281,7 @@ export default function AboutPage() {
 
             <ScrollReveal direction="right">
               <div className="relative rounded-2xl overflow-hidden border border-white/[0.06]">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&auto=format" alt="Isaac Emmanuel — Founder" className="w-full h-full object-cover opacity-80" />
+                <img src="/assets/PORTFILO.png" alt="Isaac Emmanuel — Founder" className="w-full h-full object-cover opacity-80" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a1128]/60 to-transparent" />
               </div>
             </ScrollReveal>
