@@ -160,16 +160,21 @@ export default function InsightsPage() {
       <section className="section-spacing pt-32 pb-16">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <ScrollReveal>
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="h-px w-8 bg-gradient-to-r from-transparent to-gold/50" />
+              <span className="text-gold/90 text-xs font-semibold tracking-[0.25em] uppercase">
+                DatTechGee Technologies
+              </span>
+              <div className="h-px w-8 bg-gradient-to-l from-transparent to-gold/50" />
+            </div>
             <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
               Insights
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold dark:text-white text-neutral-800 mb-6">
-              Insights &amp; Thinking
+            <h1 className="text-5xl md:text-6xl font-bold dark:text-white text-neutral-800 mb-6">
+              Our Insights
             </h1>
             <p className="dark:text-neutral-400 text-neutral-500 max-w-2xl mx-auto text-lg">
-              Sharing knowledge on web development, software architecture, and the
-              technology decisions that shape how businesses operate in the digital
-              age.
+              Thoughts on modern web development, AI-powered automation, and building scalable digital solutions.
             </p>
           </ScrollReveal>
         </div>
@@ -179,6 +184,11 @@ export default function InsightsPage() {
       <section className="pb-16">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
+            <div className="mb-6">
+              <span className="text-gold/70 text-xs font-semibold tracking-[0.2em] uppercase">
+                Featured
+              </span>
+            </div>
             <motion.div
               initial={{ opacity: 0, y: 35, filter: "blur(4px)" }}
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -261,6 +271,12 @@ export default function InsightsPage() {
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
             <div className="mb-10">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="h-px w-6 bg-gradient-to-r from-transparent to-gold/40" />
+                <span className="text-gold/60 text-xs font-semibold tracking-[0.2em] uppercase">
+                  DatTechGee Technologies
+                </span>
+              </div>
               <h2 className="text-2xl font-bold dark:text-white text-neutral-800">
                 Latest Articles
               </h2>

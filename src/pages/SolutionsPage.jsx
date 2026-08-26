@@ -70,7 +70,7 @@ const approachPillars = [
     title: "Systems",
     subtitle: "Operational frameworks for scale",
     description:
-      "Software without structure is just code. I design operational systems — workflows, data pipelines, access controls — that turn individual features into cohesive, maintainable platforms.",
+      "Software without structure is just code. We design operational systems — workflows, data pipelines, access controls — that turn individual features into cohesive, maintainable platforms.",
   },
   {
     icon: (
@@ -81,7 +81,7 @@ const approachPillars = [
     title: "Execution",
     subtitle: "Disciplined delivery of results",
     description:
-      "Strategy means nothing without execution. I follow a structured delivery process — milestones, testing, feedback loops — so projects ship on time and meet the standard they are supposed to.",
+      "Strategy means nothing without execution. We follow a structured delivery process — milestones, testing, feedback loops — so projects ship on time and meet the standard they are supposed to.",
   },
 ];
 
@@ -129,7 +129,7 @@ const whyWorkWithMe = [
       </svg>
     ),
     title: "Ongoing Support",
-    description: "Post-launch maintenance, updates, and optimization — I do not disappear after delivery.",
+    description: "Post-launch maintenance, updates, and optimization — we do not disappear after delivery.",
   },
   {
     icon: (
@@ -149,6 +149,9 @@ export default function SolutionsPage() {
       <section className="section-spacing pt-32 pb-16">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <ScrollReveal>
+            <span className="text-gold text-xs font-semibold tracking-[0.25em] uppercase mb-6 block">
+              DatTechGee Technologies
+            </span>
             <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
               Solutions
             </span>
@@ -168,6 +171,11 @@ export default function SolutionsPage() {
       {/* Client Segments */}
       <section className="pb-20">
         <div className="max-w-6xl mx-auto px-6">
+          <div className="mb-12 text-center">
+            <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
+              Who We Serve
+            </span>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {clientSegments.map((segment, i) => (
               <motion.div
@@ -273,10 +281,10 @@ export default function SolutionsPage() {
           <ScrollReveal>
             <div className="mb-12 text-center">
               <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
-                Why DatTechGee
+                Why DatTechGee Technologies
               </span>
               <h2 className="text-3xl md:text-4xl font-bold dark:text-white text-neutral-800 mb-4">
-                Why Work With Me
+                Why DatTechGee Technologies
               </h2>
               <p className="dark:text-neutral-400 text-neutral-500 max-w-xl mx-auto">
                 A partnership built on technical excellence, transparency, and a
@@ -326,7 +334,7 @@ export default function SolutionsPage() {
               Ready to Build Something Purpose-Built?
             </h2>
             <p className="dark:text-neutral-400 text-neutral-500 mb-8 max-w-lg mx-auto">
-              Let&apos;s discuss your business challenges and architect a solution
+              Let DatTechGee Technologies discuss your business challenges and architect a solution
               that actually fits.
             </p>
             <Link

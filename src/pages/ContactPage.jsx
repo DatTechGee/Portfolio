@@ -58,11 +58,11 @@ const faqs = [
   },
   {
     question: "Do you offer maintenance and support?",
-    answer: "Yes, I offer ongoing maintenance, bug fixes, and feature additions after deployment.",
+    answer: "Yes, we offer ongoing maintenance, bug fixes, and feature additions after deployment.",
   },
   {
     question: "How do I get started?",
-    answer: "Reach out via the form, WhatsApp, or email. We will discuss your needs, I will provide a quote, and we begin.",
+    answer: "Reach out via the form, WhatsApp, or email. We will discuss your needs, provide a quote, and begin.",
   },
 ];
 
@@ -123,14 +123,17 @@ export default function ContactPage() {
       <section className="section-spacing pt-32 pb-12">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <ScrollReveal>
-            <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
+            <span className="text-gold text-xs font-bold tracking-[0.25em] uppercase mb-3 block">
+              DatTechGee Technologies
+            </span>
+            <span className="text-gold/70 text-sm font-semibold tracking-widest uppercase mb-4 block">
               Contact
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold dark:text-white text-neutral-800 mb-6">
-              Let&apos;s Build Something Great
+            <h1 className="text-5xl md:text-6xl font-bold dark:text-white text-neutral-800 mb-6">
+              Get in Touch
             </h1>
             <p className="dark:text-neutral-400 text-neutral-500 max-w-2xl mx-auto text-lg">
-              Ready to transform your vision into reality? Let&apos;s discuss your project.
+              Ready to start your next project? Reach out to DatTechGee Technologies and let's discuss how we can bring your vision to life.
             </p>
           </ScrollReveal>
         </div>
@@ -139,6 +142,11 @@ export default function ContactPage() {
       {/* Contact Channels */}
       <section className="section-spacing pb-12">
         <div className="max-w-6xl mx-auto px-6">
+          <ScrollReveal>
+            <span className="text-gold/60 text-xs font-semibold tracking-widest uppercase mb-4 block">
+              Contact Channels
+            </span>
+          </ScrollReveal>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {contactChannels.map((info, i) => (
               <ScrollReveal key={info.label} delay={i * 0.08}>
@@ -188,7 +196,7 @@ export default function ContactPage() {
                   Prefer a quick conversation?
                 </p>
                 <p className="dark:text-neutral-400 text-neutral-500 text-sm">
-                  Reach me directly on WhatsApp or LinkedIn for a faster response.
+                  Reach us directly on WhatsApp or LinkedIn for a faster response.
                 </p>
               </div>
               <div className="flex items-center gap-3">
@@ -231,7 +239,7 @@ export default function ContactPage() {
                   Request a Quote
                 </h2>
                 <p className="dark:text-neutral-400 text-neutral-500 mb-8 leading-relaxed">
-                  Tell me about your project and I&apos;ll get back to you within 24 hours with a detailed proposal, timeline, and quote.
+                  Tell us about your project and DatTechGee Technologies will get back to you within 24 hours with a detailed proposal, timeline, and quote.
                 </p>
 
                 {/* FAQ Accordion */}
@@ -302,7 +310,7 @@ export default function ContactPage() {
                       Message Sent Successfully!
                     </h3>
                     <p className="dark:text-neutral-400 text-neutral-500 mb-6">
-                      Thanks for reaching out. I&apos;ll review your project details and get back to you within 24 hours.
+                      Thanks for reaching out. DatTechGee Technologies will review your project details and get back to you within 24 hours.
                     </p>
                     <button
                       onClick={() => {
@@ -443,7 +451,7 @@ export default function ContactPage() {
                         value={formData.projectSummary}
                         onChange={handleChange}
                         required
-                        placeholder="Tell me about your project, goals, and any specific requirements..."
+                        placeholder="Tell us about your project, goals, and any specific requirements..."
                         className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-500 focus:border-gold/50 focus:ring-2 focus:ring-gold/20 outline-none transition-all h-32 resize-none"
                       />
                     </div>

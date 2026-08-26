@@ -69,11 +69,14 @@ export default function ProjectsPage() {
       <section className="section-spacing pt-32 pb-12">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <ScrollReveal>
+            <span className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-3 block">
+              DatTechGee Technologies
+            </span>
             <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
               Portfolio
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold dark:text-white text-neutral-800 mb-6">
-              Featured Projects
+              Our Portfolio
             </h1>
             <p className="dark:text-neutral-400 text-neutral-500 max-w-2xl mx-auto text-lg">
               A selection of projects that demonstrate execution quality and technical breadth
@@ -86,6 +89,11 @@ export default function ProjectsPage() {
       <section className="pb-12">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
+            <div className="text-center mb-4">
+              <span className="text-neutral-500 text-xs font-medium tracking-widest uppercase">
+                Filter by Category
+              </span>
+            </div>
             <div className="flex flex-wrap justify-center gap-3">
               {filterCategories.map((cat) => (
                 <button
@@ -202,9 +210,17 @@ export default function ProjectsPage() {
       </section>
 
       {/* Project Stats */}
-      <section className="py-16 border-t border-white/[0.06]">
+      <section className="py-16 bg-[#060d1f]">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
+            <div className="text-center mb-10">
+              <span className="text-gold text-xs font-semibold tracking-[0.2em] uppercase block mb-3">
+                Track Record
+              </span>
+              <h2 className="text-2xl md:text-3xl font-bold dark:text-white text-neutral-800">
+                Proven Results
+              </h2>
+            </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               {[
                 { label: "Projects", value: "21+" },
@@ -231,10 +247,10 @@ export default function ProjectsPage() {
         <div className="max-w-6xl mx-auto px-6 text-center">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-bold dark:text-white text-neutral-800 mb-4">
-              Have a project in mind?
+              Ready to build something exceptional?
             </h2>
             <p className="dark:text-neutral-400 text-neutral-500 mb-8 max-w-lg mx-auto">
-              Let&apos;s collaborate and build something exceptional together.
+              Let DatTechGee Technologies discuss your vision and bring it to life with expert execution.
             </p>
             <Link
               to="/contact"

@@ -68,7 +68,7 @@ const serviceCategories = [
   {
     title: "Mobile App Development",
     description:
-      "Cross-platform iOS and Android applications with React Native and Expo. From GPS tracking to biometric auth, I build mobile experiences that perform like native.",
+      "Cross-platform iOS and Android applications with React Native and Expo. From GPS tracking to biometric auth, we build mobile experiences that perform like native.",
     icon: "smartphone",
     features: [
       "Cross-platform iOS and Android from one codebase",
@@ -80,7 +80,7 @@ const serviceCategories = [
   {
     title: "Business Systems & Automation",
     description:
-      "Payroll, student portals, inventory, CRM, and workflow automation. I replace manual, error-prone processes with systems that run themselves.",
+      "Payroll, student portals, inventory, CRM, and workflow automation. We replace manual, error-prone processes with systems that run themselves.",
     icon: "briefcase",
     features: [
       "Custom ERP, CRM, and payroll systems",
@@ -176,6 +176,9 @@ export default function ServicesPage() {
       <section className="section-spacing pt-32 pb-20">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <ScrollReveal>
+            <span className="inline-block px-4 py-1.5 rounded-full border border-gold/20 bg-gold/5 text-gold text-xs font-semibold tracking-widest uppercase mb-6">
+              DatTechGee Technologies
+            </span>
             <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
               Services
             </span>
@@ -184,7 +187,7 @@ export default function ServicesPage() {
             </h1>
             <p className="dark:text-neutral-400 text-neutral-500 max-w-2xl mx-auto text-lg">
               Building the technical and operational backbone upon which serious
-              businesses grow
+              businesses grow. DatTechGee Technologies delivers end-to-end digital solutions.
             </p>
           </ScrollReveal>
         </div>
@@ -195,8 +198,11 @@ export default function ServicesPage() {
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
             <div className="text-center mb-16">
+              <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
+                Our Position
+              </span>
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold dark:text-white text-neutral-800 max-w-3xl mx-auto leading-snug">
-                Not just development. Not just consulting. I build systems that
+                Not just development. Not just consulting. We build systems that
                 work.
               </h2>
             </div>
@@ -237,7 +243,7 @@ export default function ServicesPage() {
           <ScrollReveal>
             <div className="mb-14 text-center">
               <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
-                What I Build
+                What We Build
               </span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold dark:text-white text-neutral-800 mb-4">
                 Service Categories
@@ -318,7 +324,7 @@ export default function ServicesPage() {
                 Process
               </span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold dark:text-white text-neutral-800 mb-4">
-                How I Work
+                How We Work
               </h2>
               <p className="dark:text-neutral-400 text-neutral-500 max-w-xl mx-auto">
                 A disciplined approach that turns ideas into reliable,
@@ -373,7 +379,7 @@ export default function ServicesPage() {
                 Tech Stack
               </span>
               <h2 className="text-2xl md:text-3xl font-bold dark:text-white text-neutral-800">
-                Technologies I Work With
+                Technologies We Work With
               </h2>
             </div>
           </ScrollReveal>
@@ -417,7 +423,7 @@ export default function ServicesPage() {
                 Industries
               </span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold dark:text-white text-neutral-800 mb-4">
-                Industries I Serve
+                Industries We Serve
               </h2>
               <p className="dark:text-neutral-400 text-neutral-500 max-w-xl mx-auto">
                 Solutions tailored to the unique challenges and workflows of
@@ -457,7 +463,7 @@ export default function ServicesPage() {
               Ready to start your project?
             </h2>
             <p className="dark:text-neutral-400 text-neutral-500 mb-8 max-w-lg mx-auto">
-              Let&apos;s discuss your vision and build something exceptional
+              Let DatTechGee Technologies discuss your vision and build something exceptional
               together.
             </p>
             <Link
