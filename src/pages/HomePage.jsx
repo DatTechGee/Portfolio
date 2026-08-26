@@ -14,30 +14,65 @@ const partnerNames = [
   "Climate Website",
 ];
 
-const processSteps = [
+const positionCards = [
   {
-    num: "01",
-    title: "Discovery",
-    description:
-      "Deep-dive into your business goals, user needs, and technical requirements to define a clear roadmap.",
+    label: "Not",
+    items: [
+      "A traditional software agency",
+      "A speculative consultancy",
+      "An accelerator or incubator",
+    ],
+    accent: "border-red-500/20",
+    icon: (
+      <svg className="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    ),
   },
   {
-    num: "02",
-    title: "Design",
-    description:
-      "Craft intuitive wireframes and modern UI designs focused on usability, brand alignment, and conversion.",
+    label: "Is",
+    items: [
+      "An execution-focused technology company",
+      "Built at the intersection of software, systems, and disciplined implementation",
+      "Serving businesses that demand structure, clarity, and measurable outcomes",
+    ],
+    accent: "border-gold/30",
+    icon: (
+      <svg className="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.5 12.75l6 6 9-13.5" />
+      </svg>
+    ),
+  },
+];
+
+const pillars = [
+  {
+    icon: (
+      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
+      </svg>
+    ),
+    title: "Software",
+    description: "Digital infrastructure that powers growth.",
   },
   {
-    num: "03",
-    title: "Develop",
-    description:
-      "Build robust, scalable solutions with clean architecture, iterative sprints, and transparent progress updates.",
+    icon: (
+      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
+    ),
+    title: "Innovation",
+    description: "Operational frameworks for scale.",
   },
   {
-    num: "04",
-    title: "Deploy",
-    description:
-      "Launch your product with optimized performance, thorough testing, and ongoing support for seamless operations.",
+    icon: (
+      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+      </svg>
+    ),
+    title: "Impact",
+    description: "Disciplined delivery of results.",
   },
 ];
 
@@ -48,7 +83,7 @@ const capabilities = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
       </svg>
     ),
-    title: "Full-Stack Web Applications",
+    title: "Custom Software Development",
     description:
       "End-to-end web platforms with React frontends, Laravel/Node.js backends, authentication, dashboards, and reporting — built for scale.",
   },
@@ -58,7 +93,7 @@ const capabilities = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
       </svg>
     ),
-    title: "Mobile App Development",
+    title: "Mobile Application Development",
     description:
       "Cross-platform Android/iOS apps with React Native and Expo — GPS tracking, push notifications, biometric auth, and offline capabilities.",
   },
@@ -68,7 +103,7 @@ const capabilities = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z" />
       </svg>
     ),
-    title: "Business Management Systems",
+    title: "Business Systems & Automation",
     description:
       "Custom ERP, CRM, payroll, inventory, and student management systems tailored to your organization's exact operational workflow.",
   },
@@ -84,10 +119,95 @@ const capabilities = [
   },
 ];
 
-const techBadges = [
-  { name: "React", position: "top-0 -left-16 md:-left-24" },
-  { name: ".NET", position: "bottom-8 -left-20 md:-left-28" },
-  { name: "Node.js", position: "top-1/4 -right-16 md:-right-24" },
+const processSteps = [
+  {
+    num: "01",
+    title: "Assessment & Alignment",
+    description:
+      "Evaluate your business model, operational gaps, and execution needs to establish a clear foundation.",
+  },
+  {
+    num: "02",
+    title: "Systems Blueprinting",
+    description:
+      "Design the technical and operational frameworks required for scale with precision and clarity.",
+  },
+  {
+    num: "03",
+    title: "Structured Execution",
+    description:
+      "Build, integrate, and deploy with precision and accountability, ensuring measurable outcomes.",
+  },
+  {
+    num: "04",
+    title: "Review & Optimization",
+    description:
+      "Refine systems based on performance and growth needs, creating sustainable momentum.",
+  },
+];
+
+const partners = [
+  {
+    title: "Early-Stage Founders",
+    subtitle: "Building real businesses from the ground up",
+    description:
+      "We partner with founders who are serious about building sustainable businesses. Our approach establishes structured systems and technical foundations that transform ideas into execution-ready ventures.",
+    num: "01",
+  },
+  {
+    title: "Growing Companies",
+    subtitle: "Facing operational complexity and scaling challenges",
+    description:
+      "Organizations experiencing rapid growth encounter operational friction. We systematize operations and implement technology-enabled workflows that bring clarity to complexity.",
+    num: "02",
+  },
+  {
+    title: "Organizations Requiring Execution",
+    subtitle: "Demanding technology-backed implementation",
+    description:
+      "We work with businesses that prioritize measurable outcomes over theoretical frameworks. We provide the technology backbone that transforms strategic plans into operational reality.",
+    num: "03",
+  },
+  {
+    title: "Teams Valuing Structure",
+    subtitle: "Committed to clarity and disciplined delivery",
+    description:
+      "Organizations that recognize the competitive advantage of structured systems. We help implement frameworks that create measurable performance metrics and clear accountability.",
+    num: "04",
+  },
+];
+
+const differentiators = [
+  {
+    num: "01",
+    title: "Execution-First",
+    description: "Not theory-led. We prioritize tangible results and measurable outcomes over conceptual frameworks.",
+  },
+  {
+    num: "02",
+    title: "Technology as Infrastructure",
+    description: "Not decoration. We build technical foundations that power operations, not superficial digital layers.",
+  },
+  {
+    num: "03",
+    title: "Systems Thinking",
+    description: "Across operations. We design interconnected frameworks that address the full scope of business operations.",
+  },
+  {
+    num: "04",
+    title: "Discipline & Governance",
+    description: "Accountability built-in. We establish clear structures, ownership, and performance standards.",
+  },
+  {
+    num: "05",
+    title: "Long-Term Value",
+    description: "Over short-term delivery. We optimize for sustainable growth and lasting impact.",
+  },
+  {
+    num: "06",
+    title: "Institutional Rigor",
+    description: "Professional standards. Enterprise-grade processes, documentation, and quality control.",
+  },
 ];
 
 const avatarColors = [
@@ -148,23 +268,22 @@ const HomePage = () => {
 
               <ScrollReveal direction="up" delay={0.2}>
                 <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight leading-[1.1]">
-                  <span className="text-white">Isaac</span>{" "}
+                  <span className="text-white">DatTechGee</span>{" "}
                   <span className="bg-gradient-to-r from-white via-gold to-gold bg-clip-text text-transparent">
-                    Emmanuel
+                    Technologies
                   </span>
                 </h1>
               </ScrollReveal>
 
               <ScrollReveal direction="up" delay={0.3}>
-                <p className="text-lg sm:text-xl text-neutral-400 font-medium">
-                  Founder &amp; Lead Developer at{" "}
-                  <span className="text-gold">DatTechGee</span>
+                <p className="text-lg sm:text-xl text-gold font-semibold tracking-wide">
+                  Software. Innovation. Impact.
                 </p>
               </ScrollReveal>
 
               <ScrollReveal direction="up" delay={0.35}>
-                <p className="text-base text-gold font-semibold tracking-wide">
-                  Software. Innovation. Impact.
+                <p className="text-base text-neutral-400">
+                  Engineering digital solutions that drive business growth.
                 </p>
               </ScrollReveal>
 
@@ -179,87 +298,44 @@ const HomePage = () => {
               <ScrollReveal direction="up" delay={0.45}>
                 <div className="flex flex-wrap gap-4 justify-center lg:justify-start mt-2">
                   <Link
-                    to="/projects"
+                    to="/services"
                     className="bg-gold text-navy px-7 py-3.5 rounded-lg font-semibold text-sm hover:bg-gold/90 transition-colors duration-300 inline-flex items-center gap-2"
                   >
-                    View My Work
+                    Our Services
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                     </svg>
                   </Link>
-                  <a
-                    href="/Isaac_Emmanuel_CV.pdf"
-                    download
-                    className="border border-gold/30 text-gold px-7 py-3.5 rounded-lg font-semibold text-sm hover:bg-gold/10 transition-colors duration-300 inline-flex items-center gap-2"
-                  >
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                    </svg>
-                    Download CV
-                  </a>
                   <Link
                     to="/contact"
                     className="border border-gold/30 text-gold px-7 py-3.5 rounded-lg font-semibold text-sm hover:bg-gold/10 transition-colors duration-300 inline-flex items-center gap-2"
                   >
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-                    </svg>
-                    Get In Touch
+                    Start a Project
                   </Link>
                 </div>
               </ScrollReveal>
             </div>
 
-            {/* Right - Profile Image */}
+            {/* Right - Image */}
             <ScrollReveal direction="right" delay={0.3} className="relative hidden lg:flex justify-center">
               <motion.div style={{ y: heroY }} className="relative">
-                {/* Glow ring */}
-                <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-gold/30 via-gold/10 to-gold/30 blur-2xl opacity-60" />
-                <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-gold/40 to-gold/10" />
-                <div className="relative w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-2 border-gold/30">
+                <div className="absolute -inset-4 rounded-2xl bg-gradient-to-r from-gold/30 via-gold/10 to-gold/30 blur-2xl opacity-60" />
+                <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-gold/40 to-gold/10" />
+                <div className="relative w-[420px] h-[300px] lg:w-[480px] lg:h-[340px] rounded-2xl overflow-hidden border-2 border-gold/30">
                   <img
-                    src="/assets/PORTFILO.png"
-                    alt="Isaac Emmanuel"
+                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=500&fit=crop&auto=format"
+                    alt="DatTechGee Technologies — Team collaboration"
                     className="w-full h-full object-cover"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a1128]/80 via-transparent to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <p className="text-white text-sm font-semibold">DatTechGee Technologies</p>
+                    <p className="text-neutral-400 text-xs">Software. Innovation. Impact.</p>
+                  </div>
                 </div>
-
-                {/* Floating tech badges */}
-                {techBadges.map((badge, i) => (
-                  <motion.div
-                    key={badge.name}
-                    className={`absolute ${badge.position} bg-[#0f1a36] border border-white/[0.08] rounded-xl px-4 py-2.5 shadow-2xl`}
-                    animate={{
-                      y: [0, -8, 0],
-                    }}
-                    transition={{
-                      duration: 3 + i * 0.5,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                  >
-                    <span className="text-gold text-xs font-semibold tracking-wide">
-                      {badge.name}
-                    </span>
-                  </motion.div>
-                ))}
               </motion.div>
             </ScrollReveal>
           </div>
-
-          {/* Mobile profile image */}
-          <ScrollReveal direction="up" delay={0.5} className="lg:hidden flex justify-center mt-10">
-            <div className="relative">
-              <div className="absolute -inset-3 rounded-full bg-gradient-to-r from-gold/20 via-gold/5 to-gold/20 blur-xl opacity-50" />
-              <div className="relative w-48 h-48 rounded-full overflow-hidden border-2 border-gold/30">
-                <img
-                  src="/assets/PORTFILO.png"
-                  alt="Isaac Emmanuel"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </ScrollReveal>
         </div>
 
         {/* Scroll indicator */}
@@ -320,45 +396,75 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* ===== TRUSTED PARTNERS / CLIENT LOGOS MARQUEE ===== */}
-      <section className="section-spacing relative py-12 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-10">
-          <ScrollReveal>
-            <p className="text-center text-neutral-500 text-sm uppercase tracking-[0.2em] font-medium">
-              Trusted By Organizations Across Industries
-            </p>
-          </ScrollReveal>
-        </div>
-        <ScrollReveal>
-          <div className="relative">
-            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#0a1128] to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#0a1128] to-transparent z-10 pointer-events-none" />
-            <div className="flex overflow-hidden">
-              <div className="flex items-center gap-12 animate-marquee whitespace-nowrap">
-                {[...partnerNames, ...partnerNames, ...partnerNames, ...partnerNames].map(
-                  (name, i) => (
-                    <div
-                      key={`${name}-${i}`}
-                      className="flex items-center gap-3 px-6 py-3 bg-[#0f1a36]/60 border border-white/[0.04] rounded-xl shrink-0"
-                    >
-                      <div className="w-8 h-8 rounded-lg bg-gold/10 flex items-center justify-center">
-                        <span className="text-gold text-xs font-bold">
-                          {name.charAt(0)}
-                        </span>
-                      </div>
-                      <span className="text-neutral-400 text-sm font-medium whitespace-nowrap">
-                        {name}
-                      </span>
-                    </div>
-                  )
-                )}
-              </div>
-            </div>
+      {/* ===== OUR POSITION ===== */}
+      <section className="section-spacing relative py-24">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <ScrollReveal>
+              <p className="text-gold text-sm uppercase tracking-[0.2em] font-semibold mb-4">
+                Our Position
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.1}>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold dark:text-white text-neutral-800 mb-4">
+                What We{" "}
+                <span className="bg-gradient-to-r from-white to-gold bg-clip-text text-transparent">
+                  Stand For
+                </span>
+              </h2>
+            </ScrollReveal>
           </div>
-        </ScrollReveal>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {positionCards.map((card, i) => (
+              <ScrollReveal key={card.label} delay={i * 0.15}>
+                <div className={`bg-[#0f1a36] border ${card.accent} rounded-2xl p-8 h-full`}>
+                  <div className="flex items-center gap-3 mb-6">
+                    {card.icon}
+                    <span className={`text-sm font-bold uppercase tracking-wider ${card.label === "Is" ? "text-gold" : "text-neutral-400"}`}>
+                      DatTechGee Technologies {card.label}
+                    </span>
+                  </div>
+                  <ul className="space-y-4">
+                    {card.items.map((item, j) => (
+                      <li key={j} className="flex items-start gap-3">
+                        <span className={`w-1.5 h-1.5 rounded-full shrink-0 mt-2 ${card.label === "Is" ? "bg-gold" : "bg-neutral-600"}`} />
+                        <span className="dark:text-neutral-300 text-neutral-500 text-sm leading-relaxed">
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
       </section>
 
-      {/* ===== WHAT I DO — CORE CAPABILITIES ===== */}
+      {/* ===== THREE PILLARS ===== */}
+      <section className="section-spacing relative py-24 bg-[#060d1f]">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-8">
+            {pillars.map((pillar, i) => (
+              <ScrollReveal key={pillar.title} delay={i * 0.12}>
+                <motion.div
+                  whileHover={{ y: -6 }}
+                  className="bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-8 text-center hover:border-gold/20 transition-all duration-300"
+                >
+                  <div className="w-14 h-14 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold mx-auto mb-5">
+                    {pillar.icon}
+                  </div>
+                  <h3 className="text-white text-xl font-bold mb-3">{pillar.title}</h3>
+                  <p className="text-neutral-400 text-sm">{pillar.description}</p>
+                </motion.div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== WHAT WE DO — CORE CAPABILITIES ===== */}
       <section className="section-spacing relative py-24">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a1128] via-[#0c1429] to-[#0a1128]" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
@@ -370,7 +476,7 @@ const HomePage = () => {
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold dark:text-white text-neutral-800 mb-4">
-                What I{" "}
+                What We{" "}
                 <span className="bg-gradient-to-r from-white to-gold bg-clip-text text-transparent">
                   Do
                 </span>
@@ -404,32 +510,51 @@ const HomePage = () => {
                   </p>
                   <div className="mt-5 pt-4 border-t border-white/[0.04]">
                     <span className="text-gold/60 text-[10px] font-bold tracking-[0.3em] uppercase">
-                      DatTechGee
+                      DatTechGee Technologies
                     </span>
                   </div>
                 </motion.div>
               </ScrollReveal>
             ))}
           </div>
+
+          <ScrollReveal delay={0.5}>
+            <div className="text-center mt-12">
+              <Link
+                to="/services"
+                className="inline-flex items-center gap-2 border border-gold/30 text-gold px-8 py-3.5 rounded-lg font-semibold text-sm hover:bg-gold/10 transition-colors duration-300"
+              >
+                Explore Services in Detail
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </Link>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* ===== DEVELOPMENT PROCESS ===== */}
+      {/* ===== EXECUTION FRAMEWORK — HOW WE WORK ===== */}
       <section className="section-spacing relative py-24 overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <ScrollReveal>
               <p className="text-gold text-sm uppercase tracking-[0.2em] font-semibold mb-4">
-                How We Work
+                Execution Framework
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold dark:text-white text-neutral-800">
-                Development{" "}
+                How We{" "}
                 <span className="bg-gradient-to-r from-white to-gold bg-clip-text text-transparent">
-                  Process
+                  Work
                 </span>
               </h2>
+            </ScrollReveal>
+            <ScrollReveal delay={0.15}>
+              <p className="text-neutral-400 max-w-xl mx-auto text-base mt-4">
+                A disciplined approach to transforming vision into execution
+              </p>
             </ScrollReveal>
           </div>
 
@@ -446,7 +571,6 @@ const HomePage = () => {
                     whileHover={{ y: -4 }}
                     className="relative flex flex-col items-center text-center group"
                   >
-                    {/* Step number circle */}
                     <div className="relative z-10 mb-6">
                       <div className="w-14 h-14 rounded-full bg-[#0f1a36] border-2 border-gold/30 flex items-center justify-center group-hover:border-gold/60 group-hover:bg-gold/10 transition-all duration-300">
                         <span className="text-gold font-bold text-lg">
@@ -465,6 +589,117 @@ const HomePage = () => {
                 </ScrollReveal>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== GROWTH QUOTE ===== */}
+      <section className="section-spacing relative py-24 bg-[#060d1f]">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
+          <ScrollReveal>
+            <div className="relative">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[200px] bg-gold/5 rounded-full blur-[100px] pointer-events-none" />
+              <p className="text-3xl sm:text-4xl lg:text-5xl font-bold dark:text-white text-neutral-800 relative z-10 mb-4">
+                Growth is not accidental.
+              </p>
+              <p className="text-3xl sm:text-4xl lg:text-5xl font-bold relative z-10">
+                <span className="bg-gradient-to-r from-gold to-gold/70 bg-clip-text text-transparent">
+                  It is engineered.
+                </span>
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ===== WHO WE WORK WITH ===== */}
+      <section className="section-spacing relative py-24">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <ScrollReveal>
+              <p className="text-gold text-sm uppercase tracking-[0.2em] font-semibold mb-4">
+                Our Partners
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.1}>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold dark:text-white text-neutral-800 mb-4">
+                Who We{" "}
+                <span className="bg-gradient-to-r from-white to-gold bg-clip-text text-transparent">
+                  Work With
+                </span>
+              </h2>
+            </ScrollReveal>
+            <ScrollReveal delay={0.15}>
+              <p className="text-neutral-400 max-w-xl mx-auto text-base">
+                Strategic partnerships with businesses ready for structured growth
+              </p>
+            </ScrollReveal>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-6">
+            {partners.map((partner, i) => (
+              <ScrollReveal key={partner.num} delay={i * 0.1}>
+                <motion.div
+                  whileHover={{ y: -4 }}
+                  className="bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-8 hover:border-gold/20 transition-all duration-300 h-full"
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-gold/40 text-xs font-bold tracking-[0.3em] uppercase">
+                      Partner Type {partner.num}
+                    </span>
+                  </div>
+                  <h3 className="text-white text-xl font-bold mb-2">{partner.title}</h3>
+                  <p className="text-gold text-sm font-medium mb-4">{partner.subtitle}</p>
+                  <p className="text-neutral-400 text-sm leading-relaxed">{partner.description}</p>
+                </motion.div>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          <ScrollReveal delay={0.5}>
+            <div className="mt-8 bg-[#0f1a36] border border-gold/20 rounded-2xl p-6 text-center">
+              <p className="dark:text-neutral-300 text-neutral-600 text-sm leading-relaxed">
+                DatTechGee Technologies partners selectively. Engagements are accepted only where execution value can be clearly delivered and where our approach aligns with your commitment to structure, discipline, and measurable outcomes.
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ===== WHY DATTECHGEE TECHNOLOGIES ===== */}
+      <section className="section-spacing relative py-24 bg-[#060d1f]">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <ScrollReveal>
+              <p className="text-gold text-sm uppercase tracking-[0.2em] font-semibold mb-4">
+                Our Differentiators
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.1}>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold dark:text-white text-neutral-800">
+                Why{" "}
+                <span className="bg-gradient-to-r from-white to-gold bg-clip-text text-transparent">
+                  DatTechGee Technologies
+                </span>
+              </h2>
+            </ScrollReveal>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {differentiators.map((diff, i) => (
+              <ScrollReveal key={diff.num} delay={i * 0.08}>
+                <motion.div
+                  whileHover={{ y: -4 }}
+                  className="bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-6 hover:border-gold/20 transition-all duration-300"
+                >
+                  <span className="text-gold/40 text-xs font-bold tracking-[0.3em] uppercase block mb-3">
+                    {diff.num}
+                  </span>
+                  <h3 className="text-white font-semibold text-lg mb-2">{diff.title}</h3>
+                  <p className="text-neutral-400 text-sm leading-relaxed">{diff.description}</p>
+                </motion.div>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>
@@ -606,29 +841,27 @@ const HomePage = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <ScrollReveal>
             <div className="relative bg-[#0f1a36] border border-white/[0.06] rounded-3xl p-10 md:p-16 text-center overflow-hidden">
-              {/* Ambient glow */}
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-gold/5 rounded-full blur-[100px] pointer-events-none" />
 
               <p className="text-gold text-sm uppercase tracking-[0.2em] font-semibold mb-6 relative z-10">
                 Let&apos;s Collaborate
               </p>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold dark:text-white text-neutral-800 mb-6 relative z-10 max-w-3xl mx-auto leading-tight">
-                Ready to build something{" "}
+                Ready to build the systems your{" "}
                 <span className="bg-gradient-to-r from-gold to-gold/70 bg-clip-text text-transparent">
-                  great
+                  business needs to scale
                 </span>
                 ?
               </h2>
               <p className="text-neutral-400 max-w-xl mx-auto mb-10 text-base relative z-10">
-                Let&apos;s turn your vision into a high-performance digital product.
-                From concept to deployment, we&apos;ve got you covered.
+                Partner with DatTechGee Technologies to engineer the digital and operational infrastructure that transforms vision into sustainable execution.
               </p>
               <div className="flex flex-wrap gap-4 justify-center relative z-10">
                 <Link
                   to="/contact"
                   className="bg-gold text-navy px-8 py-4 rounded-lg font-semibold text-sm hover:bg-gold/90 transition-colors duration-300 inline-flex items-center gap-2"
                 >
-                  Start a Project
+                  Start a Strategic Session
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
@@ -641,6 +874,17 @@ const HomePage = () => {
                 </Link>
               </div>
             </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ===== BOTTOM LINE ===== */}
+      <section className="pb-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+          <ScrollReveal>
+            <p className="dark:text-neutral-500 text-neutral-400 text-xs tracking-wider uppercase">
+              Selective engagements. Disciplined execution. Measurable outcomes.
+            </p>
           </ScrollReveal>
         </div>
       </section>

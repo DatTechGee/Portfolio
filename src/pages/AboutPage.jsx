@@ -3,31 +3,30 @@ import { Link } from "react-router-dom";
 import ScrollReveal from "../components/ScrollReveal";
 import { experiences, techStack, industries, portfolioStats } from "../constants";
 
-const principles = [
+const companyValues = [
   {
-    title: "SOLID Principles",
+    num: "01",
+    title: "Execution Over Theory",
     description:
-      "Five design principles that make software more maintainable, scalable, and easier to understand — Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion.",
+      "We prioritize tangible results and measurable outcomes over conceptual frameworks and speculative strategies.",
   },
   {
-    title: "GRASP",
+    num: "02",
+    title: "Technology as Infrastructure",
     description:
-      "General Responsibility Assignment Software Patterns that guide assigning responsibilities to classes and objects in object-oriented design.",
+      "We build technical foundations that power operations, not superficial digital layers that add complexity.",
   },
   {
-    title: "Design Patterns",
+    num: "03",
+    title: "Systems Thinking",
     description:
-      "Proven reusable solutions to common software design problems — Creational, Structural, and Behavioral patterns that improve code architecture.",
+      "We design interconnected frameworks that address the full scope of business operations, not isolated solutions.",
   },
   {
-    title: "SRP",
+    num: "04",
+    title: "Discipline & Governance",
     description:
-      "Single Responsibility Principle — every module or class should have one, and only one, reason to change, keeping code focused and testable.",
-  },
-  {
-    title: "Clean Architecture",
-    description:
-      "Structuring systems with clear boundaries between layers — entities, use cases, adapters, and frameworks — so business logic stays independent of external concerns.",
+      "We establish clear structures, ownership, and performance standards that ensure reliable delivery.",
   },
 ];
 
@@ -82,26 +81,28 @@ const barVariants = {
 export default function AboutPage() {
   return (
     <main className="bg-[#0a1128] min-h-screen">
-      {/* Page Header */}
+      {/* ===== PAGE HEADER ===== */}
       <section className="section-spacing pt-32 pb-12">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <ScrollReveal>
-              <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
+            <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
               About
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold dark:text-white text-neutral-800 mb-6">
-              Building Digital Systems That Drive Growth
+              Engineering the Systems Behind{" "}
+              <span className="bg-gradient-to-r from-white to-gold bg-clip-text text-transparent">
+                Business Growth
+              </span>
             </h1>
             <p className="dark:text-neutral-400 text-neutral-500 max-w-2xl mx-auto text-lg">
-              DatTechGee Technologies builds secure, scalable
-              web applications, mobile apps, and business systems for clients across
-              Nigeria and beyond. Founded by Isaac Emmanuel.
+              DatTechGee Technologies designs and deploys digital infrastructure
+              for businesses that demand execution, structure, and measurable outcomes.
             </p>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* Bio Section */}
+      {/* ===== COMPANY INTRO ===== */}
       <section className="section-spacing pt-0">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -109,8 +110,8 @@ export default function AboutPage() {
               <div className="relative">
                 <div className="rounded-2xl overflow-hidden border-2 border-gold/30 shadow-[0_0_40px_rgba(212,168,67,0.1)]">
                   <img
-                    src="/assets/PORTFILO.png"
-                    alt="Isaac Emmanuel — DatTechGee"
+                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=500&fit=crop&auto=format"
+                    alt="DatTechGee Technologies — Team collaboration"
                     className="w-full h-auto object-cover"
                   />
                 </div>
@@ -120,33 +121,31 @@ export default function AboutPage() {
 
             <ScrollReveal direction="right">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold dark:text-white text-neutral-800 mb-2">
-                  Hi, I&apos;m Isaac Emmanuel
+                <span className="text-gold text-sm font-semibold tracking-wide uppercase mb-4 block">
+                  DatTechGee Technologies
+                </span>
+                <h2 className="text-2xl md:text-3xl font-bold dark:text-white text-neutral-800 mb-4">
+                  Software. Innovation. Impact.
                 </h2>
-                <p className="text-gold text-sm font-semibold tracking-wide uppercase mb-4">
-                  Founder &amp; Lead Developer — DatTechGee Technologies
-                </p>
                 <div className="space-y-4 dark:text-neutral-400 text-neutral-500 leading-relaxed text-sm md:text-base">
                   <p>
-                    With over 4 years of hands-on experience, I design and build
-                    full-stack web and mobile applications that help businesses
-                    scale — from student management systems to blockchain-powered
-                    platforms.
+                    DatTechGee Technologies is a software solutions company
+                    building secure, scalable web applications, mobile apps, and
+                    business systems. We serve clients across Nigeria and beyond,
+                    delivering end-to-end digital infrastructure that powers growth.
                   </p>
                   <p>
-                    My core stack centers on{" "}
+                    Our core stack centers on{" "}
                     <span className="dark:text-white text-neutral-800 font-medium">
                       Laravel, React, React Native, and Node.js
                     </span>
-                    . I&apos;m passionate about solving real-world problems through
+                    . We are passionate about solving real-world problems through
                     clean, maintainable code and intuitive user experiences.
                   </p>
                   <p>
-                    Based in Nigeria and working globally, I&apos;ve delivered
-                    end-to-end solutions for schools, startups, SMEs, and
-                    organizations — covering everything from requirements analysis
-                    and database architecture to deployment and ongoing
-                    maintenance.
+                    From student management systems to blockchain-powered platforms,
+                    we cover everything from requirements analysis and database
+                    architecture to deployment and ongoing maintenance.
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-4 mt-8">
@@ -172,28 +171,28 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Principles */}
+      {/* ===== COMPANY VALUES ===== */}
       <section className="section-spacing bg-[#060d1f]">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
             <div className="text-center mb-12">
               <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
-                Philosophy
+                Our Values
               </span>
               <h2 className="text-3xl md:text-4xl font-bold dark:text-white text-neutral-800 mb-4">
-                CODE IS CRAFT
+                What Guides Us
               </h2>
               <p className="dark:text-neutral-400 text-neutral-500 max-w-xl mx-auto">
-                Every line of code is a deliberate decision. These principles
-                guide how I architect and build software.
+                These principles define how DatTechGee Technologies approaches
+                every engagement and delivers results.
               </p>
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {principles.map((p, i) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {companyValues.map((v, i) => (
               <motion.div
-                key={p.title}
+                key={v.title}
                 initial={{ opacity: 0, y: 30, scale: 0.97 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true, amount: 0.2 }}
@@ -204,16 +203,14 @@ export default function AboutPage() {
                 }}
                 className="bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-6 hover:border-gold/30 transition-all duration-500"
               >
-                <div className="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center mb-4">
-                  <span className="text-gold font-bold text-lg">
-                    {p.title.charAt(0)}
-                  </span>
-                </div>
+                <span className="text-gold/40 text-xs font-bold tracking-[0.3em] uppercase block mb-3">
+                  {v.num}
+                </span>
                 <h3 className="text-base font-semibold dark:text-white text-neutral-800 mb-2">
-                  {p.title}
+                  {v.title}
                 </h3>
                 <p className="dark:text-neutral-400 text-neutral-500 text-sm leading-relaxed">
-                  {p.description}
+                  {v.description}
                 </p>
               </motion.div>
             ))}
@@ -221,8 +218,65 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Tech Stack */}
+      {/* ===== THE FOUNDER — ISAAC EMMANUEL ===== */}
       <section className="section-spacing">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <ScrollReveal direction="left">
+              <div>
+                <span className="text-gold text-sm font-semibold tracking-wide uppercase mb-4 block">
+                  The Founder
+                </span>
+                <h2 className="text-2xl md:text-3xl font-bold dark:text-white text-neutral-800 mb-2">
+                  Isaac Emmanuel
+                </h2>
+                <p className="text-gold text-sm font-semibold tracking-wide uppercase mb-4">
+                  Founder &amp; Lead Developer
+                </p>
+                <div className="space-y-4 dark:text-neutral-400 text-neutral-500 leading-relaxed text-sm md:text-base">
+                  <p>
+                    With over 4 years of hands-on experience, Isaac designs and builds
+                    full-stack web and mobile applications that help businesses
+                    scale — from student management systems to blockchain-powered
+                    platforms.
+                  </p>
+                  <p>
+                    Isaac&apos;s core stack centers on{" "}
+                    <span className="dark:text-white text-neutral-800 font-medium">
+                      Laravel, React, React Native, and Node.js
+                    </span>
+                    . He is passionate about solving real-world problems through
+                    clean, maintainable code and intuitive user experiences.
+                  </p>
+                  <p>
+                    Based in Nigeria and working globally, Isaac has delivered
+                    end-to-end solutions for schools, startups, SMEs, and
+                    organizations — covering everything from requirements analysis
+                    and database architecture to deployment and ongoing
+                    maintenance.
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal direction="right">
+              <div className="relative">
+                <div className="rounded-2xl overflow-hidden border-2 border-gold/30 shadow-[0_0_40px_rgba(212,168,67,0.1)]">
+                  <img
+                    src="/assets/PORTFILO.png"
+                    alt="Isaac Emmanuel — Founder of DatTechGee Technologies"
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+                <div className="absolute -bottom-4 -right-4 w-full h-full rounded-2xl border border-gold/20 -z-10" />
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== TECH STACK ===== */}
+      <section className="section-spacing bg-[#060d1f]">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
             <div className="text-center mb-12">
@@ -230,10 +284,10 @@ export default function AboutPage() {
                 Toolkit
               </span>
               <h2 className="text-3xl md:text-4xl font-bold dark:text-white text-neutral-800 mb-4">
-                Tech Stack
+                Technologies We Use
               </h2>
               <p className="dark:text-neutral-400 text-neutral-500 max-w-xl mx-auto">
-                The technologies I use to build robust, production-ready
+                The technologies we use to build robust, production-ready
                 applications.
               </p>
             </div>
@@ -273,94 +327,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Experience Timeline */}
-      <section className="section-spacing bg-[#060d1f]">
-        <div className="max-w-6xl mx-auto px-6">
-          <ScrollReveal>
-            <div className="text-center mb-16">
-              <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
-                Career
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold dark:text-white text-neutral-800">
-                Experience
-              </h2>
-            </div>
-          </ScrollReveal>
-
-          <div className="relative">
-            {/* Gold accent line */}
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-gold/60 via-gold/20 to-transparent" />
-
-            {experiences.map((exp, i) => (
-              <motion.div
-                key={exp.title}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{
-                  duration: 0.6,
-                  delay: i * 0.15,
-                  ease: [0.16, 1, 0.3, 1],
-                }}
-                className={`relative flex flex-col md:flex-row gap-8 mb-16 last:mb-0 ${
-                  i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                }`}
-              >
-                {/* Timeline dot */}
-                <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-gold border-4 border-[#060d1f] z-10 mt-6" />
-
-                {/* Date side */}
-                <div
-                  className={`md:w-1/2 ${
-                    i % 2 === 0 ? "md:text-right md:pr-12" : "md:text-left md:pl-12"
-                  } pl-12 md:pl-0`}
-                >
-                  <span className="text-gold text-sm font-semibold tracking-wide">
-                    {exp.date}
-                  </span>
-                  <h3 className="text-xl font-bold dark:text-white text-neutral-800 mt-1">
-                    {exp.title}
-                  </h3>
-                  <p className="dark:text-neutral-400 text-neutral-500 text-sm mt-1">
-                    {exp.job}
-                  </p>
-                </div>
-
-                {/* Content side */}
-                <div
-                  className={`md:w-1/2 ${
-                    i % 2 === 0 ? "md:pl-12" : "md:pr-12"
-                  } pl-12 md:pl-0`}
-                >
-                  <div className="bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-6">
-                    <ul className="space-y-2.5">
-                      {exp.contents.map((content, j) => (
-                        <motion.li
-                          key={j}
-                          initial={{ opacity: 0, x: 10 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          viewport={{ once: true }}
-                          transition={{
-                            duration: 0.4,
-                            delay: i * 0.15 + j * 0.05 + 0.2,
-                            ease: [0.16, 1, 0.3, 1],
-                          }}
-                          className="flex items-start gap-2 text-sm dark:text-neutral-400 text-neutral-500 leading-relaxed"
-                        >
-                          <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0 mt-2" />
-                          {content}
-                        </motion.li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Skills Breakdown */}
+      {/* ===== SKILLS BREAKDOWN ===== */}
       <section className="section-spacing">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
@@ -372,7 +339,7 @@ export default function AboutPage() {
                 Skills Breakdown
               </h2>
               <p className="dark:text-neutral-400 text-neutral-500 max-w-xl mx-auto">
-                A detailed look at my proficiency across different domains.
+                A detailed look at our proficiency across different domains.
               </p>
             </div>
           </ScrollReveal>
@@ -424,8 +391,91 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Industries */}
+      {/* ===== EXPERIENCE TIMELINE ===== */}
       <section className="section-spacing bg-[#060d1f]">
+        <div className="max-w-6xl mx-auto px-6">
+          <ScrollReveal>
+            <div className="text-center mb-16">
+              <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
+                Career
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold dark:text-white text-neutral-800">
+                Experience
+              </h2>
+            </div>
+          </ScrollReveal>
+
+          <div className="relative">
+            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-gold/60 via-gold/20 to-transparent" />
+
+            {experiences.map((exp, i) => (
+              <motion.div
+                key={exp.title}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{
+                  duration: 0.6,
+                  delay: i * 0.15,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+                className={`relative flex flex-col md:flex-row gap-8 mb-16 last:mb-0 ${
+                  i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                }`}
+              >
+                <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-gold border-4 border-[#060d1f] z-10 mt-6" />
+
+                <div
+                  className={`md:w-1/2 ${
+                    i % 2 === 0 ? "md:text-right md:pr-12" : "md:text-left md:pl-12"
+                  } pl-12 md:pl-0`}
+                >
+                  <span className="text-gold text-sm font-semibold tracking-wide">
+                    {exp.date}
+                  </span>
+                  <h3 className="text-xl font-bold dark:text-white text-neutral-800 mt-1">
+                    {exp.title}
+                  </h3>
+                  <p className="dark:text-neutral-400 text-neutral-500 text-sm mt-1">
+                    {exp.job}
+                  </p>
+                </div>
+
+                <div
+                  className={`md:w-1/2 ${
+                    i % 2 === 0 ? "md:pl-12" : "md:pr-12"
+                  } pl-12 md:pl-0`}
+                >
+                  <div className="bg-[#0f1a36] border border-white/[0.06] rounded-2xl p-6">
+                    <ul className="space-y-2.5">
+                      {exp.contents.map((content, j) => (
+                        <motion.li
+                          key={j}
+                          initial={{ opacity: 0, x: 10 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{
+                            duration: 0.4,
+                            delay: i * 0.15 + j * 0.05 + 0.2,
+                            ease: [0.16, 1, 0.3, 1],
+                          }}
+                          className="flex items-start gap-2 text-sm dark:text-neutral-400 text-neutral-500 leading-relaxed"
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0 mt-2" />
+                          {content}
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== INDUSTRIES ===== */}
+      <section className="section-spacing">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
             <div className="text-center mb-12">
@@ -433,7 +483,7 @@ export default function AboutPage() {
                 Reach
               </span>
               <h2 className="text-3xl md:text-4xl font-bold dark:text-white text-neutral-800 mb-4">
-                Industries I Serve
+                Industries We Serve
               </h2>
               <p className="dark:text-neutral-400 text-neutral-500 max-w-xl mx-auto">
                 Delivering tailored digital solutions across diverse sectors.
@@ -463,7 +513,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Stats */}
+      {/* ===== STATS ===== */}
       <section className="py-16 border-t border-white/[0.06]">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
@@ -488,22 +538,22 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* ===== CTA ===== */}
       <section className="py-20 bg-[#060d1f]">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-bold dark:text-white text-neutral-800 mb-4">
-              Let&apos;s Build Something Together
+              Ready to Build Something Great?
             </h2>
             <p className="dark:text-neutral-400 text-neutral-500 mb-8 max-w-lg mx-auto">
-              Ready to turn your idea into a production-ready product? Let&apos;s
-              start a conversation.
+              Let DatTechGee Technologies engineer the digital and operational
+              infrastructure that transforms your vision into sustainable execution.
             </p>
             <Link
               to="/contact"
               className="inline-flex items-center gap-2 bg-gold text-[#0a1128] px-8 py-3.5 rounded-full font-semibold hover:bg-gold/90 transition-colors duration-300"
             >
-              Start a Conversation
+              Start a Strategic Session
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
