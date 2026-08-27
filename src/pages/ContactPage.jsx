@@ -145,7 +145,7 @@ export default function ContactPage() {
             <span className="text-gold/70 text-sm font-semibold tracking-widest uppercase mb-4 block">
               Contact
             </span>
-            <h1 className="text-5xl md:text-6xl font-bold text-white text-neutral-800 mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Get in Touch
             </h1>
             <p className="text-neutral-400 text-neutral-500 max-w-2xl mx-auto text-lg">
@@ -197,7 +197,7 @@ export default function ContactPage() {
                     <p className="text-neutral-500 text-neutral-400 text-xs uppercase tracking-wider mb-1">
                       {info.label}
                     </p>
-                    <p className="text-white text-neutral-800 font-medium text-sm">
+                    <p className="text-white font-medium text-sm">
                       {info.value}
                     </p>
                   </a>
@@ -209,7 +209,7 @@ export default function ContactPage() {
                     <p className="text-neutral-500 text-neutral-400 text-xs uppercase tracking-wider mb-1">
                       {info.label}
                     </p>
-                    <p className="text-white text-neutral-800 font-medium text-sm">
+                    <p className="text-white font-medium text-sm">
                       {info.value}
                     </p>
                   </div>
@@ -226,7 +226,7 @@ export default function ContactPage() {
           <ScrollReveal>
             <div className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="text-center sm:text-left">
-                <p className="text-white text-neutral-800 font-semibold mb-1">
+                <p className="text-white font-semibold mb-1">
                   Prefer a quick conversation?
                 </p>
                 <p className="text-neutral-400 text-neutral-500 text-sm">
@@ -285,7 +285,7 @@ export default function ContactPage() {
             {/* Left Column - Sticky */}
             <ScrollReveal direction="left">
               <div className="lg:sticky lg:top-32 lg:self-start">
-                <h2 className="text-3xl md:text-4xl font-bold text-white text-neutral-800 mb-4">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                   Request a Quote
                 </h2>
                 <p className="text-neutral-400 text-neutral-500 mb-8 leading-relaxed">
@@ -307,7 +307,7 @@ export default function ContactPage() {
                         onClick={() => setOpenFaq(openFaq === i ? null : i)}
                         className="w-full flex items-center justify-between px-6 py-4 text-left"
                       >
-                        <span className="text-white text-neutral-800 font-medium text-sm pr-4">
+                        <span className="text-white font-medium text-sm pr-4">
                           {faq.question}
                         </span>
                         <motion.span
@@ -356,7 +356,7 @@ export default function ContactPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.5 12.75l6 6 9-13.5" />
                       </svg>
                     </div>
-                    <h3 className="text-2xl font-bold text-white text-neutral-800 mb-3">
+                    <h3 className="text-2xl font-bold text-white mb-3">
                       Message Sent Successfully!
                     </h3>
                     <p className="text-neutral-400 text-neutral-500 mb-6">
@@ -395,7 +395,7 @@ export default function ContactPage() {
                     )}
 
                     <div>
-                      <label className="block text-sm font-medium text-white text-neutral-800 mb-2">
+                      <label className="block text-sm font-medium text-white mb-2">
                         Name
                       </label>
                       <input
@@ -410,7 +410,7 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-white text-neutral-800 mb-2">
+                      <label className="block text-sm font-medium text-white mb-2">
                         Email
                       </label>
                       <input
@@ -425,7 +425,7 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-white text-neutral-800 mb-2">
+                      <label className="block text-sm font-medium text-white mb-2">
                         Project Type
                       </label>
                       <select
@@ -448,7 +448,7 @@ export default function ContactPage() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div>
-                        <label className="block text-sm font-medium text-white text-neutral-800 mb-2">
+                        <label className="block text-sm font-medium text-white mb-2">
                           Budget Range
                         </label>
                         <select
@@ -470,7 +470,7 @@ export default function ContactPage() {
                       </div>
 
                       <div>
-                        <label className="block text-sm font-medium text-white text-neutral-800 mb-2">
+                        <label className="block text-sm font-medium text-white mb-2">
                           Timeline
                         </label>
                         <select
@@ -493,7 +493,7 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-white text-neutral-800 mb-2">
+                      <label className="block text-sm font-medium text-white mb-2">
                         Project Summary
                       </label>
                       <textarea

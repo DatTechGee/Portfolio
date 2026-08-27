@@ -103,7 +103,7 @@ export default function AboutPage() {
             <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
               About
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-neutral-800 mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Engineering the Systems Behind{" "}
               <span className="bg-gradient-to-r from-white to-gold bg-clip-text text-transparent">
                 Business Growth
@@ -141,7 +141,7 @@ export default function AboutPage() {
                 <span className="text-gold text-sm font-semibold tracking-wide uppercase mb-4 block">
                   DatTechGee Technologies
                 </span>
-                <h2 className="text-2xl md:text-3xl font-bold text-white text-neutral-800 mb-4">
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
                   Software. Innovation. Impact.
                 </h2>
                 <div className="space-y-4 text-neutral-400 text-neutral-500 leading-relaxed text-sm md:text-base">
@@ -153,7 +153,7 @@ export default function AboutPage() {
                   </p>
                   <p>
                     Our core stack centers on{" "}
-                    <span className="text-white text-neutral-800 font-medium">
+                    <span className="text-white font-medium">
                       Laravel, React, React Native, and Node.js
                     </span>
                     . We are passionate about solving real-world problems through
@@ -198,7 +198,7 @@ export default function AboutPage() {
               <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
                 Our Values
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white text-neutral-800 mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 What Guides Us
               </h2>
               <p className="text-neutral-400 text-neutral-500 max-w-xl mx-auto">
@@ -230,7 +230,7 @@ export default function AboutPage() {
                 <span className="text-gold/40 text-xs font-bold tracking-[0.3em] uppercase block mb-3">
                   {v.num}
                 </span>
-                <h3 className="text-base font-semibold text-white text-neutral-800 mb-2">
+                <h3 className="text-base font-semibold text-white mb-2">
                   {v.title}
                 </h3>
                 <p className="text-neutral-400 text-neutral-500 text-sm leading-relaxed">
@@ -253,7 +253,7 @@ export default function AboutPage() {
                 <span className="text-gold text-sm font-semibold tracking-wide uppercase mb-4 block">
                   The Founder
                 </span>
-                <h2 className="text-2xl md:text-3xl font-bold text-white text-neutral-800 mb-2">
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
                   Isaac Emmanuel
                 </h2>
                 <p className="text-gold text-sm font-semibold tracking-wide uppercase mb-4">
@@ -268,7 +268,7 @@ export default function AboutPage() {
                   </p>
                   <p>
                     Isaac&apos;s core stack centers on{" "}
-                    <span className="text-white text-neutral-800 font-medium">
+                    <span className="text-white font-medium">
                       Laravel, React, React Native, and Node.js
                     </span>
                     . He is passionate about solving real-world problems through
@@ -305,7 +305,7 @@ export default function AboutPage() {
               <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
                 Toolkit
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white text-neutral-800 mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 Technologies We Use
               </h2>
               <p className="text-neutral-400 text-neutral-500 max-w-xl mx-auto">
@@ -359,7 +359,7 @@ export default function AboutPage() {
               <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
                 Expertise
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white text-neutral-800 mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 Skills Breakdown
               </h2>
               <p className="text-neutral-400 text-neutral-500 max-w-xl mx-auto">
@@ -382,7 +382,7 @@ export default function AboutPage() {
                 }}
                 className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6"
               >
-                <h3 className="text-sm font-semibold text-white text-neutral-800 mb-5">
+                <h3 className="text-sm font-semibold text-white mb-5">
                   {cat.title}
                 </h3>
                 <div className="flex flex-col gap-4">
@@ -425,7 +425,7 @@ export default function AboutPage() {
               <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
                 Career
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white text-neutral-800">
+              <h2 className="text-3xl md:text-4xl font-bold text-white">
                 Experience
               </h2>
             </div>
@@ -459,7 +459,7 @@ export default function AboutPage() {
                   <span className="text-gold text-sm font-semibold tracking-wide">
                     {exp.date}
                   </span>
-                  <h3 className="text-xl font-bold text-white text-neutral-800 mt-1">
+                  <h3 className="text-xl font-bold text-white mt-1">
                     {exp.title}
                   </h3>
                   <p className="text-neutral-400 text-neutral-500 text-sm mt-1">
@@ -510,7 +510,7 @@ export default function AboutPage() {
               <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
                 Reach
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white text-neutral-800 mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 Industries We Serve
               </h2>
               <p className="text-neutral-400 text-neutral-500 max-w-xl mx-auto">
@@ -580,7 +580,7 @@ export default function AboutPage() {
       <section className="py-20 bg-[#060d1f]">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-bold text-white text-neutral-800 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Ready to Build Something Great?
             </h2>
             <p className="text-neutral-400 text-neutral-500 mb-8 max-w-lg mx-auto">

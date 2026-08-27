@@ -186,7 +186,7 @@ export default function ServicesPage() {
             <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
               Services
             </span>
-            <h1 className="text-5xl md:text-6xl font-bold text-white text-neutral-800 mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               What We Do
             </h1>
             <p className="text-neutral-400 text-neutral-500 max-w-2xl mx-auto text-lg">
@@ -224,7 +224,7 @@ export default function ServicesPage() {
               <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
                 Our Position
               </span>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white text-neutral-800 max-w-3xl mx-auto leading-snug">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white max-w-3xl mx-auto leading-snug">
                 Not just development. Not just consulting. We build systems that
                 work.
               </h2>
@@ -248,7 +248,7 @@ export default function ServicesPage() {
                 <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold mx-auto mb-5">
                   {pillar.icon}
                 </div>
-                <h3 className="text-lg font-bold text-white text-neutral-800 mb-2">
+                <h3 className="text-lg font-bold text-white mb-2">
                   {pillar.label}
                 </h3>
                 <p className="text-sm text-neutral-400 text-neutral-500">
@@ -268,7 +268,7 @@ export default function ServicesPage() {
               <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
                 What We Build
               </span>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-neutral-800 mb-4">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
                 Service Categories
               </h2>
               <p className="text-neutral-400 text-neutral-500 max-w-xl mx-auto">
@@ -306,7 +306,7 @@ export default function ServicesPage() {
                   {iconMap[service.icon]}
                 </div>
 
-                <h3 className="text-xl font-bold text-white text-neutral-800 mb-3 group-hover:text-gold transition-colors duration-300">
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-gold transition-colors duration-300">
                   {service.title}
                 </h3>
 
@@ -351,7 +351,7 @@ export default function ServicesPage() {
               <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
                 Process
               </span>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-neutral-800 mb-4">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
                 How We Work
               </h2>
               <p className="text-neutral-400 text-neutral-500 max-w-xl mx-auto">
@@ -386,7 +386,7 @@ export default function ServicesPage() {
 
                 <div className="w-8 h-[2px] bg-gold mb-4 rounded-full" />
 
-                <h3 className="text-lg font-bold text-white text-neutral-800 mb-2">
+                <h3 className="text-lg font-bold text-white mb-2">
                   {item.title}
                 </h3>
                 <p className="text-sm text-neutral-400 text-neutral-500 leading-relaxed">
@@ -406,7 +406,7 @@ export default function ServicesPage() {
               <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-3 block">
                 Tech Stack
               </span>
-              <h2 className="text-2xl md:text-3xl font-bold text-white text-neutral-800">
+              <h2 className="text-2xl md:text-3xl font-bold text-white">
                 Technologies We Work With
               </h2>
             </div>
@@ -450,7 +450,7 @@ export default function ServicesPage() {
               <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
                 Industries
               </span>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-neutral-800 mb-4">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
                 Industries We Serve
               </h2>
               <p className="text-neutral-400 text-neutral-500 max-w-xl mx-auto">
@@ -480,7 +480,7 @@ export default function ServicesPage() {
                       <img src={industry.image} alt={industry.name} className="w-full h-full object-cover opacity-50 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500" />
                     </div>
                   )}
-                  <h3 className="text-lg font-bold text-white text-neutral-800 mb-2">
+                  <h3 className="text-lg font-bold text-white mb-2">
                     {industry.name}
                   </h3>
                   <p className="text-sm text-neutral-400 text-neutral-500 leading-relaxed">
@@ -501,7 +501,7 @@ export default function ServicesPage() {
               <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
                 Working Together
               </span>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-neutral-800 mb-4">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
                 Engagement Models
               </h2>
               <p className="text-neutral-400 text-neutral-500 max-w-xl mx-auto">
@@ -551,7 +551,7 @@ export default function ServicesPage() {
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div className="w-10 h-[2px] bg-gold mb-5 rounded-full" />
-                <h3 className="text-xl font-bold text-white text-neutral-800 mb-3 group-hover:text-gold transition-colors duration-300">
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-gold transition-colors duration-300">
                   {model.title}
                 </h3>
                 <p className="text-neutral-400 text-neutral-500 text-sm leading-relaxed mb-5">
@@ -575,7 +575,7 @@ export default function ServicesPage() {
       <section className="py-20 bg-[#060d1f]">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-bold text-white text-neutral-800 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Ready to start your project?
             </h2>
             <p className="text-neutral-400 text-neutral-500 mb-8 max-w-lg mx-auto">

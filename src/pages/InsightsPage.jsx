@@ -122,7 +122,7 @@ function ArticleCard({ article, index, large = false }) {
 
         {/* Title */}
         <h3
-          className={`font-bold text-white text-neutral-800 mb-3 group-hover:text-gold transition-colors duration-300 leading-snug ${
+          className={`font-bold text-white mb-3 group-hover:text-gold transition-colors duration-300 leading-snug ${
             large ? "text-xl md:text-2xl" : "text-lg"
           }`}
         >
@@ -182,7 +182,7 @@ export default function InsightsPage() {
             <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
               Insights
             </span>
-            <h1 className="text-5xl md:text-6xl font-bold text-white text-neutral-800 mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Our Insights
             </h1>
             <p className="text-neutral-400 text-neutral-500 max-w-2xl mx-auto text-lg">
@@ -246,7 +246,7 @@ export default function InsightsPage() {
                     </div>
 
                     {/* Title */}
-                    <h2 className="text-2xl md:text-3xl font-bold text-white text-neutral-800 mb-4 leading-tight group-hover:text-gold transition-colors duration-300">
+                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight group-hover:text-gold transition-colors duration-300">
                       {featuredArticle.title}
                     </h2>
 
@@ -301,7 +301,7 @@ export default function InsightsPage() {
                   DatTechGee Technologies
                 </span>
               </div>
-              <h2 className="text-2xl font-bold text-white text-neutral-800">
+              <h2 className="text-2xl font-bold text-white">
                 Latest Articles
               </h2>
             </div>
@@ -320,7 +320,7 @@ export default function InsightsPage() {
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
             <div className="mb-10">
-              <h2 className="text-2xl font-bold text-white text-neutral-800">
+              <h2 className="text-2xl font-bold text-white">
                 More to Explore
               </h2>
             </div>
@@ -349,7 +349,7 @@ export default function InsightsPage() {
               <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block relative">
                 Stay Updated
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white text-neutral-800 mb-4 relative">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 relative">
                 Stay Updated
               </h2>
               <p className="text-neutral-400 text-neutral-500 mb-8 max-w-lg mx-auto relative">

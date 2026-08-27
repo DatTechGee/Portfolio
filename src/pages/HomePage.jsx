@@ -284,7 +284,8 @@ const HomePage = () => {
 
               <ScrollReveal direction="up" delay={0.35}>
                 <p className="text-base text-neutral-400">
-                  Engineering digital solutions that drive business growth.
+                  We turn business problems into fast, secure, and
+                  production-ready digital products.
                 </p>
               </ScrollReveal>
 
@@ -408,7 +409,7 @@ const HomePage = () => {
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-neutral-800 mb-4">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
                 What We{" "}
                 <span className="bg-gradient-to-r from-white to-gold bg-clip-text text-transparent">
                   Stand For
@@ -479,7 +480,7 @@ const HomePage = () => {
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-neutral-800 mb-4">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
                 What We{" "}
                 <span className="bg-gradient-to-r from-white to-gold bg-clip-text text-transparent">
                   Do
@@ -549,7 +550,7 @@ const HomePage = () => {
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-neutral-800">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
                 How We{" "}
                 <span className="bg-gradient-to-r from-white to-gold bg-clip-text text-transparent">
                   Work
@@ -605,7 +606,7 @@ const HomePage = () => {
           <ScrollReveal>
             <div className="relative">
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[200px] bg-gold/5 rounded-full blur-[100px] pointer-events-none" />
-              <p className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-neutral-800 relative z-10 mb-4">
+              <p className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white relative z-10 mb-4">
                 Growth is not accidental.
               </p>
               <p className="text-3xl sm:text-4xl lg:text-5xl font-bold relative z-10">
@@ -629,7 +630,7 @@ const HomePage = () => {
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-neutral-800 mb-4">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
                 Who We{" "}
                 <span className="bg-gradient-to-r from-white to-gold bg-clip-text text-transparent">
                   Work With
@@ -689,7 +690,7 @@ const HomePage = () => {
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-neutral-800">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
                 Why{" "}
                 <span className="bg-gradient-to-r from-white to-gold bg-clip-text text-transparent">
                   DatTechGee Technologies
@@ -735,7 +736,7 @@ const HomePage = () => {
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.1}>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-neutral-800">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
                   What Clients{" "}
                   <span className="bg-gradient-to-r from-white to-gold bg-clip-text text-transparent">
                     Say
@@ -869,7 +870,7 @@ const HomePage = () => {
               <p className="text-gold text-sm uppercase tracking-[0.2em] font-semibold mb-6 relative z-10">
                 Let&apos;s Collaborate
               </p>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-neutral-800 mb-6 relative z-10 max-w-3xl mx-auto leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 relative z-10 max-w-3xl mx-auto leading-tight">
                 Ready to build the systems your{" "}
                 <span className="bg-gradient-to-r from-gold to-gold/70 bg-clip-text text-transparent">
                   business needs to scale

@@ -159,7 +159,7 @@ export default function SolutionsPage() {
             <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
               Solutions
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-neutral-800 mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Tailored Solutions for Every
               <br className="hidden md:block" /> Business Challenge
             </h1>
@@ -211,7 +211,7 @@ export default function SolutionsPage() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold text-white text-neutral-800 mb-1 group-hover:text-gold transition-colors duration-300">
+                <h3 className="text-xl font-bold text-white mb-1 group-hover:text-gold transition-colors duration-300">
                   {segment.title}
                 </h3>
 
@@ -238,7 +238,7 @@ export default function SolutionsPage() {
               <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
                 Our Position
               </span>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-neutral-800 mb-4">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
                 Not a One-Size-Fits-All Approach
               </h2>
               <p className="text-neutral-400 text-neutral-500 max-w-xl mx-auto">
@@ -269,7 +269,7 @@ export default function SolutionsPage() {
                   {pillar.icon}
                 </div>
 
-                <h3 className="text-lg font-bold text-white text-neutral-800 mb-1">
+                <h3 className="text-lg font-bold text-white mb-1">
                   {pillar.title}
                 </h3>
                 <p className="text-gold text-xs font-semibold tracking-wide uppercase mb-3">
@@ -292,7 +292,7 @@ export default function SolutionsPage() {
               <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
                 Why Choose Us
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white text-neutral-800 mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 Why DatTechGee Technologies
               </h2>
               <p className="text-neutral-400 text-neutral-500 max-w-xl mx-auto">
@@ -321,7 +321,7 @@ export default function SolutionsPage() {
                     {item.icon}
                   </div>
                   <div>
-                    <h3 className="text-base font-bold text-white text-neutral-800 mb-1.5 group-hover:text-gold transition-colors duration-300">
+                    <h3 className="text-base font-bold text-white mb-1.5 group-hover:text-gold transition-colors duration-300">
                       {item.title}
                     </h3>
                     <p className="text-neutral-400 text-neutral-500 text-sm leading-relaxed">
@@ -343,7 +343,7 @@ export default function SolutionsPage() {
               <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
                 Timeline
               </span>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-neutral-800 mb-4">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
                 How We Deliver
               </h2>
               <p className="text-neutral-400 text-neutral-500 max-w-xl mx-auto">
@@ -371,7 +371,7 @@ export default function SolutionsPage() {
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div className="w-8 h-[2px] bg-gold mb-4 rounded-full" />
-                <h3 className="text-lg font-bold text-white text-neutral-800 mb-1">
+                <h3 className="text-lg font-bold text-white mb-1">
                   {item.phase}
                 </h3>
                 <p className="text-gold text-xs font-semibold tracking-wide uppercase mb-3">
@@ -390,7 +390,7 @@ export default function SolutionsPage() {
       <section className="py-20 bg-[#060d1f]">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-bold text-white text-neutral-800 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Ready to Build Something Purpose-Built?
             </h2>
             <p className="text-neutral-400 text-neutral-500 mb-8 max-w-lg mx-auto">

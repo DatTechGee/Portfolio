@@ -75,7 +75,7 @@ export default function ProjectsPage() {
             <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
               Portfolio
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-neutral-800 mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Our Portfolio
             </h1>
             <p className="text-neutral-400 text-neutral-500 max-w-2xl mx-auto text-lg">
@@ -153,7 +153,7 @@ export default function ProjectsPage() {
 
                   {/* Card Content */}
                   <div className="p-5">
-                    <h3 className="text-lg font-semibold text-white text-neutral-800 mb-2">
+                    <h3 className="text-lg font-semibold text-white mb-2">
                       {project.title}
                     </h3>
                     <p className="text-neutral-400 text-neutral-500 text-sm mb-4 line-clamp-3">
@@ -222,7 +222,7 @@ export default function ProjectsPage() {
               <span className="text-gold text-xs font-semibold tracking-[0.2em] uppercase block mb-3">
                 Track Record
               </span>
-              <h2 className="text-2xl md:text-3xl font-bold text-white text-neutral-800">
+              <h2 className="text-2xl md:text-3xl font-bold text-white">
                 Proven Results
               </h2>
             </div>
@@ -251,7 +251,7 @@ export default function ProjectsPage() {
       <section className="py-20 bg-[#060d1f]">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-bold text-white text-neutral-800 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Ready to build something exceptional?
             </h2>
             <p className="text-neutral-400 text-neutral-500 mb-8 max-w-lg mx-auto">
@@ -318,7 +318,7 @@ export default function ProjectsPage() {
 
               {/* Modal Content */}
               <div className="p-8">
-                <h2 className="text-2xl font-bold text-white text-neutral-800 mb-3">
+                <h2 className="text-2xl font-bold text-white mb-3">
                   {selectedProject.title}
                 </h2>
                 <p className="text-neutral-400 text-neutral-500 mb-6 leading-relaxed">
@@ -328,7 +328,7 @@ export default function ProjectsPage() {
                 {/* Key Features */}
                 {selectedProject.subDescription && selectedProject.subDescription.length > 0 && (
                   <div className="mb-6">
-                    <h3 className="text-lg font-semibold text-white text-neutral-800 mb-3">
+                    <h3 className="text-lg font-semibold text-white mb-3">
                       Key Features
                     </h3>
                     <ul className="space-y-2">
@@ -347,7 +347,7 @@ export default function ProjectsPage() {
                 {/* Tech Stack Tags */}
                 {selectedProject.tags && selectedProject.tags.length > 0 && (
                   <div className="mb-8">
-                    <h3 className="text-lg font-semibold text-white text-neutral-800 mb-3">
+                    <h3 className="text-lg font-semibold text-white mb-3">
                       Tech Stack
                     </h3>
                     <div className="flex flex-wrap gap-2">
