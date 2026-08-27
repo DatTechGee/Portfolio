@@ -110,8 +110,9 @@ export default function AboutPage() {
               </span>
             </h1>
             <p className="text-neutral-500 max-w-2xl mx-auto text-lg">
-              DatTechGee Technologies designs and deploys digital infrastructure
-              for businesses that demand execution, structure, and measurable outcomes.
+              The company Isaac Emmanuel built — designing and deploying digital
+              infrastructure for businesses that demand execution, structure, and
+              measurable outcomes.
             </p>
           </ScrollReveal>
         </div>
@@ -146,10 +147,11 @@ export default function AboutPage() {
                 </h2>
                 <div className="space-y-4 text-neutral-500 leading-relaxed text-sm md:text-base">
                   <p>
-                    DatTechGee Technologies is a software solutions company
-                    building secure, scalable web applications, mobile apps, and
-                    business systems. We serve clients across Nigeria and beyond,
-                    delivering end-to-end digital infrastructure that powers growth.
+                    DatTechGee Technologies is the software company founded by
+                    Isaac Emmanuel — a full-stack developer and engineer building
+                    secure, scalable web applications, mobile apps, and business
+                    systems. We serve clients across Nigeria and beyond, delivering
+                    end-to-end digital infrastructure that powers growth.
                   </p>
                   <p>
                     Our core stack centers on{" "}
@@ -287,8 +289,23 @@ export default function AboutPage() {
 
             <ScrollReveal direction="right">
               <div className="relative rounded-2xl overflow-hidden border border-white/[0.08]">
-                <img src="/assets/PORTFILO.png" alt="Isaac Emmanuel — Founder" className="w-full h-full object-cover opacity-80" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a1128]/60 to-transparent" />
+                <img src="/assets/PORTFILO.png" alt="Isaac Emmanuel — Founder" className="w-full h-full object-cover opacity-90" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a1128]/70 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4 space-y-2">
+                  {[
+                    { label: "Currently building →", value: "Smart attendance + payroll systems" },
+                    { label: "Learning →", value: "Go, Cloud (AWS), advanced AI" },
+                    { label: "Interested in →", value: "Fintech, EdTech, Web3" },
+                  ].map((row) => (
+                    <div
+                      key={row.label}
+                      className="flex items-center gap-2 text-xs bg-[#0f1a36]/90 border border-white/10 rounded-lg px-3 py-2"
+                    >
+                      <span className="text-gold font-semibold whitespace-nowrap">{row.label}</span>
+                      <span className="text-neutral-300">{row.value}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </ScrollReveal>
           </div>
@@ -306,11 +323,11 @@ export default function AboutPage() {
                 Toolkit
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Technologies We Use
+                The Stack I Build With
               </h2>
               <p className="text-neutral-500 max-w-xl mx-auto">
                 The technologies we use to build robust, production-ready
-                applications.
+                applications — from frontend to backend and mobile.
               </p>
             </div>
           </ScrollReveal>

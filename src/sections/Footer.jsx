@@ -6,6 +6,36 @@ const Footer = () => {
   return (
     <footer className="relative bg-[#060d1f] border-t border-white/[0.08]" role="contentinfo">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        {/* Branding CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="relative mb-12 rounded-2xl overflow-hidden border border-gold/20 bg-[#0f1a36] p-8 md:p-12 text-center"
+        >
+          <div className="absolute -top-10 -right-10 w-48 h-48 bg-gold/10 rounded-full blur-3xl pointer-events-none" />
+          <p className="text-gold text-sm uppercase tracking-[0.3em] font-semibold mb-3">
+            Let&apos;s Build Something
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Have an idea, project or problem
+            <br className="hidden md:block" /> you want to solve?
+          </h2>
+          <p className="text-neutral-400 max-w-xl mx-auto mb-6">
+            Start a conversation with Isaac Emmanuel and DatTechGee Technologies today.
+          </p>
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-2 bg-gold text-[#0a1128] px-7 py-3 rounded-lg font-semibold text-sm hover:bg-gold/90 transition-colors duration-300"
+          >
+            Start a Conversation
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </Link>
+        </motion.div>
+
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
           {/* Brand */}
           <motion.div

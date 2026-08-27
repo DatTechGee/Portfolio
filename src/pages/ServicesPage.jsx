@@ -190,8 +190,8 @@ export default function ServicesPage() {
               What We Do
             </h1>
             <p className="text-neutral-500 max-w-2xl mx-auto text-lg">
-              Building the technical and operational backbone upon which serious
-              businesses grow. DatTechGee Technologies delivers end-to-end digital solutions.
+              The services Isaac Emmanuel and the DatTechGee team deliver — the
+              technical and operational backbone upon which serious businesses grow.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.2}>

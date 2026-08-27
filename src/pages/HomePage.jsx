@@ -113,27 +113,33 @@ const capabilities = [
 const processSteps = [
   {
     num: "01",
-    title: "Assessment & Alignment",
+    title: "Understand",
     description:
-      "Evaluate your business model, operational gaps, and execution needs to establish a clear foundation.",
+      "I start with the problem, the users, and the requirements — before a single line of code.",
   },
   {
     num: "02",
-    title: "Systems Blueprinting",
+    title: "Architect",
     description:
-      "Design the technical and operational frameworks required for scale with precision and clarity.",
+      "I design the system, data flow, database schema, and technology choices for scale.",
   },
   {
     num: "03",
-    title: "Structured Execution",
+    title: "Build",
     description:
-      "Build, integrate, and deploy with precision and accountability, ensuring measurable outcomes.",
+      "I develop the frontend, backend, APIs and integrations with clean, maintainable code.",
   },
   {
     num: "04",
-    title: "Review & Optimization",
+    title: "Test",
     description:
-      "Refine systems based on performance and growth needs, creating sustainable momentum.",
+      "I validate functionality, security, and performance across the whole product.",
+  },
+  {
+    num: "05",
+    title: "Deploy",
+    description:
+      "I ship the application to production and keep improving it over time.",
   },
 ];
 
@@ -262,7 +268,7 @@ const HomePage = () => {
                     <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-gold" />
                   </span>
                   <span className="text-gold text-sm font-medium">
-                    Available for new projects
+                    Founded by Isaac Emmanuel
                   </span>
                 </div>
               </ScrollReveal>
@@ -284,12 +290,25 @@ const HomePage = () => {
 
               <ScrollReveal direction="up" delay={0.35}>
                 <p className="text-base text-neutral-400">
-                  We turn business problems into fast, secure, and
-                  production-ready digital products.
+                  The personal technology brand of Isaac Emmanuel —
+                  full-stack engineer building scalable web, mobile and backend systems.
                 </p>
               </ScrollReveal>
 
               <ScrollReveal direction="up" delay={0.4}>
+                <div className="flex flex-wrap gap-2 justify-center lg:justify-start mt-2">
+                  {["React", "Laravel", "PHP", "React Native", "Node.js", "AI"].map((t) => (
+                    <span
+                      key={t}
+                      className="text-xs font-medium text-neutral-300 bg-white/5 border border-white/10 rounded-full px-3 py-1.5"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </ScrollReveal>
+
+              <ScrollReveal direction="up" delay={0.45}>
                 <p className="text-sm sm:text-base text-neutral-500 max-w-lg mx-auto lg:mx-0 leading-relaxed">
                   We design and build the digital infrastructure businesses need
                   to scale — custom software, mobile apps, and operational
@@ -318,23 +337,44 @@ const HomePage = () => {
               </ScrollReveal>
             </div>
 
-            {/* Right - Image */}
+            {/* Right - Portrait */}
             <ScrollReveal direction="right" delay={0.3} className="relative hidden lg:flex justify-center">
               <motion.div style={{ y: heroY }} className="relative">
-                <div className="absolute -inset-4 rounded-2xl bg-gradient-to-r from-gold/30 via-gold/10 to-gold/30 blur-2xl opacity-60" />
-                <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-gold/40 to-gold/10" />
-                <div className="relative w-[420px] h-[300px] lg:w-[480px] lg:h-[340px] rounded-2xl overflow-hidden border-2 border-gold/30">
+                <div className="absolute -inset-6 rounded-2xl bg-gradient-to-br from-gold/30 via-gold/10 to-transparent blur-2xl opacity-60" />
+
+                {/* Portrait */}
+                <div className="relative w-[360px] h-[440px] rounded-2xl overflow-hidden border-2 border-gold/30">
                   <img
-                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=500&fit=crop&auto=format"
-                    alt="DatTechGee Technologies — Team collaboration"
+                    src="/assets/PORTFILO.png"
+                    alt="Isaac Emmanuel — Founder, DatTechGee Technologies"
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a1128]/80 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a1128]/90 via-transparent to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <p className="text-white text-sm font-semibold">DatTechGee Technologies</p>
-                    <p className="text-neutral-400 text-xs">Software. Innovation. Impact.</p>
+                    <p className="text-white text-lg font-bold">Isaac Emmanuel</p>
+                    <p className="text-gold text-sm">Founder & Lead Developer</p>
                   </div>
                 </div>
+
+                {/* Floating tech elements */}
+                {[
+                  { label: "React", top: "6%", left: "-10%" },
+                  { label: "Laravel", top: "18%", right: "-12%" },
+                  { label: "Node.js", bottom: "22%", left: "-14%" },
+                  { label: "PHP", bottom: "10%", right: "-10%" },
+                  { label: "AI", top: "38%", right: "-14%" },
+                  { label: "API", bottom: "34%", left: "-12%" },
+                ].map((t, i) => (
+                  <motion.span
+                    key={t.label}
+                    className="absolute z-10 text-xs font-semibold text-gold bg-[#0f1a36]/95 border border-gold/30 rounded-full px-3 py-1.5 shadow-lg"
+                    style={{ top: t.top, left: t.left, right: t.right, bottom: t.bottom }}
+                    animate={{ y: [0, -6, 0] }}
+                    transition={{ duration: 3 + i * 0.3, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    {t.label}
+                  </motion.span>
+                ))}
               </motion.div>
             </ScrollReveal>
           </div>
@@ -350,6 +390,46 @@ const HomePage = () => {
             <div className="w-1 h-2.5 bg-gold/60 rounded-full" />
           </div>
         </motion.div>
+      </section>
+
+      {/* ===== TECHNOLOGY WALL ===== */}
+      <section className="relative py-10 border-y border-white/[0.06] bg-[#060d1f] overflow-hidden">
+        <div className="flex items-center justify-center gap-10 mb-6 px-6">
+          <span className="text-gold text-sm uppercase tracking-[0.3em] font-semibold">
+            I Build With
+          </span>
+        </div>
+        <div className="relative">
+          <motion.div
+            className="flex items-center gap-10 whitespace-nowrap"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+          >
+            {[
+              "React",
+              "Laravel",
+              "PHP",
+              "JavaScript",
+              "TypeScript",
+              "React Native",
+              "Node.js",
+              "MySQL",
+              "Python",
+              "Tailwind CSS",
+              "REST APIs",
+              "AI",
+              "Git",
+              "Vercel",
+            ].map((t) => (
+              <span key={t} className="flex items-center gap-10">
+                <span className="text-2xl md:text-3xl font-bold text-white/15 hover:text-gold/60 transition-colors duration-300">
+                  {t}
+                </span>
+                <span className="text-gold/30">•</span>
+              </span>
+            ))}
+          </motion.div>
+        </div>
       </section>
 
       {/* ===== STATS BAR ===== */}
@@ -395,6 +475,80 @@ const HomePage = () => {
               </div>
             </div>
           </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ===== WHAT I BUILD — PERSONAL ===== */}
+      <div className="section-divider" />
+      <section className="section-spacing relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a1128] via-[#0c1429] to-[#0a1128]" />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <ScrollReveal>
+              <p className="text-gold text-sm uppercase tracking-[0.2em] font-semibold mb-4">
+                What I Build
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.1}>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+                From idea to{" "}
+                <span className="bg-gradient-to-r from-white to-gold bg-clip-text text-transparent">
+                  working product
+                </span>
+              </h2>
+            </ScrollReveal>
+            <ScrollReveal delay={0.15}>
+              <p className="text-neutral-400 max-w-2xl mx-auto text-base mt-4">
+                More than a technology list — here's what Isaac actually ships,
+                end to end, for real businesses.
+              </p>
+            </ScrollReveal>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {[
+              {
+                title: "Web Applications",
+                desc: "Business platforms, dashboards, SaaS products and custom web applications.",
+              },
+              {
+                title: "Mobile Applications",
+                desc: "Cross-platform apps for iOS & Android using React Native and Expo.",
+              },
+              {
+                title: "Backend Systems",
+                desc: "APIs, authentication, databases, business logic and integrations.",
+              },
+              {
+                title: "AI-Powered Products",
+                desc: "AI integrations, automation and intelligent application features.",
+              },
+              {
+                title: "Blockchain Applications",
+                desc: "Smart contracts and transparent decentralized applications.",
+              },
+              {
+                title: "Full Product Delivery",
+                desc: "Design, architecture, build, deploy — and keep improving in production.",
+              },
+            ].map((item, i) => (
+              <ScrollReveal key={item.title} delay={i * 0.1}>
+                <motion.div
+                  whileHover={{ y: -6, scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                  className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6 h-full hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(212,168,67,0.06)] transition-all duration-400"
+                >
+                  <div className="w-10 h-10 rounded-lg bg-gold/10 border border-gold/20 flex items-center justify-center text-gold mb-4 group-hover:bg-gold/15 transition-colors duration-300">
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-white font-semibold text-lg mb-2">{item.title}</h3>
+                  <p className="text-neutral-400 text-sm leading-relaxed">{item.desc}</p>
+                </motion.div>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -546,31 +700,31 @@ const HomePage = () => {
           <div className="text-center mb-16">
             <ScrollReveal>
               <p className="text-gold text-sm uppercase tracking-[0.2em] font-semibold mb-4">
-                Execution Framework
+                How I Build
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-                How We{" "}
+                A disciplined{" "}
                 <span className="bg-gradient-to-r from-white to-gold bg-clip-text text-transparent">
-                  Work
+                  engineering process
                 </span>
               </h2>
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
               <p className="text-neutral-400 max-w-xl mx-auto text-base mt-4">
-                A disciplined approach to transforming vision into execution
+                From first conversation to production — how Isaac ships reliable software.
               </p>
             </ScrollReveal>
           </div>
 
           <div className="relative">
             {/* Connection line - desktop */}
-            <div className="hidden lg:block absolute top-16 left-[12.5%] right-[12.5%] h-[2px]">
+            <div className="hidden lg:block absolute top-16 left-[10%] right-[10%] h-[2px]">
               <div className="w-full h-full bg-gradient-to-r from-gold/0 via-gold/40 to-gold/0" />
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6">
               {processSteps.map((step, i) => (
                 <ScrollReveal key={step.num} delay={i * 0.12}>
                   <motion.div

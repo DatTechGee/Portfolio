@@ -186,7 +186,8 @@ export default function InsightsPage() {
               Our Insights
             </h1>
             <p className="text-neutral-500 max-w-2xl mx-auto text-lg">
-              Thoughts on modern web development, AI-powered automation, and building scalable digital solutions.
+              Isaac Emmanuel and DatTechGee on modern web development, AI-powered
+              automation, and building scalable digital solutions.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.2}>

@@ -149,7 +149,9 @@ export default function ContactPage() {
               Get in Touch
             </h1>
             <p className="text-neutral-500 max-w-2xl mx-auto text-lg">
-              Ready to start your next project? Reach out to DatTechGee Technologies and let's discuss how we can bring your vision to life.
+              Have a project in mind? Let's build it. Reach out to Isaac and
+              DatTechGee Technologies — freelancing, collaborations, and software
+              development opportunities welcome.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.2}>

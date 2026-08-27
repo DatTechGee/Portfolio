@@ -165,8 +165,8 @@ export default function SolutionsPage() {
             </h1>
             <p className="text-neutral-500 max-w-2xl mx-auto text-lg">
               Adapting technology to your specific business needs — not the other
-              way around. Every solution is engineered with precision, built for
-              scale, and designed to deliver measurable results.
+              way around. Isaac and the DatTechGee team engineer every solution
+              with precision, build for scale, and design for measurable results.
             </p>
           </ScrollReveal>
         </div>
