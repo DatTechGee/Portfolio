@@ -4,14 +4,14 @@ import ScrollReveal from "../components/ScrollReveal";
 import { experiences, techStack, industries, portfolioStats } from "../constants";
 
 const industryImages = [
-  "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&h=300&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=300&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=300&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=600&h=300&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=300&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=300&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=600&h=300&fit=crop&auto=format",
-  "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=300&fit=crop&auto=format",
+  "/assets/image1.jpg",
+  "/assets/image2.jpg",
+  "/assets/image3.jpg",
+  "/assets/image4.jpg",
+  "/assets/image5.jpg",
+  "/assets/image6.jpg",
+  "/assets/image7.jpg",
+  "/assets/image8.jpg",
 ];
 
 const companyValues = [
@@ -109,7 +109,7 @@ export default function AboutPage() {
                 Business Growth
               </span>
             </h1>
-            <p className="text-neutral-400 text-neutral-500 max-w-2xl mx-auto text-lg">
+            <p className="text-neutral-500 max-w-2xl mx-auto text-lg">
               DatTechGee Technologies designs and deploys digital infrastructure
               for businesses that demand execution, structure, and measurable outcomes.
             </p>
@@ -144,7 +144,7 @@ export default function AboutPage() {
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
                   Software. Innovation. Impact.
                 </h2>
-                <div className="space-y-4 text-neutral-400 text-neutral-500 leading-relaxed text-sm md:text-base">
+                <div className="space-y-4 text-neutral-500 leading-relaxed text-sm md:text-base">
                   <p>
                     DatTechGee Technologies is a software solutions company
                     building secure, scalable web applications, mobile apps, and
@@ -201,7 +201,7 @@ export default function AboutPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 What Guides Us
               </h2>
-              <p className="text-neutral-400 text-neutral-500 max-w-xl mx-auto">
+              <p className="text-neutral-500 max-w-xl mx-auto">
                 These principles define how DatTechGee Technologies approaches
                 every engagement and delivers results.
               </p>
@@ -233,7 +233,7 @@ export default function AboutPage() {
                 <h3 className="text-base font-semibold text-white mb-2">
                   {v.title}
                 </h3>
-                <p className="text-neutral-400 text-neutral-500 text-sm leading-relaxed">
+                <p className="text-neutral-500 text-sm leading-relaxed">
                   {v.description}
                 </p>
               </motion.div>
@@ -259,7 +259,7 @@ export default function AboutPage() {
                 <p className="text-gold text-sm font-semibold tracking-wide uppercase mb-4">
                   Founder &amp; Lead Developer
                 </p>
-                <div className="space-y-4 text-neutral-400 text-neutral-500 leading-relaxed text-sm md:text-base">
+                <div className="space-y-4 text-neutral-500 leading-relaxed text-sm md:text-base">
                   <p>
                     With over 4 years of hands-on experience, Isaac designs and builds
                     full-stack web and mobile applications that help businesses
@@ -308,7 +308,7 @@ export default function AboutPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 Technologies We Use
               </h2>
-              <p className="text-neutral-400 text-neutral-500 max-w-xl mx-auto">
+              <p className="text-neutral-500 max-w-xl mx-auto">
                 The technologies we use to build robust, production-ready
                 applications.
               </p>
@@ -340,7 +340,7 @@ export default function AboutPage() {
                     {tech.name.charAt(0)}
                   </div>
                 )}
-                <span className="text-xs font-medium text-neutral-300 text-neutral-600 text-center">
+                <span className="text-xs font-medium text-neutral-600 text-center">
                   {tech.name}
                 </span>
               </motion.div>
@@ -362,7 +362,7 @@ export default function AboutPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 Skills Breakdown
               </h2>
-              <p className="text-neutral-400 text-neutral-500 max-w-xl mx-auto">
+              <p className="text-neutral-500 max-w-xl mx-auto">
                 A detailed look at our proficiency across different domains.
               </p>
             </div>
@@ -389,10 +389,10 @@ export default function AboutPage() {
                   {cat.skills.map((skill) => (
                     <div key={skill.name}>
                       <div className="flex items-center justify-between mb-1.5">
-                        <span className="text-xs text-neutral-300 text-neutral-600 font-medium">
+                        <span className="text-xs text-neutral-600 font-medium">
                           {skill.name}
                         </span>
-                        <span className="text-[10px] text-neutral-500 text-neutral-400 tabular-nums">
+                        <span className="text-[10px] text-neutral-400 tabular-nums">
                           {skill.level}%
                         </span>
                       </div>
@@ -462,7 +462,7 @@ export default function AboutPage() {
                   <h3 className="text-xl font-bold text-white mt-1">
                     {exp.title}
                   </h3>
-                  <p className="text-neutral-400 text-neutral-500 text-sm mt-1">
+                  <p className="text-neutral-500 text-sm mt-1">
                     {exp.job}
                   </p>
                 </div>
@@ -485,7 +485,7 @@ export default function AboutPage() {
                             delay: i * 0.15 + j * 0.05 + 0.2,
                             ease: [0.16, 1, 0.3, 1],
                           }}
-                          className="flex items-start gap-2 text-sm text-neutral-400 text-neutral-500 leading-relaxed"
+                          className="flex items-start gap-2 text-sm text-neutral-500 leading-relaxed"
                         >
                           <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0 mt-2" />
                           {content}
@@ -513,7 +513,7 @@ export default function AboutPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 Industries We Serve
               </h2>
-              <p className="text-neutral-400 text-neutral-500 max-w-xl mx-auto">
+              <p className="text-neutral-500 max-w-xl mx-auto">
                 Delivering tailored digital solutions across diverse sectors.
               </p>
             </div>
@@ -531,15 +531,21 @@ export default function AboutPage() {
                   delay: i * 0.06,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(212,168,67,0.06)] transition-all duration-400"
+                className="group relative bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(212,168,67,0.08)] transition-all duration-400"
               >
-                <div className="h-24 overflow-hidden">
-                  <img src={industryImages[i]} alt={industry.name} className="w-full h-full object-cover opacity-50 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500" />
-                </div>
-                <div className="p-3 text-center">
-                  <span className="text-sm font-medium text-neutral-300 text-neutral-600">
-                    {industry.name}
-                  </span>
+                <div className="relative h-40 overflow-hidden">
+                  <img
+                    src={industryImages[i]}
+                    alt={industry.name}
+                    loading="lazy"
+                    className="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a1128] via-[#0f1a36]/30 to-transparent group-hover:from-[#0a1128] transition-all duration-400" />
+                  <div className="absolute bottom-2 left-0 right-0 px-4 text-center">
+                    <span className="text-sm font-semibold text-white group-hover:text-gold transition-colors duration-300">
+                      {industry.name}
+                    </span>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -564,7 +570,7 @@ export default function AboutPage() {
                   <div className="text-3xl md:text-4xl font-bold text-gold mb-1">
                     {stat.value}
                   </div>
-                  <div className="text-neutral-400 text-neutral-500 text-sm">
+                  <div className="text-neutral-500 text-sm">
                     {stat.label}
                   </div>
                 </div>
@@ -583,7 +589,7 @@ export default function AboutPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Ready to Build Something Great?
             </h2>
-            <p className="text-neutral-400 text-neutral-500 mb-8 max-w-lg mx-auto">
+            <p className="text-neutral-500 mb-8 max-w-lg mx-auto">
               Let DatTechGee Technologies engineer the digital and operational
               infrastructure that transforms your vision into sustainable execution.
             </p>
@@ -598,7 +604,7 @@ export default function AboutPage() {
             </Link>
             <Link
               to="/insights"
-              className="inline-flex items-center gap-2 border border-white/10 text-neutral-300 text-neutral-600 px-8 py-3.5 rounded-full font-semibold hover:border-gold/40 hover:text-gold transition-all duration-300"
+              className="inline-flex items-center gap-2 border border-white/10 text-neutral-600 px-8 py-3.5 rounded-full font-semibold hover:border-gold/40 hover:text-gold transition-all duration-300"
             >
               Read Insights
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

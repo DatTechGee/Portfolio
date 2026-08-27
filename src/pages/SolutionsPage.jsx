@@ -163,7 +163,7 @@ export default function SolutionsPage() {
               Tailored Solutions for Every
               <br className="hidden md:block" /> Business Challenge
             </h1>
-            <p className="text-neutral-400 text-neutral-500 max-w-2xl mx-auto text-lg">
+            <p className="text-neutral-500 max-w-2xl mx-auto text-lg">
               Adapting technology to your specific business needs — not the other
               way around. Every solution is engineered with precision, built for
               scale, and designed to deliver measurable results.
@@ -221,7 +221,7 @@ export default function SolutionsPage() {
                 </p>
 
                 {/* Description */}
-                <p className="text-neutral-400 text-neutral-500 leading-relaxed text-sm">
+                <p className="text-neutral-500 leading-relaxed text-sm">
                   {segment.description}
                 </p>
               </motion.div>
@@ -241,7 +241,7 @@ export default function SolutionsPage() {
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
                 Not a One-Size-Fits-All Approach
               </h2>
-              <p className="text-neutral-400 text-neutral-500 max-w-xl mx-auto">
+              <p className="text-neutral-500 max-w-xl mx-auto">
                 Every engagement is built around three pillars that ensure
                 technology serves the business — not the other way around.
               </p>
@@ -275,7 +275,7 @@ export default function SolutionsPage() {
                 <p className="text-gold text-xs font-semibold tracking-wide uppercase mb-3">
                   {pillar.subtitle}
                 </p>
-                <p className="text-neutral-400 text-neutral-500 leading-relaxed text-sm">
+                <p className="text-neutral-500 leading-relaxed text-sm">
                   {pillar.description}
                 </p>
               </motion.div>
@@ -295,7 +295,7 @@ export default function SolutionsPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 Why DatTechGee Technologies
               </h2>
-              <p className="text-neutral-400 text-neutral-500 max-w-xl mx-auto">
+              <p className="text-neutral-500 max-w-xl mx-auto">
                 A partnership built on technical excellence, transparency, and a
                 shared commitment to building something that lasts.
               </p>
@@ -324,7 +324,7 @@ export default function SolutionsPage() {
                     <h3 className="text-base font-bold text-white mb-1.5 group-hover:text-gold transition-colors duration-300">
                       {item.title}
                     </h3>
-                    <p className="text-neutral-400 text-neutral-500 text-sm leading-relaxed">
+                    <p className="text-neutral-500 text-sm leading-relaxed">
                       {item.description}
                     </p>
                   </div>
@@ -346,7 +346,7 @@ export default function SolutionsPage() {
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
                 How We Deliver
               </h2>
-              <p className="text-neutral-400 text-neutral-500 max-w-xl mx-auto">
+              <p className="text-neutral-500 max-w-xl mx-auto">
                 A structured engagement process from first conversation to production deployment and beyond.
               </p>
             </div>
@@ -377,7 +377,7 @@ export default function SolutionsPage() {
                 <p className="text-gold text-xs font-semibold tracking-wide uppercase mb-3">
                   {item.duration}
                 </p>
-                <p className="text-neutral-400 text-neutral-500 text-sm leading-relaxed">
+                <p className="text-neutral-500 text-sm leading-relaxed">
                   {item.description}
                 </p>
               </motion.div>
@@ -393,7 +393,7 @@ export default function SolutionsPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Ready to Build Something Purpose-Built?
             </h2>
-            <p className="text-neutral-400 text-neutral-500 mb-8 max-w-lg mx-auto">
+            <p className="text-neutral-500 mb-8 max-w-lg mx-auto">
               Let DatTechGee Technologies discuss your business challenges and architect a solution
               that actually fits.
             </p>

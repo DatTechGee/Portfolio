@@ -115,7 +115,7 @@ function ArticleCard({ article, index, large = false }) {
           >
             {article.category}
           </span>
-          <span className="text-xs text-neutral-500 text-neutral-500 tabular-nums">
+          <span className="text-xs text-neutral-500 tabular-nums">
             {article.date}
           </span>
         </div>
@@ -131,7 +131,7 @@ function ArticleCard({ article, index, large = false }) {
 
         {/* Description */}
         <p
-          className={`text-neutral-400 text-neutral-500 leading-relaxed mb-6 flex-1 ${
+          className={`text-neutral-500 leading-relaxed mb-6 flex-1 ${
             large ? "text-sm md:text-base" : "text-sm"
           }`}
         >
@@ -140,7 +140,7 @@ function ArticleCard({ article, index, large = false }) {
 
         {/* Footer */}
         <div className="flex items-center justify-between pt-4 border-t border-white/[0.08]">
-          <span className="text-xs text-neutral-500 text-neutral-500">
+          <span className="text-xs text-neutral-500">
             {article.readTime}
           </span>
           <span className="inline-flex items-center gap-1.5 text-gold text-sm font-semibold group-hover:gap-3 transition-all duration-300">
@@ -185,7 +185,7 @@ export default function InsightsPage() {
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Our Insights
             </h1>
-            <p className="text-neutral-400 text-neutral-500 max-w-2xl mx-auto text-lg">
+            <p className="text-neutral-500 max-w-2xl mx-auto text-lg">
               Thoughts on modern web development, AI-powered automation, and building scalable digital solutions.
             </p>
           </ScrollReveal>
@@ -240,7 +240,7 @@ export default function InsightsPage() {
                       >
                         {featuredArticle.category}
                       </span>
-                      <span className="text-xs text-neutral-500 text-neutral-500">
+                      <span className="text-xs text-neutral-500">
                         Featured
                       </span>
                     </div>
@@ -251,7 +251,7 @@ export default function InsightsPage() {
                     </h2>
 
                     {/* Description */}
-                    <p className="text-neutral-400 text-neutral-500 leading-relaxed text-sm md:text-base max-w-3xl">
+                    <p className="text-neutral-500 leading-relaxed text-sm md:text-base max-w-3xl">
                       {featuredArticle.description}
                     </p>
                   </div>
@@ -260,10 +260,10 @@ export default function InsightsPage() {
                 {/* Footer */}
                 <div className="flex items-center justify-between pt-6 mt-6 border-t border-white/[0.08]">
                   <div className="flex items-center gap-4">
-                    <span className="text-xs text-neutral-500 text-neutral-500 tabular-nums">
+                    <span className="text-xs text-neutral-500 tabular-nums">
                       {featuredArticle.date}
                     </span>
-                    <span className="text-xs text-neutral-500 text-neutral-500">
+                    <span className="text-xs text-neutral-500">
                       {featuredArticle.readTime}
                     </span>
                   </div>
@@ -352,7 +352,7 @@ export default function InsightsPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 relative">
                 Stay Updated
               </h2>
-              <p className="text-neutral-400 text-neutral-500 mb-8 max-w-lg mx-auto relative">
+              <p className="text-neutral-500 mb-8 max-w-lg mx-auto relative">
                 Join 500+ developers and business leaders who receive weekly insights on software
                 architecture, development best practices, and technology strategy from DatTechGee Technologies.
               </p>
@@ -375,7 +375,7 @@ export default function InsightsPage() {
                 </button>
               </form>
 
-              <p className="text-xs text-neutral-600 text-neutral-400 mt-4 relative">
+              <p className="text-xs text-neutral-400 mt-4 relative">
                 No spam. Unsubscribe anytime.
               </p>
             </div>

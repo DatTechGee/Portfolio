@@ -432,7 +432,7 @@ const HomePage = () => {
                     {card.items.map((item, j) => (
                       <li key={j} className="flex items-start gap-3">
                         <span className={`w-1.5 h-1.5 rounded-full shrink-0 mt-2 ${card.label === "Is" ? "bg-gold" : "bg-neutral-600"}`} />
-                        <span className="text-neutral-300 text-neutral-500 text-sm leading-relaxed">
+                        <span className="text-neutral-500 text-sm leading-relaxed">
                           {item}
                         </span>
                       </li>
@@ -671,7 +671,7 @@ const HomePage = () => {
 
           <ScrollReveal delay={0.5}>
             <div className="mt-8 bg-[#0f1a36] border border-gold/20 rounded-2xl p-6 text-center">
-              <p className="text-neutral-300 text-neutral-600 text-sm leading-relaxed">
+              <p className="text-neutral-600 text-sm leading-relaxed">
                 DatTechGee Technologies partners selectively. Engagements are accepted only where execution value can be clearly delivered and where our approach aligns with your commitment to structure, discipline, and measurable outcomes.
               </p>
             </div>
@@ -906,7 +906,7 @@ const HomePage = () => {
       <section className="pb-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <ScrollReveal>
-            <p className="text-neutral-500 text-neutral-400 text-xs tracking-wider uppercase">
+            <p className="text-neutral-400 text-xs tracking-wider uppercase">
               Selective engagements. Disciplined execution. Measurable outcomes.
             </p>
           </ScrollReveal>

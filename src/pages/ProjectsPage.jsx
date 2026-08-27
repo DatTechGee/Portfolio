@@ -78,7 +78,7 @@ export default function ProjectsPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Our Portfolio
             </h1>
-            <p className="text-neutral-400 text-neutral-500 max-w-2xl mx-auto text-lg">
+            <p className="text-neutral-500 max-w-2xl mx-auto text-lg">
               A selection of projects that demonstrate execution quality and technical breadth
             </p>
           </ScrollReveal>
@@ -156,7 +156,7 @@ export default function ProjectsPage() {
                     <h3 className="text-lg font-semibold text-white mb-2">
                       {project.title}
                     </h3>
-                    <p className="text-neutral-400 text-neutral-500 text-sm mb-4 line-clamp-3">
+                    <p className="text-neutral-500 text-sm mb-4 line-clamp-3">
                       {project.description}
                     </p>
 
@@ -166,7 +166,7 @@ export default function ProjectsPage() {
                         {project.tags.slice(0, 4).map((tag) => (
                           <span
                             key={tag.id || tag.name}
-                            className="px-2 py-0.5 rounded text-xs bg-white/5 border border-white/10 text-neutral-400 text-neutral-500"
+                            className="px-2 py-0.5 rounded text-xs bg-white/5 border border-white/10 text-neutral-500"
                           >
                             {tag.name}
                           </span>
@@ -206,7 +206,7 @@ export default function ProjectsPage() {
 
           {filteredProjects.length === 0 && (
             <div className="text-center py-20">
-              <p className="text-neutral-400 text-neutral-500 text-lg">
+              <p className="text-neutral-500 text-lg">
                 No projects found for this filter.
               </p>
             </div>
@@ -237,7 +237,7 @@ export default function ProjectsPage() {
                   <div className="text-3xl md:text-4xl font-bold text-gold mb-1">
                     {stat.value}
                   </div>
-                  <div className="text-neutral-400 text-neutral-500 text-sm">
+                  <div className="text-neutral-500 text-sm">
                     {stat.label}
                   </div>
                 </div>
@@ -254,7 +254,7 @@ export default function ProjectsPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Ready to build something exceptional?
             </h2>
-            <p className="text-neutral-400 text-neutral-500 mb-8 max-w-lg mx-auto">
+            <p className="text-neutral-500 mb-8 max-w-lg mx-auto">
               Let DatTechGee Technologies discuss your vision and bring it to life with expert execution.
             </p>
             <Link
@@ -321,7 +321,7 @@ export default function ProjectsPage() {
                 <h2 className="text-2xl font-bold text-white mb-3">
                   {selectedProject.title}
                 </h2>
-                <p className="text-neutral-400 text-neutral-500 mb-6 leading-relaxed">
+                <p className="text-neutral-500 mb-6 leading-relaxed">
                   {selectedProject.description}
                 </p>
 
@@ -333,7 +333,7 @@ export default function ProjectsPage() {
                     </h3>
                     <ul className="space-y-2">
                       {selectedProject.subDescription.map((feature, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm text-neutral-400 text-neutral-500">
+                        <li key={idx} className="flex items-start gap-2 text-sm text-neutral-500">
                           <svg className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
@@ -354,7 +354,7 @@ export default function ProjectsPage() {
                       {selectedProject.tags.map((tag) => (
                         <span
                           key={tag.id || tag.name}
-                          className="px-3 py-1 rounded-full text-xs bg-white/5 border border-white/10 text-neutral-400 text-neutral-500"
+                          className="px-3 py-1 rounded-full text-xs bg-white/5 border border-white/10 text-neutral-500"
                         >
                           {tag.name}
                         </span>
