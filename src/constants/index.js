@@ -255,7 +255,7 @@ export const myProjects = [
       "Built with React, Laravel API, MySQL, and Tailwind CSS.",
     ],
     href: "",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=480&fit=crop&auto=format",
+    image: "/assets/image5.jpg",
     gradient: projectGradients[3],
     tags: [
       { id: 1, name: "React", path: "/assets/logos/react.svg" },
@@ -276,7 +276,7 @@ export const myProjects = [
       "Built with Next.js, Node.js, PostgreSQL, and Chart.js.",
     ],
     href: "",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=480&fit=crop&auto=format",
+    image: "/assets/image7.jpg",
     gradient: projectGradients[6],
     tags: [
       { id: 1, name: "React", path: "/assets/logos/react.svg" },
@@ -297,7 +297,7 @@ export const myProjects = [
       "Built with React Native, Expo, and Firebase for real-time sync.",
     ],
     href: "",
-    image: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&h=480&fit=crop&auto=format",
+    image: "/assets/image8.jpg",
     gradient: projectGradients[4],
     tags: [
       { id: 1, name: "React Native", path: "/assets/logos/react.svg" },
@@ -318,7 +318,7 @@ export const myProjects = [
       "Built with React Native, Node.js backend, and MongoDB.",
     ],
     href: "",
-    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&h=480&fit=crop&auto=format",
+    image: "/assets/image2.jpg",
     gradient: projectGradients[1],
     tags: [
       { id: 1, name: "React Native", path: "/assets/logos/react.svg" },
@@ -339,7 +339,7 @@ export const myProjects = [
       "Sales reports with daily, weekly, and monthly breakdowns.",
     ],
     href: "",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=480&fit=crop&auto=format",
+    image: "/assets/image1.jpg",
     gradient: projectGradients[8],
     tags: [
       { id: 1, name: "Laravel", path: "/assets/logos/laravel.svg" },
@@ -360,7 +360,7 @@ export const myProjects = [
       "Built with Laravel, React, MySQL, and real-time notifications via WebSockets.",
     ],
     href: "",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=480&fit=crop&auto=format",
+    image: "/assets/image6.jpg",
     gradient: projectGradients[0],
     tags: [
       { id: 1, name: "Laravel", path: "/assets/logos/laravel.svg" },
@@ -381,7 +381,7 @@ export const myProjects = [
       "Built with Node.js, Express, PostgreSQL, and Redis for queuing.",
     ],
     href: "",
-    image: "https://images.unsplash.com/photo-1556742393-d75f468bfcb0?w=800&h=480&fit=crop&auto=format",
+    image: "/assets/image7.jpg",
     gradient: projectGradients[5],
     tags: [
       { id: 1, name: "Node.js", path: "/assets/logos/nodejs.svg" },
@@ -403,7 +403,7 @@ export const myProjects = [
       "Built with Node.js, Bull queue, Redis, and PostgreSQL.",
     ],
     href: "",
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=480&fit=crop&auto=format",
+    image: "/assets/image3.jpg",
     gradient: projectGradients[2],
     tags: [
       { id: 1, name: "Node.js", path: "/assets/logos/nodejs.svg" },
@@ -425,7 +425,7 @@ export const myProjects = [
       "Session management with device tracking and revoke-all capability.",
     ],
     href: "",
-    image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&h=480&fit=crop&auto=format",
+    image: "/assets/image8.jpg",
     gradient: projectGradients[9],
     tags: [
       { id: 1, name: "Node.js", path: "/assets/logos/nodejs.svg" },
@@ -446,7 +446,7 @@ export const myProjects = [
       "IPFS-based metadata storage for decentralized artwork hosting.",
     ],
     href: "",
-    image: "https://images.unsplash.com/photo-1620321023374-d1a68fbc720d?w=800&h=480&fit=crop&auto=format",
+    image: "/assets/image7.jpg",
     gradient: projectGradients[7],
     tags: [
       { id: 1, name: "Solidity", path: "" },

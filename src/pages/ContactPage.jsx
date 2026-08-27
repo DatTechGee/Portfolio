@@ -157,7 +157,7 @@ export default function ContactPage() {
           <ScrollReveal delay={0.2}>
             <div className="mt-10 max-w-3xl mx-auto">
               <div className="relative rounded-2xl overflow-hidden border border-white/[0.08]">
-                <img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1000&h=300&fit=crop&auto=format" alt="DatTechGee Technologies — Contact us" className="w-full h-48 md:h-56 object-cover opacity-70" />
+                <img src="/assets/image5.jpg" alt="DatTechGee Technologies — Contact us" className="w-full h-48 md:h-56 object-cover opacity-70" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a1128]/80 via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 flex items-center justify-between">
                   <div>

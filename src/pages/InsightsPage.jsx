@@ -9,7 +9,7 @@ const featuredArticle = {
     "A deep dive into the architectural decisions that separate short-lived prototypes from production-grade applications. From monolith to modular design, database indexing strategies, caching layers, and horizontal scaling — this guide covers the foundational patterns every full-stack developer needs to understand before scaling beyond a single server. Based on real-world experience building systems that handle thousands of concurrent users.",
   date: "Jan 15, 2026",
   readTime: "12 min read",
-  image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop&auto=format",
+  image: "/assets/image7.jpg",
 };
 
 const articles = [
@@ -20,7 +20,7 @@ const articles = [
       "Off-the-shelf tools get you started, but custom software gives you a competitive edge. Explore how tailored systems reduce operational friction, eliminate license costs, and align perfectly with your unique workflows. We have seen businesses transform their operations within weeks of switching to custom-built solutions.",
     date: "Jan 11, 2026",
     readTime: "8 min read",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=300&fit=crop&auto=format",
+    image: "/assets/image2.jpg",
   },
   {
     category: "Technology",
@@ -29,7 +29,7 @@ const articles = [
       "APIs are the backbone of connected systems. Learn how RESTful design, versioning strategies, rate limiting, and documentation practices create interfaces that other developers actually want to use. This guide draws from our experience building APIs that serve multiple client applications simultaneously.",
     date: "Jan 8, 2026",
     readTime: "10 min read",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=300&fit=crop&auto=format",
+    image: "/assets/image5.jpg",
   },
   {
     category: "Development",
@@ -38,7 +38,7 @@ const articles = [
       "With mobile traffic surpassing desktop, designing mobile-first is no longer optional. Break down responsive breakpoints, touch targets, performance budgets, and progressive web app strategies that keep users engaged. These are battle-tested patterns from apps we have deployed for thousands of active users.",
     date: "Jan 5, 2026",
     readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=300&fit=crop&auto=format",
+    image: "/assets/image8.jpg",
   },
 ];
 
@@ -50,7 +50,7 @@ const moreArticles = [
       "From normalization to denormalization, composite indexes to partitioning — the database design decisions that determine whether your application performs at 100 rows or 100 million. We share the exact patterns we use when architecting databases for high-traffic applications.",
     date: "Dec 28, 2025",
     readTime: "9 min read",
-    image: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=600&h=300&fit=crop&auto=format",
+    image: "/assets/image1.jpg",
   },
   {
     category: "Security",
@@ -59,7 +59,7 @@ const moreArticles = [
       "A comprehensive walkthrough of modern web application security — covering JWT best practices, CORS configuration, SQL injection prevention, and infrastructure hardening for production environments. Every recommendation is based on real security audits and production deployments.",
     date: "Dec 20, 2025",
     readTime: "11 min read",
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f2?w=600&h=300&fit=crop&auto=format",
+    image: "/assets/image8.jpg",
   },
   {
     category: "Development",
@@ -68,7 +68,7 @@ const moreArticles = [
       "Both are powerful, but they solve different problems. Compare rendering strategies, SEO capabilities, developer experience, and deployment models to make an informed architectural choice. We have built production applications with both and share our honest assessment.",
     date: "Dec 15, 2025",
     readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=300&fit=crop&auto=format",
+    image: "/assets/image3.jpg",
   },
 ];
 
@@ -193,7 +193,7 @@ export default function InsightsPage() {
           <ScrollReveal delay={0.2}>
             <div className="mt-10 max-w-3xl mx-auto">
               <div className="relative rounded-2xl overflow-hidden border border-white/[0.08]">
-                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1000&h=300&fit=crop&auto=format" alt="DatTechGee Technologies — Insights" className="w-full h-48 md:h-56 object-cover opacity-70" />
+                <img src="/assets/image5.jpg" alt="DatTechGee Technologies — Insights" className="w-full h-48 md:h-56 object-cover opacity-70" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a1128]/80 via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <p className="text-white text-sm font-semibold">Engineering Insights</p>

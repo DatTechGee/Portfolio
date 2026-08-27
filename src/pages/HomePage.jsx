@@ -150,7 +150,7 @@ const partners = [
     description:
       "We partner with founders who are serious about building sustainable businesses. Our approach establishes structured systems and technical foundations that transform ideas into execution-ready ventures.",
     num: "01",
-    image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=600&h=400&fit=crop&auto=format",
+    image: "/assets/image2.jpg",
   },
   {
     title: "Growing Companies",
@@ -158,7 +158,7 @@ const partners = [
     description:
       "Organizations experiencing rapid growth encounter operational friction. We systematize operations and implement technology-enabled workflows that bring clarity to complexity.",
     num: "02",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&auto=format",
+    image: "/assets/image5.jpg",
   },
   {
     title: "Organizations Requiring Execution",
@@ -166,7 +166,7 @@ const partners = [
     description:
       "We work with businesses that prioritize measurable outcomes over theoretical frameworks. We provide the technology backbone that transforms strategic plans into operational reality.",
     num: "03",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop&auto=format",
+    image: "/assets/image7.jpg",
   },
   {
     title: "Teams Valuing Structure",
@@ -174,7 +174,7 @@ const partners = [
     description:
       "Organizations that recognize the competitive advantage of structured systems. We help implement frameworks that create measurable performance metrics and clear accountability.",
     num: "04",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&auto=format",
+    image: "/assets/image1.jpg",
   },
 ];
 
@@ -183,37 +183,37 @@ const differentiators = [
     num: "01",
     title: "Execution-First",
     description: "We do not sell strategies — we build systems. Every engagement produces tangible, deployed, working software that your team can use immediately.",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=300&fit=crop&auto=format",
+    image: "/assets/image2.jpg",
   },
   {
     num: "02",
     title: "Technology as Infrastructure",
     description: "We choose technology based on fit, not trends. Our stack decisions are guided by your business requirements, timeline, and long-term maintenance capacity.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=300&fit=crop&auto=format",
+    image: "/assets/image7.jpg",
   },
   {
     num: "03",
     title: "Systems Thinking",
     description: "We design interconnected solutions that address the full scope of your operations. Isolated features create complexity; integrated systems create clarity.",
-    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=300&fit=crop&auto=format",
+    image: "/assets/image5.jpg",
   },
   {
     num: "04",
     title: "Discipline & Governance",
     description: "Clear milestones, transparent communication, and structured delivery processes ensure projects stay on time and on budget.",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=300&fit=crop&auto=format",
+    image: "/assets/image1.jpg",
   },
   {
     num: "05",
     title: "Long-Term Value",
     description: "We build for sustainability, not shortcuts. Clean architecture, comprehensive documentation, and scalable design mean your system grows with your business.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=300&fit=crop&auto=format",
+    image: "/assets/image8.jpg",
   },
   {
     num: "06",
     title: "Institutional Rigor",
     description: "We apply enterprise-grade standards to every project, regardless of size. Security, performance, and maintainability are non-negotiable.",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=300&fit=crop&auto=format",
+    image: "/assets/image3.jpg",
   },
 ];
 
@@ -1017,7 +1017,7 @@ const HomePage = () => {
           <ScrollReveal>
             <div className="relative bg-[#0f1a36] border border-white/[0.06] rounded-3xl p-10 md:p-16 text-center overflow-hidden">
               <div className="absolute inset-0 rounded-3xl overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=600&fit=crop&auto=format" alt="" className="w-full h-full object-cover opacity-10" />
+                <img src="/assets/image5.jpg" alt="" className="w-full h-full object-cover opacity-10" />
               </div>
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-gold/5 rounded-full blur-[100px] pointer-events-none" />
 

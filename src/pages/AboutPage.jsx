@@ -20,28 +20,28 @@ const companyValues = [
     title: "Execution Over Theory",
     description:
       "We prioritize tangible results and measurable outcomes over conceptual frameworks and speculative strategies.",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=300&fit=crop&auto=format",
+    image: "/assets/image2.jpg",
   },
   {
     num: "02",
     title: "Technology as Infrastructure",
     description:
       "We build technical foundations that power operations, not superficial digital layers that add complexity.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=300&fit=crop&auto=format",
+    image: "/assets/image7.jpg",
   },
   {
     num: "03",
     title: "Systems Thinking",
     description:
       "We design interconnected frameworks that address the full scope of business operations, not isolated solutions.",
-    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=300&fit=crop&auto=format",
+    image: "/assets/image5.jpg",
   },
   {
     num: "04",
     title: "Discipline & Governance",
     description:
       "We establish clear structures, ownership, and performance standards that ensure reliable delivery.",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=300&fit=crop&auto=format",
+    image: "/assets/image1.jpg",
   },
 ];
 
@@ -128,7 +128,7 @@ export default function AboutPage() {
               <div className="relative">
                 <div className="rounded-2xl overflow-hidden border-2 border-gold/30 shadow-[0_0_40px_rgba(212,168,67,0.1)]">
                   <img
-                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=500&fit=crop&auto=format"
+                    src="/assets/image5.jpg"
                     alt="DatTechGee Technologies — Team collaboration"
                     className="w-full h-auto object-cover"
                   />
