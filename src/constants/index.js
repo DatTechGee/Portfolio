@@ -26,6 +26,12 @@ export const myProjects = [
     ],
     href: "https://scholarsnudge.com/",
     featured: true,
+    problem:
+      "Schools and universities struggled with manual, forgeable attendance records and no real-time visibility into classroom participation.",
+    solution:
+      "Built a full-stack attendance platform combining face verification, GPS geofencing and live monitoring across student, lecturer and admin dashboards.",
+    result:
+      "Delivered verifiable, automated attendance tracking that cut record-keeping overhead and gave institutions live oversight — deployed for real school use.",
     image: "/assets/projects/scholars-nudge.jpg",
     gradient: projectGradients[8],
     tags: [
@@ -49,6 +55,12 @@ export const myProjects = [
     ],
     href: "",
     featured: true,
+    problem:
+      "Payroll was handled manually and in spreadsheets, making salary computation, deductions and payslip delivery slow and error-prone.",
+    solution:
+      "Automated the full payroll cycle — employee records, salary calculation with tax and deductions, and downloadable PDF payslips.",
+    result:
+      "Turned a multi-day manual process into one-click salary runs with consistent, audit-ready payslips and reports.",
     image: "/assets/projects/payroll.png",
     gradient: projectGradients[1],
     tags: [
@@ -134,6 +146,12 @@ export const myProjects = [
     ],
     href: "",
     featured: true,
+    problem:
+      "Medical fundraising suffered from opaque fund handling, fraud and a lack of donor trust in how money reached patients.",
+    solution:
+      "Built a blockchain-powered crowdfunding DApp with MetaMask authentication and smart-contract donation tracking for transparent disbursement.",
+    result:
+      "Created a trustless fundraising flow where every donation is recorded on-chain, reducing fraud exposure and rebuilding donor confidence.",
     image: "/assets/projects/blockchain-medical.jpg",
     gradient: projectGradients[7],
     tags: [
@@ -156,6 +174,12 @@ export const myProjects = [
     ],
     href: "",
     featured: true,
+    problem:
+      "Networks lacked accessible tools to inspect traffic and detect suspicious activity before it became a security incident.",
+    solution:
+      "Integrated Laravel, React, Python, Wireshark and TShark into a real-time packet-capture and anomaly-detection dashboard.",
+    result:
+      "Gave operators a live view of network health with automated alerts for unusual traffic patterns and faster incident response.",
     image: "/assets/projects/network-analyzer.jpg",
     gradient: projectGradients[5],
     tags: [

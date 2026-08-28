@@ -308,9 +308,17 @@ const HomePage = () => {
               </ScrollReveal>
 
               <ScrollReveal direction="up" delay={0.35}>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
+                  We build software that solves{" "}
+                  <span className="text-gold">business problems.</span>
+                </h2>
+              </ScrollReveal>
+
+              <ScrollReveal direction="up" delay={0.4}>
                 <p className="text-base text-neutral-400">
-                  The personal technology brand of Isaac Emmanuel —
-                  full-stack engineer building scalable web, mobile and backend systems.
+                  DatTechGee is the full-stack engineering brand of Isaac
+                  Emmanuel — building scalable web, mobile and backend systems
+                  that move ideas into production.
                 </p>
               </ScrollReveal>
 
@@ -329,9 +337,9 @@ const HomePage = () => {
 
               <ScrollReveal direction="up" delay={0.45}>
                 <p className="text-sm sm:text-base text-neutral-500 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-                  We design and build the digital infrastructure businesses need
-                  to scale — custom software, mobile apps, and operational
-                  systems built for execution.
+                  From custom platforms and business automation to mobile apps
+                  and APIs — we turn operational pain points into reliable,
+                  scalable digital products built for execution.
                 </p>
               </ScrollReveal>
 

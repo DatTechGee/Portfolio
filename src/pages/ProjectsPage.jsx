@@ -182,6 +182,28 @@ export default function ProjectsPage() {
                       {project.description}
                     </p>
 
+                    {/* Case Study — Problem / Solution / Result for featured projects */}
+                    {project.featured && (
+                      <div className="mb-4 space-y-2.5">
+                        {[
+                          { label: "Problem", value: project.problem },
+                          { label: "Solution", value: project.solution },
+                          { label: "Result", value: project.result },
+                        ].map((cs) =>
+                          cs.value ? (
+                            <div key={cs.label} className="rounded-lg bg-white/[0.03] border border-white/[0.06] px-3 py-2">
+                              <span className="block text-[10px] font-bold uppercase tracking-wider text-gold mb-0.5">
+                                {cs.label}
+                              </span>
+                              <span className="block text-xs text-neutral-400 leading-relaxed">
+                                {cs.value}
+                              </span>
+                            </div>
+                          ) : null
+                        )}
+                      </div>
+                    )}
+
                     {/* Tech Tags */}
                     {project.tags && (
                       <div className="flex flex-wrap gap-1.5 mb-4">
@@ -346,6 +368,31 @@ export default function ProjectsPage() {
                 <p className="text-neutral-500 mb-6 leading-relaxed">
                   {selectedProject.description}
                 </p>
+
+                {/* Case Study — Problem / Solution / Result */}
+                {selectedProject.featured && (
+                  <div className="mb-6 grid gap-4 md:grid-cols-3">
+                    {[
+                      { label: "Problem", value: selectedProject.problem },
+                      { label: "Solution", value: selectedProject.solution },
+                      { label: "Result", value: selectedProject.result },
+                    ].map((cs) =>
+                      cs.value ? (
+                        <div
+                          key={cs.label}
+                          className="rounded-xl bg-white/[0.03] border border-white/[0.06] p-4"
+                        >
+                          <span className="block text-[11px] font-bold uppercase tracking-wider text-gold mb-1.5">
+                            {cs.label}
+                          </span>
+                          <span className="block text-sm text-neutral-400 leading-relaxed">
+                            {cs.value}
+                          </span>
+                        </div>
+                      ) : null
+                    )}
+                  </div>
+                )}
 
                 {/* Key Features */}
                 {selectedProject.subDescription && selectedProject.subDescription.length > 0 && (
