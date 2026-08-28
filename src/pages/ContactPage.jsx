@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import ScrollReveal from "../components/ScrollReveal";
+import Seo from "../components/Seo";
 import { mySocials } from "../constants";
 
 const contactChannels = [
@@ -135,6 +136,13 @@ export default function ContactPage() {
 
   return (
     <main className="bg-[#0a1128] min-h-screen">
+      <Seo
+        title="Contact | DatTechGee Technologies — Isaac Emmanuel"
+        description="Contact Isaac Emmanuel at DatTechGee Technologies for web development, mobile apps, and custom software. WhatsApp 09112454166. Based in Abuja, Nigeria."
+        path="/contact"
+        image="/assets/logo.png"
+        type="website"
+      />
       {/* Page Header */}
       <section className="section-spacing pt-32 pb-12">
         <div className="max-w-6xl mx-auto px-6 text-center">

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Particles } from "../components/Particles";
 import { FlipWords } from "../components/FlipWords";
 import ScrollReveal from "../components/ScrollReveal";
+import Seo from "../components/Seo";
 import { reviews, portfolioStats } from "../constants";
 
 const positionCards = [
@@ -236,6 +237,24 @@ const HomePage = () => {
 
   return (
     <div className="min-h-screen bg-[#0a1128]">
+      <Seo
+        title="DatTechGee Technologies — Software. Innovation. Impact. | Isaac Emmanuel"
+        description="DatTechGee Technologies builds custom web apps, mobile apps, business systems, and APIs. Founded by Isaac Emmanuel — Full Stack Developer using React, Laravel, and Node.js. 20+ projects delivered."
+        path="/"
+        image="/assets/logo.png"
+        type="website"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          name: "DatTechGee Technologies",
+          url: "https://dattechgee.vercel.app/",
+          description:
+            "DatTechGee Technologies builds web apps, mobile apps, school portals, payroll systems, and business systems with Laravel, React, and React Native.",
+          email: "dattechgee@gmail.com",
+          founder: { "@type": "Person", name: "Isaac Emmanuel" },
+          areaServed: ["Abuja", "FCT", "Nigeria"],
+        }}
+      />
       {/* ===== HERO SECTION ===== */}
       <section className="section-spacing relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a1128] to-[#060d1f]" />
@@ -338,12 +357,12 @@ const HomePage = () => {
             </div>
 
             {/* Right - Portrait */}
-            <ScrollReveal direction="right" delay={0.3} className="relative hidden lg:flex justify-center">
+            <ScrollReveal direction="right" delay={0.3} className="relative flex justify-center order-first lg:order-none">
               <motion.div style={{ y: heroY }} className="relative">
                 <div className="absolute -inset-6 rounded-2xl bg-gradient-to-br from-gold/30 via-gold/10 to-transparent blur-2xl opacity-60" />
 
                 {/* Portrait */}
-                <div className="relative w-[360px] h-[440px] rounded-2xl overflow-hidden border-2 border-gold/30">
+                <div className="relative w-[220px] h-[270px] sm:w-[300px] sm:h-[370px] lg:w-[360px] lg:h-[440px] rounded-2xl overflow-hidden border-2 border-gold/30">
                   <img
                     src="/assets/PORTFILO.png"
                     alt="Isaac Emmanuel — Founder, DatTechGee Technologies"
@@ -906,7 +925,7 @@ const HomePage = () => {
             <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#0a1128] to-transparent z-10 pointer-events-none" />
             <div className="flex overflow-hidden">
               <div className="flex gap-5 animate-marquee whitespace-nowrap">
-                {[...reviews, ...reviews, ...reviews].map((review, i) => {
+                {[...reviews, ...reviews].map((review, i) => {
                   const colors = getAvatarColors(review.colorIdx);
                   return (
                     <div
@@ -959,7 +978,7 @@ const HomePage = () => {
             <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#0a1128] to-transparent z-10 pointer-events-none" />
             <div className="flex overflow-hidden">
               <div className="flex gap-5 animate-marquee [animation-direction:reverse] whitespace-nowrap">
-                {[...reviews, ...reviews, ...reviews]
+                {[...reviews, ...reviews]
                   .reverse()
                   .map((review, i) => {
                     const colors = getAvatarColors(review.colorIdx);

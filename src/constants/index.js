@@ -25,6 +25,7 @@ export const myProjects = [
       "Built with Laravel backend, React Native (Expo) mobile app, and MySQL database.",
     ],
     href: "https://scholarsnudge.com/",
+    featured: true,
     image: "/assets/projects/scholars-nudge.jpg",
     gradient: projectGradients[8],
     tags: [
@@ -47,6 +48,7 @@ export const myProjects = [
       "Built with Laravel backend, React frontend, and MySQL database.",
     ],
     href: "",
+    featured: true,
     image: "/assets/projects/payroll.png",
     gradient: projectGradients[1],
     tags: [
@@ -131,6 +133,7 @@ export const myProjects = [
       "Built with Laravel backend for admin oversight and fraud prevention logic.",
     ],
     href: "",
+    featured: true,
     image: "/assets/projects/blockchain-medical.jpg",
     gradient: projectGradients[7],
     tags: [
@@ -152,6 +155,7 @@ export const myProjects = [
       "Security alerts and anomaly detection for suspicious traffic patterns.",
     ],
     href: "",
+    featured: true,
     image: "/assets/projects/network-analyzer.jpg",
     gradient: projectGradients[5],
     tags: [

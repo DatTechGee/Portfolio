@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import ScrollReveal from "../components/ScrollReveal";
+import Seo from "../components/Seo";
 import { experiences, techStack, industries, portfolioStats } from "../constants";
 
 const industryImages = [
@@ -77,6 +78,13 @@ const skillCategories = [
     ],
   },
   {
+    title: "AI & Tools",
+    skills: [
+      { name: "AI-assisted Dev", level: 92 },
+      { name: "Prompt Engineering", level: 88 },
+    ],
+  },
+  {
     title: "Specialized",
     skills: [
       { name: "Geolocation", level: 88 },
@@ -96,6 +104,13 @@ const barVariants = {
 export default function AboutPage() {
   return (
     <main className="bg-[#0a1128] min-h-screen">
+      <Seo
+        title="About | DatTechGee Technologies — Isaac Emmanuel"
+        description="Meet Isaac Emmanuel, Founder & Lead Developer of DatTechGee Technologies. Full Stack Developer in Abuja building web, mobile, and business systems with React, Laravel, Node.js, and MySQL."
+        path="/about"
+        image="/assets/PORTFILO.png"
+        type="profile"
+      />
       {/* ===== PAGE HEADER ===== */}
       <section className="section-spacing pt-32 pb-12">
         <div className="max-w-6xl mx-auto px-6 text-center">

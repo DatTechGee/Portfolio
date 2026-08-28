@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import ScrollReveal from "../components/ScrollReveal";
+import Seo from "../components/Seo";
 import { techStack } from "../constants";
 import Marquee from "../components/Marquee";
 
@@ -176,6 +177,13 @@ const industries = [
 export default function ServicesPage() {
   return (
     <main className="bg-[#0a1128] min-h-screen">
+      <Seo
+        title="Services | DatTechGee Technologies — Software. Innovation. Impact."
+        description="Web development, mobile app development, business systems, API integration, and UI/UX design. Custom software by DatTechGee Technologies in Abuja, Nigeria."
+        path="/services"
+        image="/assets/logo.png"
+        type="website"
+      />
       {/* Hero Section */}
       <section className="section-spacing pt-32 pb-20">
         <div className="max-w-6xl mx-auto px-6 text-center">

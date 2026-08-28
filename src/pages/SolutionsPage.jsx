@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import ScrollReveal from "../components/ScrollReveal";
+import Seo from "../components/Seo";
 
 const clientSegments = [
   {
@@ -149,6 +150,13 @@ const whyWorkWithMe = [
 export default function SolutionsPage() {
   return (
     <main className="bg-[#0a1128] min-h-screen">
+      <Seo
+        title="Solutions | DatTechGee Technologies — Software for Every Industry"
+        description="Software solutions for startups, schools, SMEs, healthcare, e-commerce, NGOs, and enterprises. Custom systems from DatTechGee Technologies in Nigeria."
+        path="/solutions"
+        image="/assets/logo.png"
+        type="website"
+      />
       {/* Hero Section */}
       <section className="section-spacing pt-32 pb-16">
         <div className="max-w-6xl mx-auto px-6 text-center">

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Link } from "react-router-dom";
 import ScrollReveal from "../components/ScrollReveal";
+import Seo from "../components/Seo";
 import { myProjects } from "../constants";
 
 const filterCategories = [
@@ -44,6 +45,9 @@ export default function ProjectsPage() {
   const [selectedProject, setSelectedProject] = useState(null);
 
   const filteredProjects = myProjects.filter((p) => matchesFilter(p, activeFilter));
+  const sortedProjects = [...filteredProjects].sort(
+    (a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0)
+  );
 
   useEffect(() => {
     if (!selectedProject) return;
@@ -65,6 +69,13 @@ export default function ProjectsPage() {
 
   return (
     <main className="bg-[#0a1128] min-h-screen">
+      <Seo
+        title="Projects | DatTechGee Technologies — Isaac Emmanuel"
+        description="Explore 20+ projects built by Isaac Emmanuel and DatTechGee Technologies — school management systems, payroll, blockchain DApps, mobile apps, and business systems."
+        path="/projects"
+        image="/assets/logo.png"
+        type="website"
+      />
       {/* Page Header */}
       <section className="section-spacing pt-32 pb-12">
         <div className="max-w-6xl mx-auto px-6 text-center">
@@ -118,7 +129,7 @@ export default function ProjectsPage() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <AnimatePresence mode="wait">
-              {filteredProjects.map((project, index) => (
+              {sortedProjects.map((project, index) => (
                 <motion.div
                   key={project.title}
                   custom={index}
@@ -127,11 +138,17 @@ export default function ProjectsPage() {
                   animate="visible"
                   exit="exit"
                   onClick={() => setSelectedProject(project)}
-                  className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(212,168,67,0.06)] transition-all duration-400 hover:-translate-y-1 cursor-pointer"
+                  className={`group bg-[#0f1a36] border rounded-xl overflow-hidden hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(212,168,67,0.06)] transition-all duration-400 hover:-translate-y-1 cursor-pointer ${
+                    project.featured
+                      ? "md:col-span-2 lg:col-span-1 border-gold/20 lg:col-span-1"
+                      : "border-white/[0.08]"
+                  }`}
                 >
                   {/* Image / Gradient Preview */}
                   <div
-                    className="h-48 relative overflow-hidden"
+                    className={`relative overflow-hidden ${
+                      project.featured ? "h-56" : "h-48"
+                    }`}
                     style={{
                       background: project.gradient || "linear-gradient(135deg, #0f1a36, #1a2a50)",
                     }}
@@ -147,6 +164,11 @@ export default function ProjectsPage() {
                     {!project.href && (
                       <span className="absolute top-3 left-3 px-2 py-0.5 rounded text-[10px] font-semibold bg-white/10 backdrop-blur-sm text-neutral-300 border border-white/10">
                         Concept
+                      </span>
+                    )}
+                    {project.featured && (
+                      <span className="absolute top-3 right-3 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide bg-gold text-[#0a1128]">
+                        Featured
                       </span>
                     )}
                   </div>

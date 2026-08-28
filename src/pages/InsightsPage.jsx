@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import ScrollReveal from "../components/ScrollReveal";
+import Seo from "../components/Seo";
 
 const featuredArticle = {
   category: "Architecture",
@@ -168,6 +169,13 @@ function ArticleCard({ article, index, large = false }) {
 export default function InsightsPage() {
   return (
     <main className="bg-[#0a1128] min-h-screen">
+      <Seo
+        title="Insights | DatTechGee Technologies — Our Perspective"
+        description="Articles and guides on software architecture, API design, mobile development, security, and business systems from Isaac Emmanuel and DatTechGee Technologies."
+        path="/insights"
+        image="/assets/logo.png"
+        type="website"
+      />
       {/* Hero Section */}
       <section className="section-spacing pt-32 pb-16">
         <div className="max-w-6xl mx-auto px-6 text-center">
