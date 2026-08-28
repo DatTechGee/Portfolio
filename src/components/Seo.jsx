@@ -4,7 +4,7 @@ const BASE_URL = "https://dattechgee.vercel.app";
 
 const setMeta = (attr, key, content) => {
   if (!content) return;
-  let tag = document.head.querySelector(`${attr}${key}`);
+  let tag = document.head.querySelector(`[${attr}="${key}"]`);
   if (!tag) {
     tag = document.createElement("meta");
     tag.setAttribute(attr, key);
@@ -14,7 +14,7 @@ const setMeta = (attr, key, content) => {
 };
 
 const removeMeta = (attr, key) => {
-  const tag = document.head.querySelector(`${attr}${key}`);
+  const tag = document.head.querySelector(`[${attr}="${key}"]`);
   if (tag) tag.remove();
 };
 
