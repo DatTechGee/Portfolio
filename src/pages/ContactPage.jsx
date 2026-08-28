@@ -195,7 +195,7 @@ export default function ContactPage() {
 
       {/* Contact Channels */}
       <section className="section-spacing pb-12">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6">
           <ScrollReveal>
             <span className="text-gold/60 text-xs font-semibold tracking-widest uppercase mb-4 block">
               Contact Channels
