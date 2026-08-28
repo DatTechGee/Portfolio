@@ -93,7 +93,7 @@ function ArticleCard({ article, index, large = false }) {
         ease: [0.16, 1, 0.3, 1],
       }}
       whileHover={{ y: -4 }}
-      className={`group bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden cursor-default hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 209, 255,0.06)] transition-all duration-400 ${
+      className={`group bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden cursor-default hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400 ${
         large ? "flex flex-col" : "flex flex-col"
       }`}
     >
@@ -231,7 +231,7 @@ export default function InsightsPage() {
                 ease: [0.16, 1, 0.3, 1],
               }}
               whileHover={{ y: -4 }}
-              className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden cursor-default hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 209, 255,0.06)] transition-all duration-400 relative"
+              className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden cursor-default hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400 relative"
             >
               {/* Gradient accent */}
               <div className="h-1.5 bg-gradient-to-r from-gold via-gold/60 to-transparent" />
@@ -374,7 +374,7 @@ export default function InsightsPage() {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="w-full sm:flex-1 bg-[#0a1128] border border-white/[0.08] rounded-full px-5 py-3.5 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-gold/40 focus:shadow-[0_0_20px_rgba(0, 209, 255,0.08)] transition-all duration-300"
+                  className="w-full sm:flex-1 bg-[#0a1128] border border-white/[0.08] rounded-full px-5 py-3.5 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-gold/40 focus:shadow-[0_0_20px_rgba(0, 114, 255,0.08)] transition-all duration-300"
                 />
                 <button
                   type="submit"

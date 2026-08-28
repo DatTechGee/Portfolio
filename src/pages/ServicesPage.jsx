@@ -251,7 +251,7 @@ export default function ServicesPage() {
                   delay: i * 0.1,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-8 text-center hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 209, 255,0.06)] transition-all duration-400"
+                className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-8 text-center hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400"
               >
                 <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold mx-auto mb-5">
                   {pillar.icon}
@@ -299,7 +299,7 @@ export default function ServicesPage() {
                   ease: [0.16, 1, 0.3, 1],
                 }}
                 whileHover={{ y: -4 }}
-                className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl p-8 cursor-default hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 209, 255,0.06)] transition-all duration-400 relative overflow-hidden"
+                className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl p-8 cursor-default hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400 relative overflow-hidden"
               >
                 {service.image && (
                   <div className="h-36 rounded-xl overflow-hidden mb-5 -mx-2 -mt-2">

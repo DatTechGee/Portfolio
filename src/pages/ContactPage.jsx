@@ -209,7 +209,7 @@ export default function ContactPage() {
                     href={info.href}
                     target={info.href.startsWith("http") ? "_blank" : undefined}
                     rel={info.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="block bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6 text-center hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 209, 255,0.06)] transition-all duration-400 group"
+                    className="block bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6 text-center hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400 group"
                   >
                     <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                       {info.icon}

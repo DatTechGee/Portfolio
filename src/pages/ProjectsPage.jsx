@@ -138,7 +138,7 @@ export default function ProjectsPage() {
                   animate="visible"
                   exit="exit"
                   onClick={() => setSelectedProject(project)}
-                  className={`group bg-[#0f1a36] border rounded-xl overflow-hidden hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 209, 255,0.06)] transition-all duration-400 hover:-translate-y-1 cursor-pointer ${
+                  className={`group bg-[#0f1a36] border rounded-xl overflow-hidden hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400 hover:-translate-y-1 cursor-pointer ${
                     project.featured
                       ? "md:col-span-2 lg:col-span-1 border-gold/20 lg:col-span-1"
                       : "border-white/[0.08]"

@@ -141,7 +141,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <ScrollReveal direction="left">
               <div className="relative">
-                <div className="rounded-2xl overflow-hidden border-2 border-gold/30 shadow-[0_0_40px_rgba(0, 209, 255,0.1)]">
+                <div className="rounded-2xl overflow-hidden border-2 border-gold/30 shadow-[0_0_40px_rgba(0, 114, 255,0.1)]">
                   <img
                     src="/assets/image5.jpg"
                     alt="DatTechGee Technologies — Team collaboration"
@@ -359,7 +359,7 @@ export default function AboutPage() {
                   delay: i * 0.05,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-4 flex flex-col items-center gap-3 hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 209, 255,0.06)] transition-all duration-400 group"
+                className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-4 flex flex-col items-center gap-3 hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400 group"
               >
                 {tech.logo ? (
                   <img
@@ -563,7 +563,7 @@ export default function AboutPage() {
                   delay: i * 0.06,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="group relative bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 209, 255,0.08)] transition-all duration-400"
+                className="group relative bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.08)] transition-all duration-400"
               >
                 <div className="relative h-40 overflow-hidden">
                   <img
