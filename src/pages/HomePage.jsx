@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from "motion/react";
+﻿import { motion, useScroll, useTransform } from "motion/react";
 import { Link } from "react-router-dom";
 import { Particles } from "../components/Particles";
 import { FlipWords } from "../components/FlipWords";
@@ -271,7 +271,7 @@ const HomePage = () => {
         <Particles
           className="absolute inset-0"
           quantity={80}
-          color="#d4a843"
+          color="#00d1ff"
           size={0.3}
           staticity={30}
         />
@@ -555,7 +555,7 @@ const HomePage = () => {
                 <motion.div
                   whileHover={{ y: -6, scale: 1.02 }}
                   transition={{ duration: 0.3 }}
-                  className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6 h-full hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(212,168,67,0.06)] transition-all duration-400"
+                  className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6 h-full hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 209, 255,0.06)] transition-all duration-400"
                 >
                   <div className="w-10 h-10 rounded-lg bg-gold/10 border border-gold/20 flex items-center justify-center text-gold mb-4 group-hover:bg-gold/15 transition-colors duration-300">
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -627,7 +627,7 @@ const HomePage = () => {
               <ScrollReveal key={pillar.title} delay={i * 0.12}>
                 <motion.div
                   whileHover={{ y: -6 }}
-                  className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-8 text-center hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(212,168,67,0.06)] transition-all duration-400"
+                  className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-8 text-center hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 209, 255,0.06)] transition-all duration-400"
                 >
                   <div className="w-14 h-14 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold mx-auto mb-5">
                     {pillar.icon}
@@ -675,7 +675,7 @@ const HomePage = () => {
                 <motion.div
                   whileHover={{ y: -6, scale: 1.02 }}
                   transition={{ duration: 0.3 }}
-                  className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6 h-full flex flex-col hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(212,168,67,0.06)] transition-all duration-400"
+                  className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6 h-full flex flex-col hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 209, 255,0.06)] transition-all duration-400"
                 >
                   <div className="w-12 h-12 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold mb-5 group-hover:bg-gold/15 transition-colors duration-300">
                     {cap.icon}
@@ -822,7 +822,7 @@ const HomePage = () => {
               <ScrollReveal key={partner.num} delay={i * 0.1}>
                   <motion.div
                     whileHover={{ y: -4 }}
-                    className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl p-8 hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(212,168,67,0.06)] transition-all duration-400 h-full"
+                    className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl p-8 hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 209, 255,0.06)] transition-all duration-400 h-full"
                   >
                     {partner.image && (
                       <div className="h-40 rounded-xl overflow-hidden mb-5 -mx-2 -mt-2">
