@@ -49,6 +49,7 @@ const companyValues = [
 const skillCategories = [
   {
     title: "Backend",
+    image: "/assets/software3.jpg",
     skills: [
       { name: "Laravel", level: 95 },
       { name: "PHP", level: 90 },
@@ -57,6 +58,7 @@ const skillCategories = [
   },
   {
     title: "Frontend",
+    image: "/assets/software4.jpg",
     skills: [
       { name: "React", level: 92 },
       { name: "Tailwind", level: 95 },
@@ -65,6 +67,7 @@ const skillCategories = [
   },
   {
     title: "Mobile",
+    image: "/assets/software2.jpg",
     skills: [
       { name: "Cross-platform", level: 88 },
       { name: "GPS & Location", level: 85 },
@@ -72,6 +75,7 @@ const skillCategories = [
   },
   {
     title: "Database & DevOps",
+    image: "/assets/image8.jpg",
     skills: [
       { name: "MySQL", level: 90 },
       { name: "Git", level: 90 },
@@ -79,6 +83,7 @@ const skillCategories = [
   },
   {
     title: "AI & Tools",
+    image: "/assets/sotwareai.jpg",
     skills: [
       { name: "AI-assisted Dev", level: 92 },
       { name: "Prompt Engineering", level: 88 },
@@ -86,6 +91,7 @@ const skillCategories = [
   },
   {
     title: "Specialized",
+    image: "/assets/image6.jpg",
     skills: [
       { name: "Geolocation", level: 88 },
       { name: "Dashboard Dev", level: 90 },
@@ -415,34 +421,42 @@ export default function AboutPage() {
                   delay: i * 0.1,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6"
+                className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400"
               >
-                <h3 className="text-sm font-semibold text-white mb-5">
-                  {cat.title}
-                </h3>
-                <div className="flex flex-col gap-4">
-                  {cat.skills.map((skill) => (
-                    <div key={skill.name}>
-                      <div className="flex items-center justify-between mb-1.5">
-                        <span className="text-xs text-neutral-600 font-medium">
-                          {skill.name}
-                        </span>
-                        <span className="text-[10px] text-neutral-400 tabular-nums">
-                          {skill.level}%
-                        </span>
+                {cat.image && (
+                  <div className="relative h-28 overflow-hidden">
+                    <img src={cat.image} alt={cat.title} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f1a36] via-[#0f1a36]/40 to-transparent" />
+                  </div>
+                )}
+                <div className="p-6">
+                  <h3 className="text-sm font-semibold text-white mb-5">
+                    {cat.title}
+                  </h3>
+                  <div className="flex flex-col gap-4">
+                    {cat.skills.map((skill) => (
+                      <div key={skill.name}>
+                        <div className="flex items-center justify-between mb-1.5">
+                          <span className="text-xs text-neutral-600 font-medium">
+                            {skill.name}
+                          </span>
+                          <span className="text-[10px] text-neutral-400 tabular-nums">
+                            {skill.level}%
+                          </span>
+                        </div>
+                        <div className="h-2 bg-navy/50 rounded-full overflow-hidden">
+                          <motion.div
+                            custom={skill.level}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            variants={barVariants}
+                            className="h-full rounded-full bg-gold origin-left"
+                          />
+                        </div>
                       </div>
-                      <div className="h-2 bg-navy/50 rounded-full overflow-hidden">
-                        <motion.div
-                          custom={skill.level}
-                          initial="hidden"
-                          whileInView="visible"
-                          viewport={{ once: true }}
-                          variants={barVariants}
-                          className="h-full rounded-full bg-gold origin-left"
-                        />
-                      </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </motion.div>
             ))}
