@@ -237,22 +237,25 @@ export default function AboutPage() {
                   delay: i * 0.1,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6 hover:border-gold/25 transition-all duration-400"
+                className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400"
               >
                 {v.image && (
-                  <div className="h-32 rounded-xl overflow-hidden mb-4 -mx-2 -mt-2">
-                    <img src={v.image} alt={v.title} className="w-full h-full object-cover opacity-60 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500" />
+                  <div className="relative h-40 overflow-hidden">
+                    <img src={v.image} alt={v.title} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f1a36] via-[#0f1a36]/30 to-transparent" />
                   </div>
                 )}
-                <span className="text-gold/40 text-xs font-bold tracking-[0.3em] uppercase block mb-3">
-                  {v.num}
-                </span>
-                <h3 className="text-base font-semibold text-white mb-2">
-                  {v.title}
-                </h3>
-                <p className="text-neutral-500 text-sm leading-relaxed">
-                  {v.description}
-                </p>
+                <div className="p-6">
+                  <span className="text-gold/40 text-xs font-bold tracking-[0.3em] uppercase block mb-3">
+                    {v.num}
+                  </span>
+                  <h3 className="text-base font-semibold text-white mb-2">
+                    {v.title}
+                  </h3>
+                  <p className="text-neutral-500 text-sm leading-relaxed">
+                    {v.description}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>

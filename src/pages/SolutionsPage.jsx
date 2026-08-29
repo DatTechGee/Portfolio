@@ -131,6 +131,7 @@ const whyWorkWithMe = [
       </svg>
     ),
     title: "Security-First",
+    image: "/assets/software1.jpg",
     description: "Authentication, authorization, and data protection baked in from day one.",
   },
   {
@@ -140,6 +141,7 @@ const whyWorkWithMe = [
       </svg>
     ),
     title: "Ongoing Support",
+    image: "/assets/mountain-2.png",
     description: "Post-launch maintenance, updates, and optimization — we do not disappear after delivery.",
   },
   {
@@ -149,6 +151,7 @@ const whyWorkWithMe = [
       </svg>
     ),
     title: "Transparent Communication",
+    image: "/assets/software3.jpg",
     description: "Regular updates, clear timelines, and honest conversations — no surprises.",
   },
 ];
@@ -337,19 +340,27 @@ export default function SolutionsPage() {
                   delay: i * 0.08,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6 hover:border-gold/25 transition-all duration-400 group"
+                className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden hover:border-gold/25 transition-all duration-400 h-full"
               >
-                <div className="flex items-start gap-4">
-                  <div className="w-11 h-11 rounded-xl bg-gold/10 flex items-center justify-center text-gold shrink-0 group-hover:scale-110 transition-transform duration-300">
-                    {item.icon}
+                {item.image && (
+                  <div className="relative h-36 overflow-hidden">
+                    <img src={item.image} alt={item.title} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f1a36] via-[#0f1a36]/35 to-transparent" />
                   </div>
-                  <div>
-                    <h3 className="text-base font-bold text-white mb-1.5 group-hover:text-gold transition-colors duration-300">
-                      {item.title}
-                    </h3>
-                    <p className="text-neutral-500 text-sm leading-relaxed">
-                      {item.description}
-                    </p>
+                )}
+                <div className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-11 h-11 rounded-xl bg-gold/10 flex items-center justify-center text-gold shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-base font-bold text-white mb-1.5 group-hover:text-gold transition-colors duration-300">
+                        {item.title}
+                      </h3>
+                      <p className="text-neutral-500 text-sm leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </motion.div>
