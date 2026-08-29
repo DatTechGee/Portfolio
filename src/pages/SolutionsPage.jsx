@@ -63,6 +63,7 @@ const approachPillars = [
     ),
     title: "Technology",
     subtitle: "Infrastructure that powers growth",
+    image: "/assets/coding-pov.png",
     description:
       "Choosing the right stack is not about trends — it is about fit. Every technology decision is guided by the specific demands of your business, your timeline, and your long-term vision.",
   },
@@ -74,6 +75,7 @@ const approachPillars = [
     ),
     title: "Systems",
     subtitle: "Operational frameworks for scale",
+    image: "/assets/image6.jpg",
     description:
       "Software without structure is just code. We design operational systems — workflows, data pipelines, access controls — that turn individual features into cohesive, maintainable platforms.",
   },
@@ -85,6 +87,7 @@ const approachPillars = [
     ),
     title: "Execution",
     subtitle: "Disciplined delivery of results",
+    image: "/assets/image8.jpg",
     description:
       "Strategy means nothing without execution. We follow a structured delivery process — milestones, testing, feedback loops — so projects ship on time and meet the standard they are supposed to.",
   },
@@ -98,6 +101,7 @@ const whyWorkWithMe = [
       </svg>
     ),
     title: "Custom Solutions",
+    image: "/assets/software5.jpg",
     description: "No templates — every project is purpose-built to solve your specific problem.",
   },
   {
@@ -107,6 +111,7 @@ const whyWorkWithMe = [
       </svg>
     ),
     title: "Full-Stack Capability",
+    image: "/assets/software2.jpg",
     description: "End-to-end delivery: frontend, backend, database, and deployment under one roof.",
   },
   {
@@ -116,6 +121,7 @@ const whyWorkWithMe = [
       </svg>
     ),
     title: "Scalable Architecture",
+    image: "/assets/grid.png",
     description: "Built to grow with your business — from first user to thousands.",
   },
   {
@@ -204,8 +210,9 @@ export default function SolutionsPage() {
                 className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl p-8 cursor-default hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400 relative overflow-hidden"
               >
                 {segment.image && (
-                  <div className="h-36 rounded-xl overflow-hidden mb-5 -mx-2 -mt-2">
-                    <img src={segment.image} alt={segment.title} className="w-full h-full object-cover opacity-60 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500" />
+                  <div className="relative h-44 overflow-hidden -mt-8 -mx-8 mb-6">
+                    <img src={segment.image} alt={segment.title} className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f1a36] via-[#0f1a36]/30 to-transparent" />
                   </div>
                 )}
                 {/* Number overlay */}
@@ -268,24 +275,32 @@ export default function SolutionsPage() {
                   delay: i * 0.12,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-8 relative overflow-hidden group hover:border-gold/25 transition-all duration-400"
+                className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden relative hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400"
               >
-                {/* Gold accent bar */}
-                <div className="w-10 h-[2px] bg-gold mb-5 rounded-full" />
+                {pillar.image && (
+                  <div className="relative h-40 overflow-hidden">
+                    <img src={pillar.image} alt={pillar.title} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f1a36] via-[#0f1a36]/35 to-transparent" />
+                  </div>
+                )}
+                <div className="p-8">
+                  {/* Gold accent bar */}
+                  <div className="w-10 h-[2px] bg-gold mb-5 rounded-full" />
 
-                <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold mb-5 group-hover:scale-110 transition-transform duration-300">
-                  {pillar.icon}
+                  <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold mb-5 group-hover:scale-110 transition-transform duration-300">
+                    {pillar.icon}
+                  </div>
+
+                  <h3 className="text-lg font-bold text-white mb-1">
+                    {pillar.title}
+                  </h3>
+                  <p className="text-gold text-xs font-semibold tracking-wide uppercase mb-3">
+                    {pillar.subtitle}
+                  </p>
+                  <p className="text-neutral-500 leading-relaxed text-sm">
+                    {pillar.description}
+                  </p>
                 </div>
-
-                <h3 className="text-lg font-bold text-white mb-1">
-                  {pillar.title}
-                </h3>
-                <p className="text-gold text-xs font-semibold tracking-wide uppercase mb-3">
-                  {pillar.subtitle}
-                </p>
-                <p className="text-neutral-500 leading-relaxed text-sm">
-                  {pillar.description}
-                </p>
               </motion.div>
             ))}
           </div>
@@ -362,10 +377,10 @@ export default function SolutionsPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
-              { phase: "Discovery", duration: "1–2 Weeks", description: "Requirements analysis, technical architecture, and project scoping with clear deliverables." },
-              { phase: "Development", duration: "3–8 Weeks", description: "Iterative development with weekly demos, feedback integration, and quality assurance." },
-              { phase: "Testing", duration: "1–2 Weeks", description: "Comprehensive testing, performance optimization, and security hardening before launch." },
-              { phase: "Launch & Support", duration: "Ongoing", description: "Production deployment, monitoring, and continuous improvement with dedicated support." },
+              { phase: "Discovery", duration: "1–2 Weeks", image: "/assets/image3.jpg", description: "Requirements analysis, technical architecture, and project scoping with clear deliverables." },
+              { phase: "Development", duration: "3–8 Weeks", image: "/assets/software4.jpg", description: "Iterative development with weekly demos, feedback integration, and quality assurance." },
+              { phase: "Testing", duration: "1–2 Weeks", image: "/assets/image4.jpg", description: "Comprehensive testing, performance optimization, and security hardening before launch." },
+              { phase: "Launch & Support", duration: "Ongoing", image: "/assets/sky.jpg", description: "Production deployment, monitoring, and continuous improvement with dedicated support." },
             ].map((item, i) => (
               <motion.div
                 key={item.phase}
@@ -373,10 +388,17 @@ export default function SolutionsPage() {
                 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6 relative overflow-hidden group hover:border-gold/25 transition-all duration-400"
+                className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden relative hover:border-gold/25 transition-all duration-400"
               >
-                <span className="text-5xl font-black text-gold/[0.08] select-none leading-none block mb-3 group-hover:text-gold/[0.2] transition-colors duration-500">
-                  {String(i + 1).padStart(2, "0")}
+                {item.image && (
+                  <div className="relative h-32 overflow-hidden">
+                    <img src={item.image} alt={item.phase} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f1a36] via-[#0f1a36]/40 to-transparent" />
+                  </div>
+                )}
+                <div className="p-6">
+                  <span className="text-5xl font-black text-gold/[0.08] select-none leading-none block mb-3 group-hover:text-gold/[0.2] transition-colors duration-500">
+                    {String(i + 1).padStart(2, "0")}
                 </span>
                 <div className="w-8 h-[2px] bg-gold mb-4 rounded-full" />
                 <h3 className="text-lg font-bold text-white mb-1">
@@ -388,6 +410,7 @@ export default function SolutionsPage() {
                 <p className="text-neutral-500 text-sm leading-relaxed">
                   {item.description}
                 </p>
+                </div>
               </motion.div>
             ))}
           </div>

@@ -46,6 +46,7 @@ const pillars = [
     ),
     title: "Software",
     description: "We build custom web applications, mobile apps, and business systems from the ground up. Every solution is engineered for performance, security, and long-term maintainability. From student portals to enterprise dashboards, our software powers real operations for real businesses.",
+    image: "/assets/software3.jpg",
   },
   {
     icon: (
@@ -56,6 +57,7 @@ const pillars = [
     ),
     title: "Innovation",
     description: "We stay at the cutting edge of technology to give your business a competitive advantage. AI-powered automation, blockchain integration, and modern cloud architectures are tools we deploy strategically — not for novelty, but for measurable impact.",
+    image: "/assets/AI.jpg",
   },
   {
     icon: (
@@ -65,6 +67,7 @@ const pillars = [
     ),
     title: "Impact",
     description: "Technology without outcomes is just code. We measure success by the efficiency gains, cost reductions, and revenue growth our solutions deliver. Every project is tied to clear business objectives and measurable results.",
+    image: "/assets/software6.jpg",
   },
 ];
 
@@ -78,6 +81,7 @@ const capabilities = [
     title: "Custom Software Development",
     description:
       "End-to-end web platforms with React frontends, Laravel/Node.js backends, authentication, dashboards, and reporting — built for scale.",
+    image: "/assets/image2.jpg",
   },
   {
     icon: (
@@ -88,6 +92,7 @@ const capabilities = [
     title: "Mobile Application Development",
     description:
       "Cross-platform Android/iOS apps with React Native and Expo — GPS tracking, push notifications, biometric auth, and offline capabilities.",
+    image: "/assets/image5.jpg",
   },
   {
     icon: (
@@ -98,6 +103,7 @@ const capabilities = [
     title: "Business Systems & Automation",
     description:
       "Custom ERP, CRM, payroll, inventory, and student management systems tailored to your organization's exact operational workflow.",
+    image: "/assets/image8.jpg",
   },
   {
     icon: (
@@ -108,6 +114,7 @@ const capabilities = [
     title: "API Development & Integration",
     description:
       "Secure RESTful APIs with token authentication, third-party integrations, and seamless data flow between systems and platforms.",
+    image: "/assets/image1.jpg",
   },
 ];
 
@@ -364,22 +371,22 @@ const HomePage = () => {
               </ScrollReveal>
             </div>
 
-            {/* Right - Portrait */}
+            {/* Right - Hero Visual */}
             <ScrollReveal direction="right" delay={0.3} className="relative flex justify-center order-first lg:order-none">
               <motion.div style={{ y: heroY }} className="relative">
                 <div className="absolute -inset-6 rounded-2xl bg-gradient-to-br from-gold/30 via-gold/10 to-transparent blur-2xl opacity-60" />
 
-                {/* Portrait */}
-                <div className="relative w-[220px] h-[270px] sm:w-[300px] sm:h-[370px] lg:w-[360px] lg:h-[440px] rounded-2xl overflow-hidden border-2 border-gold/30">
+                {/* Hero Visual */}
+                <div className="relative w-[300px] h-[330px] sm:w-[380px] sm:h-[420px] lg:w-[440px] lg:h-[500px] rounded-2xl overflow-hidden border-2 border-gold/30">
                   <img
-                    src="/assets/PORTFILO.png"
-                    alt="Isaac Emmanuel — Founder, DatTechGee Technologies"
+                    src="/assets/software1.jpg"
+                    alt="DatTechGee Technologies — Custom software development"
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a1128]/90 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a1128]/90 via-[#0a1128]/20 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <p className="text-white text-lg font-bold">Isaac Emmanuel</p>
-                    <p className="text-gold text-sm">Founder & Lead Developer</p>
+                    <p className="text-white text-lg font-bold">DatTechGee Technologies</p>
+                    <p className="text-gold text-sm">Software. Innovation. Impact.</p>
                   </div>
                 </div>
 
@@ -537,41 +544,57 @@ const HomePage = () => {
               {
                 title: "Web Applications",
                 desc: "Business platforms, dashboards, SaaS products and custom web applications.",
+                image: "/assets/software1.jpg",
               },
               {
                 title: "Mobile Applications",
                 desc: "Cross-platform apps for iOS & Android using React Native and Expo.",
+                image: "/assets/software2.jpg",
               },
               {
                 title: "Backend Systems",
                 desc: "APIs, authentication, databases, business logic and integrations.",
+                image: "/assets/software3.jpg",
               },
               {
                 title: "AI-Powered Products",
                 desc: "AI integrations, automation and intelligent application features.",
+                image: "/assets/sotwareai.jpg",
               },
               {
                 title: "Blockchain Applications",
                 desc: "Smart contracts and transparent decentralized applications.",
+                image: "/assets/software5.jpg",
               },
               {
                 title: "Full Product Delivery",
                 desc: "Design, architecture, build, deploy — and keep improving in production.",
+                image: "/assets/software6.jpg",
               },
             ].map((item, i) => (
               <ScrollReveal key={item.title} delay={i * 0.1}>
                 <motion.div
                   whileHover={{ y: -6, scale: 1.02 }}
                   transition={{ duration: 0.3 }}
-                  className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6 h-full hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400"
+                  className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden h-full hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-gold/10 border border-gold/20 flex items-center justify-center text-gold mb-4 group-hover:bg-gold/15 transition-colors duration-300">
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
-                    </svg>
+                  <div className="relative h-40 overflow-hidden">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f1a36] via-[#0f1a36]/40 to-transparent" />
                   </div>
-                  <h3 className="text-white font-semibold text-lg mb-2">{item.title}</h3>
-                  <p className="text-neutral-400 text-sm leading-relaxed">{item.desc}</p>
+                  <div className="p-6 pt-0 -mt-6 relative z-10">
+                    <div className="w-10 h-10 rounded-lg bg-gold/10 border border-gold/20 flex items-center justify-center text-gold mb-4 group-hover:bg-gold/15 transition-colors duration-300">
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-white font-semibold text-lg mb-2">{item.title}</h3>
+                    <p className="text-neutral-400 text-sm leading-relaxed">{item.desc}</p>
+                  </div>
                 </motion.div>
               </ScrollReveal>
             ))}
@@ -635,13 +658,23 @@ const HomePage = () => {
               <ScrollReveal key={pillar.title} delay={i * 0.12}>
                 <motion.div
                   whileHover={{ y: -6 }}
-                  className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-8 text-center hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400"
+                  className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden text-center hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400"
                 >
-                  <div className="w-14 h-14 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold mx-auto mb-5">
-                    {pillar.icon}
+                  <div className="relative h-40 overflow-hidden">
+                    <img
+                      src={pillar.image}
+                      alt={pillar.title}
+                      className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f1a36] via-[#0f1a36]/30 to-transparent" />
                   </div>
-                  <h3 className="text-white text-xl font-bold mb-3">{pillar.title}</h3>
-                  <p className="text-neutral-400 text-sm">{pillar.description}</p>
+                  <div className="p-8 -mt-8 relative z-10">
+                    <div className="w-14 h-14 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold mx-auto mb-5">
+                      {pillar.icon}
+                    </div>
+                    <h3 className="text-white text-xl font-bold mb-3">{pillar.title}</h3>
+                    <p className="text-neutral-400 text-sm">{pillar.description}</p>
+                  </div>
                 </motion.div>
               </ScrollReveal>
             ))}
@@ -683,21 +716,31 @@ const HomePage = () => {
                 <motion.div
                   whileHover={{ y: -6, scale: 1.02 }}
                   transition={{ duration: 0.3 }}
-                  className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6 h-full flex flex-col hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400"
+                  className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden h-full flex flex-col hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold mb-5 group-hover:bg-gold/15 transition-colors duration-300">
-                    {cap.icon}
+                  <div className="relative h-36 overflow-hidden">
+                    <img
+                      src={cap.image}
+                      alt={cap.title}
+                      className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f1a36] via-[#0f1a36]/35 to-transparent" />
                   </div>
-                  <h3 className="text-white font-semibold text-lg mb-3">
-                    {cap.title}
-                  </h3>
-                  <p className="text-neutral-400 text-sm leading-relaxed flex-1">
-                    {cap.description}
-                  </p>
-                  <div className="mt-5 pt-4 border-t border-white/[0.04]">
-                    <span className="text-gold/60 text-[10px] font-bold tracking-[0.3em] uppercase">
-                      DatTechGee Technologies
-                    </span>
+                  <div className="p-6 pt-0 -mt-8 relative z-10 flex flex-col flex-1">
+                    <div className="w-12 h-12 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold mb-5 group-hover:bg-gold/15 transition-colors duration-300">
+                      {cap.icon}
+                    </div>
+                    <h3 className="text-white font-semibold text-lg mb-3">
+                      {cap.title}
+                    </h3>
+                    <p className="text-neutral-400 text-sm leading-relaxed flex-1">
+                      {cap.description}
+                    </p>
+                    <div className="mt-5 pt-4 border-t border-white/[0.04]">
+                      <span className="text-gold/60 text-[10px] font-bold tracking-[0.3em] uppercase">
+                        DatTechGee Technologies
+                      </span>
+                    </div>
                   </div>
                 </motion.div>
               </ScrollReveal>

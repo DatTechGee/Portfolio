@@ -59,7 +59,7 @@ const serviceCategories = [
     description:
       "Full-stack web applications, APIs, and business systems built from scratch with Laravel, React, and modern frameworks. Every solution is engineered for performance, security, and long-term maintainability.",
     icon: "layers",
-    image: "/assets/image7.jpg",
+    image: "/assets/software1.jpg",
     features: [
       "End-to-end web applications with React and Laravel",
       "RESTful APIs with token authentication",
@@ -72,7 +72,7 @@ const serviceCategories = [
     description:
       "Cross-platform iOS and Android applications with React Native and Expo. From GPS tracking to biometric auth, we build mobile experiences that perform like native.",
     icon: "smartphone",
-    image: "/assets/image2.jpg",
+    image: "/assets/software2.jpg",
     features: [
       "Cross-platform iOS and Android from one codebase",
       "GPS tracking, push notifications, and biometrics",
@@ -85,7 +85,7 @@ const serviceCategories = [
     description:
       "Payroll, student portals, inventory, CRM, and workflow automation. We replace manual, error-prone processes with systems that run themselves.",
     icon: "briefcase",
-    image: "/assets/image1.jpg",
+    image: "/assets/software3.jpg",
     features: [
       "Custom ERP, CRM, and payroll systems",
       "Student management and attendance platforms",
@@ -98,7 +98,7 @@ const serviceCategories = [
     description:
       "Modern, responsive interfaces built with Tailwind CSS and React. Clean design systems that users trust and enjoy, with animations that feel intentional.",
     icon: "palette",
-    image: "/assets/image5.jpg",
+    image: "/assets/software4.jpg",
     features: [
       "Responsive design with Tailwind CSS",
       "Component-driven architecture with React",
@@ -142,24 +142,28 @@ const processSteps = [
   {
     step: "01",
     title: "Discovery & Alignment",
+    image: "/assets/image3.jpg",
     description:
       "Understanding your goals, requirements, and constraints. We align on vision, scope, and success criteria before writing a single line of code.",
   },
   {
     step: "02",
     title: "Architecture & Design",
+    image: "/assets/software4.jpg",
     description:
       "System design, database schemas, API contracts, and wireframes. A solid blueprint that ensures scalability and maintainability.",
   },
   {
     step: "03",
     title: "Development & Testing",
+    image: "/assets/software2.jpg",
     description:
       "Clean, modular code built with best practices. Thorough testing at every stage to ensure reliability and performance.",
   },
   {
     step: "04",
     title: "Deployment & Support",
+    image: "/assets/image6.jpg",
     description:
       "Production launch, performance monitoring, and ongoing maintenance. Your system stays fast, secure, and up-to-date.",
   },
@@ -302,8 +306,12 @@ export default function ServicesPage() {
                 className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl p-8 cursor-default hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400 relative overflow-hidden"
               >
                 {service.image && (
-                  <div className="h-36 rounded-xl overflow-hidden mb-5 -mx-2 -mt-2">
-                    <img src={service.image} alt={service.title} className="w-full h-full object-cover opacity-60 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500" />
+                  <div className="relative h-48 overflow-hidden -mt-8 -mx-8 mb-6">
+                    <img src={service.image} alt={service.title} className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f1a36] via-[#0f1a36]/30 to-transparent" />
+                    <span className="absolute top-5 right-6 text-6xl font-black text-white/10 select-none leading-none pointer-events-none">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
                   </div>
                 )}
                 <span className="absolute top-5 right-6 text-6xl font-black text-gold/[0.07] select-none leading-none pointer-events-none group-hover:text-gold/[0.15] transition-colors duration-500">
@@ -381,25 +389,33 @@ export default function ServicesPage() {
                   delay: i * 0.1,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6 relative overflow-hidden group hover:border-gold/25 transition-all duration-400"
+                className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden relative hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400"
               >
                 {/* Connector line between steps (desktop only) */}
                 {i < processSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-[1px] bg-white/10" />
+                  <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-[1px] bg-white/10 z-10" />
                 )}
 
-                <span className="text-6xl font-black text-gold/[0.1] select-none leading-none block mb-4 group-hover:text-gold/[0.25] transition-colors duration-500">
-                  {item.step}
-                </span>
+                {item.image && (
+                  <div className="h-32 overflow-hidden">
+                    <img src={item.image} alt={item.title} className="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500" />
+                  </div>
+                )}
 
-                <div className="w-8 h-[2px] bg-gold mb-4 rounded-full" />
+                <div className="p-6">
+                  <span className="text-6xl font-black text-gold/[0.1] select-none leading-none block mb-4 group-hover:text-gold/[0.25] transition-colors duration-500">
+                    {item.step}
+                  </span>
 
-                <h3 className="text-lg font-bold text-white mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-neutral-500 leading-relaxed">
-                  {item.description}
-                </p>
+                  <div className="w-8 h-[2px] bg-gold mb-4 rounded-full" />
+
+                  <h3 className="text-lg font-bold text-white mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-neutral-500 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>
