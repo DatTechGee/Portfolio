@@ -141,7 +141,7 @@ const whyWorkWithMe = [
       </svg>
     ),
     title: "Ongoing Support",
-    image: "/assets/mountain-2.png",
+    image: "/assets/software00.jpg",
     description: "Post-launch maintenance, updates, and optimization — we do not disappear after delivery.",
   },
   {
@@ -391,7 +391,7 @@ export default function SolutionsPage() {
               { phase: "Discovery", duration: "1–2 Weeks", image: "/assets/image3.jpg", description: "Requirements analysis, technical architecture, and project scoping with clear deliverables." },
               { phase: "Development", duration: "3–8 Weeks", image: "/assets/software4.jpg", description: "Iterative development with weekly demos, feedback integration, and quality assurance." },
               { phase: "Testing", duration: "1–2 Weeks", image: "/assets/image4.jpg", description: "Comprehensive testing, performance optimization, and security hardening before launch." },
-              { phase: "Launch & Support", duration: "Ongoing", image: "/assets/sky.jpg", description: "Production deployment, monitoring, and continuous improvement with dedicated support." },
+              { phase: "Launch & Support", duration: "Ongoing", image: "/assets/software9.jpg", description: "Production deployment, monitoring, and continuous improvement with dedicated support." },
             ].map((item, i) => (
               <motion.div
                 key={item.phase}
