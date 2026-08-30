@@ -900,6 +900,22 @@ a:focus-visible, button:focus-visible {
 .light .theme-toggle:hover { background: rgba(0,114,255,0.12); border-color: rgba(0,114,255,0.3); color: #0072ff; }
 .light ::selection { background: rgba(0, 114, 255, 0.25); color: #0c1626; }
 
+/* Frame content images so dark photos sit cleanly on white instead of clashing.
+   Scope: card/section images (w-full h-full object-cover at content opacity),
+   excluding small logos (w-9 etc.) and full-bleed page backdrops (opacity-10). */
+.light img.w-full.h-full.object-cover.opacity-50,
+.light img.w-full.h-full.object-cover.opacity-60,
+.light img.w-full.h-full.object-cover.opacity-70,
+.light img.w-full.h-full.object-cover.opacity-80,
+.light img.w-full.h-full.object-cover.opacity-90 {
+  border: 1px solid rgba(12, 22, 38, 0.08);
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(12, 22, 38, 0.08);
+}
+.light img.w-full.h-full.object-cover[class*="rounded"] {
+  border-radius: inherit;
+}
+
 /* ── DARK ISLANDS (`.on-dark`): restore light text inside media overlays
    and floating chips that stay dark in BOTH themes ── */
 .light .on-dark {
