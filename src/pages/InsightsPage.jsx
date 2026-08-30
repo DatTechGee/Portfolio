@@ -5,7 +5,7 @@ import ScrollReveal from "../components/ScrollReveal";
 import Seo from "../components/Seo";
 import {
   featuredArticle,
-  articles,
+  allArticles,
   moreArticles,
   categoryColors,
 } from "../constants/articles";
@@ -104,6 +104,25 @@ export default function InsightsPage() {
   const [subscribing, setSubscribing] = useState(false);
   const [subscribed, setSubscribed] = useState(false);
   const [subscribeError, setSubscribeError] = useState(null);
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [query, setQuery] = useState("");
+
+  const categories = [
+    "All",
+    ...Array.from(new Set(allArticles.map((a) => a.category))),
+  ];
+
+  const filteredArticles = allArticles.filter((article) => {
+    const matchesCategory =
+      activeCategory === "All" || article.category === activeCategory;
+    const q = query.trim().toLowerCase();
+    const matchesQuery =
+      q === "" ||
+      `${article.title} ${article.description} ${article.category}`
+        .toLowerCase()
+        .includes(q);
+    return matchesCategory && matchesQuery;
+  });
 
   const handleSubscribe = async (e) => {
     e.preventDefault();
@@ -283,36 +302,84 @@ export default function InsightsPage() {
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {articles.map((article, i) => (
-              <ArticleCard key={article.title} article={article} index={i} />
-            ))}
-          </div>
+          {/* Category filter + Search */}
+          <ScrollReveal delay={0.05}>
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
+              <div className="flex flex-wrap gap-2">
+                {categories.map((cat) => (
+                  <button
+                    key={cat}
+                    onClick={() => setActiveCategory(cat)}
+                    className={`px-4 py-1.5 rounded-full text-xs font-semibold border transition-all duration-300 cursor-pointer ${
+                      activeCategory === cat
+                        ? "bg-gold text-navy border-gold"
+                        : "text-neutral-400 border-white/10 hover:text-gold hover:border-gold/30 bg-white/[0.02]"
+                    }`}
+                  >
+                    {cat}
+                  </button>
+                ))}
+              </div>
+              <div className="relative w-full md:w-64">
+                <svg
+                  className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35m1.35-5.4a6.75 6.75 0 11-13.5 0 6.75 6.75 0 0113.5 0z" />
+                </svg>
+                <input
+                  type="text"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="Search articles…"
+                  className="w-full bg-[#0f1a36] border border-white/[0.08] rounded-full pl-10 pr-4 py-2 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-gold/40 transition-all duration-300"
+                />
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {filteredArticles.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {filteredArticles.map((article, i) => (
+                <ArticleCard key={article.title} article={article} index={i} />
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-16 bg-[#0f1a36] border border-white/[0.08] rounded-xl">
+              <p className="text-neutral-400 text-sm">
+                No articles match your search. Try a different category or keyword.
+              </p>
+            </div>
+          )}
         </div>
       </section>
 
       {/* More Articles */}
-      <section className="py-16 bg-[#060d1f]">
-        <div className="max-w-6xl mx-auto px-6">
-          <ScrollReveal>
-            <div className="mb-10">
-              <h2 className="text-2xl font-bold text-white">
-                More to Explore
-              </h2>
-            </div>
-          </ScrollReveal>
+      {activeCategory === "All" && query.trim() === "" && (
+        <section className="py-16 bg-[#060d1f]">
+          <div className="max-w-6xl mx-auto px-6">
+            <ScrollReveal>
+              <div className="mb-10">
+                <h2 className="text-2xl font-bold text-white">
+                  More to Explore
+                </h2>
+              </div>
+            </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {moreArticles.map((article, i) => (
-              <ArticleCard
-                key={article.title}
-                article={article}
-                index={i}
-              />
-            ))}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {moreArticles.map((article, i) => (
+                <ArticleCard
+                  key={article.title}
+                  article={article}
+                  index={i}
+                />
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Newsletter / CTA Section */}
       <section className="section-spacing">

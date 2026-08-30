@@ -85,7 +85,10 @@ const Footer = () => {
                 { path: "/", label: "Home" },
                 { path: "/about", label: "About" },
                 { path: "/services", label: "Services" },
+                { path: "/solutions", label: "Solutions" },
                 { path: "/projects", label: "Projects" },
+                { path: "/testimonials", label: "Testimonials" },
+                { path: "/insights", label: "Insights" },
                 { path: "/contact", label: "Contact" },
               ].map((link) => (
                 <Link

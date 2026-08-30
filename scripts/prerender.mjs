@@ -59,6 +59,13 @@ const routes = [
       "Contact Isaac Emmanuel at DatTechGee Technologies for web development, mobile apps, and custom software. WhatsApp 09112454166. Based in Abuja, Nigeria.",
     image: DEFAULT_IMAGE,
   },
+  {
+    path: "/testimonials",
+    title: "Testimonials | DatTechGee Technologies — Isaac Emmanuel",
+    description:
+      "Read what clients say about DatTechGee Technologies — school portals, payroll systems, e-commerce, logistics apps, and custom business software built by Isaac Emmanuel.",
+    image: DEFAULT_IMAGE,
+  },
 ];
 
 if (!existsSync(indexHtmlPath)) {

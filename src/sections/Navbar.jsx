@@ -6,9 +6,39 @@ const navLinks = [
   { path: "/", label: "Home" },
   { path: "/about", label: "About" },
   { path: "/services", label: "Services" },
+  { path: "/solutions", label: "Solutions" },
   { path: "/projects", label: "Projects" },
+  { path: "/testimonials", label: "Testimonials" },
+  { path: "/insights", label: "Insights" },
   { path: "/contact", label: "Contact" },
 ];
+
+const resumeHref = "/Isaac_Emmanuel_Premium_ATS_Resume.docx";
+
+const ResumeButton = ({ className = "" }) => (
+  <a
+    href={resumeHref}
+    download="Isaac_Emmanuel_Resume.docx"
+    title="Download resume"
+    aria-label="Download resume"
+    className={`inline-flex items-center justify-center gap-2 rounded-full border border-gold/40 text-gold hover:bg-gold hover:text-navy text-sm transition-colors duration-300 ${className}`}
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      className="w-4 h-4"
+      aria-hidden="true"
+    >
+      <path
+        fillRule="evenodd"
+        d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V17H9V5.414L6.707 7.707a1 1 0 01-1.414 0z"
+        clipRule="evenodd"
+      />
+    </svg>
+    Resume
+  </a>
+);
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -104,12 +134,15 @@ const Navbar = () => {
           </nav>
 
           {/* CTA */}
-          <Link
-            to="/contact"
-            className="hidden sm:flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-full bg-gold text-navy hover:bg-gold/90 transition-all duration-300 shadow-lg shadow-gold/20"
-          >
-            Let&apos;s Talk
-          </Link>
+          <div className="hidden sm:flex items-center gap-2">
+            <ResumeButton className="px-4 py-2.5" />
+            <Link
+              to="/contact"
+              className="flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-full bg-gold text-navy hover:bg-gold/90 transition-all duration-300 shadow-lg shadow-gold/20"
+            >
+              Let&apos;s Talk
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -148,6 +181,7 @@ const Navbar = () => {
                 >
                   Let&apos;s Talk
                 </Link>
+                <ResumeButton className="mt-2 w-full py-3" />
               </nav>
             </motion.div>
           </>

@@ -4,7 +4,7 @@ import { Particles } from "../components/Particles";
 import { FlipWords } from "../components/FlipWords";
 import ScrollReveal from "../components/ScrollReveal";
 import Seo from "../components/Seo";
-import { reviews, portfolioStats } from "../constants";
+import { reviews, portfolioStats, industries } from "../constants";
 
 const positionCards = [
   {
@@ -458,6 +458,37 @@ const HomePage = () => {
               <span key={t} className="flex items-center gap-10">
                 <span className="text-2xl md:text-3xl font-bold text-white/15 hover:text-gold/60 transition-colors duration-300">
                   {t}
+                </span>
+                <span className="text-gold/30">•</span>
+              </span>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ===== INDUSTRIES WE SERVE ===== */}
+      <section className="relative py-10 border-b border-white/[0.06] bg-[#060d1f] overflow-hidden">
+        <div className="flex items-center justify-center gap-10 mb-6 px-6">
+          <span className="text-gold text-sm uppercase tracking-[0.3em] font-semibold">
+            Industries We Serve
+          </span>
+        </div>
+        <div className="relative">
+          <motion.div
+            className="flex items-center gap-10 whitespace-nowrap"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+          >
+            {[...industries, ...industries].map((ind, i) => (
+              <span
+                key={`${ind.name}-${i}`}
+                className="flex items-center gap-10"
+              >
+                <span className="flex items-center gap-3 text-lg md:text-xl text-white/25 hover:text-gold/60 transition-colors duration-300 font-semibold">
+                  <span className="w-6 h-6 rounded-md bg-white/5 border border-white/10 flex items-center justify-center text-[10px] font-bold text-gold/70">
+                    {ind.initials}
+                  </span>
+                  {ind.name}
                 </span>
                 <span className="text-gold/30">•</span>
               </span>
