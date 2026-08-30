@@ -36,7 +36,7 @@ export default function ArticlePage() {
   };
 
   return (
-    <main className="bg-[#0a1128] min-h-screen">
+    <main className="bg-[var(--bg-base)] min-h-screen">
       <Seo
         title={article.title}
         description={article.description}
@@ -99,7 +99,7 @@ export default function ArticlePage() {
               alt={article.title}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0a1128]/70 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-base)]/70 via-transparent to-transparent" />
           </div>
         </div>
       </section>
@@ -131,7 +131,7 @@ export default function ArticlePage() {
           </div>
 
           {/* Author */}
-          <div className="mt-14 rounded-2xl bg-[#0f1a36] border border-white/[0.08] p-6 flex items-center gap-4">
+          <div className="mt-14 rounded-2xl bg-[var(--bg-card)] border border-white/[0.08] p-6 flex items-center gap-4">
             <div className="w-14 h-14 rounded-full overflow-hidden border border-white/10 shrink-0">
               <img src="/assets/PORTFILO.png" alt="Isaac Emmanuel" className="w-full h-full object-cover" />
             </div>
@@ -152,7 +152,7 @@ export default function ArticlePage() {
                   <Link
                     key={a.id}
                     to={`/insights/${toSlug(a.title)}`}
-                    className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl p-5 hover:border-gold/25 transition-all duration-300"
+                    className="group bg-[var(--bg-card)] border border-white/[0.08] rounded-xl p-5 hover:border-gold/25 transition-all duration-300"
                   >
                     <span className="text-[11px] uppercase tracking-wider text-gold mb-2 block">
                       {a.category}

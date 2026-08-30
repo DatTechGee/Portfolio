@@ -1,6 +1,11 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { myProjects } from "../src/constants/index.js";
+import { allArticles } from "../src/constants/articles.js";
+
+const toSlug = (s) =>
+  s.toString().toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const distDir = resolve(__dirname, "../dist");
@@ -141,14 +146,34 @@ const articleSlugs = [
   { slug: "react-vs-nextjs", title: "React vs Next.js: Choosing the Right Framework", desc: "Rendering strategies, SEO capabilities, and deployment models to make an informed architectural choice." },
 ];
 
+const articleImage = new Map(
+  allArticles.map((a) => [toSlug(a.title), a.image])
+);
+
 const articleRoutes = articleSlugs.map((a) => ({
   path: `/insights/${a.slug}`,
   title: `${a.title} | DatTechGee Technologies`,
   description: a.desc,
-  image: DEFAULT_IMAGE,
+  image: articleImage.get(a.slug)
+    ? `${SITE}${articleImage.get(a.slug)}`
+    : DEFAULT_IMAGE,
 }));
 
-const allRoutes = [...routes, ...articleRoutes];
+const projectRoutes = myProjects.map((p) => ({
+  path: `/projects/${toSlug(p.title)}`,
+  title: `${p.title} | DatTechGee Technologies`,
+  description: p.description || "",
+  image: p.image ? `${SITE}${p.image}` : DEFAULT_IMAGE,
+}));
+
+const notFoundRoute = {
+  path: "/404",
+  title: "Page Not Found | DatTechGee Technologies",
+  description: "The page you are looking for could not be found.",
+  image: DEFAULT_IMAGE,
+};
+
+const allRoutes = [...routes, ...articleRoutes, ...projectRoutes, notFoundRoute];
 
 for (const route of allRoutes) {
   const outPath = route.path === "/" ? resolve(distDir, "index.html") : resolve(distDir, route.path.slice(1), "index.html");
@@ -160,7 +185,8 @@ for (const route of allRoutes) {
 }
 
 const today = new Date().toISOString().slice(0, 10);
-const sitemapItems = allRoutes
+const sitemapRoutes = allRoutes.filter((r) => r.path !== "/404");
+const sitemapItems = sitemapRoutes
   .map((r) => {
     const loc = r.path === "/" ? SITE : `${SITE}${r.path}`;
     const isArticle = r.path.startsWith("/insights/");
@@ -175,5 +201,29 @@ console.log("Generated dist/sitemap.xml");
 const robots = `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`;
 writeFileSync(resolve(distDir, "robots.txt"), robots);
 console.log("Generated dist/robots.txt");
+
+// RSS feed for Insights
+const escapeXml = (s) =>
+  String(s || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
+
+const rssItems = allArticles
+  .map((a) => {
+    const slug = toSlug(a.title);
+    const pubDate = a.date ? new Date(a.date).toUTCString() : new Date().toUTCString();
+    const enc = a.image
+      ? `\n      <enclosure url="${SITE}${a.image}" type="image/jpeg" />`
+      : "";
+    return `    <item>\n      <title>${escapeXml(a.title)}</title>\n      <link>${SITE}/insights/${slug}</link>\n      <guid isPermaLink="false">${SITE}/insights/${slug}</guid>\n      <description>${escapeXml(a.description)}</description>\n      <pubDate>${pubDate}</pubDate>\n      <category>${escapeXml(a.category || "Software")}</category>${enc}\n    </item>`;
+  })
+  .join("\n");
+
+const rss = `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n  <channel>\n    <title>DatTechGee Technologies — Insights</title>\n    <link>${SITE}/insights</link>\n    <description>Articles and guides on software architecture, API design, mobile development, security, and business systems from Isaac Emmanuel and DatTechGee Technologies.</description>\n    <language>en</language>\n    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>\n    <atom:link href="${SITE}/rss.xml" rel="self" type="application/rss+xml" />\n${rssItems}\n  </channel>\n</rss>\n`;
+writeFileSync(resolve(distDir, "rss.xml"), rss);
+console.log("Generated dist/rss.xml");
 
 console.log("Done. Static per-route HTML generated in dist/");

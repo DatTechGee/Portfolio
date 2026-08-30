@@ -1,7 +1,8 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import ScrollReveal from "../components/ScrollReveal";
 import Seo from "../components/Seo";
+import AvailabilityBadge from "../components/AvailabilityBadge";
 import { mySocials } from "../constants";
 
 const contactChannels = [
@@ -89,7 +90,7 @@ const faqs = [
   },
   {
     question: "What happens after the project is delivered?",
-    answer: "DatTechGee Technologies provides post-launch support including bug fixes, performance monitoring, feature additions, and system updates. We offer flexible maintenance plans — monthly, quarterly, or annual — to keep your system running at peak performance.",
+    answer: "DatTechGee Technologies provides post-launch support including bug fixes, performance monitoring, feature additions, and system updates. We offer flexible maintenance plans � monthly, quarterly, or annual � to keep your system running at peak performance.",
   },
 ];
 
@@ -145,9 +146,9 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="bg-[#0a1128] min-h-screen">
+    <main className="bg-[var(--bg-base)] min-h-screen">
       <Seo
-        title="Contact | DatTechGee Technologies — Isaac Emmanuel"
+        title="Contact | DatTechGee Technologies � Isaac Emmanuel"
         description="Contact Isaac Emmanuel at DatTechGee Technologies for web development, mobile apps, and custom software. WhatsApp 09112454166. Based in Abuja, Nigeria."
         path="/contact"
         image="/assets/logo.png"
@@ -166,17 +167,20 @@ export default function ContactPage() {
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Get in Touch
             </h1>
+            <div className="flex justify-center mb-6">
+              <AvailabilityBadge />
+            </div>
             <p className="text-neutral-500 max-w-2xl mx-auto text-lg">
               Have a project in mind? Let's build it. Reach out to Isaac and
-              DatTechGee Technologies — freelancing, collaborations, and software
+              DatTechGee Technologies � freelancing, collaborations, and software
               development opportunities welcome.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
             <div className="mt-10 max-w-3xl mx-auto">
               <div className="relative rounded-2xl overflow-hidden border border-white/[0.08]">
-                <img src="/assets/image5.jpg" alt="DatTechGee Technologies — Contact us" className="w-full h-48 md:h-56 object-cover opacity-70" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a1128]/80 via-transparent to-transparent" />
+                <img src="/assets/image5.jpg" alt="DatTechGee Technologies � Contact us" className="w-full h-48 md:h-56 object-cover opacity-70" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-base)]/80 via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 flex items-center justify-between">
                   <div>
                     <p className="text-white text-sm font-semibold">Let's Build Something Great</p>
@@ -209,7 +213,7 @@ export default function ContactPage() {
                     href={info.href}
                     target={info.href.startsWith("http") ? "_blank" : undefined}
                     rel={info.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="block bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6 text-center hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400 group"
+                    className="block bg-[var(--bg-card)] border border-white/[0.08] rounded-xl p-6 text-center hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400 group"
                   >
                     <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                       {info.icon}
@@ -222,7 +226,7 @@ export default function ContactPage() {
                     </p>
                   </a>
                 ) : (
-                  <div className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6 text-center">
+                  <div className="bg-[var(--bg-card)] border border-white/[0.08] rounded-xl p-6 text-center">
                     <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold mx-auto mb-4">
                       {info.icon}
                     </div>
@@ -244,7 +248,7 @@ export default function ContactPage() {
       <section className="pb-12">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
-            <div className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="bg-[var(--bg-card)] border border-white/[0.08] rounded-xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="text-center sm:text-left">
                 <p className="text-white font-semibold mb-1">
                   Prefer a quick conversation?
@@ -319,8 +323,8 @@ export default function ContactPage() {
                       key={i}
                       className={`border rounded-xl overflow-hidden transition-all duration-300 ${
                         openFaq === i
-                          ? "border-gold/30 border-t-gold bg-[#0f1a36]"
-                          : "border-white/[0.08] bg-[#0f1a36]"
+                          ? "border-gold/30 border-t-gold bg-[var(--bg-card)]"
+                          : "border-white/[0.08] bg-[var(--bg-card)]"
                       }`}
                     >
                       <button
@@ -369,7 +373,7 @@ export default function ContactPage() {
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.95 }}
-                    className="bg-[#0f1a36] border border-gold/30 rounded-xl p-12 text-center"
+                    className="bg-[var(--bg-card)] border border-gold/30 rounded-xl p-12 text-center"
                   >
                     <div className="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-6">
                       <svg className="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -406,7 +410,7 @@ export default function ContactPage() {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     onSubmit={handleSubmit}
-                    className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-8 space-y-5"
+                    className="bg-[var(--bg-card)] border border-white/[0.08] rounded-xl p-8 space-y-5"
                   >
                     {error && (
                       <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4 mb-6">
@@ -455,11 +459,11 @@ export default function ContactPage() {
                         required
                         className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-500 focus:border-gold/50 focus:ring-2 focus:ring-gold/20 outline-none transition-all appearance-none"
                       >
-                        <option value="" disabled className="bg-[#0f1a36]">
+                        <option value="" disabled className="bg-[var(--bg-card)]">
                           Select project type
                         </option>
                         {projectTypes.map((type) => (
-                          <option key={type} value={type} className="bg-[#0f1a36]">
+                          <option key={type} value={type} className="bg-[var(--bg-card)]">
                             {type}
                           </option>
                         ))}
@@ -478,11 +482,11 @@ export default function ContactPage() {
                           required
                           className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-500 focus:border-gold/50 focus:ring-2 focus:ring-gold/20 outline-none transition-all appearance-none"
                         >
-                          <option value="" disabled className="bg-[#0f1a36]">
+                          <option value="" disabled className="bg-[var(--bg-card)]">
                             Select budget
                           </option>
                           {budgetRanges.map((range) => (
-                            <option key={range} value={range} className="bg-[#0f1a36]">
+                            <option key={range} value={range} className="bg-[var(--bg-card)]">
                               {range}
                             </option>
                           ))}
@@ -500,11 +504,11 @@ export default function ContactPage() {
                           required
                           className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-500 focus:border-gold/50 focus:ring-2 focus:ring-gold/20 outline-none transition-all appearance-none"
                         >
-                          <option value="" disabled className="bg-[#0f1a36]">
+                          <option value="" disabled className="bg-[var(--bg-card)]">
                             Select timeline
                           </option>
                           {timelines.map((t) => (
-                            <option key={t} value={t} className="bg-[#0f1a36]">
+                            <option key={t} value={t} className="bg-[var(--bg-card)]">
                               {t}
                             </option>
                           ))}
@@ -562,7 +566,7 @@ export default function ContactPage() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-xl bg-[#0f1a36] border border-white/[0.08] flex items-center justify-center text-neutral-400 hover:text-gold hover:border-gold/30 transition-all duration-300"
+                  className="w-12 h-12 rounded-xl bg-[var(--bg-card)] border border-white/[0.08] flex items-center justify-center text-neutral-400 hover:text-gold hover:border-gold/30 transition-all duration-300"
                 >
                   <img src={social.icon} alt={social.name} className="w-5 h-5" />
                 </a>

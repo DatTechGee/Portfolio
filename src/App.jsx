@@ -1,4 +1,4 @@
-import { lazy, Suspense, useCallback, useState } from "react";
+import { lazy, Suspense, useCallback, useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "motion/react";
 import Navbar from "./sections/Navbar";
@@ -8,6 +8,7 @@ import ScrollButtons from "./components/ScrollButtons";
 import ScrollProgress from "./components/ScrollProgress";
 import WhatsAppButton from "./components/WhatsAppButton";
 import ErrorBoundary from "./components/ErrorBoundary";
+import CommandPalette from "./components/CommandPalette";
 
 const HomePage = lazy(() => import("./pages/HomePage"));
 const AboutPage = lazy(() => import("./pages/AboutPage"));
@@ -18,6 +19,8 @@ const InsightsPage = lazy(() => import("./pages/InsightsPage"));
 const ArticlePage = lazy(() => import("./pages/ArticlePage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 const TestimonialsPage = lazy(() => import("./pages/TestimonialsPage"));
+const ProjectPage = lazy(() => import("./pages/ProjectPage"));
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 
 const PageWrapper = ({ children }) => (
   <motion.div
@@ -32,10 +35,22 @@ const PageWrapper = ({ children }) => (
 
 const App = () => {
   const [showPreloader, setShowPreloader] = useState(true);
+  const [paletteOpen, setPaletteOpen] = useState(false);
   const location = useLocation();
 
   const handlePreloaderComplete = useCallback(() => {
     setShowPreloader(false);
+  }, []);
+
+  useEffect(() => {
+    const onKey = (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        setPaletteOpen((v) => !v);
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
   }, []);
 
   return (
@@ -64,11 +79,13 @@ const App = () => {
                     <Route path="/about" element={<PageWrapper><AboutPage /></PageWrapper>} />
                     <Route path="/services" element={<PageWrapper><ServicesPage /></PageWrapper>} />
                     <Route path="/projects" element={<PageWrapper><ProjectsPage /></PageWrapper>} />
+                    <Route path="/projects/:slug" element={<PageWrapper><ProjectPage /></PageWrapper>} />
                     <Route path="/solutions" element={<PageWrapper><SolutionsPage /></PageWrapper>} />
                     <Route path="/insights" element={<PageWrapper><InsightsPage /></PageWrapper>} />
                     <Route path="/insights/:slug" element={<PageWrapper><ArticlePage /></PageWrapper>} />
                     <Route path="/contact" element={<PageWrapper><ContactPage /></PageWrapper>} />
                     <Route path="/testimonials" element={<PageWrapper><TestimonialsPage /></PageWrapper>} />
+                    <Route path="*" element={<PageWrapper><NotFoundPage /></PageWrapper>} />
                   </Routes>
                 </AnimatePresence>
               </Suspense>
@@ -77,6 +94,7 @@ const App = () => {
             <ScrollButtons />
             <WhatsAppButton />
           </div>
+          <CommandPalette open={paletteOpen} onClose={() => setPaletteOpen(false)} />
         </div>
     </ErrorBoundary>
   );

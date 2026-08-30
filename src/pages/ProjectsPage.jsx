@@ -1,9 +1,10 @@
-ï»¿import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Link } from "react-router-dom";
 import ScrollReveal from "../components/ScrollReveal";
 import Seo from "../components/Seo";
 import { myProjects } from "../constants";
+import toSlug from "../utils/slug";
 
 const filterCategories = [
   "All",
@@ -44,6 +45,7 @@ export default function ProjectsPage() {
   const [activeFilter, setActiveFilter] = useState("All");
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedProject, setSelectedProject] = useState(null);
+  const [showPreview, setShowPreview] = useState(false);
 
   const filteredProjects = myProjects.filter(
     (p) =>
@@ -76,10 +78,10 @@ export default function ProjectsPage() {
   }, [selectedProject]);
 
   return (
-    <main className="bg-[#0a1128] min-h-screen">
+    <main className="bg-[var(--bg-base)] min-h-screen">
       <Seo
-        title="Projects | DatTechGee Technologies â€” Isaac Emmanuel"
-        description="Explore 20+ projects built by Isaac Emmanuel and DatTechGee Technologies â€” school management systems, payroll, blockchain DApps, mobile apps, and business systems."
+        title="Projects | DatTechGee Technologies — Isaac Emmanuel"
+        description="Explore 20+ projects built by Isaac Emmanuel and DatTechGee Technologies — school management systems, payroll, blockchain DApps, mobile apps, and business systems."
         path="/projects"
         image="/assets/logo.png"
         type="website"
@@ -122,8 +124,8 @@ export default function ProjectsPage() {
                   type="text"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  placeholder="Search projects by name, tech, or keywordâ€¦"
-                  className="w-full bg-[#0f1a36] border border-white/[0.08] rounded-full pl-12 pr-4 py-3.5 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-gold/40 focus:shadow-[0_0_20px_rgba(0, 114, 255,0.08)] transition-all duration-300"
+                  placeholder="Search projects by name, tech, or keyword…"
+                  className="w-full bg-[var(--bg-card)] border border-white/[0.08] rounded-full pl-12 pr-4 py-3.5 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-gold/40 focus:shadow-[0_0_20px_rgba(0, 114, 255,0.08)] transition-all duration-300"
                 />
               </div>
             </div>
@@ -139,7 +141,7 @@ export default function ProjectsPage() {
                   onClick={() => setActiveFilter(cat)}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer ${
                     activeFilter === cat
-                      ? "bg-gold text-[#0a1128]"
+                      ? "bg-gold text-[var(--bg-base)]"
                       : "border border-white/10 text-neutral-400 hover:border-gold/40 hover:text-neutral-200"
                   }`}
                 >
@@ -164,8 +166,11 @@ export default function ProjectsPage() {
                   initial="hidden"
                   animate="visible"
                   exit="exit"
-                  onClick={() => setSelectedProject(project)}
-                  className={`group bg-[#0f1a36] border rounded-xl overflow-hidden hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400 hover:-translate-y-1 cursor-pointer ${
+                  onClick={() => {
+                    setShowPreview(false);
+                    setSelectedProject(project);
+                  }}
+                  className={`group bg-[var(--bg-card)] border rounded-xl overflow-hidden hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400 hover:-translate-y-1 cursor-pointer ${
                     project.featured
                       ? "md:col-span-2 lg:col-span-1 border-gold/20 lg:col-span-1"
                       : "border-white/[0.08]"
@@ -177,7 +182,7 @@ export default function ProjectsPage() {
                       project.featured ? "h-56" : "h-48"
                     }`}
                     style={{
-                      background: project.gradient || "linear-gradient(135deg, #0f1a36, #1a2a50)",
+                      background: project.gradient || "linear-gradient(135deg, var(--bg-card), #1a2a50)",
                     }}
                   >
                     {project.image && (
@@ -187,14 +192,14 @@ export default function ProjectsPage() {
                         className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500"
                       />
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f1a36] via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-card)] via-transparent to-transparent" />
                     {!project.href && (
                       <span className="absolute top-3 left-3 px-2 py-0.5 rounded text-[10px] font-semibold bg-white/10 backdrop-blur-sm text-neutral-300 border border-white/10">
                         Concept
                       </span>
                     )}
                     {project.featured && (
-                      <span className="absolute top-3 right-3 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide bg-gold text-[#0a1128]">
+                      <span className="absolute top-3 right-3 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide bg-gold text-[var(--bg-base)]">
                         Featured
                       </span>
                     )}
@@ -209,7 +214,7 @@ export default function ProjectsPage() {
                       {project.description}
                     </p>
 
-                    {/* Case Study â€” Problem / Solution / Result */}
+                    {/* Case Study — Problem / Solution / Result */}
                     {[project.problem, project.solution, project.result].some(Boolean) && (
                       <div className="mb-4 space-y-2.5">
                         {[
@@ -287,6 +292,15 @@ export default function ProjectsPage() {
                           GitHub
                         </a>
                       )}
+                      <Link
+                        to={`/projects/${toSlug(project.title)}`}
+                        className="inline-flex items-center gap-1 text-neutral-400 text-sm font-medium hover:text-gold transition-colors duration-300"
+                      >
+                        Case Study
+                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
                     </div>
                   </div>
                 </motion.div>
@@ -305,7 +319,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* Project Stats */}
-      <section className="py-16 bg-[#060d1f]">
+      <section className="py-16 bg-[var(--bg-deep)]">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
             <div className="text-center mb-10">
@@ -338,7 +352,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-[#060d1f]">
+      <section className="py-20 bg-[var(--bg-deep)]">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -349,7 +363,7 @@ export default function ProjectsPage() {
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 bg-gold text-[#0a1128] px-8 py-3.5 rounded-full font-semibold hover:bg-gold/90 transition-colors duration-300"
+              className="inline-flex items-center gap-2 bg-gold text-[var(--bg-base)] px-8 py-3.5 rounded-full font-semibold hover:bg-gold/90 transition-colors duration-300"
             >
               Start a Conversation
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -377,7 +391,7 @@ export default function ProjectsPage() {
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-[#0f1a36] border border-white/[0.08] rounded-3xl"
+              className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-[var(--bg-card)] border border-white/[0.08] rounded-3xl"
             >
               {/* Close Button */}
               <button
@@ -393,7 +407,7 @@ export default function ProjectsPage() {
               <div
                 className="h-64 relative overflow-hidden"
                 style={{
-                  background: selectedProject.gradient || "linear-gradient(135deg, #0f1a36, #1a2a50)",
+                  background: selectedProject.gradient || "linear-gradient(135deg, var(--bg-card), #1a2a50)",
                 }}
               >
                 {selectedProject.image && (
@@ -403,7 +417,7 @@ export default function ProjectsPage() {
                     className="w-full h-full object-cover"
                   />
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0f1a36] via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-card)] via-transparent to-transparent" />
               </div>
 
               {/* Modal Content */}
@@ -415,7 +429,7 @@ export default function ProjectsPage() {
                   {selectedProject.description}
                 </p>
 
-                {/* Case Study â€” Problem / Solution / Result */}
+                {/* Case Study — Problem / Solution / Result */}
                 {[selectedProject.problem, selectedProject.solution, selectedProject.result].some(Boolean) && (
                   <div className="mb-6 grid gap-4 md:grid-cols-3">
                     {[
@@ -478,6 +492,49 @@ export default function ProjectsPage() {
                   </div>
                 )}
 
+                {/* Live Preview */}
+                {showPreview &&
+                  selectedProject.href &&
+                  !selectedProject.href.includes("github.com") && (
+                    <div className="mb-8">
+                      <div className="flex items-center justify-between mb-3">
+                        <h3 className="text-lg font-semibold text-white">
+                          Live Preview
+                        </h3>
+                        <span className="flex items-center gap-1.5 text-[11px] text-neutral-500">
+                          <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
+                          {selectedProject.href.replace(/^https?:\/\//, "").replace(/\/$/, "")}
+                        </span>
+                      </div>
+                      <div className="rounded-2xl overflow-hidden border border-white/10 bg-[var(--bg-base)]">
+                        <div className="flex items-center gap-2 px-4 py-2.5 border-b border-white/[0.06]">
+                          <span className="w-2.5 h-2.5 rounded-full bg-red-500/70" />
+                          <span className="w-2.5 h-2.5 rounded-full bg-amber-500/70" />
+                          <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/70" />
+                        </div>
+                        <iframe
+                          src={selectedProject.href}
+                          title={`Live preview of ${selectedProject.title}`}
+                          className="w-full h-[420px] block bg-white"
+                          loading="lazy"
+                          sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+                        />
+                      </div>
+                      <p className="text-xs text-neutral-500 mt-2">
+                        Some sites may block embedded previews — use{" "}
+                        <a
+                          href={selectedProject.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gold hover:underline"
+                        >
+                          View Live
+                        </a>{" "}
+                        to open the full site.
+                      </p>
+                    </div>
+                  )}
+
                 {/* Action Buttons */}
                 <div className="flex flex-wrap gap-3">
                   {selectedProject.href && (
@@ -485,13 +542,21 @@ export default function ProjectsPage() {
                       href={selectedProject.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-gold text-[#0a1128] px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-gold/90 transition-colors duration-300"
+                      className="inline-flex items-center gap-2 bg-gold text-[var(--bg-base)] px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-gold/90 transition-colors duration-300"
                     >
                       View Live
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
                     </a>
+                  )}
+                  {selectedProject.href && !selectedProject.href.includes("github.com") && (
+                    <button
+                      onClick={() => setShowPreview((v) => !v)}
+                      className="inline-flex items-center gap-2 border border-gold/40 text-gold px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-gold/10 transition-colors duration-300 cursor-pointer"
+                    >
+                      {showPreview ? "Hide Preview" : "Preview Live"}
+                    </button>
                   )}
                   {selectedProject.github && (
                     <a
@@ -512,6 +577,15 @@ export default function ProjectsPage() {
                   >
                     Close
                   </button>
+                  <Link
+                    to={`/projects/${toSlug(selectedProject.title)}`}
+                    className="inline-flex items-center gap-2 border border-gold/40 text-gold px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-gold/10 transition-colors duration-300"
+                  >
+                    Full Case Study
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
                 </div>
               </div>
             </motion.div>

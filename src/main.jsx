@@ -5,6 +5,10 @@ import './index.css'
 import App from './App.jsx'
 import emailjs from '@emailjs/browser'
 import { initAnalytics } from './utils/analytics'
+import { inject } from '@vercel/analytics'
+import { ThemeProvider } from './context/ThemeContext'
+
+inject();
 
 try {
   const userId = import.meta.env.VITE_EMAILJS_USER_ID;
@@ -24,8 +28,10 @@ try {
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <ThemeProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </ThemeProvider>
   </StrictMode>,
 )

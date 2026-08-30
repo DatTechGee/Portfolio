@@ -4,7 +4,7 @@ import { mySocials } from "../constants";
 import { trackEvent } from "../utils/analytics";
 const Footer = () => {
   return (
-    <footer className="relative bg-[#060d1f] border-t border-white/[0.08]" role="contentinfo">
+    <footer className="relative bg-[var(--bg-deep)] border-t border-white/[0.08]" role="contentinfo">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         {/* Branding CTA */}
         <motion.div
@@ -12,7 +12,7 @@ const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="relative mb-12 rounded-2xl overflow-hidden border border-gold/20 bg-[#0f1a36] p-8 md:p-12 text-center"
+          className="relative mb-12 rounded-2xl overflow-hidden border border-gold/20 bg-[var(--bg-card)] p-8 md:p-12 text-center"
         >
           <div className="absolute -top-10 -right-10 w-48 h-48 bg-gold/10 rounded-full blur-3xl pointer-events-none" />
           <p className="text-gold text-sm uppercase tracking-[0.3em] font-semibold mb-3">
@@ -27,7 +27,7 @@ const Footer = () => {
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 bg-gold text-[#0a1128] px-7 py-3 rounded-lg font-semibold text-sm hover:bg-gold/90 transition-colors duration-300"
+            className="inline-flex items-center gap-2 bg-gold text-[var(--bg-base)] px-7 py-3 rounded-lg font-semibold text-sm hover:bg-gold/90 transition-colors duration-300"
           >
             Start a Conversation
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

@@ -1,4 +1,4 @@
-ï»¿import { motion } from "motion/react";
+import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import ScrollReveal from "../components/ScrollReveal";
 import Seo from "../components/Seo";
@@ -25,7 +25,7 @@ const clientSegments = [
     title: "Schools & Education",
     tagline: "Digital transformation for institutions",
     description:
-      "Comprehensive school management systems with student portals, attendance tracking, GPA computation, fee management, and real-time reporting. Built to streamline administrative workflows and give educators more time to focus on what matters â€” teaching. Our solutions serve institutions with 100 to 5,000+ students.",
+      "Comprehensive school management systems with student portals, attendance tracking, GPA computation, fee management, and real-time reporting. Built to streamline administrative workflows and give educators more time to focus on what matters — teaching. Our solutions serve institutions with 100 to 5,000+ students.",
     image: "/assets/image1.jpg",
   },
   {
@@ -65,7 +65,7 @@ const approachPillars = [
     subtitle: "Infrastructure that powers growth",
     image: "/assets/coding-pov.png",
     description:
-      "Choosing the right stack is not about trends â€” it is about fit. Every technology decision is guided by the specific demands of your business, your timeline, and your long-term vision.",
+      "Choosing the right stack is not about trends — it is about fit. Every technology decision is guided by the specific demands of your business, your timeline, and your long-term vision.",
   },
   {
     icon: (
@@ -77,7 +77,7 @@ const approachPillars = [
     subtitle: "Operational frameworks for scale",
     image: "/assets/image6.jpg",
     description:
-      "Software without structure is just code. We design operational systems â€” workflows, data pipelines, access controls â€” that turn individual features into cohesive, maintainable platforms.",
+      "Software without structure is just code. We design operational systems — workflows, data pipelines, access controls — that turn individual features into cohesive, maintainable platforms.",
   },
   {
     icon: (
@@ -89,7 +89,7 @@ const approachPillars = [
     subtitle: "Disciplined delivery of results",
     image: "/assets/image8.jpg",
     description:
-      "Strategy means nothing without execution. We follow a structured delivery process â€” milestones, testing, feedback loops â€” so projects ship on time and meet the standard they are supposed to.",
+      "Strategy means nothing without execution. We follow a structured delivery process — milestones, testing, feedback loops — so projects ship on time and meet the standard they are supposed to.",
   },
 ];
 
@@ -102,7 +102,7 @@ const whyWorkWithMe = [
     ),
     title: "Custom Solutions",
     image: "/assets/software5.jpg",
-    description: "No templates â€” every project is purpose-built to solve your specific problem.",
+    description: "No templates — every project is purpose-built to solve your specific problem.",
   },
   {
     icon: (
@@ -122,7 +122,7 @@ const whyWorkWithMe = [
     ),
     title: "Scalable Architecture",
     image: "/assets/grid.png",
-    description: "Built to grow with your business â€” from first user to thousands.",
+    description: "Built to grow with your business — from first user to thousands.",
   },
   {
     icon: (
@@ -142,7 +142,7 @@ const whyWorkWithMe = [
     ),
     title: "Ongoing Support",
     image: "/assets/software00.jpg",
-    description: "Post-launch maintenance, updates, and optimization â€” we do not disappear after delivery.",
+    description: "Post-launch maintenance, updates, and optimization — we do not disappear after delivery.",
   },
   {
     icon: (
@@ -152,15 +152,15 @@ const whyWorkWithMe = [
     ),
     title: "Transparent Communication",
     image: "/assets/software3.jpg",
-    description: "Regular updates, clear timelines, and honest conversations â€” no surprises.",
+    description: "Regular updates, clear timelines, and honest conversations — no surprises.",
   },
 ];
 
 export default function SolutionsPage() {
   return (
-    <main className="bg-[#0a1128] min-h-screen">
+    <main className="bg-[var(--bg-base)] min-h-screen">
       <Seo
-        title="Solutions | DatTechGee Technologies â€” Software for Every Industry"
+        title="Solutions | DatTechGee Technologies — Software for Every Industry"
         description="Software solutions for startups, schools, SMEs, healthcare, e-commerce, NGOs, and enterprises. Custom systems from DatTechGee Technologies in Nigeria."
         path="/solutions"
         image="/assets/logo.png"
@@ -181,7 +181,7 @@ export default function SolutionsPage() {
               <br className="hidden md:block" /> Business Challenge
             </h1>
             <p className="text-neutral-500 max-w-2xl mx-auto text-lg">
-              Adapting technology to your specific business needs â€” not the other
+              Adapting technology to your specific business needs — not the other
               way around. Isaac and the DatTechGee team engineer every solution
               with precision, build for scale, and design for measurable results.
             </p>
@@ -210,12 +210,12 @@ export default function SolutionsPage() {
                   ease: [0.16, 1, 0.3, 1],
                 }}
                 whileHover={{ y: -4 }}
-                className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl p-8 cursor-default hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400 relative overflow-hidden"
+                className="group bg-[var(--bg-card)] border border-white/[0.08] rounded-xl p-8 cursor-default hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400 relative overflow-hidden"
               >
                 {segment.image && (
                   <div className="relative h-44 overflow-hidden -mt-8 -mx-8 mb-6">
                     <img src={segment.image} alt={segment.title} className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f1a36] via-[#0f1a36]/30 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-card)] via-[var(--bg-card)]/30 to-transparent" />
                   </div>
                 )}
                 {/* Number overlay */}
@@ -249,7 +249,7 @@ export default function SolutionsPage() {
       </section>
 
       {/* Approach Section */}
-      <section className="py-20 bg-[#060d1f]">
+      <section className="py-20 bg-[var(--bg-deep)]">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
             <div className="mb-14 text-center">
@@ -261,7 +261,7 @@ export default function SolutionsPage() {
               </h2>
               <p className="text-neutral-500 max-w-xl mx-auto">
                 Every engagement is built around three pillars that ensure
-                technology serves the business â€” not the other way around.
+                technology serves the business — not the other way around.
               </p>
             </div>
           </ScrollReveal>
@@ -278,12 +278,12 @@ export default function SolutionsPage() {
                   delay: i * 0.12,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden relative hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400"
+                className="group bg-[var(--bg-card)] border border-white/[0.08] rounded-xl overflow-hidden relative hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400"
               >
                 {pillar.image && (
                   <div className="relative h-40 overflow-hidden">
                     <img src={pillar.image} alt={pillar.title} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f1a36] via-[#0f1a36]/35 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-card)] via-[var(--bg-card)]/35 to-transparent" />
                   </div>
                 )}
                 <div className="p-8">
@@ -340,12 +340,12 @@ export default function SolutionsPage() {
                   delay: i * 0.08,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden hover:border-gold/25 transition-all duration-400 h-full"
+                className="group bg-[var(--bg-card)] border border-white/[0.08] rounded-xl overflow-hidden hover:border-gold/25 transition-all duration-400 h-full"
               >
                 {item.image && (
                   <div className="relative h-36 overflow-hidden">
                     <img src={item.image} alt={item.title} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f1a36] via-[#0f1a36]/35 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-card)] via-[var(--bg-card)]/35 to-transparent" />
                   </div>
                 )}
                 <div className="p-6">
@@ -370,7 +370,7 @@ export default function SolutionsPage() {
       </section>
 
       {/* Engagement Timeline */}
-      <section className="py-20 bg-[#060d1f]">
+      <section className="py-20 bg-[var(--bg-deep)]">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
             <div className="mb-14 text-center">
@@ -388,9 +388,9 @@ export default function SolutionsPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
-              { phase: "Discovery", duration: "1â€“2 Weeks", image: "/assets/image3.jpg", description: "Requirements analysis, technical architecture, and project scoping with clear deliverables." },
-              { phase: "Development", duration: "3â€“8 Weeks", image: "/assets/software4.jpg", description: "Iterative development with weekly demos, feedback integration, and quality assurance." },
-              { phase: "Testing", duration: "1â€“2 Weeks", image: "/assets/image4.jpg", description: "Comprehensive testing, performance optimization, and security hardening before launch." },
+              { phase: "Discovery", duration: "1–2 Weeks", image: "/assets/image3.jpg", description: "Requirements analysis, technical architecture, and project scoping with clear deliverables." },
+              { phase: "Development", duration: "3–8 Weeks", image: "/assets/software4.jpg", description: "Iterative development with weekly demos, feedback integration, and quality assurance." },
+              { phase: "Testing", duration: "1–2 Weeks", image: "/assets/image4.jpg", description: "Comprehensive testing, performance optimization, and security hardening before launch." },
               { phase: "Launch & Support", duration: "Ongoing", image: "/assets/software9.jpg", description: "Production deployment, monitoring, and continuous improvement with dedicated support." },
             ].map((item, i) => (
               <motion.div
@@ -399,12 +399,12 @@ export default function SolutionsPage() {
                 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden relative hover:border-gold/25 transition-all duration-400"
+                className="group bg-[var(--bg-card)] border border-white/[0.08] rounded-xl overflow-hidden relative hover:border-gold/25 transition-all duration-400"
               >
                 {item.image && (
                   <div className="relative h-32 overflow-hidden">
                     <img src={item.image} alt={item.phase} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f1a36] via-[#0f1a36]/40 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-card)] via-[var(--bg-card)]/40 to-transparent" />
                   </div>
                 )}
                 <div className="p-6">
@@ -429,7 +429,7 @@ export default function SolutionsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-[#060d1f]">
+      <section className="py-20 bg-[var(--bg-deep)]">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -441,7 +441,7 @@ export default function SolutionsPage() {
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 bg-gold text-[#0a1128] px-8 py-3.5 rounded-full font-semibold hover:bg-gold/90 transition-colors duration-300"
+              className="inline-flex items-center gap-2 bg-gold text-[var(--bg-base)] px-8 py-3.5 rounded-full font-semibold hover:bg-gold/90 transition-colors duration-300"
             >
               Start a Conversation
               <svg

@@ -1,9 +1,10 @@
-﻿import { motion, useScroll, useTransform } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
 import { Link } from "react-router-dom";
 import { Particles } from "../components/Particles";
 import { FlipWords } from "../components/FlipWords";
 import ScrollReveal from "../components/ScrollReveal";
 import Seo from "../components/Seo";
+import AvailabilityBadge from "../components/AvailabilityBadge";
 import { reviews, portfolioStats, industries } from "../constants";
 
 const positionCards = [
@@ -56,7 +57,7 @@ const pillars = [
       </svg>
     ),
     title: "Innovation",
-    description: "We stay at the cutting edge of technology to give your business a competitive advantage. AI-powered automation, blockchain integration, and modern cloud architectures are tools we deploy strategically — not for novelty, but for measurable impact.",
+    description: "We stay at the cutting edge of technology to give your business a competitive advantage. AI-powered automation, blockchain integration, and modern cloud architectures are tools we deploy strategically � not for novelty, but for measurable impact.",
     image: "/assets/AI.jpg",
   },
   {
@@ -80,7 +81,7 @@ const capabilities = [
     ),
     title: "Custom Software Development",
     description:
-      "End-to-end web platforms with React frontends, Laravel/Node.js backends, authentication, dashboards, and reporting — built for scale.",
+      "End-to-end web platforms with React frontends, Laravel/Node.js backends, authentication, dashboards, and reporting � built for scale.",
     image: "/assets/image2.jpg",
   },
   {
@@ -91,7 +92,7 @@ const capabilities = [
     ),
     title: "Mobile Application Development",
     description:
-      "Cross-platform Android/iOS apps with React Native and Expo — GPS tracking, push notifications, biometric auth, and offline capabilities.",
+      "Cross-platform Android/iOS apps with React Native and Expo � GPS tracking, push notifications, biometric auth, and offline capabilities.",
     image: "/assets/image5.jpg",
   },
   {
@@ -123,7 +124,7 @@ const processSteps = [
     num: "01",
     title: "Understand",
     description:
-      "I start with the problem, the users, and the requirements — before a single line of code.",
+      "I start with the problem, the users, and the requirements � before a single line of code.",
   },
   {
     num: "02",
@@ -190,7 +191,7 @@ const differentiators = [
   {
     num: "01",
     title: "Execution-First",
-    description: "We do not sell strategies — we build systems. Every engagement produces tangible, deployed, working software that your team can use immediately.",
+    description: "We do not sell strategies � we build systems. Every engagement produces tangible, deployed, working software that your team can use immediately.",
     image: "/assets/image2.jpg",
   },
   {
@@ -243,10 +244,10 @@ const HomePage = () => {
   const heroY = useTransform(scrollYProgress, [0, 0.3], [0, -80]);
 
   return (
-    <div className="min-h-screen bg-[#0a1128]">
+    <div className="min-h-screen bg-[var(--bg-base)]">
       <Seo
-        title="DatTechGee Technologies — Software. Innovation. Impact. | Isaac Emmanuel"
-        description="DatTechGee Technologies builds custom web apps, mobile apps, business systems, and APIs. Founded by Isaac Emmanuel — Full Stack Developer using React, Laravel, and Node.js. 20+ projects delivered."
+        title="DatTechGee Technologies � Software. Innovation. Impact. | Isaac Emmanuel"
+        description="DatTechGee Technologies builds custom web apps, mobile apps, business systems, and APIs. Founded by Isaac Emmanuel � Full Stack Developer using React, Laravel, and Node.js. 20+ projects delivered."
         path="/"
         image="/assets/logo.png"
         type="website"
@@ -264,7 +265,7 @@ const HomePage = () => {
       />
       {/* ===== HERO SECTION ===== */}
       <section className="section-spacing relative min-h-screen flex items-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a1128] to-[#060d1f]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-base)] to-[var(--bg-deep)]" />
         <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
@@ -288,14 +289,17 @@ const HomePage = () => {
             {/* Left Content */}
             <div className="flex flex-col gap-6 text-center lg:text-left">
               <ScrollReveal direction="up" delay={0.1}>
-                <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 rounded-full px-4 py-2 w-fit mx-auto lg:mx-0">
-                  <span className="relative flex h-2.5 w-2.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75" />
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-gold" />
-                  </span>
-                  <span className="text-gold text-sm font-medium">
-                    Founded by Isaac Emmanuel
-                  </span>
+                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3">
+                  <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 rounded-full px-4 py-2 w-fit">
+                    <span className="relative flex h-2.5 w-2.5">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75" />
+                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-gold" />
+                    </span>
+                    <span className="text-gold text-sm font-medium">
+                      Founded by Isaac Emmanuel
+                    </span>
+                  </div>
+                  <AvailabilityBadge />
                 </div>
               </ScrollReveal>
 
@@ -324,7 +328,7 @@ const HomePage = () => {
               <ScrollReveal direction="up" delay={0.4}>
                 <p className="text-base text-neutral-400">
                   DatTechGee is the full-stack engineering brand of Isaac
-                  Emmanuel — building scalable web, mobile and backend systems
+                  Emmanuel � building scalable web, mobile and backend systems
                   that move ideas into production.
                 </p>
               </ScrollReveal>
@@ -345,7 +349,7 @@ const HomePage = () => {
               <ScrollReveal direction="up" delay={0.45}>
                 <p className="text-sm sm:text-base text-neutral-500 max-w-lg mx-auto lg:mx-0 leading-relaxed">
                   From custom platforms and business automation to mobile apps
-                  and APIs — we turn operational pain points into reliable,
+                  and APIs � we turn operational pain points into reliable,
                   scalable digital products built for execution.
                 </p>
               </ScrollReveal>
@@ -380,10 +384,10 @@ const HomePage = () => {
                 <div className="relative w-[300px] h-[330px] sm:w-[380px] sm:h-[420px] lg:w-[440px] lg:h-[500px] rounded-2xl overflow-hidden border-2 border-gold/30">
                   <img
                     src="/assets/software1.jpg"
-                    alt="DatTechGee Technologies — Custom software development"
+                    alt="DatTechGee Technologies � Custom software development"
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a1128]/90 via-[#0a1128]/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-base)]/90 via-[var(--bg-base)]/20 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <p className="text-white text-lg font-bold">DatTechGee Technologies</p>
                     <p className="text-gold text-sm">Software. Innovation. Impact.</p>
@@ -401,7 +405,7 @@ const HomePage = () => {
                 ].map((t, i) => (
                   <motion.span
                     key={t.label}
-                    className="absolute z-10 text-xs font-semibold text-gold bg-[#0f1a36]/95 border border-gold/30 rounded-full px-3 py-1.5 shadow-lg"
+                    className="absolute z-10 text-xs font-semibold text-gold bg-[var(--bg-card)]/95 border border-gold/30 rounded-full px-3 py-1.5 shadow-lg"
                     style={{ top: t.top, left: t.left, right: t.right, bottom: t.bottom }}
                     animate={{ y: [0, -6, 0] }}
                     transition={{ duration: 3 + i * 0.3, repeat: Infinity, ease: "easeInOut" }}
@@ -427,7 +431,7 @@ const HomePage = () => {
       </section>
 
       {/* ===== TECHNOLOGY WALL ===== */}
-      <section className="relative py-10 border-y border-white/[0.06] bg-[#060d1f] overflow-hidden">
+      <section className="relative py-10 border-y border-white/[0.06] bg-[var(--bg-deep)] overflow-hidden">
         <div className="flex items-center justify-center gap-10 mb-6 px-6">
           <span className="text-gold text-sm uppercase tracking-[0.3em] font-semibold">
             I Build With
@@ -459,7 +463,7 @@ const HomePage = () => {
                 <span className="text-2xl md:text-3xl font-bold text-white/15 hover:text-gold/60 transition-colors duration-300">
                   {t}
                 </span>
-                <span className="text-gold/30">•</span>
+                <span className="text-gold/30">�</span>
               </span>
             ))}
           </motion.div>
@@ -467,7 +471,7 @@ const HomePage = () => {
       </section>
 
       {/* ===== INDUSTRIES WE SERVE ===== */}
-      <section className="relative py-10 border-b border-white/[0.06] bg-[#060d1f] overflow-hidden">
+      <section className="relative py-10 border-b border-white/[0.06] bg-[var(--bg-deep)] overflow-hidden">
         <div className="flex items-center justify-center gap-10 mb-6 px-6">
           <span className="text-gold text-sm uppercase tracking-[0.3em] font-semibold">
             Industries We Serve
@@ -490,7 +494,7 @@ const HomePage = () => {
                   </span>
                   {ind.name}
                 </span>
-                <span className="text-gold/30">•</span>
+                <span className="text-gold/30">�</span>
               </span>
             ))}
           </motion.div>
@@ -501,7 +505,7 @@ const HomePage = () => {
       <section className="section-spacing relative py-16">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <ScrollReveal>
-            <div className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-8 md:p-12">
+            <div className="bg-[var(--bg-card)] border border-white/[0.08] rounded-xl p-8 md:p-12">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
                 {[
                   {
@@ -543,10 +547,10 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* ===== WHAT I BUILD — PERSONAL ===== */}
+      {/* ===== WHAT I BUILD � PERSONAL ===== */}
       <div className="section-divider" />
       <section className="section-spacing relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a1128] via-[#0c1429] to-[#0a1128]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-base)] via-[#0c1429] to-[var(--bg-base)]" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <ScrollReveal>
@@ -564,7 +568,7 @@ const HomePage = () => {
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
               <p className="text-neutral-400 max-w-2xl mx-auto text-base mt-4">
-                More than a technology list — here's what Isaac actually ships,
+                More than a technology list � here's what Isaac actually ships,
                 end to end, for real businesses.
               </p>
             </ScrollReveal>
@@ -599,7 +603,7 @@ const HomePage = () => {
               },
               {
                 title: "Full Product Delivery",
-                desc: "Design, architecture, build, deploy — and keep improving in production.",
+                desc: "Design, architecture, build, deploy � and keep improving in production.",
                 image: "/assets/software6.jpg",
               },
             ].map((item, i) => (
@@ -607,7 +611,7 @@ const HomePage = () => {
                 <motion.div
                   whileHover={{ y: -6, scale: 1.02 }}
                   transition={{ duration: 0.3 }}
-                  className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden h-full hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400"
+                  className="group bg-[var(--bg-card)] border border-white/[0.08] rounded-xl overflow-hidden h-full hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400"
                 >
                   <div className="relative h-40 overflow-hidden">
                     <img
@@ -615,7 +619,7 @@ const HomePage = () => {
                       alt={item.title}
                       className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f1a36] via-[#0f1a36]/40 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-card)] via-[var(--bg-card)]/40 to-transparent" />
                   </div>
                   <div className="p-6 pt-0 -mt-6 relative z-10">
                     <div className="w-10 h-10 rounded-lg bg-gold/10 border border-gold/20 flex items-center justify-center text-gold mb-4 group-hover:bg-gold/15 transition-colors duration-300">
@@ -656,7 +660,7 @@ const HomePage = () => {
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {positionCards.map((card, i) => (
               <ScrollReveal key={card.label} delay={i * 0.15}>
-                <div className={`bg-[#0f1a36] border ${card.accent} rounded-2xl p-8 h-full`}>
+                <div className={`bg-[var(--bg-card)] border ${card.accent} rounded-2xl p-8 h-full`}>
                   <div className="flex items-center gap-3 mb-6">
                     {card.icon}
                     <span className={`text-sm font-bold uppercase tracking-wider ${card.label === "Is" ? "text-gold" : "text-neutral-400"}`}>
@@ -682,14 +686,14 @@ const HomePage = () => {
 
       {/* ===== THREE PILLARS ===== */}
       <div className="section-divider" />
-      <section className="section-spacing relative py-24 bg-[#060d1f]">
+      <section className="section-spacing relative py-24 bg-[var(--bg-deep)]">
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8">
             {pillars.map((pillar, i) => (
               <ScrollReveal key={pillar.title} delay={i * 0.12}>
                 <motion.div
                   whileHover={{ y: -6 }}
-                  className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden text-center hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400"
+                  className="group bg-[var(--bg-card)] border border-white/[0.08] rounded-xl overflow-hidden text-center hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400"
                 >
                   <div className="relative h-40 overflow-hidden">
                     <img
@@ -697,7 +701,7 @@ const HomePage = () => {
                       alt={pillar.title}
                       className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f1a36] via-[#0f1a36]/30 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-card)] via-[var(--bg-card)]/30 to-transparent" />
                   </div>
                   <div className="p-8 -mt-8 relative z-10">
                     <div className="w-14 h-14 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold mx-auto mb-5">
@@ -713,10 +717,10 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* ===== WHAT WE DO — CORE CAPABILITIES ===== */}
+      {/* ===== WHAT WE DO � CORE CAPABILITIES ===== */}
       <div className="section-divider" />
       <section className="section-spacing relative py-24">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a1128] via-[#0c1429] to-[#0a1128]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-base)] via-[#0c1429] to-[var(--bg-base)]" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <ScrollReveal>
@@ -747,7 +751,7 @@ const HomePage = () => {
                 <motion.div
                   whileHover={{ y: -6, scale: 1.02 }}
                   transition={{ duration: 0.3 }}
-                  className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden h-full flex flex-col hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400"
+                  className="group bg-[var(--bg-card)] border border-white/[0.08] rounded-xl overflow-hidden h-full flex flex-col hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400"
                 >
                   <div className="relative h-36 overflow-hidden">
                     <img
@@ -755,7 +759,7 @@ const HomePage = () => {
                       alt={cap.title}
                       className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f1a36] via-[#0f1a36]/35 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-card)] via-[var(--bg-card)]/35 to-transparent" />
                   </div>
                   <div className="p-6 pt-0 -mt-8 relative z-10 flex flex-col flex-1">
                     <div className="w-12 h-12 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold mb-5 group-hover:bg-gold/15 transition-colors duration-300">
@@ -794,7 +798,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* ===== EXECUTION FRAMEWORK — HOW WE WORK ===== */}
+      {/* ===== EXECUTION FRAMEWORK � HOW WE WORK ===== */}
       <div className="section-divider" />
       <section className="section-spacing relative py-24 overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
@@ -814,7 +818,7 @@ const HomePage = () => {
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
               <p className="text-neutral-400 max-w-xl mx-auto text-base mt-4">
-                From first conversation to production — how Isaac ships reliable software.
+                From first conversation to production � how Isaac ships reliable software.
               </p>
             </ScrollReveal>
           </div>
@@ -833,7 +837,7 @@ const HomePage = () => {
                     className="relative flex flex-col items-center text-center group"
                   >
                     <div className="relative z-10 mb-6">
-                      <div className="w-14 h-14 rounded-full bg-[#0f1a36] border-2 border-gold/30 flex items-center justify-center group-hover:border-gold/60 group-hover:bg-gold/10 transition-all duration-300">
+                      <div className="w-14 h-14 rounded-full bg-[var(--bg-card)] border-2 border-gold/30 flex items-center justify-center group-hover:border-gold/60 group-hover:bg-gold/10 transition-all duration-300">
                         <span className="text-gold font-bold text-lg">
                           {step.num}
                         </span>
@@ -856,7 +860,7 @@ const HomePage = () => {
 
       {/* ===== GROWTH QUOTE ===== */}
       <div className="section-divider" />
-      <section className="section-spacing relative py-24 bg-[#060d1f]">
+      <section className="section-spacing relative py-24 bg-[var(--bg-deep)]">
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <ScrollReveal>
             <div className="relative">
@@ -904,7 +908,7 @@ const HomePage = () => {
               <ScrollReveal key={partner.num} delay={i * 0.1}>
                   <motion.div
                     whileHover={{ y: -4 }}
-                    className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl p-8 hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400 h-full"
+                    className="group bg-[var(--bg-card)] border border-white/[0.08] rounded-xl p-8 hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400 h-full"
                   >
                     {partner.image && (
                       <div className="h-40 rounded-xl overflow-hidden mb-5 -mx-2 -mt-2">
@@ -925,7 +929,7 @@ const HomePage = () => {
           </div>
 
           <ScrollReveal delay={0.5}>
-            <div className="mt-8 bg-[#0f1a36] border border-gold/20 rounded-2xl p-6 text-center">
+            <div className="mt-8 bg-[var(--bg-card)] border border-gold/20 rounded-2xl p-6 text-center">
               <p className="text-neutral-600 text-sm leading-relaxed">
                 DatTechGee Technologies partners selectively. Engagements are accepted only where execution value can be clearly delivered and where our approach aligns with your commitment to structure, discipline, and measurable outcomes.
               </p>
@@ -936,7 +940,7 @@ const HomePage = () => {
 
       {/* ===== WHY DATTECHGEE TECHNOLOGIES ===== */}
       <div className="section-divider" />
-      <section className="section-spacing relative py-24 bg-[#060d1f]">
+      <section className="section-spacing relative py-24 bg-[var(--bg-deep)]">
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <ScrollReveal>
@@ -959,7 +963,7 @@ const HomePage = () => {
               <ScrollReveal key={diff.num} delay={i * 0.08}>
                 <motion.div
                   whileHover={{ y: -4 }}
-                  className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6 hover:border-gold/25 transition-all duration-400"
+                  className="group bg-[var(--bg-card)] border border-white/[0.08] rounded-xl p-6 hover:border-gold/25 transition-all duration-400"
                 >
                   {diff.image && (
                     <div className="h-32 rounded-xl overflow-hidden mb-4 -mx-2 -mt-2">
@@ -981,7 +985,7 @@ const HomePage = () => {
       {/* ===== TESTIMONIALS ===== */}
       <div className="section-divider" />
       <section className="section-spacing relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a1128] via-[#0c1429] to-[#0a1128]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-base)] via-[#0c1429] to-[var(--bg-base)]" />
         <div className="relative z-10">
           <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-12">
             <div className="text-center">
@@ -1003,8 +1007,8 @@ const HomePage = () => {
 
           {/* Testimonials marquee row 1 */}
           <div className="relative mb-4">
-            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#0a1128] to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#0a1128] to-transparent z-10 pointer-events-none" />
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[var(--bg-base)] to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[var(--bg-base)] to-transparent z-10 pointer-events-none" />
             <div className="flex overflow-hidden">
               <div className="flex gap-5 animate-marquee whitespace-nowrap">
                 {[...reviews, ...reviews].map((review, i) => {
@@ -1012,7 +1016,7 @@ const HomePage = () => {
                   return (
                     <div
                       key={`${review.name}-${i}`}
-                      className="shrink-0 w-[360px] bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6 whitespace-normal hover:border-gold/25 transition-all duration-400"
+                      className="shrink-0 w-[360px] bg-[var(--bg-card)] border border-white/[0.08] rounded-xl p-6 whitespace-normal hover:border-gold/25 transition-all duration-400"
                     >
                       <div className="flex items-center gap-3 mb-4">
                         <div
@@ -1056,8 +1060,8 @@ const HomePage = () => {
 
           {/* Testimonials marquee row 2 (reversed) */}
           <div className="relative">
-            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#0a1128] to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#0a1128] to-transparent z-10 pointer-events-none" />
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[var(--bg-base)] to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[var(--bg-base)] to-transparent z-10 pointer-events-none" />
             <div className="flex overflow-hidden">
               <div className="flex gap-5 animate-marquee [animation-direction:reverse] whitespace-nowrap">
                 {[...reviews, ...reviews]
@@ -1067,7 +1071,7 @@ const HomePage = () => {
                     return (
                       <div
                         key={`${review.name}-rev-${i}`}
-                        className="shrink-0 w-[360px] bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6 whitespace-normal hover:border-gold/25 transition-all duration-400"
+                        className="shrink-0 w-[360px] bg-[var(--bg-card)] border border-white/[0.08] rounded-xl p-6 whitespace-normal hover:border-gold/25 transition-all duration-400"
                       >
                         <div className="flex items-center gap-3 mb-4">
                           <div
@@ -1116,7 +1120,7 @@ const HomePage = () => {
       <section className="section-spacing relative py-24">
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <ScrollReveal>
-            <div className="relative bg-[#0f1a36] border border-white/[0.06] rounded-3xl p-10 md:p-16 text-center overflow-hidden">
+            <div className="relative bg-[var(--bg-card)] border border-white/[0.06] rounded-3xl p-10 md:p-16 text-center overflow-hidden">
               <div className="absolute inset-0 rounded-3xl overflow-hidden">
                 <img src="/assets/image5.jpg" alt="" className="w-full h-full object-cover opacity-10" />
               </div>

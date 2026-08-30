@@ -1,0 +1,9 @@
+const toSlug = (s) =>
+  s
+    .toString()
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+
+export default toSlug;

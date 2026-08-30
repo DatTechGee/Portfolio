@@ -1,8 +1,18 @@
 ﻿<!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("dattchgee-theme");
+          if (t === "light") document.documentElement.classList.remove("dark");
+          else document.documentElement.classList.add("dark");
+          if (t === "light") document.documentElement.classList.add("light");
+        } catch (e) {}
+      })();
+    </script>
 
     <!-- Primary Meta Tags -->
     <title>DatTechGee Technologies — Software. Innovation. Impact. | Isaac Emmanuel</title>
@@ -12,9 +22,10 @@
     <meta name="author" content="Isaac Emmanuel" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="theme-color" content="#0072ff" />
-    <meta name="color-scheme" content="dark" />
+    <meta name="color-scheme" content="dark light" />
     <meta name="format-detection" content="telephone=no" />
     <link rel="canonical" href="https://dattechgee.vercel.app/" />
+    <link rel="alternate" type="application/rss+xml" title="DatTechGee Technologies — Insights RSS" href="https://dattechgee.vercel.app/rss.xml" />
     <meta name="geo.region" content="NG-FC" />
     <meta name="geo.placename" content="Abuja" />
     <meta name="geo.position" content="9.0579;7.4951" />

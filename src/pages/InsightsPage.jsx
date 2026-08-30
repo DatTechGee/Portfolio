@@ -1,4 +1,4 @@
-ï»¿import { useState } from "react";
+import { useState } from "react";
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import ScrollReveal from "../components/ScrollReveal";
@@ -26,7 +26,7 @@ function ArticleCard({ article, index, large = false }) {
         ease: [0.16, 1, 0.3, 1],
       }}
       whileHover={{ y: -4 }}
-      className={`group bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden cursor-pointer hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400 ${
+      className={`group bg-[var(--bg-card)] border border-white/[0.08] rounded-xl overflow-hidden cursor-pointer hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400 ${
         large ? "flex flex-col" : "flex flex-col"
       }`}
     >
@@ -153,9 +153,9 @@ export default function InsightsPage() {
   };
 
   return (
-    <main className="bg-[#0a1128] min-h-screen">
+    <main className="bg-[var(--bg-base)] min-h-screen">
       <Seo
-        title="Insights | DatTechGee Technologies â€” Our Perspective"
+        title="Insights | DatTechGee Technologies — Our Perspective"
         description="Articles and guides on software architecture, API design, mobile development, security, and business systems from Isaac Emmanuel and DatTechGee Technologies."
         path="/insights"
         image="/assets/logo.png"
@@ -186,8 +186,8 @@ export default function InsightsPage() {
           <ScrollReveal delay={0.2}>
             <div className="mt-10 max-w-3xl mx-auto">
               <div className="relative rounded-2xl overflow-hidden border border-white/[0.08]">
-                <img src="/assets/image5.jpg" alt="DatTechGee Technologies â€” Insights" className="w-full h-48 md:h-56 object-cover opacity-70" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a1128]/80 via-transparent to-transparent" />
+                <img src="/assets/image5.jpg" alt="DatTechGee Technologies — Insights" className="w-full h-48 md:h-56 object-cover opacity-70" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-base)]/80 via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <p className="text-white text-sm font-semibold">Engineering Insights</p>
                   <p className="text-neutral-400 text-xs">Real-world lessons from building production systems</p>
@@ -217,7 +217,7 @@ export default function InsightsPage() {
                 ease: [0.16, 1, 0.3, 1],
               }}
               whileHover={{ y: -4 }}
-              className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden cursor-pointer hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400 relative"
+              className="group bg-[var(--bg-card)] border border-white/[0.08] rounded-xl overflow-hidden cursor-pointer hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400 relative"
             >
               {/* Gradient accent */}
               <div className="h-1.5 bg-gradient-to-r from-gold via-gold/60 to-transparent" />
@@ -333,8 +333,8 @@ export default function InsightsPage() {
                   type="text"
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
-                  placeholder="Search articlesâ€¦"
-                  className="w-full bg-[#0f1a36] border border-white/[0.08] rounded-full pl-10 pr-4 py-2 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-gold/40 transition-all duration-300"
+                  placeholder="Search articles…"
+                  className="w-full bg-[var(--bg-card)] border border-white/[0.08] rounded-full pl-10 pr-4 py-2 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-gold/40 transition-all duration-300"
                 />
               </div>
             </div>
@@ -347,7 +347,7 @@ export default function InsightsPage() {
               ))}
             </div>
           ) : (
-            <div className="text-center py-16 bg-[#0f1a36] border border-white/[0.08] rounded-xl">
+            <div className="text-center py-16 bg-[var(--bg-card)] border border-white/[0.08] rounded-xl">
               <p className="text-neutral-400 text-sm">
                 No articles match your search. Try a different category or keyword.
               </p>
@@ -358,7 +358,7 @@ export default function InsightsPage() {
 
       {/* More Articles */}
       {activeCategory === "All" && query.trim() === "" && (
-        <section className="py-16 bg-[#060d1f]">
+        <section className="py-16 bg-[var(--bg-deep)]">
           <div className="max-w-6xl mx-auto px-6">
             <ScrollReveal>
               <div className="mb-10">
@@ -385,7 +385,7 @@ export default function InsightsPage() {
       <section className="section-spacing">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
-            <div className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-8 md:p-12 text-center relative overflow-hidden">
+            <div className="bg-[var(--bg-card)] border border-white/[0.08] rounded-xl p-8 md:p-12 text-center relative overflow-hidden">
               {/* Background accent */}
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-gold/[0.03] rounded-full blur-3xl pointer-events-none" />
 
@@ -424,14 +424,14 @@ export default function InsightsPage() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
-                    className="w-full sm:flex-1 bg-[#0a1128] border border-white/[0.08] rounded-full px-5 py-3.5 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-gold/40 focus:shadow-[0_0_20px_rgba(0, 114, 255,0.08)] transition-all duration-300"
+                    className="w-full sm:flex-1 bg-[var(--bg-base)] border border-white/[0.08] rounded-full px-5 py-3.5 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-gold/40 focus:shadow-[0_0_20px_rgba(0, 114, 255,0.08)] transition-all duration-300"
                   />
                   <button
                     type="submit"
                     disabled={subscribing}
-                    className="w-full sm:w-auto bg-gold text-[#0a1128] px-7 py-3.5 rounded-full font-semibold text-sm hover:bg-gold/90 transition-colors duration-300 whitespace-nowrap disabled:opacity-60 disabled:cursor-not-allowed"
+                    className="w-full sm:w-auto bg-gold text-[var(--bg-base)] px-7 py-3.5 rounded-full font-semibold text-sm hover:bg-gold/90 transition-colors duration-300 whitespace-nowrap disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    {subscribing ? "Subscribingâ€¦" : "Subscribe"}
+                    {subscribing ? "Subscribing…" : "Subscribe"}
                   </button>
                 </form>
               )}

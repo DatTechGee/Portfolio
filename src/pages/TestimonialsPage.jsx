@@ -21,7 +21,7 @@ const starRow = (key) => (
 
 export default function TestimonialsPage() {
   return (
-    <main className="bg-[#0a1128] min-h-screen">
+    <main className="bg-[var(--bg-base)] min-h-screen">
       <Seo
         title="Testimonials | DatTechGee Technologies — Isaac Emmanuel"
         description="Read what clients say about DatTechGee Technologies — school portals, payroll systems, e-commerce, logistics apps, and custom business software built by Isaac Emmanuel."
@@ -56,7 +56,7 @@ export default function TestimonialsPage() {
       <section className="pb-14">
         <div className="max-w-4xl mx-auto px-6">
           <ScrollReveal>
-            <div className="bg-[#0f1a36] border border-white/[0.08] rounded-2xl p-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div className="bg-[var(--bg-card)] border border-white/[0.08] rounded-2xl p-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               {[
                 { value: `${portfolioStats.projectsDelivered}+`, label: "Projects Delivered" },
                 { value: `${portfolioStats.happyClients}+`, label: "Happy Clients" },
@@ -83,7 +83,7 @@ export default function TestimonialsPage() {
                 <ScrollReveal key={review.name} delay={(i % 3) * 0.08}>
                   <motion.div
                     whileHover={{ y: -4 }}
-                    className="h-full bg-[#0f1a36] border border-white/[0.08] rounded-2xl p-6 hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0,114,255,0.06)] transition-all duration-400 flex flex-col"
+                    className="h-full bg-[var(--bg-card)] border border-white/[0.08] rounded-2xl p-6 hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0,114,255,0.06)] transition-all duration-400 flex flex-col"
                   >
                     <svg className="w-8 h-8 text-gold/30 mb-4" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
@@ -116,7 +116,7 @@ export default function TestimonialsPage() {
       <section className="pb-24">
         <div className="max-w-4xl mx-auto px-6">
           <ScrollReveal>
-            <div className="bg-[#0f1a36] border border-gold/20 rounded-3xl p-10 text-center">
+            <div className="bg-[var(--bg-card)] border border-gold/20 rounded-3xl p-10 text-center">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
                 Ready to be our next success story?
               </h2>

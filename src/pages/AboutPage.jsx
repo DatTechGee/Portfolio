@@ -1,4 +1,4 @@
-ï»¿import { motion } from "motion/react";
+import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import ScrollReveal from "../components/ScrollReveal";
 import Seo from "../components/Seo";
@@ -109,9 +109,9 @@ const barVariants = {
 
 export default function AboutPage() {
   return (
-    <main className="bg-[#0a1128] min-h-screen">
+    <main className="bg-[var(--bg-base)] min-h-screen">
       <Seo
-        title="About | DatTechGee Technologies â€” Isaac Emmanuel"
+        title="About | DatTechGee Technologies — Isaac Emmanuel"
         description="Meet Isaac Emmanuel, Founder & Lead Developer of DatTechGee Technologies. Full Stack Developer in Abuja building web, mobile, and business systems with React, Laravel, Node.js, and MySQL."
         path="/about"
         image="/assets/PORTFILO.png"
@@ -131,7 +131,7 @@ export default function AboutPage() {
               </span>
             </h1>
             <p className="text-neutral-500 max-w-2xl mx-auto text-lg">
-              The company Isaac Emmanuel built â€” designing and deploying digital
+              The company Isaac Emmanuel built — designing and deploying digital
               infrastructure for businesses that demand execution, structure, and
               measurable outcomes.
             </p>
@@ -150,7 +150,7 @@ export default function AboutPage() {
                 <div className="rounded-2xl overflow-hidden border-2 border-gold/30 shadow-[0_0_40px_rgba(0, 114, 255,0.1)]">
                   <img
                     src="/assets/image5.jpg"
-                    alt="DatTechGee Technologies â€” Team collaboration"
+                    alt="DatTechGee Technologies — Team collaboration"
                     className="w-full h-auto object-cover"
                   />
                 </div>
@@ -169,7 +169,7 @@ export default function AboutPage() {
                 <div className="space-y-4 text-neutral-500 leading-relaxed text-sm md:text-base">
                   <p>
                     DatTechGee Technologies is the software company founded by
-                    Isaac Emmanuel â€” a full-stack developer and engineer building
+                    Isaac Emmanuel — a full-stack developer and engineer building
                     secure, scalable web applications, mobile apps, and business
                     systems. We serve clients across Nigeria and beyond, delivering
                     end-to-end digital infrastructure that powers growth.
@@ -191,7 +191,7 @@ export default function AboutPage() {
                 <div className="flex flex-wrap gap-4 mt-8">
                   <Link
                     to="/projects"
-                    className="inline-flex items-center gap-2 bg-gold text-[#0a1128] px-6 py-3 rounded-full font-semibold text-sm hover:bg-gold/90 transition-colors duration-300"
+                    className="inline-flex items-center gap-2 bg-gold text-[var(--bg-base)] px-6 py-3 rounded-full font-semibold text-sm hover:bg-gold/90 transition-colors duration-300"
                   >
                     View Projects
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -214,7 +214,7 @@ export default function AboutPage() {
       <div className="section-divider" />
 
       {/* ===== COMPANY VALUES ===== */}
-      <section className="section-spacing bg-[#060d1f]">
+      <section className="section-spacing bg-[var(--bg-deep)]">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
             <div className="text-center mb-12">
@@ -243,12 +243,12 @@ export default function AboutPage() {
                   delay: i * 0.1,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400"
+                className="group bg-[var(--bg-card)] border border-white/[0.08] rounded-xl overflow-hidden hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400"
               >
                 {v.image && (
                   <div className="relative h-40 overflow-hidden">
                     <img src={v.image} alt={v.title} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f1a36] via-[#0f1a36]/30 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-card)] via-[var(--bg-card)]/30 to-transparent" />
                   </div>
                 )}
                 <div className="p-6">
@@ -270,7 +270,7 @@ export default function AboutPage() {
 
       <div className="section-divider" />
 
-      {/* ===== THE FOUNDER â€” ISAAC EMMANUEL ===== */}
+      {/* ===== THE FOUNDER — ISAAC EMMANUEL ===== */}
       <section className="section-spacing">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -289,7 +289,7 @@ export default function AboutPage() {
                   <p>
                     With over 4 years of hands-on experience, Isaac designs and builds
                     full-stack web and mobile applications that help businesses
-                    scale â€” from student management systems to blockchain-powered
+                    scale — from student management systems to blockchain-powered
                     platforms.
                   </p>
                   <p>
@@ -303,7 +303,7 @@ export default function AboutPage() {
                   <p>
                     Based in Nigeria and working globally, Isaac has delivered
                     end-to-end solutions for schools, startups, SMEs, and
-                    organizations â€” covering everything from requirements analysis
+                    organizations — covering everything from requirements analysis
                     and database architecture to deployment and ongoing
                     maintenance.
                   </p>
@@ -313,17 +313,17 @@ export default function AboutPage() {
 
             <ScrollReveal direction="right">
               <div className="relative rounded-2xl overflow-hidden border border-white/[0.08]">
-                <img src="/assets/PORTFILO.png" alt="Isaac Emmanuel â€” Founder" className="w-full h-full object-cover opacity-90" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a1128]/70 via-transparent to-transparent" />
+                <img src="/assets/PORTFILO.png" alt="Isaac Emmanuel — Founder" className="w-full h-full object-cover opacity-90" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-base)]/70 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 space-y-2">
                   {[
-                    { label: "Currently building â†’", value: "Smart attendance + payroll systems" },
-                    { label: "Learning â†’", value: "Go, Cloud (AWS), advanced AI" },
-                    { label: "Interested in â†’", value: "Fintech, EdTech, Web3" },
+                    { label: "Currently building ?", value: "Smart attendance + payroll systems" },
+                    { label: "Learning ?", value: "Go, Cloud (AWS), advanced AI" },
+                    { label: "Interested in ?", value: "Fintech, EdTech, Web3" },
                   ].map((row) => (
                     <div
                       key={row.label}
-                      className="flex items-center gap-2 text-xs bg-[#0f1a36]/90 border border-white/10 rounded-lg px-3 py-2"
+                      className="flex items-center gap-2 text-xs bg-[var(--bg-card)]/90 border border-white/10 rounded-lg px-3 py-2"
                     >
                       <span className="text-gold font-semibold whitespace-nowrap">{row.label}</span>
                       <span className="text-neutral-300">{row.value}</span>
@@ -339,7 +339,7 @@ export default function AboutPage() {
       <div className="section-divider" />
 
       {/* ===== TECH STACK ===== */}
-      <section className="section-spacing bg-[#060d1f]">
+      <section className="section-spacing bg-[var(--bg-deep)]">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
             <div className="text-center mb-12">
@@ -351,7 +351,7 @@ export default function AboutPage() {
               </h2>
               <p className="text-neutral-500 max-w-xl mx-auto">
                 The technologies we use to build robust, production-ready
-                applications â€” from frontend to backend and mobile.
+                applications — from frontend to backend and mobile.
               </p>
             </div>
           </ScrollReveal>
@@ -368,7 +368,7 @@ export default function AboutPage() {
                   delay: i * 0.05,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-4 flex flex-col items-center gap-3 hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400 group"
+                className="bg-[var(--bg-card)] border border-white/[0.08] rounded-xl p-4 flex flex-col items-center gap-3 hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400 group"
               >
                 {tech.logo ? (
                   <img
@@ -421,12 +421,12 @@ export default function AboutPage() {
                   delay: i * 0.1,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400"
+                className="group bg-[var(--bg-card)] border border-white/[0.08] rounded-xl overflow-hidden hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400"
               >
                 {cat.image && (
                   <div className="relative h-28 overflow-hidden">
                     <img src={cat.image} alt={cat.title} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f1a36] via-[#0f1a36]/40 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-card)] via-[var(--bg-card)]/40 to-transparent" />
                   </div>
                 )}
                 <div className="p-6">
@@ -467,7 +467,7 @@ export default function AboutPage() {
       <div className="section-divider" />
 
       {/* ===== EXPERIENCE TIMELINE ===== */}
-      <section className="section-spacing bg-[#060d1f]">
+      <section className="section-spacing bg-[var(--bg-deep)]">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
             <div className="text-center mb-16">
@@ -498,7 +498,7 @@ export default function AboutPage() {
                   i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                 }`}
               >
-                <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-gold border-4 border-[#060d1f] z-10 mt-6" />
+                <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-gold border-4 border-[var(--bg-deep)] z-10 mt-6" />
 
                 <div
                   className={`md:w-1/2 ${
@@ -521,7 +521,7 @@ export default function AboutPage() {
                     i % 2 === 0 ? "md:pl-12" : "md:pr-12"
                   } pl-12 md:pl-0`}
                 >
-                  <div className="bg-[#0f1a36] border border-white/[0.08] rounded-xl p-6">
+                  <div className="bg-[var(--bg-card)] border border-white/[0.08] rounded-xl p-6">
                     <ul className="space-y-2.5">
                       {exp.contents.map((content, j) => (
                         <motion.li
@@ -580,7 +580,7 @@ export default function AboutPage() {
                   delay: i * 0.06,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="group relative bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.08)] transition-all duration-400"
+                className="group relative bg-[var(--bg-card)] border border-white/[0.08] rounded-xl overflow-hidden hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.08)] transition-all duration-400"
               >
                 <div className="relative h-40 overflow-hidden">
                   <img
@@ -589,7 +589,7 @@ export default function AboutPage() {
                     loading="lazy"
                     className="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a1128] via-[#0f1a36]/30 to-transparent group-hover:from-[#0a1128] transition-all duration-400" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-base)] via-[var(--bg-card)]/30 to-transparent group-hover:from-[var(--bg-base)] transition-all duration-400" />
                   <div className="absolute bottom-2 left-0 right-0 px-4 text-center">
                     <span className="text-sm font-semibold text-white group-hover:text-gold transition-colors duration-300">
                       {industry.name}
@@ -632,7 +632,7 @@ export default function AboutPage() {
       <div className="section-divider" />
 
       {/* ===== CTA ===== */}
-      <section className="py-20 bg-[#060d1f]">
+      <section className="py-20 bg-[var(--bg-deep)]">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -644,7 +644,7 @@ export default function AboutPage() {
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 bg-gold text-[#0a1128] px-8 py-3.5 rounded-full font-semibold hover:bg-gold/90 transition-colors duration-300"
+              className="inline-flex items-center gap-2 bg-gold text-[var(--bg-base)] px-8 py-3.5 rounded-full font-semibold hover:bg-gold/90 transition-colors duration-300"
             >
               Start a Strategic Session
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -34,7 +34,7 @@ const Preloader = ({ onComplete }) => {
 
   return (
     <motion.div
-      className="fixed inset-0 z-50 flex flex-col bg-[#0a1128]"
+      className="fixed inset-0 z-50 flex flex-col bg-[var(--bg-base)]"
       animate={isComplete ? { opacity: 0, scale: 1.02 } : { opacity: 1, scale: 1 }}
       transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
       role="status"
