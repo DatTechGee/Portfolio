@@ -41,7 +41,7 @@ export default function TestimonialsPage() {
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               What Our Clients{" "}
-              <span className="bg-gradient-to-r from-white to-gold bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[var(--tx)] to-gold bg-clip-text text-transparent">
                 Say
               </span>
             </h1>

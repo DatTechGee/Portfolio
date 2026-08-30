@@ -126,7 +126,7 @@ export default function AboutPage() {
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Engineering the Systems Behind{" "}
-              <span className="bg-gradient-to-r from-white to-gold bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[var(--tx)] to-gold bg-clip-text text-transparent">
                 Business Growth
               </span>
             </h1>

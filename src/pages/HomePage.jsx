@@ -124,31 +124,31 @@ const processSteps = [
     num: "01",
     title: "Understand",
     description:
-      "I start with the problem, the users, and the requirements � before a single line of code.",
+      "We start with the problem, the users, and the requirements � before a single line of code.",
   },
   {
     num: "02",
     title: "Architect",
     description:
-      "I design the system, data flow, database schema, and technology choices for scale.",
+      "We design the system, data flow, database schema, and technology choices for scale.",
   },
   {
     num: "03",
     title: "Build",
     description:
-      "I develop the frontend, backend, APIs and integrations with clean, maintainable code.",
+      "We develop the frontend, backend, APIs and integrations with clean, maintainable code.",
   },
   {
     num: "04",
     title: "Test",
     description:
-      "I validate functionality, security, and performance across the whole product.",
+      "We validate functionality, security, and performance across the whole product.",
   },
   {
     num: "05",
     title: "Deploy",
     description:
-      "I ship the application to production and keep improving it over time.",
+      "We ship the application to production and keep improving it over time.",
   },
 ];
 
@@ -306,7 +306,7 @@ const HomePage = () => {
               <ScrollReveal direction="up" delay={0.2}>
                 <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight leading-[1.1]">
                   <span className="text-white">DatTechGee</span>{" "}
-                  <span className="bg-gradient-to-r from-white via-gold to-gold bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-[var(--tx)] to-gold bg-clip-text text-transparent">
                     Technologies
                   </span>
                 </h1>
@@ -380,21 +380,30 @@ const HomePage = () => {
               <motion.div style={{ y: heroY }} className="relative w-full max-w-[520px]">
                 <div className="absolute -inset-8 rounded-[2rem] bg-gradient-to-br from-gold/25 via-gold/5 to-transparent blur-3xl opacity-70" />
 
-                {/* Avatar with animated conic ring */}
-                <div className="relative flex flex-col items-center mb-8">
-                  <div className="lux-ring w-44 h-44 sm:w-52 sm:h-52">
-                    <div className="rounded-full overflow-hidden bg-[var(--bg-card)]">
+                {/* Rounded image card */}
+                <div className="relative">
+                  <div className="lux-card overflow-hidden rounded-[1.75rem]">
+                    <div className="relative sm:h-[480px] h-[380px]">
                       <img
-                        src="/assets/PORTFILO.png"
-                        alt="Isaac Emmanuel � founder of DatTechGee Technologies"
+                        src="/assets/software1.jpg"
+                        alt="DatTechGee Technologies - Custom software development"
                         className="w-full h-full object-cover"
                       />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-deep)]/95 via-[var(--bg-deep)]/25 to-transparent on-dark" />
+                      <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-7">
+                        <p className="text-white text-lg sm:text-xl font-bold">
+                          DatTechGee Technologies
+                        </p>
+                        <p className="text-gold text-sm">
+                          Software. Innovation. Impact.
+                        </p>
+                      </div>
                     </div>
                   </div>
 
                   {/* Floating metric chips */}
                   <motion.span
-                    className="absolute top-3 left-2 sm:left-0 flex items-center gap-2 rounded-full bg-[var(--bg-card)]/95 border border-gold/30 px-3.5 py-2 text-xs font-bold text-gold shadow-xl"
+                    className="absolute -top-4 left-3 sm:-left-4 flex items-center gap-2 rounded-full bg-[var(--bg-card)] border border-gold/30 px-3.5 py-2 text-xs font-bold text-gold shadow-xl"
                     animate={{ y: [0, -7, 0] }}
                     transition={{ duration: 3.4, repeat: Infinity, ease: "easeInOut" }}
                   >
@@ -402,38 +411,13 @@ const HomePage = () => {
                     {portfolioStats.projectsDelivered}+ Projects
                   </motion.span>
                   <motion.span
-                    className="absolute bottom-2 right-2 sm:right-0 flex items-center gap-2 rounded-full bg-[var(--bg-card)]/95 border border-gold/30 px-3.5 py-2 text-xs font-bold text-gold shadow-xl"
+                    className="absolute -bottom-4 right-3 sm:-right-4 flex items-center gap-2 rounded-full bg-[var(--bg-card)] border border-gold/30 px-3.5 py-2 text-xs font-bold text-gold shadow-xl"
                     animate={{ y: [0, 6, 0] }}
                     transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                   >
                     <span className="w-2 h-2 rounded-full bg-emerald-400" />
                     {portfolioStats.yearsExperience} Yrs Experience
                   </motion.span>
-                </div>
-
-                {/* Terminal card */}
-                <div className="lux-card p-0 overflow-hidden">
-                  <div className="flex items-center gap-2 px-4 py-3 border-b border-[var(--border-soft)] bg-[var(--bg-elev)]/60">
-                    <span className="w-3 h-3 rounded-full bg-red-400/80" />
-                    <span className="w-3 h-3 rounded-full bg-amber-400/80" />
-                    <span className="w-3 h-3 rounded-full bg-emerald-400/80" />
-                    <span className="ml-3 text-xs font-mono text-neutral-500">
-                      dattechgee ~ deploy
-                    </span>
-                  </div>
-                  <div className="p-5 font-mono text-[13px] leading-7">
-                    <p><span className="text-neutral-500">$</span> <span className="text-gold">build</span> <span className="text-white">--stack react+laravel</span></p>
-                    <p className="text-white"><span className="text-emerald-400">✓</span> compiling modules...<span className="text-emerald-400"> done</span></p>
-                    <p className="text-white"><span className="text-emerald-400">✓</span> api connected <span className="text-neutral-500">(24 endpoints)</span></p>
-                    <p className="text-white"><span className="text-emerald-400">✓</span> auth secured <span className="text-neutral-500">(JWT + RBAC)</span></p>
-                    <p className="text-white"><span className="text-emerald-400">✓</span> database optimized</p>
-                    <p className="mt-2">
-                      <span className="text-gold">➜ ready</span>{" "}
-                      <span className="text-neutral-500">ship it →</span>{" "}
-                      <span className="inline-flex items-center gap-1.5 rounded bg-gold/10 px-2 py-0.5 text-gold">online</span>
-                    </p>
-                    <span className="inline-block w-2 h-4 bg-gold animate-pulse align-middle" />
-                  </div>
                 </div>
               </motion.div>
             </ScrollReveal>
@@ -456,7 +440,7 @@ const HomePage = () => {
       <section className="relative py-10 border-y border-white/[0.06] bg-[var(--bg-deep)] overflow-hidden">
         <div className="flex items-center justify-center gap-10 mb-6 px-6">
           <span className="text-gold text-sm uppercase tracking-[0.3em] font-semibold">
-            I Build With
+            We Build With
           </span>
         </div>
         <div className="relative">
@@ -571,27 +555,27 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* ===== WHAT I BUILD � PERSONAL ===== */}
+      {/* ===== WHAT WE BUILD ===== */}
       <div className="section-divider" />
       <section className="section-spacing relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-base)] via-[var(--bg-band)] to-[var(--bg-base)]" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <ScrollReveal>
-              <p className="lux-eyebrow mb-4">What I Build</p>
+              <p className="lux-eyebrow mb-4">What We Build</p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
                 From idea to{" "}
-                <span className="bg-gradient-to-r from-white to-gold bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[var(--tx)] to-gold bg-clip-text text-transparent">
                   working product
                 </span>
               </h2>
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
               <p className="text-neutral-400 max-w-2xl mx-auto text-base mt-4">
-                More than a technology list � here's what Isaac actually ships,
-                end to end, for real businesses.
+                More than a technology list � here's what we actually ship, end
+                to end, for real businesses.
               </p>
             </ScrollReveal>
           </div>
@@ -670,7 +654,7 @@ const HomePage = () => {
             <ScrollReveal delay={0.1}>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
                 What We{" "}
-                <span className="bg-gradient-to-r from-white to-gold bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[var(--tx)] to-gold bg-clip-text text-transparent">
                   Stand For
                 </span>
               </h2>
@@ -749,7 +733,7 @@ const HomePage = () => {
             <ScrollReveal delay={0.1}>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
                 What We{" "}
-                <span className="bg-gradient-to-r from-white to-gold bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[var(--tx)] to-gold bg-clip-text text-transparent">
                   Do
                 </span>
               </h2>
@@ -822,19 +806,19 @@ const HomePage = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <ScrollReveal>
-              <p className="lux-eyebrow mb-4">How I Build</p>
+              <p className="lux-eyebrow mb-4">How We Build</p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
                 A disciplined{" "}
-                <span className="bg-gradient-to-r from-white to-gold bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[var(--tx)] to-gold bg-clip-text text-transparent">
                   engineering process
                 </span>
               </h2>
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
               <p className="text-neutral-400 max-w-xl mx-auto text-base mt-4">
-                From first conversation to production � how Isaac ships reliable software.
+                From first conversation to production � how we ship reliable software.
               </p>
             </ScrollReveal>
           </div>
@@ -907,7 +891,7 @@ const HomePage = () => {
             <ScrollReveal delay={0.1}>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
                 Who We{" "}
-                <span className="bg-gradient-to-r from-white to-gold bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[var(--tx)] to-gold bg-clip-text text-transparent">
                   Work With
                 </span>
               </h2>
@@ -967,7 +951,7 @@ const HomePage = () => {
             <ScrollReveal delay={0.1}>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
                 Why{" "}
-                <span className="bg-gradient-to-r from-white to-gold bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[var(--tx)] to-gold bg-clip-text text-transparent">
                   DatTechGee Technologies
                 </span>
               </h2>
@@ -1013,7 +997,7 @@ const HomePage = () => {
               <ScrollReveal delay={0.1}>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
                   What Clients{" "}
-                  <span className="bg-gradient-to-r from-white to-gold bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-[var(--tx)] to-gold bg-clip-text text-transparent">
                     Say
                   </span>
                 </h2>
