@@ -16,6 +16,7 @@ export const myProjects = [
   {
     id: 1,
     title: "Scholars Nudge — Smart Attendance",
+    github: "https://github.com/DatTechGee/scholarsnudgewebview",
     description:
       "A complete attendance management platform with face verification, GPS geofencing, live monitoring, and role-based dashboards for schools and universities.",
     subDescription: [
@@ -45,6 +46,7 @@ export const myProjects = [
   {
     id: 2,
     title: "Payroll Management System",
+    github: "https://github.com/DatTechGee/payroll_Management_system",
     description:
       "A complete payroll application with employee management, automated salary calculation, payslip generation, and downloadable PDF reports.",
     subDescription: [
@@ -73,6 +75,7 @@ export const myProjects = [
   {
     id: 3,
     title: "Student Filing System",
+    github: "https://github.com/DatTechGee/Student_filing_System",
     description:
       "A Laravel-based digital student records management system that simplifies document storage, retrieval, and administration for schools.",
     subDescription: [
@@ -100,6 +103,7 @@ export const myProjects = [
   {
     id: 4,
     title: "Hostel Allocation System",
+    github: "https://github.com/DatTechGee",
     description:
       "A web-based hostel allocation system for educational institutions with room assignment, capacity management, and administrative reporting.",
     subDescription: [
@@ -127,6 +131,7 @@ export const myProjects = [
   {
     id: 5,
     title: "GPA/CGPA Management Portal",
+    github: "https://github.com/DatTechGee",
     description:
       "A student academic management platform for calculating and tracking GPA and CGPA with result analysis and an academic dashboard.",
     subDescription: [
@@ -154,6 +159,7 @@ export const myProjects = [
   {
     id: 6,
     title: "Medical Crowdfunding DApp",
+    github: "https://github.com/DatTechGee",
     description:
       "A blockchain-powered crowdfunding platform for medical bills with fraud prevention, MetaMask integration, and secure donation tracking.",
     subDescription: [
@@ -182,6 +188,7 @@ export const myProjects = [
   {
     id: 7,
     title: "Network Packet Analyzer",
+    github: "https://github.com/DatTechGee/network-packet-analyzer",
     description:
       "A cybersecurity tool integrating Laravel, React, Python, Wireshark, and TShark to analyze network traffic and detect anomalies in real time.",
     subDescription: [
@@ -210,6 +217,7 @@ export const myProjects = [
   {
     id: 8,
     title: "Real Estate Website",
+    github: "https://github.com/DatTechGee/react-estate",
     description:
       "A responsive property listing platform featuring modern UI, property management, search functionality, and customer inquiry forms.",
     subDescription: [
@@ -237,6 +245,7 @@ export const myProjects = [
   {
     id: 9,
     title: "Climate Information Website",
+    github: "https://github.com/DatTechGee/weather-app",
     description:
       "A React-based web application displaying real-time weather and climate data with an interactive dashboard and 5-day forecast.",
     subDescription: [
@@ -263,6 +272,7 @@ export const myProjects = [
   {
     id: 10,
     title: "Nike Landing Page",
+    github: "https://github.com/DatTechGee/nike-landing-page",
     description:
       "A modern responsive landing page demonstrating clean UI/UX principles, strong visuals, and smooth product showcase animations.",
     subDescription: [
@@ -289,6 +299,7 @@ export const myProjects = [
   {
     id: 11,
     title: "Portfolio Website",
+    github: "https://github.com/DatTechGee/Portfolio",
     description:
       "A personal developer portfolio with 3D elements, interactive sections, animations, and SEO-optimized structured data.",
     subDescription: [
@@ -316,6 +327,7 @@ export const myProjects = [
   {
     id: 12,
     title: "E-Commerce Admin Dashboard",
+    github: "https://github.com/DatTechGee",
     description:
       "A full-stack admin dashboard for managing products, orders, customers, and analytics for an online store with real-time sales tracking.",
     subDescription: [
@@ -343,6 +355,7 @@ export const myProjects = [
   {
     id: 13,
     title: "SaaS Analytics Dashboard",
+    github: "https://github.com/DatTechGee",
     description:
       "A multi-tenant analytics dashboard for SaaS businesses showing user metrics, MRR, churn rates, and feature usage with interactive charts.",
     subDescription: [
@@ -370,6 +383,7 @@ export const myProjects = [
   {
     id: 14,
     title: "Fitness Tracker Mobile App",
+    github: "https://github.com/DatTechGee",
     description:
       "A React Native mobile app for tracking workouts, nutrition, and health goals with progress charts and personalized recommendations.",
     subDescription: [
@@ -397,6 +411,7 @@ export const myProjects = [
   {
     id: 15,
     title: "Food Delivery Mobile App",
+    github: "https://github.com/DatTechGee",
     description:
       "A cross-platform food ordering app with restaurant browsing, real-time order tracking, in-app payments, and delivery driver assignment.",
     subDescription: [
@@ -424,6 +439,7 @@ export const myProjects = [
   {
     id: 16,
     title: "Inventory & POS System",
+    github: "https://github.com/DatTechGee",
     description:
       "A point-of-sale and inventory management system for retail shops with barcode scanning, stock alerts, sales reporting, and multi-outlet support.",
     subDescription: [
@@ -451,6 +467,7 @@ export const myProjects = [
   {
     id: 17,
     title: "CRM — Client Relationship Manager",
+    github: "https://github.com/DatTechGee",
     description:
       "A customer relationship management tool for tracking leads, deals, client communication, and sales pipeline with team collaboration features.",
     subDescription: [
@@ -478,6 +495,7 @@ export const myProjects = [
   {
     id: 18,
     title: "Payment Gateway Integration API",
+    github: "https://github.com/DatTechGee",
     description:
       "A RESTful API service that unifies multiple payment providers (Paystack, Flutterwave, bank transfers) into a single consistent interface for developers.",
     subDescription: [
@@ -506,6 +524,7 @@ export const myProjects = [
   {
     id: 19,
     title: "Notification Microservice",
+    github: "https://github.com/DatTechGee",
     description:
       "A centralized notification service that handles email, SMS, and push notifications across multiple applications via a single API with template management.",
     subDescription: [
@@ -534,6 +553,7 @@ export const myProjects = [
   {
     id: 20,
     title: "Auth & User Management Service",
+    github: "https://github.com/DatTechGee",
     description:
       "A standalone authentication microservice providing JWT-based login, OAuth social auth, role-based access control, and session management for multiple apps.",
     subDescription: [
@@ -561,6 +581,7 @@ export const myProjects = [
   {
     id: 21,
     title: "NFT Marketplace",
+    github: "https://github.com/DatTechGee",
     description:
       "A decentralized NFT marketplace for minting, buying, and selling digital collectibles with wallet integration and auction bidding system.",
     subDescription: [
@@ -589,6 +610,7 @@ export const myProjects = [
   {
     id: 22,
     title: "EchoMail",
+    github: "https://github.com/DatTechGee/echomail_frontend",
     description:
       "EchoMail is a full-stack email platform with a modern TypeScript frontend and a PHP/Laravel backend. It manages user accounts, mailboxes, and message delivery with a responsive web interface.",
     subDescription: [
@@ -613,6 +635,7 @@ export const myProjects = [
   {
     id: 23,
     title: "Jbrass Fashion",
+    github: "https://github.com/DatTechGee/Jbrass-Fashion",
     description:
       "A stylish fashion-oriented web experience for the Jbrass brand, showcasing products with a clean, brand-forward design and CSS styling.",
     subDescription: [
@@ -634,6 +657,7 @@ export const myProjects = [
   {
     id: 24,
     title: "Jonathan Project — BCA Student Portal",
+    github: "https://github.com/DatTechGee/Jonathan-project",
     description:
       "A student-facing portal for the BCA programme (Jonathan-project), built as a live web application providing academic information and resources.",
     subDescription: [
@@ -655,6 +679,7 @@ export const myProjects = [
   {
     id: 25,
     title: "MusicBlog",
+    github: "https://github.com/DatTechGee/MusicBlog",
     description:
       "A music-focused blog showcasing articles, art, and culture with a clean editorial design.",
     subDescription: [
@@ -676,6 +701,7 @@ export const myProjects = [
   {
     id: 26,
     title: "SocialMedia — Content Hub",
+    github: "https://github.com/DatTechGee/socialMedia",
     description:
       "A social-media themed content hub presented as a modern web page, designed for engagement and clean presentation.",
     subDescription: [
@@ -697,6 +723,7 @@ export const myProjects = [
   {
     id: 27,
     title: "ShopPhee",
+    github: "https://github.com/DatTechGee/ShopPhee",
     description:
       "ShopPhee is an online shopping experience with product browsing and a clean, conversion-friendly layout.",
     subDescription: [
@@ -718,6 +745,7 @@ export const myProjects = [
   {
     id: 28,
     title: "ZarahBeauty",
+    github: "https://github.com/DatTechGee/ZarahBeauty",
     description:
       "A beauty-focused brand website for ZarahBeauty with an elegant, feminine design and product presentation.",
     subDescription: [
@@ -739,6 +767,7 @@ export const myProjects = [
   {
     id: 29,
     title: "HealthSpring",
+    github: "https://github.com/DatTechGee/HealthSpring",
     description:
       "A health-and-wellness focused website with a calming, clean design and informative content sections.",
     subDescription: [
@@ -760,6 +789,7 @@ export const myProjects = [
   {
     id: 30,
     title: "J's Flawless Touch",
+    github: "https://github.com/DatTechGee/j-s-Flawless-Touch",
     description:
       "A personal-brand website for J's Flawless Touch showcasing services and offerings with a sleek, professional aesthetic.",
     subDescription: [
@@ -781,6 +811,7 @@ export const myProjects = [
   {
     id: 31,
     title: "PerfectCut",
+    github: "https://github.com/DatTechGee/perfectcut",
     description:
       "PerfectCut is a JavaScript-driven site presenting a barbershop or grooming service with interactive, modern styling.",
     subDescription: [
@@ -802,6 +833,7 @@ export const myProjects = [
   {
     id: 32,
     title: "Power of Writing",
+    github: "https://github.com/DatTechGee/PowerOfWriting",
     description:
       "An advocacy/editorial website championing the power of writing, designed to inspire and inform readers.",
     subDescription: [
@@ -823,6 +855,7 @@ export const myProjects = [
   {
     id: 33,
     title: "Education — Learning Hub",
+    github: "https://github.com/DatTechGee/education",
     description:
       "An education-themed learning hub presenting courses and resources with a clean, friendly design.",
     subDescription: [
@@ -844,6 +877,7 @@ export const myProjects = [
   {
     id: 34,
     title: "Girlism",
+    github: "https://github.com/DatTechGee/Girlism",
     description:
       "Girlism is a community-focused brand website celebrating and empowering women, with a vibrant, modern design.",
     subDescription: [
@@ -865,6 +899,7 @@ export const myProjects = [
   {
     id: 35,
     title: "BeautyForge",
+    github: "https://github.com/DatTechGee/BeautyForge",
     description:
       "BeautyForge is a beauty-and-strategy brand site forging an elegant, modern online identity.",
     subDescription: [
@@ -886,6 +921,7 @@ export const myProjects = [
   {
     id: 36,
     title: "Power of Communication",
+    github: "https://github.com/DatTechGee/PowerofCommunication",
     description:
       "An editorial site advocating the importance of strong communication skills, with clear, engaging content.",
     subDescription: [
@@ -907,6 +943,7 @@ export const myProjects = [
   {
     id: 37,
     title: "Ruthie's Relationship & Lifestyle Hub",
+    github: "https://github.com/DatTechGee/Ruthie-sRelationship-Lifestyle-Hub",
     description:
       "A lifestyle and relationship-content hub (Ruthie) with a warm, personal design and interactive feel.",
     subDescription: [
@@ -928,6 +965,7 @@ export const myProjects = [
   {
     id: 38,
     title: "ContractBasics",
+    github: "https://github.com/DatTechGee/ContractBasics",
     description:
       "A clean informational site explaining the basics of contracts, with clear, easy-to-digest content.",
     subDescription: [
@@ -949,6 +987,7 @@ export const myProjects = [
   {
     id: 39,
     title: "Digital Detox",
+    github: "https://github.com/DatTechGee/Digital-detox",
     description:
       "A mindful website promoting digital-detox habits, designed with a calm, distraction-free aesthetic.",
     subDescription: [
@@ -970,6 +1009,7 @@ export const myProjects = [
   {
     id: 40,
     title: "Media & Publicity",
+    github: "https://github.com/DatTechGee/MediaAndPublicity",
     description:
       "A media-and-publicity brand platform showcasing services and campaigns with a bold, professional design.",
     subDescription: [
@@ -991,6 +1031,7 @@ export const myProjects = [
   {
     id: 41,
     title: "The Honest Voice",
+    github: "https://github.com/DatTechGee/the-honest-voice",
     description:
       "A storytelling/editorial platform (The Honest Voice) with a refined, modern SCSS-based design.",
     subDescription: [
@@ -1012,6 +1053,7 @@ export const myProjects = [
   {
     id: 42,
     title: "The Power of Community Service",
+    github: "https://github.com/DatTechGee/The-Power-of-Community-Service",
     description:
       "An advocacy website celebrating the impact of community service, with interactive, warm design.",
     subDescription: [
@@ -1033,6 +1075,7 @@ export const myProjects = [
   {
     id: 43,
     title: "JavaScript Project",
+    github: "https://github.com/DatTechGee/javascript-project",
     description:
       "An interactive JavaScript project demonstrating dynamic web functionality and modern front-end patterns.",
     subDescription: [
@@ -1054,6 +1097,7 @@ export const myProjects = [
   {
     id: 44,
     title: "Online Movie Ticket",
+    github: "https://github.com/DatTechGee/online_movieticket",
     description:
       "An online movie-ticket booking system letting users browse showtimes and book tickets through a web interface.",
     subDescription: [
@@ -1074,6 +1118,7 @@ export const myProjects = [
   {
     id: 45,
     title: "Online Exam",
+    github: "https://github.com/DatTechGee/online_exam",
     description:
       "An online examination platform (Online Examination) for creating and taking tests digitally.",
     subDescription: [
@@ -1094,6 +1139,7 @@ export const myProjects = [
   {
     id: 46,
     title: "Online Restaurant",
+    github: "https://github.com/DatTechGee/online_resturant",
     description:
       "An online restaurant platform (Online Resturant) presenting menus and enabling a restaurant web experience.",
     subDescription: [
@@ -1114,6 +1160,7 @@ export const myProjects = [
   {
     id: 47,
     title: "Scholarnudge Website",
+    github: "https://github.com/DatTechGee/scholarnudge-website",
     description:
       "The public marketing website for Scholars Nudge, presenting the smart attendance product and its features to schools.",
     subDescription: [
@@ -1135,6 +1182,7 @@ export const myProjects = [
   {
     id: 48,
     title: "Medicare",
+    github: "https://github.com/DatTechGee/medicare",
     description:
       "A full-stack healthcare/web project (Medicare) built with JavaScript, covering medical-related functionality.",
     subDescription: [
