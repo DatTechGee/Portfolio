@@ -3,88 +3,20 @@ import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import ScrollReveal from "../components/ScrollReveal";
 import Seo from "../components/Seo";
+import {
+  featuredArticle,
+  articles,
+  moreArticles,
+  categoryColors,
+} from "../constants/articles";
 
-const featuredArticle = {
-  category: "Architecture",
-  title: "Building Scalable Full-Stack Applications: A Developer&apos;s Guide",
-  description:
-    "A deep dive into the architectural decisions that separate short-lived prototypes from production-grade applications. From monolith to modular design, database indexing strategies, caching layers, and horizontal scaling — this guide covers the foundational patterns every full-stack developer needs to understand before scaling beyond a single server. Based on real-world experience building systems that handle thousands of concurrent users.",
-  date: "Jan 15, 2026",
-  readTime: "12 min read",
-  image: "/assets/image7.jpg",
-};
-
-const articles = [
-  {
-    category: "Business Strategy",
-    title: "Why Every Business Needs a Custom Software Solution",
-    description:
-      "Off-the-shelf tools get you started, but custom software gives you a competitive edge. Explore how tailored systems reduce operational friction, eliminate license costs, and align perfectly with your unique workflows. We have seen businesses transform their operations within weeks of switching to custom-built solutions.",
-    date: "Jan 11, 2026",
-    readTime: "8 min read",
-    image: "/assets/image2.jpg",
-  },
-  {
-    category: "Technology",
-    title: "The Role of APIs in Modern Software Architecture",
-    description:
-      "APIs are the backbone of connected systems. Learn how RESTful design, versioning strategies, rate limiting, and documentation practices create interfaces that other developers actually want to use. This guide draws from our experience building APIs that serve multiple client applications simultaneously.",
-    date: "Jan 8, 2026",
-    readTime: "10 min read",
-    image: "/assets/image5.jpg",
-  },
-  {
-    category: "Development",
-    title: "Mobile-First Development: Best Practices for 2026",
-    description:
-      "With mobile traffic surpassing desktop, designing mobile-first is no longer optional. Break down responsive breakpoints, touch targets, performance budgets, and progressive web app strategies that keep users engaged. These are battle-tested patterns from apps we have deployed for thousands of active users.",
-    date: "Jan 5, 2026",
-    readTime: "6 min read",
-    image: "/assets/image8.jpg",
-  },
-];
-
-const moreArticles = [
-  {
-    category: "Architecture",
-    title: "Database Design Patterns Every Developer Should Know",
-    description:
-      "From normalization to denormalization, composite indexes to partitioning — the database design decisions that determine whether your application performs at 100 rows or 100 million. We share the exact patterns we use when architecting databases for high-traffic applications.",
-    date: "Dec 28, 2025",
-    readTime: "9 min read",
-    image: "/assets/image1.jpg",
-  },
-  {
-    category: "Security",
-    title: "Securing Web Applications: From Authentication to Deployment",
-    description:
-      "A comprehensive walkthrough of modern web application security — covering JWT best practices, CORS configuration, SQL injection prevention, and infrastructure hardening for production environments. Every recommendation is based on real security audits and production deployments.",
-    date: "Dec 20, 2025",
-    readTime: "11 min read",
-    image: "/assets/image8.jpg",
-  },
-  {
-    category: "Development",
-    title: "React vs Next.js: Choosing the Right Framework",
-    description:
-      "Both are powerful, but they solve different problems. Compare rendering strategies, SEO capabilities, developer experience, and deployment models to make an informed architectural choice. We have built production applications with both and share our honest assessment.",
-    date: "Dec 15, 2025",
-    readTime: "7 min read",
-    image: "/assets/image3.jpg",
-  },
-];
-
-const categoryColors = {
-  Architecture: "bg-blue-500/10 text-blue-400 border-blue-500/20",
-  "Business Strategy": "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
-  Technology: "bg-violet-500/10 text-violet-400 border-violet-500/20",
-  Development: "bg-amber-500/10 text-amber-400 border-amber-500/20",
-  Security: "bg-rose-500/10 text-rose-400 border-rose-500/20",
-};
+const toSlug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+const MotionLink = motion.create(Link);
 
 function ArticleCard({ article, index, large = false }) {
   return (
-    <motion.div
+    <MotionLink
+      to={`/insights/${toSlug(article.title)}`}
       initial={{ opacity: 0, y: 30, filter: "blur(4px)" }}
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       viewport={{ once: true, margin: "-40px" }}
@@ -94,7 +26,7 @@ function ArticleCard({ article, index, large = false }) {
         ease: [0.16, 1, 0.3, 1],
       }}
       whileHover={{ y: -4 }}
-      className={`group bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden cursor-default hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400 ${
+      className={`group bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden cursor-pointer hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400 ${
         large ? "flex flex-col" : "flex flex-col"
       }`}
     >
@@ -163,7 +95,7 @@ function ArticleCard({ article, index, large = false }) {
           </span>
         </div>
       </div>
-    </motion.div>
+    </MotionLink>
   );
 }
 
@@ -256,7 +188,8 @@ export default function InsightsPage() {
                 Featured
               </span>
             </div>
-            <motion.div
+            <MotionLink
+              to={`/insights/${toSlug(featuredArticle.title)}`}
               initial={{ opacity: 0, y: 35, filter: "blur(4px)" }}
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               viewport={{ once: true, margin: "-40px" }}
@@ -265,7 +198,7 @@ export default function InsightsPage() {
                 ease: [0.16, 1, 0.3, 1],
               }}
               whileHover={{ y: -4 }}
-              className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden cursor-default hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400 relative"
+              className="group bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden cursor-pointer hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400 relative"
             >
               {/* Gradient accent */}
               <div className="h-1.5 bg-gradient-to-r from-gold via-gold/60 to-transparent" />
@@ -328,7 +261,7 @@ export default function InsightsPage() {
                   </span>
                 </div>
               </div>
-            </motion.div>
+            </MotionLink>
           </ScrollReveal>
         </div>
       </section>
@@ -407,7 +340,7 @@ export default function InsightsPage() {
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="font-semibold text-white">You're subscribed!</span>
+                    <span className="font-semibold text-white">You&apos;re subscribed!</span>
                   </div>
                   <p className="text-sm text-neutral-400">
                     Thanks for joining. Weekly insights are on the way to your inbox.

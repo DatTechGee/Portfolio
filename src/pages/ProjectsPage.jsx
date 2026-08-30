@@ -42,9 +42,17 @@ const cardVariants = {
 
 export default function ProjectsPage() {
   const [activeFilter, setActiveFilter] = useState("All");
+  const [searchTerm, setSearchTerm] = useState("");
   const [selectedProject, setSelectedProject] = useState(null);
 
-  const filteredProjects = myProjects.filter((p) => matchesFilter(p, activeFilter));
+  const filteredProjects = myProjects.filter(
+    (p) =>
+      matchesFilter(p, activeFilter) &&
+      (searchTerm.trim() === "" ||
+        `${p.title} ${p.description} ${p.tags?.map((t) => t.name).join(" ") || ""}`
+          .toLowerCase()
+          .includes(searchTerm.trim().toLowerCase()))
+  );
   const sortedProjects = [...filteredProjects].sort(
     (a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0)
   );
@@ -100,6 +108,25 @@ export default function ProjectsPage() {
       <section className="pb-12">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
+            <div className="max-w-xl mx-auto mb-8">
+              <div className="relative">
+                <svg
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-500"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35m1.35-5.4a6.75 6.75 0 11-13.5 0 6.75 6.75 0 0113.5 0z" />
+                </svg>
+                <input
+                  type="text"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  placeholder="Search projects by name, tech, or keyword…"
+                  className="w-full bg-[#0f1a36] border border-white/[0.08] rounded-full pl-12 pr-4 py-3.5 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-gold/40 focus:shadow-[0_0_20px_rgba(0, 114, 255,0.08)] transition-all duration-300"
+                />
+              </div>
+            </div>
             <div className="text-center mb-4">
               <span className="text-neutral-500 text-xs font-medium tracking-widest uppercase">
                 Filter by Category
@@ -251,7 +278,7 @@ export default function ProjectsPage() {
           {filteredProjects.length === 0 && (
             <div className="text-center py-20">
               <p className="text-neutral-500 text-lg">
-                No projects found for this filter.
+                No projects found{searchTerm ? ` for "${searchTerm}"` : ""}. Try a different search or filter.
               </p>
             </div>
           )}

@@ -124,7 +124,26 @@ function injectMeta(html, route) {
   return out;
 }
 
-for (const route of routes) {
+const articleSlugs = [
+  { slug: "building-scalable-full-stack-applications", title: "Building Scalable Full-Stack Applications", desc: "Architectural patterns for production-grade full-stack applications — modular design, database indexing, caching, and scaling." },
+  { slug: "why-business-needs-custom-software", title: "Why Every Business Needs a Custom Software Solution", desc: "Why tailored systems reduce friction, eliminate license costs, and align perfectly with your workflows." },
+  { slug: "the-role-of-apis-in-modern-software", title: "The Role of APIs in Modern Software Architecture", desc: "RESTful design, versioning, rate limiting, and documentation practices that make APIs developers love." },
+  { slug: "mobile-first-development-best-practices", title: "Mobile-First Development: Best Practices for 2026", desc: "Responsive breakpoints, touch targets, performance budgets, and PWA strategies that keep users engaged." },
+  { slug: "database-design-patterns", title: "Database Design Patterns Every Developer Should Know", desc: "Normalization, composite indexes, and partitioning for databases that perform at 100 rows or 100 million." },
+  { slug: "securing-web-applications", title: "Securing Web Applications: From Authentication to Deployment", desc: "JWT best practices, CORS, SQL injection prevention, and infrastructure hardening for production." },
+  { slug: "react-vs-nextjs", title: "React vs Next.js: Choosing the Right Framework", desc: "Rendering strategies, SEO capabilities, and deployment models to make an informed architectural choice." },
+];
+
+const articleRoutes = articleSlugs.map((a) => ({
+  path: `/insights/${a.slug}`,
+  title: `${a.title} | DatTechGee Technologies`,
+  description: a.desc,
+  image: DEFAULT_IMAGE,
+}));
+
+const allRoutes = [...routes, ...articleRoutes];
+
+for (const route of allRoutes) {
   const outPath = route.path === "/" ? resolve(distDir, "index.html") : resolve(distDir, route.path.slice(1), "index.html");
   const pre = dirname(outPath);
   if (!existsSync(pre)) mkdirSync(pre, { recursive: true });
@@ -132,5 +151,22 @@ for (const route of routes) {
   writeFileSync(outPath, injected);
   console.log(`Prerendered ${route.path}`);
 }
+
+const today = new Date().toISOString().slice(0, 10);
+const sitemapItems = allRoutes
+  .map((r) => {
+    const loc = r.path === "/" ? SITE : `${SITE}${r.path}`;
+    const isArticle = r.path.startsWith("/insights/");
+    return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>${isArticle ? "monthly" : "weekly"}</changefreq>\n    <priority>${r.path === "/" ? "1.0" : r.path === "/contact" ? "0.9" : "0.8"}</priority>\n  </url>`;
+  })
+  .join("\n");
+
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapItems}\n</urlset>\n`;
+writeFileSync(resolve(distDir, "sitemap.xml"), sitemap);
+console.log("Generated dist/sitemap.xml");
+
+const robots = `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`;
+writeFileSync(resolve(distDir, "robots.txt"), robots);
+console.log("Generated dist/robots.txt");
 
 console.log("Done. Static per-route HTML generated in dist/");

@@ -13,6 +13,7 @@ import ServicesPage from "./pages/ServicesPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import SolutionsPage from "./pages/SolutionsPage";
 import InsightsPage from "./pages/InsightsPage";
+import ArticlePage from "./pages/ArticlePage";
 import ContactPage from "./pages/ContactPage";
 
 const PageWrapper = ({ children }) => (
@@ -55,6 +56,7 @@ const App = () => {
                   <Route path="/projects" element={<PageWrapper><ProjectsPage /></PageWrapper>} />
                   <Route path="/solutions" element={<PageWrapper><SolutionsPage /></PageWrapper>} />
                   <Route path="/insights" element={<PageWrapper><InsightsPage /></PageWrapper>} />
+                  <Route path="/insights/:slug" element={<PageWrapper><ArticlePage /></PageWrapper>} />
                   <Route path="/contact" element={<PageWrapper><ContactPage /></PageWrapper>} />
                 </Routes>
               </AnimatePresence>

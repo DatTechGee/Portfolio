@@ -1,4 +1,5 @@
-﻿import { motion } from "motion/react";
+﻿import { useState } from "react";
+import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import ScrollReveal from "../components/ScrollReveal";
 import Seo from "../components/Seo";
@@ -182,6 +183,7 @@ const industries = [
 ];
 
 export default function ServicesPage() {
+  const [openFaq, setOpenFaq] = useState(null);
   return (
     <main className="bg-[#0a1128] min-h-screen">
       <Seo
@@ -600,6 +602,210 @@ export default function ServicesPage() {
                     {model.timeline}
                   </span>
                 </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Packages */}
+      <section className="py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <ScrollReveal>
+            <div className="mb-14 text-center">
+              <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
+                Investment
+              </span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+                Pricing Packages
+              </h2>
+              <p className="text-neutral-500 max-w-xl mx-auto">
+                Transparent starting points for every stage of growth. Every project is quoted
+                precisely after a free discovery call — no surprises.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                name: "Essential",
+                tagline: "For individuals & small businesses getting online",
+                price: "₦250k",
+                unit: "starting from",
+                features: [
+                  "5-7 page responsive website",
+                  "Contact & inquiry forms",
+                  "Basic SEO & speed optimization",
+                  "Mobile-optimized design",
+                  "2 weeks delivery + 1 month support",
+                ],
+                cta: "Start Simple",
+                highlight: false,
+              },
+              {
+                name: "Growth",
+                tagline: "For scaling businesses that need real systems",
+                price: "₦800k",
+                unit: "starting from",
+                features: [
+                  "Custom web application or business system",
+                  "User roles, dashboards & reporting",
+                  "API integrations & payments",
+                  "Database design & optimization",
+                  "Deployment + 3 months support",
+                ],
+                cta: "Build With Us",
+                highlight: true,
+              },
+              {
+                name: "Enterprise",
+                tagline: "For organizations with complex, long-term needs",
+                price: "Custom",
+                unit: "tailored to scope",
+                features: [
+                  "Multi-tenant or large-scale platforms",
+                  "Mobile apps + backend infrastructure",
+                  "Advanced security & compliance",
+                  "Dedicated technical consulting",
+                  "Ongoing retainer & SLA support",
+                ],
+                cta: "Request Proposal",
+                highlight: false,
+              },
+            ].map((pkg, i) => (
+              <motion.div
+                key={pkg.name}
+                initial={{ opacity: 0, y: 30, filter: "blur(4px)" }}
+                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ y: -6 }}
+                className={`relative rounded-2xl p-8 flex flex-col transition-all duration-400 ${
+                  pkg.highlight
+                    ? "bg-gradient-to-b from-gold/15 to-[#0f1a36] border border-gold/40 shadow-[0_8px_40px_rgba(0,114,255,0.12)]"
+                    : "bg-[#0f1a36] border border-white/[0.08] hover:border-gold/25"
+                }`}
+              >
+                {pkg.highlight && (
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gold text-[#0a1128] text-xs font-bold uppercase tracking-wide">
+                    Most Popular
+                  </span>
+                )}
+                <h3 className="text-xl font-bold text-white mb-1">{pkg.name}</h3>
+                <p className="text-neutral-500 text-sm mb-6">{pkg.tagline}</p>
+                <div className="mb-6">
+                  <span className={`text-4xl font-black ${pkg.highlight ? "text-gold" : "text-white"}`}>
+                    {pkg.price}
+                  </span>
+                  <span className="block text-xs text-neutral-500 mt-1">{pkg.unit}</span>
+                </div>
+                <ul className="space-y-3 mb-8 flex-1">
+                  {pkg.features.map((f, j) => (
+                    <li key={j} className="flex items-start gap-2.5 text-sm text-neutral-400">
+                      <svg className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  to="/contact"
+                  className={`inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 ${
+                    pkg.highlight
+                      ? "bg-gold text-[#0a1128] hover:bg-gold/90"
+                      : "border border-white/10 text-neutral-300 hover:border-gold/40 hover:text-gold"
+                  }`}
+                >
+                  {pkg.cta}
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 bg-[#060d1f]">
+        <div className="max-w-4xl mx-auto px-6">
+          <ScrollReveal>
+            <div className="mb-14 text-center">
+              <span className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block">
+                Common Questions
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Frequently Asked Questions
+              </h2>
+              <p className="text-neutral-500 max-w-xl mx-auto">
+                Answers to the questions we hear most often about starting a project.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="space-y-3">
+            {[
+              {
+                q: "How long does a typical project take?",
+                a: "Simple websites take 2-3 weeks. Custom web applications and business systems take 4-8 weeks. Mobile apps with backend infrastructure take 6-12 weeks. You receive a precise timeline after the free discovery call.",
+              },
+              {
+                q: "What does a free discovery call include?",
+                a: "We discuss your goals, requirements, and budget to propose the right approach and a clear estimate. There is zero obligation — you decide whether to move forward.",
+              },
+              {
+                q: "Do you provide maintenance and support after delivery?",
+                a: "Yes. Every project includes a support window, and we offer flexible maintenance plans — monthly, quarterly, or annual — for ongoing updates, bug fixes, and new features.",
+              },
+              {
+                q: "Can you work with us remotely?",
+                a: "Absolutely. DatTechGee Technologies is based in Abuja but works with clients worldwide through remote collaboration — daily updates, shared repositories, and regular calls keep you fully in the loop.",
+              },
+              {
+                q: "What do you need from us to get started?",
+                a: "A clear idea of your goals and any reference materials. We handle the rest — requirements analysis, architecture, design, development, and deployment. We will also sign an NDA before discussing sensitive details.",
+              },
+            ].map((faq, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.05 }}
+                className="bg-[#0f1a36] border border-white/[0.08] rounded-xl overflow-hidden"
+              >
+                <button
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  className="w-full flex items-center justify-between gap-4 p-5 text-left cursor-pointer"
+                >
+                  <span className="text-white font-semibold text-sm md:text-base">
+                    {faq.q}
+                  </span>
+                  <motion.span
+                    animate={{ rotate: openFaq === i ? 45 : 0 }}
+                    transition={{ duration: 0.25 }}
+                    className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gold flex-shrink-0"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                    </svg>
+                  </motion.span>
+                </button>
+                {openFaq === i && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    transition={{ duration: 0.25 }}
+                    className="overflow-hidden"
+                  >
+                    <p className="px-5 pb-5 text-sm text-neutral-500 leading-relaxed">
+                      {faq.a}
+                    </p>
+                  </motion.div>
+                )}
               </motion.div>
             ))}
           </div>
