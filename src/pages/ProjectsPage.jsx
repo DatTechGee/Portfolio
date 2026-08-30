@@ -182,8 +182,8 @@ export default function ProjectsPage() {
                       {project.description}
                     </p>
 
-                    {/* Case Study — Problem / Solution / Result for featured projects */}
-                    {project.featured && (
+                    {/* Case Study — Problem / Solution / Result */}
+                    {[project.problem, project.solution, project.result].some(Boolean) && (
                       <div className="mb-4 space-y-2.5">
                         {[
                           { label: "Problem", value: project.problem },
@@ -370,7 +370,7 @@ export default function ProjectsPage() {
                 </p>
 
                 {/* Case Study — Problem / Solution / Result */}
-                {selectedProject.featured && (
+                {[selectedProject.problem, selectedProject.solution, selectedProject.result].some(Boolean) && (
                   <div className="mb-6 grid gap-4 md:grid-cols-3">
                     {[
                       { label: "Problem", value: selectedProject.problem },
