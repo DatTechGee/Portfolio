@@ -52,6 +52,16 @@ const iconMap = {
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.098 19.902a3.75 3.75 0 005.304 0l6.401-6.402M6.75 21A3.75 3.75 0 013 17.25V4.125C3 3.504 3.504 3 4.125 3h5.25c.621 0 1.125.504 1.125 1.125v4.072M6.75 21a3.75 3.75 0 003.75-3.75V8.197M6.75 21h13.125c.621 0 1.125-.504 1.125-1.125v-5.25c0-.621-.504-1.125-1.125-1.125h-4.072M10.5 8.197l2.88-2.88c.438-.439 1.15-.439 1.59 0l3.712 3.713c.44.44.44 1.152 0 1.59l-2.879 2.88M6.75 17.25h.008v.008H6.75v-.008z" />
     </svg>
   ),
+  chart: (
+    <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+    </svg>
+  ),
+  brain: (
+    <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+    </svg>
+  ),
 };
 
 const serviceCategories = [
@@ -105,6 +115,32 @@ const serviceCategories = [
       "Component-driven architecture with React",
       "Interactive dashboards and data visualization",
       "Performance-optimized animations with Framer Motion",
+    ],
+  },
+  {
+    title: "Data Analysis & Business Intelligence",
+    description:
+      "Interactive dashboards, automated reporting, and analytics that turn raw business data into clear, actionable decisions. From KPI tracking to data pipelines across your existing systems.",
+    icon: "chart",
+    image: "/assets/data1.jpg",
+    features: [
+      "Interactive dashboards and KPI tracking",
+      "Automated reporting and data pipelines",
+      "Data cleaning, analysis, and visualization",
+      "Business intelligence with SQL and Python",
+    ],
+  },
+  {
+    title: "Data Science & AI Development",
+    description:
+      "Predictive models, machine learning, and AI-powered features embedded directly into your product. From recommendation engines to intelligent automation, we operationalize AI for real outcomes.",
+    icon: "brain",
+    image: "/assets/software55.jpg",
+    features: [
+      "Machine learning and predictive modeling",
+      "NLP, chatbots, and AI assistants",
+      "AI-powered automation and smart workflows",
+      "Model training, deployment, and integration",
     ],
   },
 ];
@@ -167,7 +203,7 @@ const processSteps = [
   {
     step: "04",
     title: "Deployment & Support",
-    image: "/assets/image6.jpg",
+    image: "/assets/soft6.jpg",
     description:
       "Production launch, performance monitoring, and ongoing maintenance. Your system stays fast, secure, and up-to-date.",
   },
@@ -178,7 +214,7 @@ const industries = [
   { name: "Healthcare", description: "Patient management, appointment scheduling, and medical record systems built with strict data privacy compliance.", image: "/assets/image4.jpg" },
   { name: "Finance", description: "Payment processing, transaction tracking, and financial reporting systems with bank-grade security.", image: "/assets/image2.jpg" },
   { name: "Real Estate", description: "Property listing platforms, tenant management, and CRM systems for real estate businesses.", image: "/assets/image3.jpg" },
-  { name: "E-Commerce", description: "Online stores, inventory management, order processing, and multi-vendor marketplace platforms.", image: "/assets/image5.jpg" },
+  { name: "E-Commerce", description: "Online stores, inventory management, order processing, and multi-vendor marketplace platforms.", image: "/assets/soft1.jpg" },
   { name: "Logistics", description: "Fleet tracking, delivery management, route optimization, and supply chain visibility systems.", image: "/assets/image8.jpg" },
 ];
 
@@ -187,8 +223,8 @@ export default function ServicesPage() {
   return (
     <main className="bg-[var(--bg-base)] min-h-screen">
       <Seo
-        title="Services | DatTechGee Technologies — Software. Innovation. Impact."
-        description="Web development, mobile app development, business systems, API integration, and UI/UX design. Custom software by DatTechGee Technologies in Abuja, Nigeria."
+        title="Services | DatTechGee Technologies ï¿½ Software. Innovation. Impact."
+        description="Web development, mobile app development, business systems, data analysis, data science & AI, API integration, and UI/UX design. Custom software by DatTechGee Technologies in Abuja, Nigeria."
         path="/services"
         image="/assets/logo.png"
         type="website"
@@ -207,14 +243,14 @@ export default function ServicesPage() {
               What We Do
             </h1>
             <p className="text-neutral-500 max-w-2xl mx-auto text-lg">
-              The services Isaac Emmanuel and the DatTechGee team deliver — the
+              The services Isaac Emmanuel and the DatTechGee team deliver ï¿½ the
               technical and operational backbone upon which serious businesses grow.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
             <div className="mt-10 max-w-3xl mx-auto">
               <div className="relative rounded-2xl overflow-hidden border border-white/[0.08]">
-                <img src="/assets/image5.jpg" alt="DatTechGee Technologies — Digital solutions" className="w-full h-48 md:h-64 object-cover opacity-70" />
+                <img src="/assets/websiteprof.jpg" alt="DatTechGee Technologies ï¿½ Digital solutions" className="w-full h-48 md:h-64 object-cover opacity-70" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-base)]/80 via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 flex items-center justify-between">
                   <div>
@@ -372,7 +408,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Development Process — Horizontal Timeline */}
+      {/* Development Process ï¿½ Horizontal Timeline */}
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
@@ -553,7 +589,7 @@ export default function ServicesPage() {
                 title: "Fixed-Price Project",
                 description: "Clear scope, timeline, and budget agreed upfront. Ideal for well-defined projects with specific requirements and measurable deliverables.",
                 bestFor: "Websites, MVPs, feature development",
-                timeline: "2–8 weeks",
+                timeline: "2ï¿½8 weeks",
                 image: "/assets/image2.jpg",
               },
               {
@@ -561,14 +597,14 @@ export default function ServicesPage() {
                 description: "Ongoing development support with a dedicated monthly allocation. Perfect for continuous improvement, new features, and long-term product growth.",
                 bestFor: "Products, maintenance, iterations",
                 timeline: "Monthly",
-                image: "/assets/image5.jpg",
+                image: "/assets/soft2.jpg",
               },
               {
                 title: "Technical Consulting",
                 description: "Architecture reviews, technology strategy, code audits, and technical advisory for teams building their own products and platforms.",
                 bestFor: "Architecture, code reviews, strategy",
                 timeline: "Per session",
-                image: "/assets/image7.jpg",
+                image: "/assets/data1.jpg",
               },
             ].map((model, i) => (
               <motion.div
@@ -621,7 +657,7 @@ export default function ServicesPage() {
               </h2>
               <p className="text-neutral-500 max-w-xl mx-auto">
                 Transparent starting points for every stage of growth. Every project is quoted
-                precisely after a free discovery call — no surprises.
+                precisely after a free discovery call ï¿½ no surprises.
               </p>
             </div>
           </ScrollReveal>
@@ -754,19 +790,19 @@ export default function ServicesPage() {
               },
               {
                 q: "What does a free discovery call include?",
-                a: "We discuss your goals, requirements, and budget to propose the right approach and a clear estimate. There is zero obligation — you decide whether to move forward.",
+                a: "We discuss your goals, requirements, and budget to propose the right approach and a clear estimate. There is zero obligation ï¿½ you decide whether to move forward.",
               },
               {
                 q: "Do you provide maintenance and support after delivery?",
-                a: "Yes. Every project includes a support window, and we offer flexible maintenance plans — monthly, quarterly, or annual — for ongoing updates, bug fixes, and new features.",
+                a: "Yes. Every project includes a support window, and we offer flexible maintenance plans ï¿½ monthly, quarterly, or annual ï¿½ for ongoing updates, bug fixes, and new features.",
               },
               {
                 q: "Can you work with us remotely?",
-                a: "Absolutely. DatTechGee Technologies is based in Abuja but works with clients worldwide through remote collaboration — daily updates, shared repositories, and regular calls keep you fully in the loop.",
+                a: "Absolutely. DatTechGee Technologies is based in Abuja but works with clients worldwide through remote collaboration ï¿½ daily updates, shared repositories, and regular calls keep you fully in the loop.",
               },
               {
                 q: "What do you need from us to get started?",
-                a: "A clear idea of your goals and any reference materials. We handle the rest — requirements analysis, architecture, design, development, and deployment. We will also sign an NDA before discussing sensitive details.",
+                a: "A clear idea of your goals and any reference materials. We handle the rest ï¿½ requirements analysis, architecture, design, development, and deployment. We will also sign an NDA before discussing sensitive details.",
               },
             ].map((faq, i) => (
               <motion.div

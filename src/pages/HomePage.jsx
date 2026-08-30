@@ -93,7 +93,7 @@ const capabilities = [
     title: "Mobile Application Development",
     description:
       "Cross-platform Android/iOS apps with React Native and Expo � GPS tracking, push notifications, biometric auth, and offline capabilities.",
-    image: "/assets/image5.jpg",
+    image: "/assets/soft.jpg",
   },
   {
     icon: (
@@ -167,7 +167,7 @@ const partners = [
     description:
       "Organizations experiencing rapid growth encounter operational friction. We systematize operations and implement technology-enabled workflows that bring clarity to complexity.",
     num: "02",
-    image: "/assets/image5.jpg",
+    image: "/assets/soft4.jpg",
   },
   {
     title: "Organizations Requiring Execution",
@@ -175,7 +175,7 @@ const partners = [
     description:
       "We work with businesses that prioritize measurable outcomes over theoretical frameworks. We provide the technology backbone that transforms strategic plans into operational reality.",
     num: "03",
-    image: "/assets/image7.jpg",
+    image: "/assets/software55.jpg",
   },
   {
     title: "Teams Valuing Structure",
@@ -198,13 +198,13 @@ const differentiators = [
     num: "02",
     title: "Technology as Infrastructure",
     description: "We choose technology based on fit, not trends. Our stack decisions are guided by your business requirements, timeline, and long-term maintenance capacity.",
-    image: "/assets/image7.jpg",
+    image: "/assets/soft6.jpg",
   },
   {
     num: "03",
     title: "Systems Thinking",
     description: "We design interconnected solutions that address the full scope of your operations. Isolated features create complexity; integrated systems create clarity.",
-    image: "/assets/image5.jpg",
+    image: "/assets/softt.jpg",
   },
   {
     num: "04",
@@ -335,7 +335,7 @@ const HomePage = () => {
 
               <ScrollReveal direction="up" delay={0.4}>
                 <div className="flex flex-wrap gap-2 justify-center lg:justify-start mt-2">
-                  {["React", "Laravel", "PHP", "React Native", "Node.js", "AI"].map((t) => (
+                  {["React", "Laravel", "PHP", "React Native", "Node.js", "AI", "Data Science"].map((t) => (
                     <span
                       key={t}
                       className="text-xs font-medium text-neutral-300 bg-white/5 border border-white/10 rounded-full px-3 py-1.5"
@@ -595,6 +595,16 @@ const HomePage = () => {
                 title: "Blockchain Applications",
                 desc: "Smart contracts and transparent decentralized applications.",
                 image: "/assets/software5.jpg",
+              },
+              {
+                title: "Data Analysis & BI",
+                desc: "Dashboards, automated reporting, and analytics that turn raw data into decisions.",
+                image: "/assets/data1.jpg",
+              },
+              {
+                title: "Data Science & AI",
+                desc: "Predictive models, ML, NLP, and AI features built into your product.",
+                image: "/assets/software55.jpg",
               },
               {
                 title: "Full Product Delivery",
@@ -1111,7 +1121,7 @@ const HomePage = () => {
           <ScrollReveal>
             <div className="relative bg-[var(--bg-card)] border border-white/[0.06] rounded-3xl p-10 md:p-16 text-center overflow-hidden">
               <div className="absolute inset-0 rounded-3xl overflow-hidden">
-                <img src="/assets/image5.jpg" alt="" className="w-full h-full object-cover opacity-10" />
+                <img src="/assets/software55.jpg" alt="" className="w-full h-full object-cover opacity-10" />
               </div>
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-gold/5 rounded-full blur-[100px] pointer-events-none" />
 

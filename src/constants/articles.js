@@ -14,7 +14,7 @@ export const featuredArticle = {
     "A deep dive into the architectural decisions that separate short-lived prototypes from production-grade applications. From monolith to modular design, database indexing strategies, caching layers, and horizontal scaling — this guide covers the foundational patterns every full-stack developer needs to understand before scaling beyond a single server. Based on real-world experience building systems that handle thousands of concurrent users.",
   date: "Jan 15, 2026",
   readTime: "12 min read",
-  image: "/assets/image7.jpg",
+  image: "/assets/soft6.jpg",
   body: [
     {
       heading: "Start With the Right Boundaries",
@@ -96,7 +96,7 @@ export const articles = [
       "APIs are the backbone of connected systems. Learn how RESTful design, versioning strategies, rate limiting, and documentation practices create interfaces that other developers actually want to use. This guide draws from our experience building APIs that serve multiple client applications simultaneously.",
     date: "Jan 8, 2026",
     readTime: "10 min read",
-    image: "/assets/image5.jpg",
+    image: "/assets/software55.jpg",
     body: [
       {
         heading: "APIs as the Glue of Modern Systems",

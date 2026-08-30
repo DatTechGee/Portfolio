@@ -9,9 +9,9 @@ const industryImages = [
   "/assets/image2.jpg",
   "/assets/image3.jpg",
   "/assets/image4.jpg",
-  "/assets/image5.jpg",
-  "/assets/image6.jpg",
-  "/assets/image7.jpg",
+  "/assets/soft1.jpg",
+  "/assets/soft2.jpg",
+  "/assets/soft4.jpg",
   "/assets/image8.jpg",
 ];
 
@@ -28,14 +28,14 @@ const companyValues = [
     title: "Technology as Infrastructure",
     description:
       "We build technical foundations that power operations, not superficial digital layers that add complexity.",
-    image: "/assets/image7.jpg",
+    image: "/assets/data1.jpg",
   },
   {
     num: "03",
     title: "Systems Thinking",
     description:
       "We design interconnected frameworks that address the full scope of business operations, not isolated solutions.",
-    image: "/assets/image5.jpg",
+    image: "/assets/softt.jpg",
   },
   {
     num: "04",
@@ -91,7 +91,7 @@ const skillCategories = [
   },
   {
     title: "Specialized",
-    image: "/assets/image6.jpg",
+    image: "/assets/software55.jpg",
     skills: [
       { name: "Geolocation", level: 88 },
       { name: "Dashboard Dev", level: 90 },
@@ -111,7 +111,7 @@ export default function AboutPage() {
   return (
     <main className="bg-[var(--bg-base)] min-h-screen">
       <Seo
-        title="About | DatTechGee Technologies — Isaac Emmanuel"
+        title="About | DatTechGee Technologies ï¿½ Isaac Emmanuel"
         description="Meet Isaac Emmanuel, Founder & Lead Developer of DatTechGee Technologies. Full Stack Developer in Abuja building web, mobile, and business systems with React, Laravel, Node.js, and MySQL."
         path="/about"
         image="/assets/PORTFILO.png"
@@ -131,7 +131,7 @@ export default function AboutPage() {
               </span>
             </h1>
             <p className="text-neutral-500 max-w-2xl mx-auto text-lg">
-              The company Isaac Emmanuel built — designing and deploying digital
+              The company Isaac Emmanuel built ï¿½ designing and deploying digital
               infrastructure for businesses that demand execution, structure, and
               measurable outcomes.
             </p>
@@ -149,8 +149,8 @@ export default function AboutPage() {
               <div className="relative">
                 <div className="rounded-2xl overflow-hidden border-2 border-gold/30 shadow-[0_0_40px_rgba(0, 114, 255,0.1)]">
                   <img
-                    src="/assets/image5.jpg"
-                    alt="DatTechGee Technologies — Team collaboration"
+                    src="/assets/websiteprof.jpg"
+                    alt="DatTechGee Technologies ï¿½ Team collaboration"
                     className="w-full h-auto object-cover"
                   />
                 </div>
@@ -169,7 +169,7 @@ export default function AboutPage() {
                 <div className="space-y-4 text-neutral-500 leading-relaxed text-sm md:text-base">
                   <p>
                     DatTechGee Technologies is the software company founded by
-                    Isaac Emmanuel — a full-stack developer and engineer building
+                    Isaac Emmanuel ï¿½ a full-stack developer and engineer building
                     secure, scalable web applications, mobile apps, and business
                     systems. We serve clients across Nigeria and beyond, delivering
                     end-to-end digital infrastructure that powers growth.
@@ -270,7 +270,7 @@ export default function AboutPage() {
 
       <div className="section-divider" />
 
-      {/* ===== THE FOUNDER — ISAAC EMMANUEL ===== */}
+      {/* ===== THE FOUNDER ï¿½ ISAAC EMMANUEL ===== */}
       <section className="section-spacing">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -289,7 +289,7 @@ export default function AboutPage() {
                   <p>
                     With over 4 years of hands-on experience, Isaac designs and builds
                     full-stack web and mobile applications that help businesses
-                    scale — from student management systems to blockchain-powered
+                    scale ï¿½ from student management systems to blockchain-powered
                     platforms.
                   </p>
                   <p>
@@ -303,7 +303,7 @@ export default function AboutPage() {
                   <p>
                     Based in Nigeria and working globally, Isaac has delivered
                     end-to-end solutions for schools, startups, SMEs, and
-                    organizations — covering everything from requirements analysis
+                    organizations ï¿½ covering everything from requirements analysis
                     and database architecture to deployment and ongoing
                     maintenance.
                   </p>
@@ -313,7 +313,7 @@ export default function AboutPage() {
 
             <ScrollReveal direction="right">
               <div className="relative rounded-2xl overflow-hidden border border-white/[0.08]">
-                <img src="/assets/PORTFILO.png" alt="Isaac Emmanuel — Founder" className="w-full h-full object-cover opacity-90" />
+                <img src="/assets/PORTFILO.png" alt="Isaac Emmanuel ï¿½ Founder" className="w-full h-full object-cover opacity-90" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-base)]/70 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 space-y-2">
                   {[
@@ -351,7 +351,7 @@ export default function AboutPage() {
               </h2>
               <p className="text-neutral-500 max-w-xl mx-auto">
                 The technologies we use to build robust, production-ready
-                applications — from frontend to backend and mobile.
+                applications ï¿½ from frontend to backend and mobile.
               </p>
             </div>
           </ScrollReveal>
