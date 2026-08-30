@@ -182,7 +182,7 @@ export default function ProjectsPage() {
                       project.featured ? "h-56" : "h-48"
                     }`}
                     style={{
-                      background: project.gradient || "linear-gradient(135deg, var(--bg-card), #1a2a50)",
+                      background: project.gradient || "linear-gradient(135deg, var(--bg-card), var(--bg-band))",
                     }}
                   >
                     {project.image && (
@@ -407,7 +407,7 @@ export default function ProjectsPage() {
               <div
                 className="h-64 relative overflow-hidden"
                 style={{
-                  background: selectedProject.gradient || "linear-gradient(135deg, var(--bg-card), #1a2a50)",
+                  background: selectedProject.gradient || "linear-gradient(135deg, var(--bg-card), var(--bg-band))",
                 }}
               >
                 {selectedProject.image && (

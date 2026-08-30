@@ -377,42 +377,64 @@ const HomePage = () => {
 
             {/* Right - Hero Visual */}
             <ScrollReveal direction="right" delay={0.3} className="relative flex justify-center order-first lg:order-none">
-              <motion.div style={{ y: heroY }} className="relative">
-                <div className="absolute -inset-6 rounded-2xl bg-gradient-to-br from-gold/30 via-gold/10 to-transparent blur-2xl opacity-60" />
+              <motion.div style={{ y: heroY }} className="relative w-full max-w-[520px]">
+                <div className="absolute -inset-8 rounded-[2rem] bg-gradient-to-br from-gold/25 via-gold/5 to-transparent blur-3xl opacity-70" />
 
-                {/* Hero Visual */}
-                <div className="relative w-[300px] h-[330px] sm:w-[380px] sm:h-[420px] lg:w-[440px] lg:h-[500px] rounded-2xl overflow-hidden border-2 border-gold/30">
-                  <img
-                    src="/assets/software1.jpg"
-                    alt="DatTechGee Technologies � Custom software development"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-base)]/90 via-[var(--bg-base)]/20 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <p className="text-white text-lg font-bold">DatTechGee Technologies</p>
-                    <p className="text-gold text-sm">Software. Innovation. Impact.</p>
+                {/* Avatar with animated conic ring */}
+                <div className="relative flex flex-col items-center mb-8">
+                  <div className="lux-ring w-44 h-44 sm:w-52 sm:h-52">
+                    <div className="rounded-full overflow-hidden bg-[var(--bg-card)]">
+                      <img
+                        src="/assets/PORTFILO.png"
+                        alt="Isaac Emmanuel � founder of DatTechGee Technologies"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   </div>
+
+                  {/* Floating metric chips */}
+                  <motion.span
+                    className="absolute top-3 left-2 sm:left-0 flex items-center gap-2 rounded-full bg-[var(--bg-card)]/95 border border-gold/30 px-3.5 py-2 text-xs font-bold text-gold shadow-xl"
+                    animate={{ y: [0, -7, 0] }}
+                    transition={{ duration: 3.4, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
+                    {portfolioStats.projectsDelivered}+ Projects
+                  </motion.span>
+                  <motion.span
+                    className="absolute bottom-2 right-2 sm:right-0 flex items-center gap-2 rounded-full bg-[var(--bg-card)]/95 border border-gold/30 px-3.5 py-2 text-xs font-bold text-gold shadow-xl"
+                    animate={{ y: [0, 6, 0] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                    {portfolioStats.yearsExperience} Yrs Experience
+                  </motion.span>
                 </div>
 
-                {/* Floating tech elements */}
-                {[
-                  { label: "React", top: "6%", left: "-10%" },
-                  { label: "Laravel", top: "18%", right: "-12%" },
-                  { label: "Node.js", bottom: "22%", left: "-14%" },
-                  { label: "PHP", bottom: "10%", right: "-10%" },
-                  { label: "AI", top: "38%", right: "-14%" },
-                  { label: "API", bottom: "34%", left: "-12%" },
-                ].map((t, i) => (
-                  <motion.span
-                    key={t.label}
-                    className="absolute z-10 text-xs font-semibold text-gold bg-[var(--bg-card)]/95 border border-gold/30 rounded-full px-3 py-1.5 shadow-lg"
-                    style={{ top: t.top, left: t.left, right: t.right, bottom: t.bottom }}
-                    animate={{ y: [0, -6, 0] }}
-                    transition={{ duration: 3 + i * 0.3, repeat: Infinity, ease: "easeInOut" }}
-                  >
-                    {t.label}
-                  </motion.span>
-                ))}
+                {/* Terminal card */}
+                <div className="lux-card p-0 overflow-hidden">
+                  <div className="flex items-center gap-2 px-4 py-3 border-b border-[var(--border-soft)] bg-[var(--bg-elev)]/60">
+                    <span className="w-3 h-3 rounded-full bg-red-400/80" />
+                    <span className="w-3 h-3 rounded-full bg-amber-400/80" />
+                    <span className="w-3 h-3 rounded-full bg-emerald-400/80" />
+                    <span className="ml-3 text-xs font-mono text-neutral-500">
+                      dattechgee ~ deploy
+                    </span>
+                  </div>
+                  <div className="p-5 font-mono text-[13px] leading-7">
+                    <p><span className="text-neutral-500">$</span> <span className="text-gold">build</span> <span className="text-white">--stack react+laravel</span></p>
+                    <p className="text-white"><span className="text-emerald-400">✓</span> compiling modules...<span className="text-emerald-400"> done</span></p>
+                    <p className="text-white"><span className="text-emerald-400">✓</span> api connected <span className="text-neutral-500">(24 endpoints)</span></p>
+                    <p className="text-white"><span className="text-emerald-400">✓</span> auth secured <span className="text-neutral-500">(JWT + RBAC)</span></p>
+                    <p className="text-white"><span className="text-emerald-400">✓</span> database optimized</p>
+                    <p className="mt-2">
+                      <span className="text-gold">➜ ready</span>{" "}
+                      <span className="text-neutral-500">ship it →</span>{" "}
+                      <span className="inline-flex items-center gap-1.5 rounded bg-gold/10 px-2 py-0.5 text-gold">online</span>
+                    </p>
+                    <span className="inline-block w-2 h-4 bg-gold animate-pulse align-middle" />
+                  </div>
+                </div>
               </motion.div>
             </ScrollReveal>
           </div>
@@ -505,8 +527,8 @@ const HomePage = () => {
       <section className="section-spacing relative py-16">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <ScrollReveal>
-            <div className="bg-[var(--bg-card)] border border-white/[0.08] rounded-xl p-8 md:p-12">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+            <div className="lux-card lux-glow p-8 md:p-12">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6">
                 {[
                   {
                     value: `${portfolioStats.yearsExperience}+`,
@@ -527,7 +549,9 @@ const HomePage = () => {
                 ].map((stat, i) => (
                   <motion.div
                     key={stat.label}
-                    className="text-center"
+                    className={`text-center md:relative ${
+                      i > 0 ? "md:before:absolute md:before:left-0 md:before:top-1/4 md:before:h-1/2 md:before:w-px md:before:bg-[var(--border)]" : ""
+                    }`}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -550,13 +574,11 @@ const HomePage = () => {
       {/* ===== WHAT I BUILD � PERSONAL ===== */}
       <div className="section-divider" />
       <section className="section-spacing relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-base)] via-[#0c1429] to-[var(--bg-base)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-base)] via-[var(--bg-band)] to-[var(--bg-base)]" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <ScrollReveal>
-              <p className="text-gold text-sm uppercase tracking-[0.2em] font-semibold mb-4">
-                What I Build
-              </p>
+              <p className="lux-eyebrow mb-4">What I Build</p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
@@ -609,9 +631,9 @@ const HomePage = () => {
             ].map((item, i) => (
               <ScrollReveal key={item.title} delay={i * 0.1}>
                 <motion.div
-                  whileHover={{ y: -6, scale: 1.02 }}
+                  whileHover={{ y: -6 }}
                   transition={{ duration: 0.3 }}
-                  className="group bg-[var(--bg-card)] border border-white/[0.08] rounded-xl overflow-hidden h-full hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400"
+                  className="group lux-card h-full"
                 >
                   <div className="relative h-40 overflow-hidden">
                     <img
@@ -643,9 +665,7 @@ const HomePage = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <ScrollReveal>
-              <p className="text-gold text-sm uppercase tracking-[0.2em] font-semibold mb-4">
-                Our Position
-              </p>
+              <p className="lux-eyebrow mb-4">Our Position</p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
@@ -693,7 +713,7 @@ const HomePage = () => {
               <ScrollReveal key={pillar.title} delay={i * 0.12}>
                 <motion.div
                   whileHover={{ y: -6 }}
-                  className="group bg-[var(--bg-card)] border border-white/[0.08] rounded-xl overflow-hidden text-center hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400"
+                  className="group lux-card text-center"
                 >
                   <div className="relative h-40 overflow-hidden">
                     <img
@@ -720,13 +740,11 @@ const HomePage = () => {
       {/* ===== WHAT WE DO � CORE CAPABILITIES ===== */}
       <div className="section-divider" />
       <section className="section-spacing relative py-24">
-        <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-base)] via-[#0c1429] to-[var(--bg-base)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-base)] via-[var(--bg-band)] to-[var(--bg-base)]" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <ScrollReveal>
-              <p className="text-gold text-sm uppercase tracking-[0.2em] font-semibold mb-4">
-                Core Capabilities
-              </p>
+              <p className="lux-eyebrow mb-4">Core Capabilities</p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
@@ -749,9 +767,9 @@ const HomePage = () => {
             {capabilities.map((cap, i) => (
               <ScrollReveal key={cap.title} delay={i * 0.1}>
                 <motion.div
-                  whileHover={{ y: -6, scale: 1.02 }}
+                  whileHover={{ y: -6 }}
                   transition={{ duration: 0.3 }}
-                  className="group bg-[var(--bg-card)] border border-white/[0.08] rounded-xl overflow-hidden h-full flex flex-col hover:border-gold/25 hover:shadow-[0_8px_30px_rgba(0, 114, 255,0.06)] transition-all duration-400"
+                  className="group lux-card h-full flex flex-col"
                 >
                   <div className="relative h-36 overflow-hidden">
                     <img
@@ -804,9 +822,7 @@ const HomePage = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <ScrollReveal>
-              <p className="text-gold text-sm uppercase tracking-[0.2em] font-semibold mb-4">
-                How I Build
-              </p>
+              <p className="lux-eyebrow mb-4">How I Build</p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
@@ -985,7 +1001,7 @@ const HomePage = () => {
       {/* ===== TESTIMONIALS ===== */}
       <div className="section-divider" />
       <section className="section-spacing relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-base)] via-[#0c1429] to-[var(--bg-base)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-base)] via-[var(--bg-band)] to-[var(--bg-base)]" />
         <div className="relative z-10">
           <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-12">
             <div className="text-center">

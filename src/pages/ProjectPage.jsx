@@ -133,7 +133,7 @@ export default function ProjectPage() {
             className="relative rounded-2xl overflow-hidden border border-white/[0.08] h-64 md:h-96"
             style={{
               background:
-                project.gradient || "linear-gradient(135deg, var(--bg-card), #1a2a50)",
+                project.gradient || "linear-gradient(135deg, var(--bg-card), var(--bg-band))",
             }}
           >
             {project.image && (
@@ -246,7 +246,7 @@ export default function ProjectPage() {
                     className="h-28 relative overflow-hidden"
                     style={{
                       background:
-                        p.gradient || "linear-gradient(135deg, var(--bg-card), #1a2a50)",
+                        p.gradient || "linear-gradient(135deg, var(--bg-card), var(--bg-band))",
                     }}
                   >
                     {p.image && (
