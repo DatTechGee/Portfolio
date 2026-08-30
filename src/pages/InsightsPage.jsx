@@ -1,4 +1,5 @@
-﻿import { motion } from "motion/react";
+﻿import { useState } from "react";
+import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import ScrollReveal from "../components/ScrollReveal";
 import Seo from "../components/Seo";
@@ -167,6 +168,39 @@ function ArticleCard({ article, index, large = false }) {
 }
 
 export default function InsightsPage() {
+  const [email, setEmail] = useState("");
+  const [subscribing, setSubscribing] = useState(false);
+  const [subscribed, setSubscribed] = useState(false);
+  const [subscribeError, setSubscribeError] = useState(null);
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    setSubscribing(true);
+    setSubscribeError(null);
+    try {
+      const emailjs = (await import("@emailjs/browser")).default;
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: "Newsletter Subscriber",
+          from_email: email,
+          subject: "Newsletter subscription",
+          message: `New newsletter subscriber: ${email}`,
+          to_name: "Isaac Emmanuel",
+          to_email: import.meta.env.VITE_EMAILJS_TO_EMAIL || "ei0413405@gmail.com",
+        }
+      );
+      setSubscribed(true);
+      setEmail("");
+    } catch (err) {
+      console.error("Subscribe failed:", err);
+      setSubscribeError("Something went wrong. Please try again.");
+    } finally {
+      setSubscribing(false);
+    }
+  };
+
   return (
     <main className="bg-[#0a1128] min-h-screen">
       <Seo
@@ -367,26 +401,49 @@ export default function InsightsPage() {
               </p>
 
               {/* Email Form */}
-              <form
-                className="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto relative"
-                onSubmit={(e) => e.preventDefault()}
-              >
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="w-full sm:flex-1 bg-[#0a1128] border border-white/[0.08] rounded-full px-5 py-3.5 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-gold/40 focus:shadow-[0_0_20px_rgba(0, 114, 255,0.08)] transition-all duration-300"
-                />
-                <button
-                  type="submit"
-                  className="w-full sm:w-auto bg-gold text-[#0a1128] px-7 py-3.5 rounded-full font-semibold text-sm hover:bg-gold/90 transition-colors duration-300 whitespace-nowrap"
+              {subscribed ? (
+                <div className="max-w-md mx-auto relative">
+                  <div className="flex items-center justify-center gap-2 text-gold mb-2">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="font-semibold text-white">You're subscribed!</span>
+                  </div>
+                  <p className="text-sm text-neutral-400">
+                    Thanks for joining. Weekly insights are on the way to your inbox.
+                  </p>
+                </div>
+              ) : (
+                <form
+                  className="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto relative"
+                  onSubmit={handleSubscribe}
                 >
-                  Subscribe
-                </button>
-              </form>
+                  <input
+                    type="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your email"
+                    className="w-full sm:flex-1 bg-[#0a1128] border border-white/[0.08] rounded-full px-5 py-3.5 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-gold/40 focus:shadow-[0_0_20px_rgba(0, 114, 255,0.08)] transition-all duration-300"
+                  />
+                  <button
+                    type="submit"
+                    disabled={subscribing}
+                    className="w-full sm:w-auto bg-gold text-[#0a1128] px-7 py-3.5 rounded-full font-semibold text-sm hover:bg-gold/90 transition-colors duration-300 whitespace-nowrap disabled:opacity-60 disabled:cursor-not-allowed"
+                  >
+                    {subscribing ? "Subscribing…" : "Subscribe"}
+                  </button>
+                </form>
+              )}
 
-              <p className="text-xs text-neutral-400 mt-4 relative">
-                No spam. Unsubscribe anytime.
-              </p>
+              {subscribeError && (
+                <p className="text-xs text-rose-400 mt-4 relative">{subscribeError}</p>
+              )}
+              {!subscribed && !subscribeError && (
+                <p className="text-xs text-neutral-400 mt-4 relative">
+                  No spam. Unsubscribe anytime.
+                </p>
+              )}
             </div>
           </ScrollReveal>
         </div>

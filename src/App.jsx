@@ -5,6 +5,7 @@ import Navbar from "./sections/Navbar";
 import Footer from "./sections/Footer";
 import Preloader from "./components/Preloader";
 import ScrollButtons from "./components/ScrollButtons";
+import ScrollProgress from "./components/ScrollProgress";
 import ErrorBoundary from "./components/ErrorBoundary";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
@@ -44,6 +45,7 @@ const App = () => {
             }`}
           >
             <Navbar />
+            <ScrollProgress />
             <main id="main-content">
               <AnimatePresence mode="wait">
                 <Routes location={location} key={location.pathname}>
