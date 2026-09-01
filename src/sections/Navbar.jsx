@@ -47,7 +47,7 @@ const ThemeToggle = ({ className = "" }) => {
       onClick={toggleTheme}
       title={isLight ? "Switch to dark mode" : "Switch to light mode"}
       aria-label={isLight ? "Switch to dark mode" : "Switch to light mode"}
-      className={`inline-flex items-center justify-center p-2 rounded-full border border-white/10 text-neutral-400 hover:text-gold hover:border-gold/40 transition-colors cursor-pointer ${className}`}
+      className={`inline-flex items-center justify-center p-2 rounded-full border border-[var(--border-soft)] text-neutral-400 hover:text-gold hover:border-gold/40 transition-colors cursor-pointer ${className}`}
     >
       {isLight ? (
         <svg className="w-4.5 h-4.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -64,7 +64,6 @@ const ThemeToggle = ({ className = "" }) => {
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -72,22 +71,18 @@ const Navbar = () => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const navBg = scrolled
-    ? "backdrop-blur-2xl bg-[var(--bg-base)]/80 border-b border-white/[0.06] shadow-xl shadow-black/30"
-    : "backdrop-blur-sm bg-[var(--bg-base)]/20";
-
   return (
-    <div className={`fixed inset-x-0 z-20 w-full transition-all duration-500 ${navBg}`}>
+    <motion.div
+      initial={{ y: -80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      className="fixed inset-x-0 top-0 z-50 w-full backdrop-blur-xl bg-[var(--bg-base)]/85 border-b border-[var(--border-soft)]"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between py-3 sm:py-4">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5 group">
+        <div className="relative flex items-center justify-between h-16 sm:h-[72px]">
+
+          {/* Logo — left */}
+          <Link to="/" className="flex items-center gap-2.5 group shrink-0 z-10">
             <motion.div
               className="relative"
               whileHover={{ y: -2, scale: 1.03 }}
@@ -101,18 +96,55 @@ const Navbar = () => {
               <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-gold rounded-full border-2 border-[var(--bg-base)]" />
             </motion.div>
             <div className="flex flex-col">
-              <span className="text-[15px] font-bold leading-tight tracking-tight text-white group-hover:text-gold transition-colors duration-300">
+              <span className="text-[15px] font-bold leading-tight tracking-tight text-tx-strong group-hover:text-gold transition-colors duration-300">
                 DatTechGee
               </span>
-              <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-neutral-500 leading-tight">
+              <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-tx-muted leading-tight">
                 DatTechGee Technologies
               </span>
             </div>
           </Link>
 
-          {/* Right controls */}
-          <div className="flex items-center gap-2">
-            <ThemeToggle />
+          {/* Desktop nav — centered */}
+          <nav
+            className="hidden sm:flex items-center h-full absolute left-1/2 -translate-x-1/2 gap-1 z-[5]"
+            aria-label="Main navigation"
+          >
+            {navLinks.map((link) => {
+              const isActive = location.pathname === link.path;
+              return (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`relative flex items-center h-full px-4 text-sm transition-colors duration-300 ${
+                    isActive
+                      ? "text-gold font-semibold"
+                      : "text-tx-muted hover:text-gold"
+                  }`}
+                >
+                  {isActive && (
+                    <motion.span
+                      layoutId="nav-indicator"
+                      className="absolute bottom-0 left-1 right-1 h-[2px] bg-gold rounded-full"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                  <span className="relative z-10">{link.label}</span>
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* Right controls — CTA + theme + hamburger */}
+          <div className="flex items-center gap-2 shrink-0 z-10">
+            <ThemeToggle className="hidden sm:inline-flex" />
+            <ResumeButton className="hidden sm:inline-flex px-4 py-2" />
+            <Link
+              to="/contact"
+              className="hidden sm:flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-full bg-gold text-navy hover:bg-gold/90 transition-all duration-300 shadow-lg shadow-gold/20"
+            >
+              Let&apos;s Talk
+            </Link>
             <motion.button
               onClick={() => setIsOpen(!isOpen)}
               className="flex cursor-pointer sm:hidden p-2 rounded-lg text-neutral-400 hover:text-gold transition-colors"
@@ -128,77 +160,53 @@ const Navbar = () => {
               />
             </motion.button>
           </div>
-
-          {/* Desktop nav */}
-          <nav className="hidden sm:flex items-center gap-1" aria-label="Main navigation">
-            {navLinks.map((link) => {
-              const isActive = location.pathname === link.path;
-              return (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`relative px-4 py-2 text-sm rounded-full transition-all duration-300 ${
-                    isActive
-                      ? "text-gold font-semibold"
-                      : "text-neutral-400 hover:text-gold"
-                  }`}
-                >
-                  {isActive && (
-                    <motion.span
-                      layoutId="nav-indicator"
-                      className="absolute inset-0 rounded-full bg-gold/10 border border-gold/20"
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                    />
-                  )}
-                  <span className="relative z-10">{link.label}</span>
-                </Link>
-              );
-            })}
-          </nav>
-
-          {/* CTA */}
-          <div className="hidden sm:flex items-center gap-2">
-            <ResumeButton className="px-4 py-2.5" />
-            <Link
-              to="/contact"
-              className="flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-full bg-gold text-navy hover:bg-gold/90 transition-all duration-300 shadow-lg shadow-gold/20"
-            >
-              Let&apos;s Talk
-            </Link>
-          </div>        </div>
+        </div>
       </div>
 
       {/* Mobile menu */}
       <AnimatePresence>
         {isOpen && (
           <>
-            <div className="absolute inset-0 z-10 sm:hidden bg-black/40" onClick={() => setIsOpen(false)} />
+            <div
+              className="absolute inset-0 z-10 sm:hidden bg-black/40"
+              onClick={() => setIsOpen(false)}
+            />
             <motion.div
-              className="block overflow-hidden sm:hidden relative z-20 bg-[var(--bg-base)]/95 backdrop-blur-2xl border-t border-white/5"
+              className="block overflow-hidden sm:hidden relative z-20 bg-[var(--bg-base)]/95 backdrop-blur-2xl border-t border-[var(--border-soft)]"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
             >
-              <nav className="py-4 px-5 flex flex-col gap-1" aria-label="Mobile navigation">
+              <nav
+                className="py-4 px-5 flex flex-col gap-1"
+                aria-label="Mobile navigation"
+              >
                 {navLinks.map((link) => {
                   const isActive = location.pathname === link.path;
                   return (
-                    <Link
+                    <motion.div
                       key={link.path}
-                      to={link.path}
-                      className={`px-4 py-3 rounded-xl text-sm font-medium transition-all ${
-                        isActive
-                          ? "bg-gold/10 text-gold border border-gold/20"
-                          : "text-neutral-400 hover:bg-white/5"
-                      }`}
+                      whileHover={{ x: 4 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     >
-                      {link.label}
-                    </Link>
+                      <Link
+                        to={link.path}
+                        onClick={() => setIsOpen(false)}
+                        className={`block px-4 py-3 rounded-xl text-sm font-medium transition-all ${
+                          isActive
+                            ? "bg-gold/10 text-gold border border-gold/20"
+                            : "text-tx-muted hover:bg-white/5"
+                        }`}
+                      >
+                        {link.label}
+                      </Link>
+                    </motion.div>
                   );
                 })}
                 <Link
                   to="/contact"
+                  onClick={() => setIsOpen(false)}
                   className="mt-3 block py-3 text-sm font-semibold rounded-xl bg-gold text-navy text-center"
                 >
                   Let&apos;s Talk
@@ -209,7 +217,7 @@ const Navbar = () => {
           </>
         )}
       </AnimatePresence>
-    </div>
+    </motion.div>
   );
 };
 

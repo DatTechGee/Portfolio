@@ -900,6 +900,17 @@ a:focus-visible, button:focus-visible {
 .light .theme-toggle:hover { background: rgba(0,114,255,0.12); border-color: rgba(0,114,255,0.3); color: #0072ff; }
 .light ::selection { background: rgba(0, 114, 255, 0.25); color: #0c1626; }
 
+/* ── GLOBAL IMAGE SHARPENING ──
+   Give every rendered photo a crisp, punchy look (mild contrast + saturation
+   claw-back after the soft ambient tints + object-cover scaling). */
+img {
+  -webkit-font-smoothing: antialiased;
+  filter: contrast(1.02) saturate(1.08);
+}
+img.w-full.h-full.object-cover {
+  filter: contrast(1.05) saturate(1.1);
+}
+
 /* Frame content images so dark photos sit cleanly on white instead of clashing.
    Scope: card/section images (w-full h-full object-cover at content opacity),
    excluding small logos (w-9 etc.) and full-bleed page backdrops (opacity-10). */
@@ -908,12 +919,25 @@ a:focus-visible, button:focus-visible {
 .light img.w-full.h-full.object-cover.opacity-70,
 .light img.w-full.h-full.object-cover.opacity-80,
 .light img.w-full.h-full.object-cover.opacity-90 {
-  border: 1px solid rgba(12, 22, 38, 0.08);
+  border: 1px solid rgba(12, 22, 38, 0.12);
   border-radius: 0.75rem;
-  box-shadow: 0 1px 3px rgba(12, 22, 38, 0.08);
+  box-shadow: 0 4px 16px rgba(12, 22, 38, 0.12);
 }
 .light img.w-full.h-full.object-cover[class*="rounded"] {
   border-radius: inherit;
+}
+/* In light mode, pull content photos up to full opacity so they read clear
+   and sharp against the pale paper instead of looking washed out. */
+.light img.w-full.h-full.object-cover.opacity-50 {
+  opacity: 0.85;
+}
+.light img.w-full.h-full.object-cover.opacity-60 {
+  opacity: 0.92;
+}
+.light img.w-full.h-full.object-cover.opacity-70,
+.light img.w-full.h-full.object-cover.opacity-80,
+.light img.w-full.h-full.object-cover.opacity-90 {
+  opacity: 1;
 }
 
 /* ── DARK ISLANDS (`.on-dark`): restore light text inside media overlays
