@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import ScrollReveal from "../components/ScrollReveal";
 import Seo from "../components/Seo";
@@ -90,7 +90,7 @@ const faqs = [
   },
   {
     question: "What happens after the project is delivered?",
-    answer: "DatTechGee Technologies provides post-launch support including bug fixes, performance monitoring, feature additions, and system updates. We offer flexible maintenance plans � monthly, quarterly, or annual � to keep your system running at peak performance.",
+    answer: "DatTechGee Technologies provides post-launch support including bug fixes, performance monitoring, feature additions, and system updates. We offer flexible maintenance plans — monthly, quarterly, or annual — to keep your system running at peak performance.",
   },
 ];
 
@@ -148,7 +148,7 @@ export default function ContactPage() {
   return (
     <main className="bg-[var(--bg-base)] min-h-screen">
       <Seo
-        title="Contact | DatTechGee Technologies � Isaac Emmanuel"
+        title="Contact | DatTechGee Technologies — Isaac Emmanuel"
         description="Contact Isaac Emmanuel at DatTechGee Technologies for web development, mobile apps, and custom software. WhatsApp 09112454166. Based in Abuja, Nigeria."
         path="/contact"
         image="/assets/logo.png"
@@ -172,14 +172,14 @@ export default function ContactPage() {
             </div>
             <p className="text-neutral-500 max-w-2xl mx-auto text-lg">
               Have a project in mind? Let's build it. Reach out to Isaac and
-              DatTechGee Technologies � freelancing, collaborations, and software
+              DatTechGee Technologies — freelancing, collaborations, and software
               development opportunities welcome.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
             <div className="mt-10 max-w-3xl mx-auto">
               <div className="relative rounded-2xl overflow-hidden border border-white/[0.08]">
-                <img src="/assets/softt.jpg" alt="DatTechGee Technologies � Contact us" className="w-full h-48 md:h-56 object-cover opacity-70" />
+                <img src="/assets/softt.jpg" alt="DatTechGee Technologies — Contact us" className="w-full h-48 md:h-56 object-cover opacity-70" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-base)]/80 via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 flex items-center justify-between">
                   <div>

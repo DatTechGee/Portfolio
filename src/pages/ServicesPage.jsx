@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import ScrollReveal from "../components/ScrollReveal";
@@ -223,7 +223,7 @@ export default function ServicesPage() {
   return (
     <main className="bg-[var(--bg-base)] min-h-screen">
       <Seo
-        title="Services | DatTechGee Technologies � Software. Innovation. Impact."
+        title="Services | DatTechGee Technologies — Software. Innovation. Impact."
         description="Web development, mobile app development, business systems, data analysis, data science & AI, API integration, and UI/UX design. Custom software by DatTechGee Technologies in Abuja, Nigeria."
         path="/services"
         image="/assets/logo.png"
@@ -243,14 +243,14 @@ export default function ServicesPage() {
               What We Do
             </h1>
             <p className="text-neutral-500 max-w-2xl mx-auto text-lg">
-              The services Isaac Emmanuel and the DatTechGee team deliver � the
+              The services Isaac Emmanuel and the DatTechGee team deliver — the
               technical and operational backbone upon which serious businesses grow.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
             <div className="mt-10 max-w-3xl mx-auto">
               <div className="relative rounded-2xl overflow-hidden border border-white/[0.08]">
-                <img src="/assets/websiteprof.jpg" alt="DatTechGee Technologies � Digital solutions" className="w-full h-48 md:h-64 object-cover opacity-70" />
+                <img src="/assets/websiteprof.jpg" alt="DatTechGee Technologies — Digital solutions" className="w-full h-48 md:h-64 object-cover opacity-70" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-base)]/80 via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 flex items-center justify-between">
                   <div>
@@ -408,7 +408,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Development Process � Horizontal Timeline */}
+      {/* Development Process — Horizontal Timeline */}
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollReveal>
@@ -589,7 +589,7 @@ export default function ServicesPage() {
                 title: "Fixed-Price Project",
                 description: "Clear scope, timeline, and budget agreed upfront. Ideal for well-defined projects with specific requirements and measurable deliverables.",
                 bestFor: "Websites, MVPs, feature development",
-                timeline: "2�8 weeks",
+                timeline: "2–8 weeks",
                 image: "/assets/image2.jpg",
               },
               {
@@ -657,7 +657,7 @@ export default function ServicesPage() {
               </h2>
               <p className="text-neutral-500 max-w-xl mx-auto">
                 Transparent starting points for every stage of growth. Every project is quoted
-                precisely after a free discovery call � no surprises.
+                precisely after a free discovery call — no surprises.
               </p>
             </div>
           </ScrollReveal>
@@ -790,19 +790,19 @@ export default function ServicesPage() {
               },
               {
                 q: "What does a free discovery call include?",
-                a: "We discuss your goals, requirements, and budget to propose the right approach and a clear estimate. There is zero obligation � you decide whether to move forward.",
+                a: "We discuss your goals, requirements, and budget to propose the right approach and a clear estimate. There is zero obligation — you decide whether to move forward.",
               },
               {
                 q: "Do you provide maintenance and support after delivery?",
-                a: "Yes. Every project includes a support window, and we offer flexible maintenance plans � monthly, quarterly, or annual � for ongoing updates, bug fixes, and new features.",
+                a: "Yes. Every project includes a support window, and we offer flexible maintenance plans — monthly, quarterly, or annual — for ongoing updates, bug fixes, and new features.",
               },
               {
                 q: "Can you work with us remotely?",
-                a: "Absolutely. DatTechGee Technologies is based in Abuja but works with clients worldwide through remote collaboration � daily updates, shared repositories, and regular calls keep you fully in the loop.",
+                a: "Absolutely. DatTechGee Technologies is based in Abuja but works with clients worldwide through remote collaboration — daily updates, shared repositories, and regular calls keep you fully in the loop.",
               },
               {
                 q: "What do you need from us to get started?",
-                a: "A clear idea of your goals and any reference materials. We handle the rest � requirements analysis, architecture, design, development, and deployment. We will also sign an NDA before discussing sensitive details.",
+                a: "A clear idea of your goals and any reference materials. We handle the rest — requirements analysis, architecture, design, development, and deployment. We will also sign an NDA before discussing sensitive details.",
               },
             ].map((faq, i) => (
               <motion.div

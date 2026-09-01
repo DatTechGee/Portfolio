@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import ScrollReveal from "../components/ScrollReveal";
@@ -155,7 +155,7 @@ export default function InsightsPage() {
   return (
     <main className="bg-[var(--bg-base)] min-h-screen">
       <Seo
-        title="Insights | DatTechGee Technologies � Our Perspective"
+        title="Insights | DatTechGee Technologies — Our Perspective"
         description="Articles and guides on software architecture, API design, mobile development, security, and business systems from Isaac Emmanuel and DatTechGee Technologies."
         path="/insights"
         image="/assets/logo.png"
@@ -186,7 +186,7 @@ export default function InsightsPage() {
           <ScrollReveal delay={0.2}>
             <div className="mt-10 max-w-3xl mx-auto">
               <div className="relative rounded-2xl overflow-hidden border border-white/[0.08]">
-                <img src="/assets/soft1.jpg" alt="DatTechGee Technologies � Insights" className="w-full h-48 md:h-56 object-cover opacity-70" />
+                <img src="/assets/soft1.jpg" alt="DatTechGee Technologies — Insights" className="w-full h-48 md:h-56 object-cover opacity-70" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-base)]/80 via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <p className="text-white text-sm font-semibold">Engineering Insights</p>
@@ -333,7 +333,7 @@ export default function InsightsPage() {
                   type="text"
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
-                  placeholder="Search articles�"
+                  placeholder="Search articles—"
                   className="w-full bg-[var(--bg-card)] border border-white/[0.08] rounded-full pl-10 pr-4 py-2 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-gold/40 transition-all duration-300"
                 />
               </div>
@@ -431,7 +431,7 @@ export default function InsightsPage() {
                     disabled={subscribing}
                     className="w-full sm:w-auto bg-gold text-[var(--bg-base)] px-7 py-3.5 rounded-full font-semibold text-sm hover:bg-gold/90 transition-colors duration-300 whitespace-nowrap disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    {subscribing ? "Subscribing�" : "Subscribe"}
+                    {subscribing ? "Subscribing—" : "Subscribe"}
                   </button>
                 </form>
               )}

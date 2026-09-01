@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+ï»¿import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Link } from "react-router-dom";
 import ScrollReveal from "../components/ScrollReveal";
@@ -80,8 +80,8 @@ export default function ProjectsPage() {
   return (
     <main className="bg-[var(--bg-base)] min-h-screen">
       <Seo
-        title="Projects | DatTechGee Technologies — Isaac Emmanuel"
-        description="Explore 20+ projects built by Isaac Emmanuel and DatTechGee Technologies — school management systems, payroll, blockchain DApps, mobile apps, and business systems."
+        title="Projects | DatTechGee Technologies â€” Isaac Emmanuel"
+        description="Explore 20+ projects built by Isaac Emmanuel and DatTechGee Technologies â€” school management systems, payroll, blockchain DApps, mobile apps, and business systems."
         path="/projects"
         image="/assets/logo.png"
         type="website"
@@ -124,7 +124,7 @@ export default function ProjectsPage() {
                   type="text"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  placeholder="Search projects by name, tech, or keyword…"
+                  placeholder="Search projects by name, tech, or keywordâ€”"
                   className="w-full bg-[var(--bg-card)] border border-white/[0.08] rounded-full pl-12 pr-4 py-3.5 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-gold/40 focus:shadow-[0_0_20px_rgba(0, 114, 255,0.08)] transition-all duration-300"
                 />
               </div>
@@ -214,7 +214,7 @@ export default function ProjectsPage() {
                       {project.description}
                     </p>
 
-                    {/* Case Study — Problem / Solution / Result */}
+                    {/* Case Study â€” Problem / Solution / Result */}
                     {[project.problem, project.solution, project.result].some(Boolean) && (
                       <div className="mb-4 space-y-2.5">
                         {[
@@ -429,7 +429,7 @@ export default function ProjectsPage() {
                   {selectedProject.description}
                 </p>
 
-                {/* Case Study — Problem / Solution / Result */}
+                {/* Case Study â€” Problem / Solution / Result */}
                 {[selectedProject.problem, selectedProject.solution, selectedProject.result].some(Boolean) && (
                   <div className="mb-6 grid gap-4 md:grid-cols-3">
                     {[
@@ -521,7 +521,7 @@ export default function ProjectsPage() {
                         />
                       </div>
                       <p className="text-xs text-neutral-500 mt-2">
-                        Some sites may block embedded previews — use{" "}
+                        Some sites may block embedded previews â€” use{" "}
                         <a
                           href={selectedProject.href}
                           target="_blank"

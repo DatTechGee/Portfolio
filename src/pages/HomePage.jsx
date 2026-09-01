@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from "motion/react";
+﻿import { motion, useScroll, useTransform } from "motion/react";
 import { Link } from "react-router-dom";
 import { Particles } from "../components/Particles";
 import { FlipWords } from "../components/FlipWords";
@@ -57,7 +57,7 @@ const pillars = [
       </svg>
     ),
     title: "Innovation",
-    description: "We stay at the cutting edge of technology to give your business a competitive advantage. AI-powered automation, blockchain integration, and modern cloud architectures are tools we deploy strategically � not for novelty, but for measurable impact.",
+    description: "We stay at the cutting edge of technology to give your business a competitive advantage. AI-powered automation, blockchain integration, and modern cloud architectures are tools we deploy strategically — not for novelty, but for measurable impact.",
     image: "/assets/AI.jpg",
   },
   {
@@ -81,7 +81,7 @@ const capabilities = [
     ),
     title: "Custom Software Development",
     description:
-      "End-to-end web platforms with React frontends, Laravel/Node.js backends, authentication, dashboards, and reporting � built for scale.",
+      "End-to-end web platforms with React frontends, Laravel/Node.js backends, authentication, dashboards, and reporting — built for scale.",
     image: "/assets/image2.jpg",
   },
   {
@@ -92,7 +92,7 @@ const capabilities = [
     ),
     title: "Mobile Application Development",
     description:
-      "Cross-platform Android/iOS apps with React Native and Expo � GPS tracking, push notifications, biometric auth, and offline capabilities.",
+      "Cross-platform Android/iOS apps with React Native and Expo — GPS tracking, push notifications, biometric auth, and offline capabilities.",
     image: "/assets/soft.jpg",
   },
   {
@@ -124,7 +124,7 @@ const processSteps = [
     num: "01",
     title: "Understand",
     description:
-      "We start with the problem, the users, and the requirements � before a single line of code.",
+      "We start with the problem, the users, and the requirements — before a single line of code.",
   },
   {
     num: "02",
@@ -191,7 +191,7 @@ const differentiators = [
   {
     num: "01",
     title: "Execution-First",
-    description: "We do not sell strategies � we build systems. Every engagement produces tangible, deployed, working software that your team can use immediately.",
+    description: "We do not sell strategies — we build systems. Every engagement produces tangible, deployed, working software that your team can use immediately.",
     image: "/assets/image2.jpg",
   },
   {
@@ -246,8 +246,8 @@ const HomePage = () => {
   return (
     <div className="min-h-screen bg-[var(--bg-base)]">
       <Seo
-        title="DatTechGee Technologies � Software. Innovation. Impact. | Isaac Emmanuel"
-        description="DatTechGee Technologies builds custom web apps, mobile apps, business systems, and APIs. Founded by Isaac Emmanuel � Full Stack Developer using React, Laravel, and Node.js. 20+ projects delivered."
+        title="DatTechGee Technologies — Software. Innovation. Impact. | Isaac Emmanuel"
+        description="DatTechGee Technologies builds custom web apps, mobile apps, business systems, and APIs. Founded by Isaac Emmanuel — Full Stack Developer using React, Laravel, and Node.js. 20+ projects delivered."
         path="/"
         image="/assets/logo.png"
         type="website"
@@ -328,7 +328,7 @@ const HomePage = () => {
               <ScrollReveal direction="up" delay={0.4}>
                 <p className="text-base text-neutral-400">
                   DatTechGee is the full-stack engineering brand of Isaac
-                  Emmanuel � building scalable web, mobile and backend systems
+                  Emmanuel — building scalable web, mobile and backend systems
                   that move ideas into production.
                 </p>
               </ScrollReveal>
@@ -349,7 +349,7 @@ const HomePage = () => {
               <ScrollReveal direction="up" delay={0.45}>
                 <p className="text-sm sm:text-base text-neutral-500 max-w-lg mx-auto lg:mx-0 leading-relaxed">
                   From custom platforms and business automation to mobile apps
-                  and APIs � we turn operational pain points into reliable,
+                  and APIs — we turn operational pain points into reliable,
                   scalable digital products built for execution.
                 </p>
               </ScrollReveal>
@@ -462,7 +462,7 @@ const HomePage = () => {
                 <span className="text-2xl md:text-3xl font-bold text-white/15 hover:text-gold/60 transition-colors duration-300">
                   {t}
                 </span>
-                <span className="text-gold/30">�</span>
+                <span className="text-gold/30">&bull;</span>
               </span>
             ))}
           </motion.div>
@@ -493,7 +493,7 @@ const HomePage = () => {
                   </span>
                   {ind.name}
                 </span>
-                <span className="text-gold/30">�</span>
+                <span className="text-gold/30">&bull;</span>
               </span>
             ))}
           </motion.div>
@@ -567,7 +567,7 @@ const HomePage = () => {
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
               <p className="text-neutral-400 max-w-2xl mx-auto text-base mt-4">
-                More than a technology list � here's what we actually ship, end
+                More than a technology list — here's what we actually ship, end
                 to end, for real businesses.
               </p>
             </ScrollReveal>
@@ -612,7 +612,7 @@ const HomePage = () => {
               },
               {
                 title: "Full Product Delivery",
-                desc: "Design, architecture, build, deploy � and keep improving in production.",
+                desc: "Design, architecture, build, deploy — and keep improving in production.",
                 image: "/assets/software6.jpg",
               },
             ].map((item, i) => (
@@ -724,7 +724,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* ===== WHAT WE DO � CORE CAPABILITIES ===== */}
+      {/* ===== WHAT WE DO — CORE CAPABILITIES ===== */}
       <div className="section-divider" />
       <section className="section-spacing relative py-24">
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-base)] via-[var(--bg-band)] to-[var(--bg-base)]" />
@@ -803,7 +803,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* ===== EXECUTION FRAMEWORK � HOW WE WORK ===== */}
+      {/* ===== EXECUTION FRAMEWORK — HOW WE WORK ===== */}
       <div className="section-divider" />
       <section className="section-spacing relative py-24 overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
@@ -821,7 +821,7 @@ const HomePage = () => {
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
               <p className="text-neutral-400 max-w-xl mx-auto text-base mt-4">
-                From first conversation to production � how we ship reliable software.
+                From first conversation to production — how we ship reliable software.
               </p>
             </ScrollReveal>
           </div>
