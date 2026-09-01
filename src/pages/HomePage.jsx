@@ -356,21 +356,25 @@ const HomePage = () => {
 
               <ScrollReveal direction="up" delay={0.45}>
                 <div className="flex flex-wrap gap-4 justify-center lg:justify-start mt-2">
-                  <Link
-                    to="/services"
-                    className="bg-gold text-navy px-7 py-3.5 rounded-lg font-semibold text-sm hover:bg-gold/90 transition-colors duration-300 inline-flex items-center gap-2"
-                  >
-                    Our Services
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                    </svg>
-                  </Link>
-                  <Link
-                    to="/contact"
-                    className="border border-gold/30 text-gold px-7 py-3.5 rounded-lg font-semibold text-sm hover:bg-gold/10 transition-colors duration-300 inline-flex items-center gap-2"
-                  >
-                    Start a Project
-                  </Link>
+                  <motion.div whileHover={{ y: -3 }} whileTap={{ scale: 0.97 }} transition={{ type: "spring", stiffness: 300, damping: 18 }}>
+                    <Link
+                      to="/services"
+                      className="bg-gold text-navy px-7 py-3.5 rounded-lg font-semibold text-sm hover:bg-gold/90 transition-colors duration-300 inline-flex items-center gap-2 shadow-lg shadow-gold/20"
+                    >
+                      Our Services
+                      <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                      </svg>
+                    </Link>
+                  </motion.div>
+                  <motion.div whileHover={{ y: -3 }} whileTap={{ scale: 0.97 }} transition={{ type: "spring", stiffness: 300, damping: 18 }}>
+                    <Link
+                      to="/contact"
+                      className="border border-gold/30 text-gold px-7 py-3.5 rounded-lg font-semibold text-sm hover:bg-gold/10 transition-colors duration-300 inline-flex items-center gap-2"
+                    >
+                      Start a Project
+                    </Link>
+                  </motion.div>
                 </div>
               </ScrollReveal>
             </div>
