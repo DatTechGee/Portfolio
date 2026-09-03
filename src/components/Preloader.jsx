@@ -80,7 +80,6 @@ const Preloader = ({ onComplete }) => {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="relative mb-8"
         >
-          <div className="absolute -inset-3 rounded-[1.75rem] bg-gradient-to-br from-gold/40 via-transparent to-[#0072ff]/40 blur-md" />
           <div className="relative w-24 h-24 rounded-2xl bg-[#0a1128] border border-white/10 overflow-hidden flex items-center justify-center shadow-2xl shadow-black/60">
             <motion.img
               src="/assets/logo.png"
@@ -95,16 +94,6 @@ const Preloader = ({ onComplete }) => {
               transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
             />
           </div>
-          {/* outer conic ring */}
-          <motion.div
-            className="absolute -inset-4 rounded-[2rem] opacity-60"
-            style={{
-              background:
-                "conic-gradient(from 0deg, #0072ff, #0a1128, #E5B800, #0a1128, #0072ff)",
-            }}
-            animate={{ rotate: 360 }}
-            transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
-          />
         </motion.div>
 
         {/* Brand + rotating status message */}
