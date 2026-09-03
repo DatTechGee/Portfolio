@@ -43,6 +43,10 @@ const App = () => {
   }, []);
 
   useEffect(() => {
+    setShowPreloader(true);
+  }, [location.pathname]);
+
+  useEffect(() => {
     const onKey = (e) => {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
         e.preventDefault();
