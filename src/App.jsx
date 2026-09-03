@@ -37,13 +37,9 @@ const App = () => {
   const [paletteOpen, setPaletteOpen] = useState(false);
   const location = useLocation();
 
-  const handlePreloaderComplete = useCallback(() => {
+const handlePreloaderComplete = useCallback(() => {
     setShowPreloader(false);
   }, []);
-
-  useEffect(() => {
-    setShowPreloader(true);
-  }, [location.pathname]);
 
   useEffect(() => {
     const onKey = (e) => {
