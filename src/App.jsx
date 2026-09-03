@@ -1,4 +1,4 @@
-import { lazy, Suspense, useCallback, useEffect, useState } from "react";
+﻿import { lazy, Suspense, useCallback, useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "motion/react";
 import Navbar from "./sections/Navbar";
@@ -6,7 +6,6 @@ import Footer from "./sections/Footer";
 import Preloader from "./components/Preloader";
 import ScrollButtons from "./components/ScrollButtons";
 import ScrollProgress from "./components/ScrollProgress";
-import WhatsAppButton from "./components/WhatsAppButton";
 import ErrorBoundary from "./components/ErrorBoundary";
 import CommandPalette from "./components/CommandPalette";
 
@@ -95,8 +94,7 @@ const App = () => {
               </Suspense>
             </main>
             <Footer />
-            <ScrollButtons />
-            <WhatsAppButton />
+<ScrollButtons />
           </div>
           <CommandPalette open={paletteOpen} onClose={() => setPaletteOpen(false)} />
         </div>
@@ -105,3 +103,4 @@ const App = () => {
 };
 
 export default App;
+
